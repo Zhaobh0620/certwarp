@@ -1,0 +1,87 @@
+{
+ "schema": "bayesreg.structure_groups.v1",
+ "comment": "Structure-layer channel groups (docs/bayesreg/04_分割器.md §2). The network predicts all 36 seg35 classes (class c = label c, 0 = background); a grouping sums class probabilities after inference, so a grouping can change without retraining. class_names of the P_S provenance = the group names in this order; channel 0 of the stored group array = background_labels.",
+ "label_table": {
+  "source": "neurite-oasis seg35_labels.txt (/mnt/d/data/seg35_labels.txt, FreeSurfer colour-table format)",
+  "sha256": "31c10de0a898a51928e825c8cc230bd78ecbce193e5f81a11b576b7605e7511a",
+  "names": {
+   "0": "Unknown", "1": "Left-Cerebral-White-Matter", "2": "Left-Cerebral-Cortex", "3": "Left-Lateral-Ventricle",
+   "4": "Left-Inf-Lat-Ventricle", "5": "Left-Cerebellum-White-Matter", "6": "Left-Cerebellum-Cortex",
+   "7": "Left-Thalamus", "8": "Left-Caudate", "9": "Left-Putamen", "10": "Left-Pallidum", "11": "3rd-Ventricle",
+   "12": "4th-Ventricle", "13": "Brain-Stem", "14": "Left-Hippocampus", "15": "Left-Amygdala", "16": "Left-Accumbens",
+   "17": "Left-Ventral-DC", "18": "Left-Vessel", "19": "Left-Choroid-Plexus", "20": "Right-Cerebral-White-Matter",
+   "21": "Right-Cerebral-Cortex", "22": "Right-Lateral-Ventricle", "23": "Right-Inf-Lat-Ventricle",
+   "24": "Right-Cerebellum-White-Matter", "25": "Right-Cerebellum-Cortex", "26": "Right-Thalamus",
+   "27": "Right-Caudate", "28": "Right-Putamen", "29": "Right-Pallidum", "30": "Right-Hippocampus",
+   "31": "Right-Amygdala", "32": "Right-Accumbens", "33": "Right-Ventral-DC", "34": "Right-Vessel",
+   "35": "Right-Choroid-Plexus"
+  }
+ },
+ "n_network_classes": 36,
+ "default_grouping": "structure13_v1",
+ "groupings": {
+  "structure13_v1": {
+   "status": "default",
+   "rule": "anatomical groups, left and right merged; two structures share a channel only if they are not adjacent or are separated by an intensity edge, so that the boundaries intensity alone cannot see (same-intensity nuclei, the six periventricular small labels) are channel boundaries -- except the boundaries listed in rule_exceptions, which lie inside a channel",
+   "rule_exceptions": [
+    "hindbrain: left and right cerebellar cortex (6, 25) meet at the vermis without an intensity edge",
+    "hindbrain: the brain stem (13) touches the left and right cerebellar white matter (5, 24) at the cerebellar peduncles without an intensity edge",
+    "cerebral_wm: left and right cerebral white matter (1, 20) meet at the corpus callosum midline without an intensity edge",
+    "not adjacent (unverified, to be counted by check-tissue4 on <= 3 training subjects): accumbens vs ventral DC (16/32 vs 17/33), vessel vs choroid plexus (18/34 vs 19/35), inferior lateral ventricle vs 3rd/4th ventricle (4/23 vs 11, 12)"
+   ],
+   "background_labels": [0],
+   "groups": [
+    {"name": "cerebral_wm", "labels": [1, 20]},
+    {"name": "cerebral_cortex", "labels": [2, 21]},
+    {"name": "lateral_ventricle", "labels": [3, 22]},
+    {"name": "inf_lat_3rd_4th_ventricle", "labels": [4, 23, 11, 12]},
+    {"name": "vessel_choroid_plexus", "labels": [18, 34, 19, 35]},
+    {"name": "hindbrain", "labels": [5, 24, 6, 25, 13]},
+    {"name": "thalamus", "labels": [7, 26]},
+    {"name": "caudate", "labels": [8, 27]},
+    {"name": "putamen", "labels": [9, 28]},
+    {"name": "pallidum", "labels": [10, 29]},
+    {"name": "hippocampus", "labels": [14, 30]},
+    {"name": "amygdala", "labels": [15, 31]},
+    {"name": "accumbens_ventral_dc", "labels": [16, 32, 17, 33]}
+   ]
+  },
+  "tissue4_ref": {
+   "status": "reference_unverified",
+   "rule": "comparison grouping after neurite-oasis seg4 (1 Cortex, 2 Subcortical-Gray-Matter, 3 White-Matter, 4 CSF). The seg35 -> seg4 assignment below is inferred, not read from the data; uncertain_labels must be checked with `python -m bayesreg.seg.unet.cli check-tissue4` (training-set subjects only) before this grouping enters any reported number",
+   "uncertain_labels": [5, 6, 13, 17, 18, 19, 24, 25, 33, 34, 35],
+   "background_labels": [0],
+   "groups": [
+    {"name": "cortex", "labels": [2, 21, 6, 25]},
+    {"name": "subcortical_gm", "labels": [7, 8, 9, 10, 14, 15, 16, 17, 26, 27, 28, 29, 30, 31, 32, 33]},
+    {"name": "white_matter", "labels": [1, 20, 5, 24, 13]},
+    {"name": "csf", "labels": [3, 4, 11, 12, 22, 23, 18, 19, 34, 35]}
+   ]
+  },
+  "identity35": {
+   "status": "ablation",
+   "rule": "one channel per seg35 label (the '35 classes vs groups' ablation of the plan, section 11.1); group names = label_table names",
+   "background_labels": [0],
+   "groups": [
+    {"name": "Left-Cerebral-White-Matter", "labels": [1]}, {"name": "Left-Cerebral-Cortex", "labels": [2]},
+    {"name": "Left-Lateral-Ventricle", "labels": [3]}, {"name": "Left-Inf-Lat-Ventricle", "labels": [4]},
+    {"name": "Left-Cerebellum-White-Matter", "labels": [5]}, {"name": "Left-Cerebellum-Cortex", "labels": [6]},
+    {"name": "Left-Thalamus", "labels": [7]}, {"name": "Left-Caudate", "labels": [8]},
+    {"name": "Left-Putamen", "labels": [9]}, {"name": "Left-Pallidum", "labels": [10]},
+    {"name": "3rd-Ventricle", "labels": [11]}, {"name": "4th-Ventricle", "labels": [12]},
+    {"name": "Brain-Stem", "labels": [13]}, {"name": "Left-Hippocampus", "labels": [14]},
+    {"name": "Left-Amygdala", "labels": [15]}, {"name": "Left-Accumbens", "labels": [16]},
+    {"name": "Left-Ventral-DC", "labels": [17]}, {"name": "Left-Vessel", "labels": [18]},
+    {"name": "Left-Choroid-Plexus", "labels": [19]}, {"name": "Right-Cerebral-White-Matter", "labels": [20]},
+    {"name": "Right-Cerebral-Cortex", "labels": [21]}, {"name": "Right-Lateral-Ventricle", "labels": [22]},
+    {"name": "Right-Inf-Lat-Ventricle", "labels": [23]}, {"name": "Right-Cerebellum-White-Matter", "labels": [24]},
+    {"name": "Right-Cerebellum-Cortex", "labels": [25]}, {"name": "Right-Thalamus", "labels": [26]},
+    {"name": "Right-Caudate", "labels": [27]}, {"name": "Right-Putamen", "labels": [28]},
+    {"name": "Right-Pallidum", "labels": [29]}, {"name": "Right-Hippocampus", "labels": [30]},
+    {"name": "Right-Amygdala", "labels": [31]}, {"name": "Right-Accumbens", "labels": [32]},
+    {"name": "Right-Ventral-DC", "labels": [33]}, {"name": "Right-Vessel", "labels": [34]},
+    {"name": "Right-Choroid-Plexus", "labels": [35]}
+   ]
+  }
+ }
+}

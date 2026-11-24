@@ -1,0 +1,13 @@
+{
+ "schema": "bayesreg.seg4_of_seg35.v1",
+ "comment": "seg35 label -> seg4 label of the neurite-oasis labels, read from the data, not inferred: on all 20 development subjects of stage_L2R_val_v1 every seg35 label falls in exactly one seg4 label (share 1 on every subject), seg35 = 0 exactly where seg4 = 0 (runs/20261102-a1p/seg4_label_check.json, experiments/d0/check_seg4_map.py). Used by the A1P arms (runs/20261102-a1p/plan.md) to merge the U-Net posterior of the 36 seg35 classes into the classes of A1's truth seg4. It differs from the tissue4_ref grouping of structure_groups_v1.json (status reference_unverified) on 4 labels: 6 and 25 (cerebellar cortex: subcortical gray matter here, cortex there), 17 and 33 (ventral DC: white matter here, subcortical gray matter there); tissue4_ref is not used.",
+ "seg4_names": {"0": "Unknown", "1": "Cortex", "2": "Subcortical-Gray-Matter", "3": "White-Matter", "4": "CSF"},
+ "check_file": "runs/20261102-a1p/seg4_label_check.json",
+ "check_file_sha256": "d4777c5a4f945db7b371260f95dabff284f9a177423d4fe02056eeeaab45749d",
+ "seg4_of_seg35": {
+  "0": 0,
+  "1": 3, "2": 1, "3": 4, "4": 4, "5": 3, "6": 2, "7": 2, "8": 2, "9": 2, "10": 2, "11": 4, "12": 4, "13": 3, "14": 2, "15": 2,
+  "16": 2, "17": 3, "18": 4, "19": 4, "20": 3, "21": 1, "22": 4, "23": 4, "24": 3, "25": 2, "26": 2, "27": 2, "28": 2, "29": 2,
+  "30": 2, "31": 2, "32": 2, "33": 3, "34": 4, "35": 4
+ }
+}

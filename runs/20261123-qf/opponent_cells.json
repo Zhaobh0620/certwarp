@@ -1,0 +1,180 @@
+{
+ "schema": "qf.opponent_cells.v1",
+ "pair": "OASIS_OAS1_0438_MR1__OASIS_OAS1_0439_MR1",
+ "opponent": "ants_s",
+ "cells": [
+  {
+   "cell_zyx": [
+    118,
+    91,
+    26
+   ],
+   "min_J_54_points": -0.013044101186096668,
+   "min_J_54_points_independent": -0.013044100803594689,
+   "central_det_corners_min": 1.070721983909607,
+   "central_det_corners_max": 1.3242706060409546,
+   "certificate_infeasible": true,
+   "in_figure": false
+  },
+  {
+   "cell_zyx": [
+    118,
+    91,
+    27
+   ],
+   "min_J_54_points": -0.013058222830295563,
+   "min_J_54_points_independent": -0.013058223128842571,
+   "central_det_corners_min": 0.947987973690033,
+   "central_det_corners_max": 1.3173571825027466,
+   "certificate_infeasible": true,
+   "in_figure": false
+  },
+  {
+   "cell_zyx": [
+    134,
+    155,
+    108
+   ],
+   "min_J_54_points": -0.02435307204723358,
+   "min_J_54_points_independent": -0.024353071133903673,
+   "central_det_corners_min": 1.148221731185913,
+   "central_det_corners_max": 1.68012535572052,
+   "certificate_infeasible": true,
+   "in_figure": false
+  },
+  {
+   "cell_zyx": [
+    135,
+    155,
+    108
+   ],
+   "min_J_54_points": -0.31051522493362427,
+   "min_J_54_points_independent": -0.3105152104479004,
+   "central_det_corners_min": 1.3037185668945312,
+   "central_det_corners_max": 1.7425605058670044,
+   "certificate_infeasible": true,
+   "in_figure": false
+  },
+  {
+   "cell_zyx": [
+    135,
+    157,
+    109
+   ],
+   "min_J_54_points": -0.06095162034034729,
+   "min_J_54_points_independent": -0.06095162080478688,
+   "central_det_corners_min": 1.0529791116714478,
+   "central_det_corners_max": 1.7074081897735596,
+   "certificate_infeasible": true,
+   "in_figure": false
+  },
+  {
+   "cell_zyx": [
+    136,
+    155,
+    108
+   ],
+   "min_J_54_points": -0.4833187758922577,
+   "min_J_54_points_independent": -0.4833187631722656,
+   "central_det_corners_min": 1.2520973682403564,
+   "central_det_corners_max": 1.8130091428756714,
+   "certificate_infeasible": true,
+   "in_figure": false
+  },
+  {
+   "cell_zyx": [
+    136,
+    157,
+    109
+   ],
+   "min_J_54_points": -0.01518098171800375,
+   "min_J_54_points_independent": -0.015180981693711834,
+   "central_det_corners_min": 0.9537962079048157,
+   "central_det_corners_max": 1.6879587173461914,
+   "certificate_infeasible": true,
+   "in_figure": false
+  },
+  {
+   "cell_zyx": [
+    150,
+    135,
+    105
+   ],
+   "min_J_54_points": -0.09865695238113403,
+   "min_J_54_points_independent": -0.09865695350455736,
+   "central_det_corners_min": 1.198765754699707,
+   "central_det_corners_max": 2.085508108139038,
+   "certificate_infeasible": true,
+   "in_figure": false
+  },
+  {
+   "cell_zyx": [
+    150,
+    136,
+    107
+   ],
+   "min_J_54_points": -0.08110502362251282,
+   "min_J_54_points_independent": -0.08110502170359878,
+   "central_det_corners_min": 1.1646249294281006,
+   "central_det_corners_max": 2.288896083831787,
+   "certificate_infeasible": true,
+   "in_figure": true
+  },
+  {
+   "cell_zyx": [
+    151,
+    136,
+    107
+   ],
+   "min_J_54_points": -0.34930482506752014,
+   "min_J_54_points_independent": -0.3493048310378442,
+   "central_det_corners_min": 1.1646249294281006,
+   "central_det_corners_max": 2.2837162017822266,
+   "certificate_infeasible": true,
+   "in_figure": true
+  },
+  {
+   "cell_zyx": [
+    152,
+    135,
+    106
+   ],
+   "min_J_54_points": -0.0361042320728302,
+   "min_J_54_points_independent": -0.03610423332156438,
+   "central_det_corners_min": 1.2696088552474976,
+   "central_det_corners_max": 2.333913564682007,
+   "certificate_infeasible": true,
+   "in_figure": false
+  },
+  {
+   "cell_zyx": [
+    152,
+    136,
+    107
+   ],
+   "min_J_54_points": -0.28599831461906433,
+   "min_J_54_points_independent": -0.2859983184065046,
+   "central_det_corners_min": 1.270602822303772,
+   "central_det_corners_max": 2.1040968894958496,
+   "certificate_infeasible": true,
+   "in_figure": true
+  }
+ ],
+ "n_cells": 12,
+ "n_in_figure": 3,
+ "independent_check_max_abs_difference": 1.4485723842661002e-08,
+ "central_det_at_corners": {
+  "min": 0.947987973690033,
+  "max": 2.333913564682007,
+  "n_cells": 12
+ },
+ "cache": "/home/rmcfz/seq_vp_tag_results/qf_v2",
+ "code": {
+  "head": "118abb3655affbce81e249b79b3111c0be1aedf7",
+  "script": "docs/manuscript/midl/figures/fig_qual.py",
+  "script_sha256": "e6d8e32a6e6c39100fc7cdc709a88914aee43f6210f740b54a3aea430bb93a81",
+  "clean": true,
+  "status": ""
+ },
+ "utc": "2026-11-23T22:43:06Z"
+}

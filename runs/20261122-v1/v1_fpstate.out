@@ -1,0 +1,502 @@
+# V1 v1_fpstate.py  host <host>  Sun Nov 22 13:04:49 CST 2026  commit 3cab1bae  model name	: 13th Gen Intel(R) Core(TM) i9-13900K
+### scenario A: exit 0
+{
+ "after_certificate_main": {
+  "daz": false,
+  "fegetenv_rc": 0,
+  "fegetround": 0,
+  "ftz": false,
+  "mxcsr": "0x1fa2",
+  "mxcsr_rc": 0,
+  "x87_cw": "0x37f",
+  "x87_rc": 0
+ },
+ "at_start": {
+  "daz": false,
+  "fegetenv_rc": 0,
+  "fegetround": 0,
+  "ftz": false,
+  "mxcsr": "0x1fa0",
+  "mxcsr_rc": 0,
+  "x87_cw": "0x37f",
+  "x87_rc": 0
+ },
+ "certificate": {
+  "min_lb": -0.014182161988052916,
+  "n_fast": 108,
+  "n_fb": 1,
+  "n_pre": 11,
+  "reason": "JACOBIAN_VIOLATION",
+  "status": "infeasible"
+ },
+ "pid": 1158666,
+ "probes": [
+  {
+   "daz": false,
+   "fegetenv_rc": 0,
+   "fegetround": 0,
+   "ftz": false,
+   "mxcsr": "0x1fa2",
+   "mxcsr_rc": 0,
+   "name": "MainThread",
+   "numba_smoke": true,
+   "numpy_smoke": true,
+   "numpy_sub_times_one": 5e-324,
+   "numpy_tiny_half": 1.1125369292536007e-308,
+   "thread": "main",
+   "x87_cw": "0x37f",
+   "x87_rc": 0
+  },
+  {
+   "daz": false,
+   "fegetenv_rc": 0,
+   "fegetround": 0,
+   "ftz": false,
+   "mxcsr": "0x1fa2",
+   "mxcsr_rc": 0,
+   "name": "Thread-1 (<lambda>)",
+   "numba_smoke": true,
+   "numpy_smoke": true,
+   "numpy_sub_times_one": 5e-324,
+   "numpy_tiny_half": 1.1125369292536007e-308,
+   "thread": "new threading.Thread",
+   "x87_cw": "0x37f",
+   "x87_rc": 0
+  },
+  {
+   "daz": false,
+   "fegetenv_rc": 0,
+   "fegetround": 0,
+   "ftz": false,
+   "mxcsr": "0x1fa2",
+   "mxcsr_rc": 0,
+   "name": "jd-curl-scan_0",
+   "numba_smoke": true,
+   "numpy_smoke": true,
+   "numpy_sub_times_one": 5e-324,
+   "numpy_tiny_half": 1.1125369292536007e-308,
+   "thread": "jd-curl-scan chunk 0",
+   "x87_cw": "0x37f",
+   "x87_rc": 0
+  },
+  {
+   "daz": false,
+   "fegetenv_rc": 0,
+   "fegetround": 0,
+   "ftz": false,
+   "mxcsr": "0x1fa2",
+   "mxcsr_rc": 0,
+   "name": "jd-curl-scan_1",
+   "numba_smoke": true,
+   "numpy_smoke": true,
+   "numpy_sub_times_one": 5e-324,
+   "numpy_tiny_half": 1.1125369292536007e-308,
+   "thread": "jd-curl-scan chunk 1",
+   "x87_cw": "0x37f",
+   "x87_rc": 0
+  },
+  {
+   "daz": false,
+   "fegetenv_rc": 0,
+   "fegetround": 0,
+   "ftz": false,
+   "mxcsr": "0x1fa2",
+   "mxcsr_rc": 0,
+   "name": "jd-curl-edge-hull_0",
+   "numba_smoke": true,
+   "numpy_smoke": true,
+   "numpy_sub_times_one": 5e-324,
+   "numpy_tiny_half": 1.1125369292536007e-308,
+   "thread": "jd-curl-edge-hull (feasibility._kernel_pool)",
+   "x87_cw": "0x37f",
+   "x87_rc": 0
+  },
+  {
+   "daz": false,
+   "fegetenv_rc": 0,
+   "fegetround": 0,
+   "ftz": false,
+   "mxcsr": "0x1fa2",
+   "mxcsr_rc": 0,
+   "name": "jd-curl-cert-probe_0",
+   "numba_smoke": true,
+   "numpy_smoke": true,
+   "numpy_sub_times_one": 5e-324,
+   "numpy_tiny_half": 1.1125369292536007e-308,
+   "thread": "fresh ThreadPoolExecutor (as the fallback pool)",
+   "x87_cw": "0x37f",
+   "x87_rc": 0
+  }
+ ],
+ "scenario": "A"
+}
+### scenario B: exit 0
+{
+ "after_certificate_main": {
+  "daz": false,
+  "fegetenv_rc": 0,
+  "fegetround": 0,
+  "ftz": false,
+  "mxcsr": "0x1fa2",
+  "mxcsr_rc": 0,
+  "x87_cw": "0x37f",
+  "x87_rc": 0
+ },
+ "after_imports": {
+  "daz": false,
+  "fegetenv_rc": 0,
+  "fegetround": 0,
+  "ftz": false,
+  "mxcsr": "0x1fa2",
+  "mxcsr_rc": 0,
+  "x87_cw": "0x37f",
+  "x87_rc": 0
+ },
+ "after_torch_and_blas_cpu_work": {
+  "daz": false,
+  "fegetenv_rc": 0,
+  "fegetround": 0,
+  "ftz": false,
+  "mxcsr": "0x1fa2",
+  "mxcsr_rc": 0,
+  "x87_cw": "0x37f",
+  "x87_rc": 0
+ },
+ "at_start": {
+  "daz": false,
+  "fegetenv_rc": 0,
+  "fegetround": 0,
+  "ftz": false,
+  "mxcsr": "0x1fa0",
+  "mxcsr_rc": 0,
+  "x87_cw": "0x37f",
+  "x87_rc": 0
+ },
+ "certificate": {
+  "min_lb": -0.014182161988052916,
+  "n_fast": 108,
+  "n_fb": 1,
+  "n_pre": 11,
+  "reason": "JACOBIAN_VIOLATION",
+  "status": "infeasible"
+ },
+ "loaded_so_sample": [
+  "_decomp_interpolative.cpython-310-x86_64-linux-gnu.so",
+  "_decomp_lu_cython.cpython-310-x86_64-linux-gnu.so",
+  "_decomp_update.cpython-310-x86_64-linux-gnu.so",
+  "libc10.so",
+  "libc10_cuda.so",
+  "libcuda.so.1",
+  "libcudart.so.12.1.105",
+  "libcudnn.so.9",
+  "libgomp.so.1.0.0",
+  "libllvmlite.so",
+  "libmkl_avx2.so.2",
+  "libmkl_core.so.2",
+  "libmkl_gnu_thread.so.2",
+  "libmkl_intel_lp64.so.2",
+  "libmkl_rt.so.2",
+  "libmkl_vml_avx2.so.2",
+  "libscipy_openblas64_-99b71e71.so",
+  "libtorch.so",
+  "libtorch_cpu.so",
+  "libtorch_cuda.so",
+  "libtorch_global_deps.so",
+  "libtorch_python.so"
+ ],
+ "n_loaded_so": 195,
+ "pid": 1158712,
+ "probes": [
+  {
+   "daz": false,
+   "fegetenv_rc": 0,
+   "fegetround": 0,
+   "ftz": false,
+   "mxcsr": "0x1fa2",
+   "mxcsr_rc": 0,
+   "name": "MainThread",
+   "numba_smoke": true,
+   "numpy_smoke": true,
+   "numpy_sub_times_one": 5e-324,
+   "numpy_tiny_half": 1.1125369292536007e-308,
+   "thread": "main",
+   "x87_cw": "0x37f",
+   "x87_rc": 0
+  },
+  {
+   "daz": false,
+   "fegetenv_rc": 0,
+   "fegetround": 0,
+   "ftz": false,
+   "mxcsr": "0x1fa2",
+   "mxcsr_rc": 0,
+   "name": "Thread-1 (<lambda>)",
+   "numba_smoke": true,
+   "numpy_smoke": true,
+   "numpy_sub_times_one": 5e-324,
+   "numpy_tiny_half": 1.1125369292536007e-308,
+   "thread": "new threading.Thread",
+   "x87_cw": "0x37f",
+   "x87_rc": 0
+  },
+  {
+   "daz": false,
+   "fegetenv_rc": 0,
+   "fegetround": 0,
+   "ftz": false,
+   "mxcsr": "0x1fa2",
+   "mxcsr_rc": 0,
+   "name": "jd-curl-scan_0",
+   "numba_smoke": true,
+   "numpy_smoke": true,
+   "numpy_sub_times_one": 5e-324,
+   "numpy_tiny_half": 1.1125369292536007e-308,
+   "thread": "jd-curl-scan chunk 0",
+   "x87_cw": "0x37f",
+   "x87_rc": 0
+  },
+  {
+   "daz": false,
+   "fegetenv_rc": 0,
+   "fegetround": 0,
+   "ftz": false,
+   "mxcsr": "0x1fa2",
+   "mxcsr_rc": 0,
+   "name": "jd-curl-scan_1",
+   "numba_smoke": true,
+   "numpy_smoke": true,
+   "numpy_sub_times_one": 5e-324,
+   "numpy_tiny_half": 1.1125369292536007e-308,
+   "thread": "jd-curl-scan chunk 1",
+   "x87_cw": "0x37f",
+   "x87_rc": 0
+  },
+  {
+   "daz": false,
+   "fegetenv_rc": 0,
+   "fegetround": 0,
+   "ftz": false,
+   "mxcsr": "0x1fa2",
+   "mxcsr_rc": 0,
+   "name": "jd-curl-edge-hull_0",
+   "numba_smoke": true,
+   "numpy_smoke": true,
+   "numpy_sub_times_one": 5e-324,
+   "numpy_tiny_half": 1.1125369292536007e-308,
+   "thread": "jd-curl-edge-hull (feasibility._kernel_pool)",
+   "x87_cw": "0x37f",
+   "x87_rc": 0
+  },
+  {
+   "daz": false,
+   "fegetenv_rc": 0,
+   "fegetround": 0,
+   "ftz": false,
+   "mxcsr": "0x1fa2",
+   "mxcsr_rc": 0,
+   "name": "jd-curl-cert-probe_0",
+   "numba_smoke": true,
+   "numpy_smoke": true,
+   "numpy_sub_times_one": 5e-324,
+   "numpy_tiny_half": 1.1125369292536007e-308,
+   "thread": "fresh ThreadPoolExecutor (as the fallback pool)",
+   "x87_cw": "0x37f",
+   "x87_rc": 0
+  }
+ ],
+ "scenario": "B",
+ "torch": "2.5.1",
+ "torch_cuda_initialized": false
+}
+### scenario C: exit 0
+{
+ "after_imports": {
+  "daz": false,
+  "fegetenv_rc": 0,
+  "fegetround": 0,
+  "ftz": false,
+  "mxcsr": "0x1fa2",
+  "mxcsr_rc": 0,
+  "x87_cw": "0x37f",
+  "x87_rc": 0
+ },
+ "after_reset": {
+  "daz": false,
+  "fegetenv_rc": 0,
+  "fegetround": 0,
+  "ftz": false,
+  "mxcsr": "0x1fa2",
+  "mxcsr_rc": 0,
+  "x87_cw": "0x37f",
+  "x87_rc": 0
+ },
+ "after_set_flush_denormal": {
+  "daz": true,
+  "fegetenv_rc": 0,
+  "fegetround": 0,
+  "ftz": true,
+  "mxcsr": "0x9fe2",
+  "mxcsr_rc": 0,
+  "x87_cw": "0x37f",
+  "x87_rc": 0
+ },
+ "at_start": {
+  "daz": false,
+  "fegetenv_rc": 0,
+  "fegetround": 0,
+  "ftz": false,
+  "mxcsr": "0x1fa0",
+  "mxcsr_rc": 0,
+  "x87_cw": "0x37f",
+  "x87_rc": 0
+ },
+ "certificate_under_ftz": {
+  "min_lb": null,
+  "n_fast": 0,
+  "n_fb": 0,
+  "n_pre": 0,
+  "reason": "unsupported_arithmetic",
+  "status": "uncertain"
+ },
+ "ftz_interval_product": {
+  "contains_exact": false,
+  "exact": "see gradual_interval_product (printed after the reset)",
+  "hi": 5e-324,
+  "lo": -5e-324
+ },
+ "gradual_interval_product": {
+  "contains_exact": true,
+  "exact": -1.5e-319,
+  "hi": -1.49993e-319,
+  "lo": -1.50003e-319
+ },
+ "pid": 1158754,
+ "probes": null,
+ "scenario": "C",
+ "set_flush_denormal_returned": true,
+ "thread_created_after_switch": {
+  "daz": true,
+  "fegetenv_rc": 0,
+  "fegetround": 0,
+  "ftz": true,
+  "mxcsr": "0x9fe2",
+  "mxcsr_rc": 0,
+  "numba_smoke": false,
+  "numpy_smoke": false,
+  "numpy_sub_times_one": 0.0,
+  "numpy_tiny_half": 0.0,
+  "x87_cw": "0x37f",
+  "x87_rc": 0
+ },
+ "thread_created_before_switch": {
+  "daz": false,
+  "fegetenv_rc": 0,
+  "fegetround": 0,
+  "ftz": false,
+  "mxcsr": "0x1fa2",
+  "mxcsr_rc": 0,
+  "numba_smoke": true,
+  "numpy_smoke": true,
+  "numpy_sub_times_one": 5e-324,
+  "numpy_tiny_half": 1.1125369292536007e-308,
+  "x87_cw": "0x37f",
+  "x87_rc": 0
+ },
+ "torch": "2.5.1",
+ "torch_cuda_initialized": false
+}
+### scenario D: exit 0
+{
+ "at_start": {
+  "daz": false,
+  "fegetenv_rc": 0,
+  "fegetround": 0,
+  "ftz": false,
+  "mxcsr": "0x1fa0",
+  "mxcsr_rc": 0,
+  "x87_cw": "0x37f",
+  "x87_rc": 0
+ },
+ "pid": 1158766,
+ "rounding_modes": {
+  "FE_DOWNWARD": {
+   "fesetround_rc": 0,
+   "numba_smoke": true,
+   "numpy_smoke": true,
+   "numpy_sub_times_one": 5e-324,
+   "numpy_tiny_half": 1.1125369292536007e-308,
+   "state": {
+    "daz": false,
+    "fegetenv_rc": 0,
+    "fegetround": 1024,
+    "ftz": false,
+    "mxcsr": "0x3fa2",
+    "mxcsr_rc": 1,
+    "x87_cw": "0x77f",
+    "x87_rc": 1
+   }
+  },
+  "FE_TONEAREST": {
+   "fesetround_rc": 0,
+   "numba_smoke": true,
+   "numpy_smoke": true,
+   "numpy_sub_times_one": 5e-324,
+   "numpy_tiny_half": 1.1125369292536007e-308,
+   "state": {
+    "daz": false,
+    "fegetenv_rc": 0,
+    "fegetround": 0,
+    "ftz": false,
+    "mxcsr": "0x1fa0",
+    "mxcsr_rc": 0,
+    "x87_cw": "0x37f",
+    "x87_rc": 0
+   }
+  },
+  "FE_TOWARDZERO": {
+   "fesetround_rc": 0,
+   "numba_smoke": true,
+   "numpy_smoke": true,
+   "numpy_sub_times_one": 5e-324,
+   "numpy_tiny_half": 1.1125369292536007e-308,
+   "state": {
+    "daz": false,
+    "fegetenv_rc": 0,
+    "fegetround": 3072,
+    "ftz": false,
+    "mxcsr": "0x7fa2",
+    "mxcsr_rc": 3,
+    "x87_cw": "0xf7f",
+    "x87_rc": 3
+   }
+  },
+  "FE_UPWARD": {
+   "fesetround_rc": 0,
+   "numba_smoke": false,
+   "numpy_smoke": false,
+   "numpy_sub_times_one": 5e-324,
+   "numpy_tiny_half": 1.1125369292536007e-308,
+   "state": {
+    "daz": false,
+    "fegetenv_rc": 0,
+    "fegetround": 2048,
+    "ftz": false,
+    "mxcsr": "0x5fa2",
+    "mxcsr_rc": 2,
+    "x87_cw": "0xb7f",
+    "x87_rc": 2
+   }
+  },
+  "restored": {
+   "daz": false,
+   "fegetenv_rc": 0,
+   "fegetround": 0,
+   "ftz": false,
+   "mxcsr": "0x1fa2",
+   "mxcsr_rc": 0,
+   "x87_cw": "0x37f",
+   "x87_rc": 0
+  }
+ },
+ "scenario": "D"
+}

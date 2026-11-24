@@ -1,0 +1,247 @@
+{
+ "schema": "qf.counts.v1",
+ "field": "certwarp_final",
+ "pair": "OASIS_OAS1_0438_MR1__OASIS_OAS1_0439_MR1",
+ "grid": {
+  "shape_zyx": [
+   192,
+   224,
+   160
+  ],
+  "spacing_xyz": [
+   1.0,
+   1.0,
+   1.0
+  ],
+  "origin_xyz": [
+   -79.0,
+   -112.0,
+   -95.0
+  ],
+  "unit": "mm"
+ },
+ "n_cells": 6772287,
+ "source": {
+  "kind": "output/disp.npz of HE smoke v3 arm a (the certified final state)",
+  "path": "/home/rmcfz/seq_vp_tag_results/he_smoke_v3/a/0438-0439/output/disp.npz",
+  "file_sha256": "ce551d06ecda2d60a1ae5bbff0493f79664fe15efb815e695d219c06a0d23d4d",
+  "stored_dtype": "float64",
+  "d_sha256": "8978044b81c1384bf26f2371401ff7d18bbaa9ec5409b1853397f35bf66f9dda",
+  "final_npz_sha256": "4c8fe7614f876c785bd7afcb350e1e9ada015466ea31b9994ef6f17b27bd1ed9",
+  "u_sha256": "79e3d2a69cbf351b28a2ac9f30fc1d288c00fd44ee2f6f338755591bac7c9c60",
+  "roundtrip": {
+   "unit_spacing": true,
+   "d_equals_u_to_d_bitwise": true,
+   "u_equals_d_to_u_bitwise": true,
+   "u_within_1ulp": true,
+   "passed": true
+  },
+  "run_certificate": {
+   "status": "certified_feasible",
+   "reason": "positive_enclosure_cover",
+   "min_jd_lower_bound": 1.2385950487470151e-08,
+   "n_cells_checked": 6772287,
+   "n_infeasible": 0,
+   "n_uncertain": 0,
+   "state_hash": "79e3d2a69cbf351b28a2ac9f30fc1d288c00fd44ee2f6f338755591bac7c9c60",
+   "passed": true,
+   "certificate_version": "q1-3d-parallel-hoisted-edge-hull-float-bernstein-prescreen-compiled-bernstein-v1"
+  },
+  "run_certificate_config": {
+   "delta": "0x0.0p+0",
+   "max_depth": 48,
+   "max_boxes": 255,
+   "tile_size": 65536,
+   "policy": "lowest_bound_first_v1",
+   "prepass": "edge_hull_v1",
+   "kernel": "numba-parallel-hoisted-edge-hull-v1",
+   "fallback_workers": 8,
+   "fallback_kernel": "numba-bernstein-fallback-v1",
+   "prescreen_kernel": "numba-float-bernstein-apriori-v1",
+   "config_class": "PrescreenCertificateConfig",
+   "certificate_version": "q1-3d-parallel-hoisted-edge-hull-float-bernstein-prescreen-compiled-bernstein-v1",
+   "precision": "CPU FP64, outward rounding"
+  },
+  "run_certificate_file_sha256": "92d37880956cbacd3dcca1ec721f28c5e5eae41184fed657d2cbb005df9767cc"
+ },
+ "pair_keys_read": [
+  "fixed",
+  "moving",
+  "initial_u"
+ ],
+ "pair_sha256": "658715bc3a23a9f84757ef66ad0e359f662d14b5b7d834426bab5530d6c8fedc",
+ "central_det": {
+  "definition": "bayesreg.eval.metrics.central_det(d), volume cropped by 2 voxels per side",
+  "n_voxels": 6452160,
+  "nonpositive": 0,
+  "min": 0.0477902486954964,
+  "max": 8.572122375131563,
+  "n_voxels_fixed_gt0": 2098710,
+  "nonpositive_fixed_gt0": 0,
+  "min_fixed_gt0": 0.0477902486954964,
+  "sdlogj_official": 0.06829699348053761
+ },
+ "q1_witness": {
+  "definition": "cells with J <= 0 at one of the Gauss27 or closed27 points of the Q1 interpolant (bayesreg.geom.q1.tile_geometry)",
+  "cells": 0,
+  "cells_gauss27": 0,
+  "cells_closed27": 0,
+  "points_gauss27": 0,
+  "points_closed27": 0,
+  "min_J": 0.00014882466877494394,
+  "cells_fixed_gt0": 0,
+  "n_cells_fixed_gt0": 2098710
+ },
+ "certificate_bl1": {
+  "status": "certified_feasible",
+  "reason": "positive_enclosure_cover",
+  "min_jd_lower_bound": 1.2385950487470151e-08,
+  "min_margin_lower_bound": 1.2385950487470151e-08,
+  "sampled_min_jd": null,
+  "n_cells_checked": 6772287,
+  "n_uncertain": 0,
+  "n_infeasible": 0,
+  "n_boxes": 6772663,
+  "max_depth": 6,
+  "witness_cell": null,
+  "witness_reference_point": null,
+  "n_fast_cells": 6576449,
+  "n_fallback_cells": 195838,
+  "n_prescreen_cells": 0,
+  "state_hash": "79e3d2a69cbf351b28a2ac9f30fc1d288c00fd44ee2f6f338755591bac7c9c60",
+  "grid_id": "1ea40c55a1b0904f524314f273f4fffd3265cbdd3686074e6d2cd8396aa7038a",
+  "delta_hex": "0x0.0p+0",
+  "certificate_version": "q1-3d-parallel-hoisted-edge-hull-bernstein-v1",
+  "mode": "jacobian_only",
+  "configuration": "BL1",
+  "n_cells": 6772287,
+  "seconds": 11.53346106101526,
+  "config": {
+   "config_class": "ParallelEnclosureCertificateConfig",
+   "certificate_version": "q1-3d-parallel-hoisted-edge-hull-bernstein-v1",
+   "delta_hex": "0x0.0p+0",
+   "max_depth": 48,
+   "max_boxes": 255,
+   "tile_size": 8192,
+   "policy": "lowest_bound_first_v1",
+   "prepass": "edge_hull_v1",
+   "kernel": "numba-parallel-hoisted-edge-hull-v1",
+   "fallback_workers": 2,
+   "precision": "CPU FP64, outward rounding",
+   "source": "archive/seq_vp_3d/results/verification/3d_stage_BL1_v1/analysis/bl1_cert.py:53-54"
+  },
+  "passed": true,
+  "faces_max_abs_u_mm": 0.0,
+  "domain": {
+   "ok": true,
+   "reason": null,
+   "count": null
+  },
+  "cells": {
+   "regions": {
+    "all": {
+     "cells": 6772287,
+     "proven": 6772287,
+     "infeasible": 0,
+     "uncertain": 0,
+     "uncertain_arithmetic": 0,
+     "min_lower_bound": 1.2385950487470151e-08
+    },
+    "brain": {
+     "cells": 2098710,
+     "proven": 2098710,
+     "infeasible": 0,
+     "uncertain": 0,
+     "uncertain_arithmetic": 0,
+     "min_lower_bound": 1.2385950487470151e-08
+    },
+    "background": {
+     "cells": 4673577,
+     "proven": 4673577,
+     "infeasible": 0,
+     "uncertain": 0,
+     "uncertain_arithmetic": 0,
+     "min_lower_bound": 0.0026209636067980316
+    }
+   },
+   "cell_pass": {
+    "n_infeasible": 0,
+    "n_uncertain": 0,
+    "n_fast_cells": 6576449,
+    "n_prescreen_cells": 0,
+    "n_fallback_cells": 195838,
+    "min_margin_lower_bound": 1.2385950487470151e-08
+   },
+   "map_reached_cells": true,
+   "matches_map": true,
+   "mismatch": {},
+   "seconds": 7.879633439006284
+  }
+ },
+ "certificate_c_full": {
+  "status": "certified_feasible",
+  "reason": "positive_enclosure_cover",
+  "min_jd_lower_bound": 1.2385950487470151e-08,
+  "min_margin_lower_bound": 1.2385950487470151e-08,
+  "sampled_min_jd": null,
+  "n_cells_checked": 6772287,
+  "n_uncertain": 0,
+  "n_infeasible": 0,
+  "n_boxes": 6772663,
+  "max_depth": 6,
+  "witness_cell": null,
+  "witness_reference_point": null,
+  "n_fast_cells": 6576449,
+  "n_fallback_cells": 79,
+  "n_prescreen_cells": 195759,
+  "state_hash": "79e3d2a69cbf351b28a2ac9f30fc1d288c00fd44ee2f6f338755591bac7c9c60",
+  "grid_id": "1ea40c55a1b0904f524314f273f4fffd3265cbdd3686074e6d2cd8396aa7038a",
+  "delta_hex": "0x0.0p+0",
+  "certificate_version": "q1-3d-parallel-hoisted-edge-hull-float-bernstein-prescreen-compiled-bernstein-v1",
+  "mode": "full",
+  "n_cells": 6772287,
+  "seconds": 4.217625771998428,
+  "config": {
+   "config_class": "PrescreenCertificateConfig",
+   "certificate_version": "q1-3d-parallel-hoisted-edge-hull-float-bernstein-prescreen-compiled-bernstein-v1",
+   "delta_hex": "0x0.0p+0",
+   "max_depth": 48,
+   "max_boxes": 255,
+   "tile_size": 8192,
+   "kernel": "numba-parallel-hoisted-edge-hull-v1",
+   "fallback_kernel": "numba-bernstein-fallback-v1",
+   "prescreen_kernel": "numba-float-bernstein-apriori-v1",
+   "fallback_workers": 8,
+   "precision": "CPU FP64, outward rounding"
+  },
+  "passed": true,
+  "faces_max_abs_u_mm": 0.0,
+  "domain": {
+   "ok": true,
+   "reason": null,
+   "count": null
+  },
+  "cells": null
+ },
+ "cell_pass": {
+  "codes": "cert_eval: 0 hull, 1 prescreen, 2 fallback (proven); 3 infeasible; 4, 5 uncertain",
+  "infeasible": 0,
+  "uncertain": 0,
+  "witness_and_infeasible": 0,
+  "witness_not_infeasible": 0,
+  "infeasible_without_witness": 0
+ },
+ "state_hash_equals_run_certificate": {
+  "bl1": true,
+  "c_full": true
+ },
+ "regions_note": "certificate_bl1.cells.regions: 'brain' here is fixed > 0 (no label), not the evaluation's seg4 > 0",
+ "utc": "2026-11-23T22:41:36Z",
+ "code": {
+  "head": "a1395c69d8949ab4a715b069ba44d18afcb5f373",
+  "script": "docs/manuscript/midl/figures/fig_qual.py",
+  "script_sha256": "759a43305ded47d4b2572995f431645c435d45b011d462eb4ab94e2264ce0212",
+  "clean": true,
+  "status": ""
+ }
+}

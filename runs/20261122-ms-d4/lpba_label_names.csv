@@ -1,0 +1,57 @@
+label_id,full_name,hemisphere,structure,id_group,in_lpba54,name_contains_gyrus
+21,L superior frontal gyrus,left,superior frontal gyrus,21-92,1,1
+22,R superior frontal gyrus,right,superior frontal gyrus,21-92,1,1
+23,L middle frontal gyrus,left,middle frontal gyrus,21-92,1,1
+24,R middle frontal gyrus,right,middle frontal gyrus,21-92,1,1
+25,L inferior frontal gyrus,left,inferior frontal gyrus,21-92,1,1
+26,R inferior frontal gyrus,right,inferior frontal gyrus,21-92,1,1
+27,L precentral gyrus,left,precentral gyrus,21-92,1,1
+28,R precentral gyrus,right,precentral gyrus,21-92,1,1
+29,L middle orbitofrontal gyrus,left,middle orbitofrontal gyrus,21-92,1,1
+30,R middle orbitofrontal gyrus,right,middle orbitofrontal gyrus,21-92,1,1
+31,L lateral orbitofrontal gyrus,left,lateral orbitofrontal gyrus,21-92,1,1
+32,R lateral orbitofrontal gyrus,right,lateral orbitofrontal gyrus,21-92,1,1
+33,L gyrus rectus,left,gyrus rectus,21-92,1,1
+34,R gyrus rectus,right,gyrus rectus,21-92,1,1
+41,L postcentral gyrus,left,postcentral gyrus,21-92,1,1
+42,R postcentral gyrus,right,postcentral gyrus,21-92,1,1
+43,L superior parietal gyrus,left,superior parietal gyrus,21-92,1,1
+44,R superior parietal gyrus,right,superior parietal gyrus,21-92,1,1
+45,L supramarginal gyrus,left,supramarginal gyrus,21-92,1,1
+46,R supramarginal gyrus,right,supramarginal gyrus,21-92,1,1
+47,L angular gyrus,left,angular gyrus,21-92,1,1
+48,R angular gyrus,right,angular gyrus,21-92,1,1
+49,L precuneus,left,precuneus,21-92,1,0
+50,R precuneus,right,precuneus,21-92,1,0
+61,L superior occipital gyrus,left,superior occipital gyrus,21-92,1,1
+62,R superior occipital gyrus,right,superior occipital gyrus,21-92,1,1
+63,L middle occipital gyrus,left,middle occipital gyrus,21-92,1,1
+64,R middle occipital gyrus,right,middle occipital gyrus,21-92,1,1
+65,L inferior occipital gyrus,left,inferior occipital gyrus,21-92,1,1
+66,R inferior occipital gyrus,right,inferior occipital gyrus,21-92,1,1
+67,L cuneus,left,cuneus,21-92,1,0
+68,R cuneus,right,cuneus,21-92,1,0
+81,L superior temporal gyrus,left,superior temporal gyrus,21-92,1,1
+82,R superior temporal gyrus,right,superior temporal gyrus,21-92,1,1
+83,L middle temporal gyrus,left,middle temporal gyrus,21-92,1,1
+84,R middle temporal gyrus,right,middle temporal gyrus,21-92,1,1
+85,L inferior temporal gyrus,left,inferior temporal gyrus,21-92,1,1
+86,R inferior temporal gyrus,right,inferior temporal gyrus,21-92,1,1
+87,L parahippocampal gyrus,left,parahippocampal gyrus,21-92,1,1
+88,R parahippocampal gyrus,right,parahippocampal gyrus,21-92,1,1
+89,L lingual gyrus,left,lingual gyrus,21-92,1,1
+90,R lingual gyrus,right,lingual gyrus,21-92,1,1
+91,L fusiform gyrus,left,fusiform gyrus,21-92,1,1
+92,R fusiform gyrus,right,fusiform gyrus,21-92,1,1
+101,L insular cortex,left,insular cortex,101-166,1,0
+102,R insular cortex,right,insular cortex,101-166,1,0
+121,L cingulate gyrus,left,cingulate gyrus,101-166,1,1
+122,R cingulate gyrus,right,cingulate gyrus,101-166,1,1
+161,L caudate,left,caudate,101-166,1,0
+162,R caudate,right,caudate,101-166,1,0
+163,L putamen,left,putamen,101-166,1,0
+164,R putamen,right,putamen,101-166,1,0
+165,L hippocampus,left,hippocampus,101-166,1,0
+166,R hippocampus,right,hippocampus,101-166,1,0
+181,cerebellum,none,cerebellum,181-182,0,0
+182,brainstem,none,brainstem,181-182,0,0

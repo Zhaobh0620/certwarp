@@ -1,0 +1,543 @@
+{
+ "schema": "bayesreg.holdout_B_v1.baselines.v1",
+ "name": "holdout_B_v1_baselines",
+ "written": "2026-11-07, XB implementation subagent (branch xb-tools, runs/20261107-xb/任务书.md item 2); configs/frozen/ only grows: never edited",
+ "basis": {
+  "preregistration": "docs/bayesreg/notes/留出集预登记_20261107.md",
+  "sections": "2.3, 2.4, 2.6",
+  "adopted": "BZ 2026-11-07 (docs/decision_log.md); BZ: \"B1 和冻结求解器（配置 C）比也和外部基线（ANTs、FireANTs 等）比；B2 可以跑\"",
+  "rule": "no tuning on the B-line hold-out, the 19 development pairs or T0: the configurations are paper 1's BL2 frozen ones (BL2 Amendment 3 items 3, 4)"
+ },
+ "bl2_protocol": {
+  "path": "archive/seq_vp_3d/results/verification/3d_stage_BL2_v1/plan/protocol.md",
+  "sha256": "8dc597ee6d8b895d6210a39434b51d66a00e0eea850f83b4518c2e3558a6acf2"
+ },
+ "harness": {
+  "archive_dir": "archive/seq_vp_3d/results/verification/3d_stage_BL2VAL_v1/harness",
+  "drive_py_sha256": "48e447caa40b5657d32377961486dfb9122d7f7bba452a29682935291731e4e5",
+  "copies": {
+   "m_fireants.py": "b92e90e3b92ebdfbccba37b85a6116d01d621e0e6a197b1914dbbcbbf156fa6e",
+   "m_convexadam.py": "04e62289cd633c3f27287c91c6cd8676bffb057194dd64f1590cb80e716fe5fc",
+   "m_unigradicon.py": "5aded495abb1edbf6d3cecab2f68b37239c14aa59f14fde0877930a7560ce380",
+   "m_voxelmorph.py": "41bd8fe0a08243db342b9dac8fefd7710b0b109d8bd16978ca93488be81da951"
+  },
+  "copy_dir": "experiments/xb/harness"
+ },
+ "env_records": {
+  "dir": "archive/seq_vp_3d_bl2_env_20261107",
+  "sha256": {
+   "ants/versions.json": "359b7c45ffafc2101fc29dddd20a7b4c75b8e93bcdbcd7945a0c4188cfc9b0a3",
+   "bl_fireants/versions.json": "a2772dbbb793cb860be8424aa442e10f0070523cfc22ff3c3fbc52bceb7c9557",
+   "bl_fireants/conda_list.txt": "4f159d1e7309ec98375ad675730e77b322e0cf7f7cb22645a314be00a9e268b3",
+   "bl_fireants/pip_freeze.txt": "7878baed80afbc04e82ee0f55d0532a23abcaaa18217decdf0d436af20fb4d4f",
+   "convexadam/versions.json": "6ba43601c4bfb0727212ef0c3352b8fa238a1ec7a38c8808b10d227321f69a0e",
+   "convexadam/conda_list.txt": "23ca40d6b774c0274c56391d8242ca7c550452bc0376b5e581661f82cb60e30a",
+   "convexadam/pip_freeze.txt": "bb151b16836311f22f9b316a8ae1967f5bb6cff8fbee642a38fb37f34da85744",
+   "bl_unigradicon/versions.json": "77c8245ecee4ad564a2d889769aea19411de66079b6c9e089dec1e9d17b8933d",
+   "bl_unigradicon/conda_list.txt": "3bb4b0715dbe6c83662875b155af7bc2e71af6845c152048d3ec4c7e21058c3a",
+   "bl_unigradicon/pip_freeze.txt": "b139e64ccb83f6f221ad3889014653b75c53e4efaa768eafd3bbb88e8ffa2ceb",
+   "niftyreg/versions.json": "c617607dc3eadb0abe8d777994d9fe202022eed4a992a3fcc35cc4ca8601820b",
+   "deedsBCV/versions.json": "523bedd8ab5e55f90894aee123ce8ee832d0bb26ee619a2766f1566d92221217",
+   "voxelmorph/versions.json": "a8365986c9ee5304778dff479db9b48a35a28cca017316afe3b87159b6f41d02",
+   "voxelmorph/conda_list.txt": "7ad3d68058aa0433aa2966581090599b642f34334ccd40c25aa27042bd9c70da",
+   "voxelmorph/pip_freeze.txt": "7cbd2b612ab5b42c8d858fc3e0491bed73af4ad977e0e0039bb54e2b251b1188"
+  }
+ },
+ "environments": {
+  "bl_fireants": {
+   "record": "bl_fireants",
+   "python": "3.10.22",
+   "conda_list": "bl_fireants/conda_list.txt",
+   "pip_freeze": "bl_fireants/pip_freeze.txt",
+   "versions": "bl_fireants/versions.json",
+   "files": {
+    "lib/python3.10/site-packages/fireants_fused_ops.cpython-310-x86_64-linux-gnu.so": "ba0a2d77164ddd6942ec5ad252b363861c3bf1a00726a580c20944a9895c6895"
+   }
+  },
+  "bl_convexadam": {
+   "record": "convexadam",
+   "python": "3.10.22",
+   "conda_list": "convexadam/conda_list.txt",
+   "pip_freeze": "convexadam/pip_freeze.txt",
+   "versions": "convexadam/versions.json",
+   "files": {
+    "lib/python3.10/site-packages/convexAdam/convex_adam_MIND.py": "3338d4ead5152e54bb8186697c8bf62ea0ea5a1092e8953ca3586c9a04ca174c",
+    "lib/python3.10/site-packages/convexAdam/convex_adam_utils.py": "69def1b084cf1229fd3f3ea0d31789183f437e49dd1332e3dbb907324966af27",
+    "lib/python3.10/site-packages/convexAdam/apply_convex.py": "5b119a0b18690a2d3befc7eb74955c23ac1402ab4923d5b6e1d189e37175eaf2",
+    "lib/python3.10/site-packages/convexAdam/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "lib/python3.10/site-packages/convexAdam/convex_adam_nnUNet.py": "9dab109177c98cd9ecda72c8b1b114a46c0a7f30ce860c32d4fcf493943d7f58"
+   }
+  },
+  "bl_unigradicon": {
+   "record": "bl_unigradicon",
+   "python": "3.10.22",
+   "conda_list": "bl_unigradicon/conda_list.txt",
+   "pip_freeze": "bl_unigradicon/pip_freeze.txt",
+   "versions": "bl_unigradicon/versions.json",
+   "files": {
+    "lib/python3.10/site-packages/unigradicon/__init__.py": "8ebd685865c26750c4522fb29a58315d1b1805eab3c7faae1f3498ffc8723150"
+   }
+  },
+  "bl_synthmorph": {
+   "record": "voxelmorph",
+   "python": null,
+   "conda_list": "voxelmorph/conda_list.txt",
+   "pip_freeze": "voxelmorph/pip_freeze.txt",
+   "versions": "voxelmorph/versions.json",
+   "files": {},
+   "note": "VoxelMorph reuses the env bl_synthmorph (archive/seq_vp_3d/results/verification/3d_stage_BL2_v1/README.md:16)"
+  },
+  "bl_niftyreg": {
+   "record": "niftyreg",
+   "python": null,
+   "conda_list": null,
+   "pip_freeze": null,
+   "versions": "niftyreg/versions.json",
+   "files": {
+    "bin/reg_f3d": "eaa7140455323ccbd187b827bf937abe1540cc806cc656dbac7dcb515c6f79c4",
+    "bin/reg_transform": "5f8e68fa44545b7fec857cd146a720b8b91ef13d667f372b86d7c380b04ea338",
+    "bin/reg_resample": "75d2e3bb660fdb62de4a590c5128e489c0d8a7f0be52c20033fbe62cbfcf2594"
+   },
+   "note": "the archive has only versions.json: the binaries by sha256"
+  }
+ },
+ "baseline_files": {
+  "fireants": {
+   "fireants/src/fireants/scripts/pairwise/oasis.py": "f336557bd2a9de5b2e9820e8a9be48d3b9e07bf56ace3e2f4e1d75834648210d",
+   "fireants/src/fused_ops/setup.py": "a942bea99ebd2b6ad3ad01a3c2812cd622ddbb3d5a5052039ddb52cf2c8bf7c5",
+   "fireants/src/fused_ops/pyproject.toml": "ac40e8c259b04b98aac679a8488540a647fe7baf3f52038f6d948b7f863f0a4c",
+   "fireants/src/pyproject.toml": "adcaa6f08b108d086830e4c89f693bf3c089a08a71da4f9820dad4dc0e579de3",
+   "fireants/src/fused_ops/src/AdamUtils.cu": "f37c7f117704e9a416cf6d30247496222afdd53b6870867bd8b287e0bf56314f",
+   "fireants/src/fused_ops/src/CrossCorrelation.cu": "2d12eeeb1b9c88eb62df496982a4be8c848db2302271e0798b8c6bb87763dcb4",
+   "fireants/src/fused_ops/src/FusedGenerateGrid.cu": "9919c8405f7e305f9b1a3e2db6d2c7ad70e5ed50b17e8d0be8a3bfd6fbf10c3d",
+   "fireants/src/fused_ops/src/FusedGridComposer.cu": "ce89b409e40bfeeeea9338af519bd1d72ae059ba522caa154b8edde81bb45387",
+   "fireants/src/fused_ops/src/FusedGridSampler.cu": "db0ab43113c4061cfb24b2f5bfe85b28cf953205cdfffc72deaf72855eb5f079",
+   "fireants/src/fused_ops/src/FusedGridSamplerGenericLabel.cu": "4291be3ad775cbae8efa88171a85fff7b58e011e5d575c8dbc65a00a6426f4ce",
+   "fireants/src/fused_ops/src/GaussianBlurFFT.cu": "316b5a8cca0a6e66da00e8b16e7027a0ec8c52a64ce2ce73c3e592e1420b98e8",
+   "fireants/src/fused_ops/src/MutualInformation.cu": "2154cd0f4f5a37ba08f73c5801b1ae87f873833a950b0e4458c1dc80476d89a3",
+   "fireants/src/fused_ops/src/src.cpp": "b0e6a3f7a8d0dc4f930c0e77bb2e602276545a81a4a5130eb88e8166126c9da4"
+  },
+  "ants": {
+   "ants/ants-2.6.5/bin/antsRegistration": "8411f2c7e163134d62c3e2cdbed0c55d52b2bd34ca50bf45ae1ea21cd90172a8",
+   "ants/ants-2.6.5/bin/antsApplyTransforms": "1d0a2128f8ece5edf1b49e91f1b0955e20369e32dfe3e46ba430c93c84a0fa25",
+   "ants/ants-2.6.5/bin/antsRegistrationSyN.sh": "1b183b5365bc89821b5ec794090151cab4c8a305e262223041083a8aaf288819",
+   "ants/ants-2.6.5/bin/PrintHeader": "cf6c0def965b758648ef3df119ee0fb4c74acc7d332befd7141c01f3362b94b5"
+  },
+  "deeds": {
+   "deedsBCV/bin/deedsBCV": "d6b1ca71b70eadd61f8e5a0c3093c9b6592512b5f8ac00554730cecfb4e3bfdb",
+   "deedsBCV/bin/linearBCV": "16deeee110ca9591c596a8fc96a91f537b68f154c7f5e831214b5e78a2cb9947",
+   "deedsBCV/bin/applyBCV": "d1fbd33da9af357518454a358ba18db58cd362261b6c51dd7c317458a19cf197",
+   "deedsBCV/bin/applyBCVfloat": "0a14091ea85e645be3647b1ecc202ca84f7c2442fbb5ea3b4ca0194e5d7d644a"
+  },
+  "convexadam": {
+   "convexadam/src/src/convexAdam/convex_adam_MIND.py": "3338d4ead5152e54bb8186697c8bf62ea0ea5a1092e8953ca3586c9a04ca174c",
+   "convexadam/src/src/convexAdam/convex_adam_utils.py": "69def1b084cf1229fd3f3ea0d31789183f437e49dd1332e3dbb907324966af27",
+   "convexadam/src/src/convexAdam/apply_convex.py": "5b119a0b18690a2d3befc7eb74955c23ac1402ab4923d5b6e1d189e37175eaf2",
+   "convexadam/src/src/convexAdam/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "convexadam/src/setup.py": "1edc24e90b6c1afc197efdb4e422c6de15bb76cb686232bb9f0aa8ce8b47d0b6",
+   "convexadam/src/setup.cfg": "0d0638acccb4dee647654657b3ae3e09b0edf42f51ccf85d0f21d7f5a6c860ba",
+   "convexadam/src/self_configuring/l2r3.py": "2e55e322e3955130f1d0a446369f5e39ee5aa046dfd86568a02956846f4cbad1",
+   "convexadam/src/self_configuring/main_for_l2r3_MIND.py": "99fa4566ab95ba04ae9ebf5f09296e6f28043d4f4e585b91831ff01a946b6f68",
+   "convexadam/src/l2r_2021_convexAdam_task3_docker.py": "2a860e905a64daa389133bb263c65cb14af5965c560487caa09de10885e70f6e",
+   "convexadam/src/src/convexAdam/convex_adam_nnUNet.py": "9dab109177c98cd9ecda72c8b1b114a46c0a7f30ce860c32d4fcf493943d7f58"
+  },
+  "unigradicon": {
+   "unigradicon/weights/unigradicon1.0/Step_2_final.trch": "1fcfa02214540915cad7b768570add2b4247c22c516d75a21e0e8258f50254a6",
+   "unigradicon/src/src/unigradicon/__init__.py": "8ebd685865c26750c4522fb29a58315d1b1805eab3c7faae1f3498ffc8723150",
+   "unigradicon/src/training/train.py": "86e01607423089e3181a027a94c2e3d8abf251583ef445b8c7570da892bb7ad8",
+   "unigradicon/src/README.md": "c9f74b6dfcf92be77cefc238af7cc0f0c302fcbb2c5fe6a1767227aa9c3c788b"
+  },
+  "voxelmorph": {
+   "voxelmorph/weights_osf_mirror/vxm_dense_brain_T1_3D_mse.h5": "8e5fe6bcbca68b4fa867864460315fdaa7e00139cd522379cea79db5e63a9e3c"
+  }
+ },
+ "baseline_root": "/home/rmcfz/opt/baselines",
+ "clones": {
+  "fireants": {
+   "dir": "fireants/src",
+   "commit": "f8a9cc259ab9113fc43bd99797000fa8fc34eb59"
+  },
+  "convexadam": {
+   "dir": "convexadam/src",
+   "commit": "b229e52e44b114e2040a503334c92269750c16b2"
+  },
+  "unigradicon": {
+   "dir": "unigradicon/src",
+   "commit": "7678cebe3967ce506bfd2c92489b324c349cb1cc"
+  },
+  "deeds": {
+   "dir": "deedsBCV/src",
+   "commit": "00b46539aa03d23988a241173d8f1f6c0c68dc6a"
+  }
+ },
+ "arms": {
+  "fireants_greedy": {
+   "kind": "py",
+   "device": "cuda",
+   "env": "bl_fireants",
+   "script": "harness/m_fireants.py",
+   "args": [
+    "greedy"
+   ],
+   "post_args": [],
+   "variant": null,
+   "role": "main",
+   "factor": null,
+   "extra_env": null,
+   "version": "fireants 1.5.1 @ f8a9cc25…, fused ops 1.2.0, env bl_fireants",
+   "configuration": "the authors' OASIS script's test configuration: scales 4,2,1; iterations 250,200,100; Adam lr .25 (beta1 .1, scaledown False); CC kernel 7; grad sigma 1, warp sigma .25; compositive; the package's convergence test (1e-6, 10 iterations) by default",
+   "source": "BL2 protocol.md:27; env/bl_fireants/smoke_cmd.md:5-7, 12-24; harness/m_fireants.py:29, 52-55",
+   "label_supervision": "none",
+   "family": "F1, F2 (prereg §4.4: the main family)",
+   "baseline_groups": [
+    "fireants"
+   ],
+   "clones": [
+    "fireants"
+   ]
+  },
+  "fireants_syn": {
+   "kind": "py",
+   "device": "cuda",
+   "env": "bl_fireants",
+   "script": "harness/m_fireants.py",
+   "args": [
+    "syn"
+   ],
+   "post_args": [],
+   "variant": null,
+   "role": "main",
+   "factor": null,
+   "extra_env": null,
+   "version": "as fireants_greedy",
+   "configuration": "scales 4,2,1; iterations 200,100,50; lr .1; CC kernel 5; grad sigma .5, warp sigma .25",
+   "source": "protocol.md:28; m_fireants.py:29, 57-58",
+   "label_supervision": "none",
+   "family": "F1, F2 (prereg §4.4: the main family)",
+   "baseline_groups": [
+    "fireants"
+   ],
+   "clones": [
+    "fireants"
+   ]
+  },
+  "ants_s": {
+   "kind": "ants",
+   "device": "cpu",
+   "env": null,
+   "script": null,
+   "args": null,
+   "post_args": null,
+   "variant": "s",
+   "role": "main",
+   "factor": null,
+   "extra_env": null,
+   "version": "ANTs 2.6.5 (fdce4d2) official binary",
+   "configuration": "antsRegistrationSyN.sh -d 3 -t s -n 8, all defaults: rigid + affine MI, then SyN[0.2,3,0] with CC[...,1,2]; ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS=8; ANTS_RANDOM_SEED unset (not bitwise reproducible)",
+   "source": "protocol.md:29; env/ants/smoke_cmd.md:4, 9, 13, 21-23, 62; harness/drive.py:248-287 (command :257)",
+   "label_supervision": "none",
+   "family": "F1, F2 (prereg §4.4: the main family)",
+   "baseline_groups": [
+    "ants"
+   ],
+   "clones": []
+  },
+  "ants_so": {
+   "kind": "ants",
+   "device": "cpu",
+   "env": null,
+   "script": null,
+   "args": null,
+   "post_args": null,
+   "variant": "so",
+   "role": "descriptive",
+   "factor": null,
+   "extra_env": null,
+   "version": "as ants_s",
+   "configuration": "as ants_s, the SyN stage only (identity start)",
+   "source": "as ants_s (smoke_cmd.md:15, 23)",
+   "label_supervision": "none",
+   "family": "F3 (described, not judged)",
+   "baseline_groups": [
+    "ants"
+   ],
+   "clones": []
+  },
+  "niftyreg": {
+   "kind": "niftyreg",
+   "device": "cpu",
+   "env": "bl_niftyreg",
+   "script": null,
+   "args": null,
+   "post_args": null,
+   "variant": null,
+   "role": "descriptive",
+   "factor": null,
+   "extra_env": null,
+   "version": "reg_f3d 1.5.69 (conda-forge 1.5.69.6)",
+   "configuration": "defaults (NMI 64 bins, -sx -5, -be .001, -le .01, -ln 3, -maxit 150), OMP 8 threads",
+   "source": "protocol.md:30; drive.py:290-327 (config :326)",
+   "label_supervision": "none",
+   "family": "F3 (described, not judged)",
+   "baseline_groups": [],
+   "clones": []
+  },
+  "deeds": {
+   "kind": "deeds",
+   "device": "cpu",
+   "env": null,
+   "script": null,
+   "args": null,
+   "post_args": null,
+   "variant": null,
+   "role": "descriptive",
+   "factor": null,
+   "extra_env": null,
+   "version": "deedsBCV @ 00b4653",
+   "configuration": "program defaults (alpha 1.6, 5 levels, G/L 8x7x6x5x4, Q 5x4x3x2x1), no affine",
+   "source": "protocol.md:31; drive.py:330-382 (:382)",
+   "label_supervision": "none",
+   "family": "F3 (described, not judged)",
+   "baseline_groups": [
+    "deeds"
+   ],
+   "clones": [
+    "deeds"
+   ]
+  },
+  "convexadam": {
+   "kind": "py",
+   "device": "cuda",
+   "env": "bl_convexadam",
+   "script": "harness/m_convexadam.py",
+   "args": [],
+   "post_args": [],
+   "variant": null,
+   "role": "descriptive",
+   "factor": null,
+   "extra_env": null,
+   "version": "ConvexAdam @ b229e52 (package 0.2.0), env bl_convexadam",
+   "configuration": "package defaults: MIND r 1, d 2; lambda 1.25; grid 6; disp_hw 4; Adam 80 iterations, grid 2; no smoothing; ic on; FP16; no mask; input in the L2R v1.1 layout",
+   "source": "protocol.md:32, 39-49; env/convexadam/smoke_cmd.md:5-28; harness/m_convexadam.py:21-28",
+   "label_supervision": "none",
+   "family": "F3 (described, not judged)",
+   "baseline_groups": [
+    "convexadam"
+   ],
+   "clones": [
+    "convexadam"
+   ]
+  },
+  "unigradicon_io": {
+   "kind": "py",
+   "device": "cuda",
+   "env": "bl_unigradicon",
+   "script": "harness/m_unigradicon.py",
+   "args": [
+    "io"
+   ],
+   "post_args": [],
+   "variant": null,
+   "role": "descriptive",
+   "factor": null,
+   "extra_env": null,
+   "version": "uniGradICON 1.0.6 (= @ 7678ceb), weights 1fcfa022…",
+   "configuration": "default IO 50 steps, lr 2e-5, LNCC sigma 5",
+   "source": "protocol.md:33; env/bl_unigradicon/smoke_cmd.md:5-11, 13-21",
+   "label_supervision": "none (unsupervised)",
+   "family": "F3 (described, not judged)",
+   "baseline_groups": [
+    "unigradicon"
+   ],
+   "clones": [
+    "unigradicon"
+   ]
+  },
+  "unigradicon_noio": {
+   "kind": "py",
+   "device": "cuda",
+   "env": "bl_unigradicon",
+   "script": "harness/m_unigradicon.py",
+   "args": [
+    "noio"
+   ],
+   "post_args": [],
+   "variant": null,
+   "role": "descriptive",
+   "factor": null,
+   "extra_env": null,
+   "version": "as unigradicon_io",
+   "configuration": "--io_iterations None",
+   "source": "as unigradicon_io",
+   "label_supervision": "none (unsupervised)",
+   "family": "F3 (described, not judged)",
+   "baseline_groups": [
+    "unigradicon"
+   ],
+   "clones": [
+    "unigradicon"
+   ]
+  },
+  "voxelmorph": {
+   "kind": "py",
+   "device": "cuda",
+   "env": "bl_synthmorph",
+   "script": "harness/m_voxelmorph.py",
+   "args": [],
+   "post_args": [],
+   "variant": null,
+   "role": "descriptive",
+   "factor": null,
+   "extra_env": {
+    "TF_FORCE_GPU_ALLOW_GROWTH": "true"
+   },
+   "version": "vxm_dense_brain_T1_3D_mse.h5 (8e5fe6bc…)",
+   "configuration": "the released model, inference only",
+   "source": "protocol.md:36; env/voxelmorph/smoke_cmd.md:8-10, 81-82",
+   "label_supervision": "training data undocumented (image MSE)",
+   "family": "F3 (described, not judged)",
+   "baseline_groups": [
+    "voxelmorph"
+   ],
+   "clones": []
+  },
+  "fireants_greedy_eq": {
+   "kind": "py",
+   "device": "cuda",
+   "env": "bl_fireants",
+   "script": "harness/m_fireants.py",
+   "args": [
+    "greedy"
+   ],
+   "post_args": [
+    "22"
+   ],
+   "variant": null,
+   "role": "tier90",
+   "factor": {
+    "name": "k",
+    "value": 22
+   },
+   "extra_env": null,
+   "version": "as fireants_greedy",
+   "configuration": "the 90 s tier: every scale's iterations x k, k = 22 (BL2 Amendment 6); the convergence test unchanged; no warm repeat",
+   "source": "protocol.md:202-210; run_bl2val_eq_r3.sh:190",
+   "label_supervision": "none",
+   "family": "F3 (the 90 s tier, §2.6)",
+   "baseline_groups": [
+    "fireants"
+   ],
+   "clones": [
+    "fireants"
+   ]
+  },
+  "fireants_syn_eq": {
+   "kind": "py",
+   "device": "cuda",
+   "env": "bl_fireants",
+   "script": "harness/m_fireants.py",
+   "args": [
+    "syn"
+   ],
+   "post_args": [
+    "27"
+   ],
+   "variant": null,
+   "role": "tier90",
+   "factor": {
+    "name": "k",
+    "value": 27
+   },
+   "extra_env": null,
+   "version": "as fireants_syn",
+   "configuration": "the 90 s tier: k = 27 (BL2 Amendment 6)",
+   "source": "protocol.md:202-210; run_bl2val_eq_r3.sh:190",
+   "label_supervision": "none",
+   "family": "F3 (the 90 s tier, §2.6)",
+   "baseline_groups": [
+    "fireants"
+   ],
+   "clones": [
+    "fireants"
+   ]
+  },
+  "unigradicon_io_eq": {
+   "kind": "py",
+   "device": "cuda",
+   "env": "bl_unigradicon",
+   "script": "harness/m_unigradicon.py",
+   "args": [
+    "io"
+   ],
+   "post_args": [
+    "123"
+   ],
+   "variant": null,
+   "role": "tier90",
+   "factor": {
+    "name": "N",
+    "value": 123
+   },
+   "extra_env": null,
+   "version": "as unigradicon_io",
+   "configuration": "the 90 s tier: --io_iterations 123 (N*, BL2VAL README:16, 20)",
+   "source": "BL2VAL README.md:16, 20",
+   "label_supervision": "none (unsupervised)",
+   "family": "F3 (the 90 s tier, §2.6)",
+   "baseline_groups": [
+    "unigradicon"
+   ],
+   "clones": [
+    "unigradicon"
+   ]
+  },
+  "convexadam_v4seg": {
+   "kind": "v4seg",
+   "device": "cuda",
+   "env": "bl_convexadam",
+   "script": "m_convexadam_v4seg.py",
+   "args": [],
+   "post_args": [],
+   "variant": null,
+   "role": "main",
+   "factor": null,
+   "extra_env": null,
+   "version": "ConvexAdam @ b229e52, src/convexAdam/convex_adam_nnUNet.py sha256 9dab1091…, env bl_convexadam",
+   "configuration": "convexAdam.convex_adam_nnUNet with its argparse defaults (lambda 1.25, grid_sp 6, disp_hw 4, selected_niter 80, selected_smooth 0, grid_sp_adam 2, ic True; convex_adam_nnUNet.py:166-172) on the two v4 argmax label maps (0..35; C22.1-4, the method channels' probs36 and argmax rule), the class weights from this pair's maps (:25-36); input in the L2R v1.1 layout as m_convexadam.py; no self-configuring search",
+   "source": "prereg §2.4; convex_adam_nnUNet.py:19-38, 41-159, 162-191",
+   "label_supervision": "the features are a segmenter trained with labels (unet35_v4_ens, training set only): the same kind as the method",
+   "features": {
+    "segmenter_id": "unet35_v4_ens",
+    "policy": "all_folds_mean",
+    "registry": "configs/bayesreg/segmenters_hs_v1.json",
+    "registry_sha256": "b7682421bf6e8d07c606ad55cd47db7936a293c5e79d00839c82e3f8c2edefa1",
+    "test_labels_seen": false,
+    "rule": "HI's provenance checked (segmenter_id, policy, registry_sha256, test_labels_seen false) and probs36's sha256 before the lock"
+   },
+   "family": "F1, F2 (prereg §4.4: the main family)",
+   "baseline_groups": [
+    "convexadam"
+   ],
+   "clones": [
+    "convexadam"
+   ]
+  }
+ },
+ "not_run": {
+  "transmorph_large": "P8: trained with Dice on the L2R OASIS training set, which holds every hold-out subject (prereg §2.5)",
+  "transmorph_base": "P8",
+  "synthmorph_deform": "not runnable on this machine (BL2 Amendment 2)",
+  "synthmorph_joint": "not runnable on this machine",
+  "vpreg": "P9"
+ },
+ "unit": [
+  "MemoryMax=10G",
+  "MemorySwapMax=0",
+  "OOMPolicy=continue",
+  "RuntimeMaxSec=1800"
+ ],
+ "export_check": {
+  "threshold": 0.999,
+  "rule": "drive.py check; corr < .999 is suspicious, not a failure; the third suspicious pair of an arm stops it (P19)"
+ }
+}

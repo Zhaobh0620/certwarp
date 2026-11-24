@@ -1,0 +1,21 @@
+# V1 existing FMA / fast-math regression tests, run on this machine  host <host>  Sun Nov 22 13:01:18 CST 2026  commit 3cab1bae  model name	: 13th Gen Intel(R) Core(TM) i9-13900K
+# command: nice -n 19 python -B -m pytest -rA -p no:cacheprovider <the tests below>
+============================= test session starts ==============================
+platform linux -- Python 3.10.20, pytest-9.0.3, pluggy-1.6.0
+rootdir: /home/rmcfz/code/python_projects/seq_vp_tag/<worktree>/v1-check
+configfile: pyproject.toml
+plugins: cov-7.1.0
+collected 39 items / 34 deselected / 5 selected
+
+tests/three_d/test_compiled_certificate_e32.py .                         [ 20%]
+tests/three_d/test_hoisted_certificate_e33.py .                          [ 40%]
+tests/test_bayesreg/solve/test_jd_cell_estimate_bernstein.py ...         [100%]
+
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED tests/three_d/test_compiled_certificate_e32.py::test_llvm_no_fastmath_contraction_parallel_or_object_mode
+PASSED tests/three_d/test_hoisted_certificate_e33.py::test_bad_config_inputs_and_no_fastmath_ir
+PASSED tests/test_bayesreg/solve/test_jd_cell_estimate_bernstein.py::test_gate13_prescreen_kernel_ir_has_no_fma_intrinsic_and_no_fast_math_flags
+PASSED tests/test_bayesreg/solve/test_jd_cell_estimate_bernstein.py::test_gate13_prescreen_kernel_asm_has_no_fma_instruction
+PASSED tests/test_bayesreg/solve/test_jd_cell_estimate_bernstein.py::test_gate13_patterns_catch_fma_and_flags
+======================= 5 passed, 34 deselected in 3.81s =======================

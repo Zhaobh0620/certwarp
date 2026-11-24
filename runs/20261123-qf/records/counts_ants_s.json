@@ -1,0 +1,166 @@
+{
+ "schema": "qf.counts.v1",
+ "field": "ants_s",
+ "pair": "OASIS_OAS1_0438_MR1__OASIS_OAS1_0439_MR1",
+ "grid": {
+  "shape_zyx": [
+   192,
+   224,
+   160
+  ],
+  "spacing_xyz": [
+   1.0,
+   1.0,
+   1.0
+  ],
+  "origin_xyz": [
+   -79.0,
+   -112.0,
+   -95.0
+  ],
+  "unit": "mm"
+ },
+ "n_cells": 6772287,
+ "source": {
+  "kind": "disp.npz of the XB development entry",
+  "path": "/home/rmcfz/seq_vp_tag_results/xb_dev_v1/work/ants_s/OASIS_OAS1_0438_MR1__OASIS_OAS1_0439_MR1/disp.npz",
+  "file_sha256": "3b3d85f4613c497b4738b762ab25986e62201f3198e72b6047c52a0c7c006a0e",
+  "stored_dtype": "float32",
+  "d_sha256": "df24263fcc198e8f4a850926a387faf43d6bfda9fcab2bca7e2571d27824f278"
+ },
+ "pair_keys_read": [
+  "fixed",
+  "moving",
+  "initial_u"
+ ],
+ "pair_sha256": "658715bc3a23a9f84757ef66ad0e359f662d14b5b7d834426bab5530d6c8fedc",
+ "central_det": {
+  "definition": "bayesreg.eval.metrics.central_det(d), volume cropped by 2 voxels per side",
+  "n_voxels": 6452160,
+  "nonpositive": 0,
+  "min": 0.11632262596392269,
+  "max": 8.605801359148664,
+  "n_voxels_fixed_gt0": 2098710,
+  "nonpositive_fixed_gt0": 0,
+  "min_fixed_gt0": 0.11632262596392269,
+  "sdlogj_official": 0.06476034715399388
+ },
+ "q1_witness": {
+  "definition": "cells with J <= 0 at one of the Gauss27 or closed27 points of the Q1 interpolant (bayesreg.geom.q1.tile_geometry)",
+  "cells": 12,
+  "cells_gauss27": 1,
+  "cells_closed27": 12,
+  "points_gauss27": 1,
+  "points_closed27": 17,
+  "min_J": -0.48331876317226385,
+  "cells_fixed_gt0": 12,
+  "n_cells_fixed_gt0": 2098710
+ },
+ "certificate_bl1": {
+  "status": "infeasible",
+  "reason": "JACOBIAN_VIOLATION",
+  "min_jd_lower_bound": -0.48331876317228806,
+  "min_margin_lower_bound": -0.48331876317228806,
+  "sampled_min_jd": null,
+  "n_cells_checked": 6772287,
+  "n_uncertain": 0,
+  "n_infeasible": 12,
+  "n_boxes": 6772287,
+  "max_depth": 0,
+  "witness_cell": 4198421,
+  "witness_reference_point": [
+   1.0,
+   0.0,
+   0.0
+  ],
+  "n_fast_cells": 6764588,
+  "n_fallback_cells": 7699,
+  "n_prescreen_cells": 0,
+  "state_hash": "e76abb900a7fe24af61545fb4ac083e55080d94f7f52af094efc523f01683eaa",
+  "grid_id": "1ea40c55a1b0904f524314f273f4fffd3265cbdd3686074e6d2cd8396aa7038a",
+  "delta_hex": "0x0.0p+0",
+  "certificate_version": "q1-3d-parallel-hoisted-edge-hull-bernstein-v1",
+  "mode": "jacobian_only",
+  "configuration": "BL1",
+  "n_cells": 6772287,
+  "seconds": 7.894512126978952,
+  "config": {
+   "config_class": "ParallelEnclosureCertificateConfig",
+   "certificate_version": "q1-3d-parallel-hoisted-edge-hull-bernstein-v1",
+   "delta_hex": "0x0.0p+0",
+   "max_depth": 48,
+   "max_boxes": 255,
+   "tile_size": 8192,
+   "policy": "lowest_bound_first_v1",
+   "prepass": "edge_hull_v1",
+   "kernel": "numba-parallel-hoisted-edge-hull-v1",
+   "fallback_workers": 2,
+   "precision": "CPU FP64, outward rounding",
+   "source": "archive/seq_vp_3d/results/verification/3d_stage_BL1_v1/analysis/bl1_cert.py:53-54"
+  },
+  "passed": false,
+  "faces_max_abs_u_mm": 8.749662399291992,
+  "domain": {
+   "ok": true,
+   "reason": null,
+   "count": null
+  },
+  "cells": {
+   "regions": {
+    "all": {
+     "cells": 6772287,
+     "proven": 6772275,
+     "infeasible": 12,
+     "uncertain": 0,
+     "uncertain_arithmetic": 0,
+     "min_lower_bound": -0.48331876317228806
+    },
+    "brain": {
+     "cells": 2098710,
+     "proven": 2098698,
+     "infeasible": 12,
+     "uncertain": 0,
+     "uncertain_arithmetic": 0,
+     "min_lower_bound": -0.48331876317228806
+    },
+    "background": {
+     "cells": 4673577,
+     "proven": 4673577,
+     "infeasible": 0,
+     "uncertain": 0,
+     "uncertain_arithmetic": 0,
+     "min_lower_bound": 0.0014807671476292357
+    }
+   },
+   "cell_pass": {
+    "n_infeasible": 12,
+    "n_uncertain": 0,
+    "n_fast_cells": 6764588,
+    "n_prescreen_cells": 0,
+    "n_fallback_cells": 7699,
+    "min_margin_lower_bound": -0.48331876317228806
+   },
+   "map_reached_cells": true,
+   "matches_map": true,
+   "mismatch": {},
+   "seconds": 2.016699713014532
+  }
+ },
+ "cell_pass": {
+  "codes": "cert_eval: 0 hull, 1 prescreen, 2 fallback (proven); 3 infeasible; 4, 5 uncertain",
+  "infeasible": 12,
+  "uncertain": 0,
+  "witness_and_infeasible": 12,
+  "witness_not_infeasible": 0,
+  "infeasible_without_witness": 0
+ },
+ "regions_note": "certificate_bl1.cells.regions: 'brain' here is fixed > 0 (no label), not the evaluation's seg4 > 0",
+ "utc": "2026-11-23T22:37:51Z",
+ "code": {
+  "head": "a1395c69d8949ab4a715b069ba44d18afcb5f373",
+  "script": "docs/manuscript/midl/figures/fig_qual.py",
+  "script_sha256": "759a43305ded47d4b2572995f431645c435d45b011d462eb4ab94e2264ce0212",
+  "clean": true,
+  "status": ""
+ }
+}

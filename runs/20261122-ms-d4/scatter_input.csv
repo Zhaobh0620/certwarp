@@ -1,0 +1,25 @@
+set,arm,family,n,dice_a_name,dice_a,dice_b_name,dice_b,sdlogj_official,cert_name,cert_passed,cert_of,source
+oasis,identity,reference,50,seg35,0.5691,seg4,0.6213,0.0000,BL1 jacobian_only,,50,runs/20261119-hb-result/arms_absolute.csv
+oasis,method,method,50,seg35,0.8782,seg4,0.9225,0.0692,BL1 jacobian_only,50,50,runs/20261119-hb-result/arms_absolute.csv
+oasis,configc,main,50,seg35,0.8197,seg4,0.8862,0.0810,BL1 jacobian_only,50,50,runs/20261119-hb-result/arms_absolute.csv
+oasis,ants_s,main,50,seg35,0.7961,seg4,0.8601,0.0655,BL1 jacobian_only,1,50,runs/20261119-hb-result/arms_absolute.csv
+oasis,fireants_greedy,main,50,seg35,0.7877,seg4,0.8462,0.0717,BL1 jacobian_only,45,50,runs/20261119-hb-result/arms_absolute.csv
+oasis,fireants_syn,main,50,seg35,0.7282,seg4,0.8025,0.0682,BL1 jacobian_only,50,50,runs/20261119-hb-result/arms_absolute.csv
+oasis,convexadam_v4seg,main,50,seg35,0.8428,seg4,0.8603,0.0508,BL1 jacobian_only,0,50,runs/20261119-hb-result/arms_absolute.csv
+oasis,ants_so,descriptive,50,seg35,0.7960,seg4,0.8603,0.0665,BL1 jacobian_only,1,50,runs/20261119-hb-result/arms_absolute.csv
+oasis,niftyreg,descriptive,50,seg35,0.7875,seg4,0.8563,0.0702,BL1 jacobian_only,0,50,runs/20261119-hb-result/arms_absolute.csv
+oasis,deeds,descriptive,50,seg35,0.7395,seg4,0.7569,0.0544,BL1 jacobian_only,27,50,runs/20261119-hb-result/arms_absolute.csv
+oasis,convexadam,descriptive,50,seg35,0.7591,seg4,0.7819,0.0608,BL1 jacobian_only,0,50,runs/20261119-hb-result/arms_absolute.csv
+oasis,unigradicon_io,descriptive,50,seg35,0.7937,seg4,0.8578,0.0640,BL1 jacobian_only,0,50,runs/20261119-hb-result/arms_absolute.csv
+oasis,unigradicon_noio,descriptive,50,seg35,0.7887,seg4,0.8499,0.0607,BL1 jacobian_only,0,50,runs/20261119-hb-result/arms_absolute.csv
+oasis,voxelmorph,descriptive,50,seg35,0.7856,seg4,0.8488,0.0643,BL1 jacobian_only,8,50,runs/20261119-hb-result/arms_absolute.csv
+oasis,fireants_greedy_eq,tier_90s,50,seg35,0.7888,seg4,0.8472,0.0726,BL1 jacobian_only,45,50,runs/20261119-hb-result/arms_absolute.csv
+oasis,fireants_syn_eq,tier_90s,50,seg35,0.7697,seg4,0.8231,0.0660,BL1 jacobian_only,23,50,runs/20261119-hb-result/arms_absolute.csv
+oasis,unigradicon_io_eq,tier_90s,50,seg35,0.7961,seg4,0.8619,0.0655,BL1 jacobian_only,0,50,runs/20261119-hb-result/arms_absolute.csv
+lpba,identity,reference,17,lpba54,0.5303,lpba56,0.5398,0.0000,BL1 jacobian_only,,17,runs/20261122-lpba-result/result.md section 2 and 2.1
+lpba,method,method,17,lpba54,0.6747,lpba56,0.6804,0.0812,BL1 jacobian_only,17,17,runs/20261122-lpba-result/result.md section 2 and 2.1
+lpba,configc,main,17,lpba54,0.7022,lpba56,0.7074,0.0558,BL1 jacobian_only,17,17,runs/20261122-lpba-result/result.md section 2 and 2.1
+lpba,ants_s,main,17,lpba54,0.7237,lpba56,0.7281,0.0448,BL1 jacobian_only,2,17,runs/20261122-lpba-result/result.md section 2 and 2.1
+lpba,fireants_greedy,main,17,lpba54,0.6923,lpba56,0.6971,0.0658,BL1 jacobian_only,17,17,runs/20261122-lpba-result/result.md section 2 and 2.1
+lpba,fireants_syn,main,17,lpba54,0.6664,lpba56,0.6720,0.0533,BL1 jacobian_only,17,17,runs/20261122-lpba-result/result.md section 2 and 2.1
+lpba,convexadam_v4seg,main,17,lpba54,0.6749,lpba56,0.6806,0.0432,BL1 jacobian_only,0,17,runs/20261122-lpba-result/result.md section 2 and 2.1

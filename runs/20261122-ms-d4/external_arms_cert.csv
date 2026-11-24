@@ -1,0 +1,25 @@
+set,arm,name_in_manuscript,name_in_preregistration_of_the_hold_out,family,n_fields,bl1_passed,bl1_failed,failed_n_uncertain_sum,failed_and_central_diff_zero,failed_and_cell_centre_zero,failed_and_both_zero,failed_central_diff_zero_and_infeasible_in_brain,failed_central_diff_zero_and_brain_central_diff_zero_and_infeasible_in_brain,infeasible_cells_in_failed_central_zero_fields_median,infeasible_cells_in_failed_central_zero_fields_max,passed_and_central_diff_positive,official_num_foldings_sum
+oasis,method,CertWarp,method (Hx24-RF05-F1200-v4),method,50,50,0,0,0,0,0,0,0,,,0,0.0
+oasis,configc,Frozen solver [R-P1],configuration C (paper 1's frozen solver),main (not external),50,50,0,0,0,0,0,0,0,,,0,0.0
+oasis,ants_s,ANTs SyN,ANTs SyN `-t s`,main,50,1,49,0,49,49,49,49,49,9,148,0,0.0
+oasis,fireants_greedy,FireANTs Greedy,FireANTs Greedy,main,50,45,5,0,5,5,5,3,3,1,4,0,0.0
+oasis,fireants_syn,FireANTs SyN,FireANTs SyN,main,50,50,0,0,0,0,0,0,0,,,0,0.0
+oasis,convexadam_v4seg,ConvexAdam-Seg,ConvexAdam-v4seg,main,50,0,50,0,0,0,0,0,0,,,0,0.0
+oasis,ants_so,,ANTs SyN `-t so`,descriptive,50,1,49,0,49,49,49,47,47,13,145,0,0.0
+oasis,niftyreg,,NiftyReg,descriptive,50,0,50,0,0,0,0,0,0,,,0,0.0
+oasis,deeds,,deedsBCV,descriptive,50,27,23,0,23,22,22,14,14,1,6,0,0.0
+oasis,convexadam,,ConvexAdam (MIND-SSC),descriptive,50,0,50,0,0,0,0,0,0,,,0,0.0
+oasis,unigradicon_io,,uniGradICON + IO,descriptive,50,0,50,0,4,3,3,4,4,95,135,0,0.0
+oasis,unigradicon_noio,,uniGradICON without IO,descriptive,50,0,50,0,7,6,4,7,7,76,94,0,0.0
+oasis,voxelmorph,,VoxelMorph,descriptive,50,8,42,0,41,40,40,31,31,6,52,0,0.0
+oasis,fireants_greedy_eq,,"FireANTs Greedy, 90 s tier",90 s tier,50,45,5,0,5,5,5,2,2,1,1,0,0.0
+oasis,fireants_syn_eq,,"FireANTs SyN, 90 s tier",90 s tier,50,23,27,0,27,27,27,21,21,3,34,0,0.0
+oasis,unigradicon_io_eq,,"uniGradICON + IO, 90 s tier",90 s tier,50,0,50,0,3,3,3,3,3,133,205,0,0.0
+oasis,TOTAL_external,,14 external arms,,700,200,500,,213,209,207,181,181,,,0,
+lpba,method,CertWarp,method (Hx24-RF05-F1200-v4),method,17,17,0,0,0,0,0,0,0,,,0,0.0
+lpba,configc,Frozen solver [R-P1],configuration C (paper 1's frozen solver),main (not external),17,17,0,0,0,0,0,0,0,,,0,0.0
+lpba,ants_s,ANTs SyN,ANTs SyN `-t s`,main,17,2,15,0,15,15,15,15,15,3,9,0,0.0
+lpba,fireants_greedy,FireANTs Greedy,FireANTs Greedy,main,17,17,0,0,0,0,0,0,0,,,0,0.0
+lpba,fireants_syn,FireANTs SyN,FireANTs SyN,main,17,17,0,0,0,0,0,0,0,,,0,0.0
+lpba,convexadam_v4seg,ConvexAdam-Seg,ConvexAdam-v4seg,main,17,0,17,0,0,0,0,0,0,,,0,0.0
+lpba,TOTAL_external,,4 external arms,,68,36,32,,15,15,15,15,15,,,0,

@@ -1,0 +1,146 @@
+# V1 v1_numerics.py  host <host>  Sun Nov 22 13:06:58 CST 2026  commit 3cab1bae  model name	: 13th Gen Intel(R) Core(TM) i9-13900K
+# arithmetic_supported: numpy True, numba True; parallel_margins execution: libm
+# prescreen table for spacing (1.0, 1.0, 1.0): every entry == fl(1/h_j) * c exactly: True; nonzero entries normal: True; distinct |entries| [0.25, 0.5, 1.0]
+# prescreen table for spacing (0.7, 1.3, 1.1): every entry == fl(1/h_j) * c exactly: True; nonzero entries normal: True; distinct |entries| [0.1923076923076923, 0.22727272727272727, 0.35714285714285715, 0.3846153846153846, 0.45454545454545453, 0.7142857142857143]
+
+== family: random: 150 cells; exact truth {'pos': 126, 'nonpos': 24, 'undet': 0}
+   i_bitwise_replica: 150/150 true
+   i_bitwise_soa: 150/150 true
+   i_encloses: 150/150 true
+   ii_bitwise_replica: 150/150 true
+   ii_error_within_B: 150/150 true
+   ii_out_le_min_beta: 150/150 true
+   iii_bitwise_numpy: 150/150 true
+   iii_J_enclosed: 150/150 true
+   iii_beta_enclosed: 150/150 true
+   iii_split_enclosed: 150/150 true
+   C_lb_le_exact_samples: 150/150 true
+   BL1_lb_le_exact_samples: 150/150 true
+   prescreen: FMA-contracted variant differs from the kernel in bits on 150/150 cells; max |beta_fl - beta_exact| / B = 2.226e-03
+   smallest positive edge-hull margin 0.05398275319187999; smallest positive prescreen bound 0.010264269719945256
+   decision BL1:   certified_feasible with truth    pos: 126
+   decision BL1:           infeasible with truth nonpos: 24
+   decision C:   certified_feasible with truth    pos: 126
+   decision C:           infeasible with truth nonpos: 24
+   violations: 0
+
+== family: cancellation (det = 1 - ab, ab within 2 ulps of 1): 100 cells; exact truth {'pos': 46, 'nonpos': 54, 'undet': 0}
+   i_bitwise_replica: 100/100 true
+   i_bitwise_soa: 100/100 true
+   i_encloses: 100/100 true
+   ii_bitwise_replica: 100/100 true
+   ii_error_within_B: 100/100 true
+   ii_out_le_min_beta: 100/100 true
+   iii_bitwise_numpy: 100/100 true
+   iii_J_enclosed: 100/100 true
+   iii_beta_enclosed: 100/100 true
+   iii_split_enclosed: 100/100 true
+   C_lb_le_exact_samples: 100/100 true
+   BL1_lb_le_exact_samples: 100/100 true
+   prescreen: FMA-contracted variant differs from the kernel in bits on 100/100 cells; max |beta_fl - beta_exact| / B = 5.962e-05
+   smallest positive edge-hull margin None; smallest positive prescreen bound None
+   decision BL1:            uncertain with truth nonpos: 54
+   decision BL1:            uncertain with truth    pos: 46
+   decision C:            uncertain with truth nonpos: 54
+   decision C:            uncertain with truth    pos: 46
+   violations: 0
+
+== family: subnormal-scale F entries, stored values rounded (J reaches 0 on the cell): 28 cells; exact truth {'pos': 0, 'nonpos': 28, 'undet': 0}
+   i_bitwise_replica: 28/28 true
+   i_bitwise_soa: 28/28 true
+   i_encloses: 28/28 true
+   ii_bitwise_replica: 28/28 true
+   ii_error_within_B: 28/28 true
+   ii_out_le_min_beta: 28/28 true
+   iii_bitwise_numpy: 28/28 true
+   iii_J_enclosed: 28/28 true
+   iii_beta_enclosed: 28/28 true
+   iii_split_enclosed: 28/28 true
+   C_lb_le_exact_samples: 28/28 true
+   BL1_lb_le_exact_samples: 28/28 true
+   prescreen: FMA-contracted variant differs from the kernel in bits on 0/28 cells; max |beta_fl - beta_exact| / B = 2.666e-169
+   smallest positive edge-hull margin None; smallest positive prescreen bound None
+   decision BL1:            uncertain with truth nonpos: 28
+   decision C:            uncertain with truth nonpos: 28
+   violations: 0
+
+== family: subnormal minimum J (J = F01 F12, min c*c2 at a corner; c = 2^-k, k up to 1000): 24 cells; exact truth {'pos': 16, 'nonpos': 8, 'undet': 0}
+   i_bitwise_replica: 24/24 true
+   i_bitwise_soa: 24/24 true
+   i_encloses: 24/24 true
+   ii_bitwise_replica: 24/24 true
+   ii_error_within_B: 24/24 true
+   ii_out_le_min_beta: 24/24 true
+   iii_bitwise_numpy: 24/24 true
+   iii_J_enclosed: 24/24 true
+   iii_beta_enclosed: 24/24 true
+   iii_split_enclosed: 24/24 true
+   C_lb_le_exact_samples: 24/24 true
+   BL1_lb_le_exact_samples: 24/24 true
+   prescreen: FMA-contracted variant differs from the kernel in bits on 0/24 cells; max |beta_fl - beta_exact| / B = 7.868e-149
+   smallest positive edge-hull margin None; smallest positive prescreen bound None
+   decision BL1:            uncertain with truth nonpos: 8
+   decision BL1:            uncertain with truth    pos: 16
+   decision C:            uncertain with truth nonpos: 8
+   decision C:            uncertain with truth    pos: 16
+   violations: 0
+
+== family: near-threshold scalings (bisected to adjacent t): 84 cells; exact truth {'pos': 84, 'nonpos': 0, 'undet': 0}
+   i_bitwise_replica: 84/84 true
+   i_bitwise_soa: 84/84 true
+   i_encloses: 84/84 true
+   ii_bitwise_replica: 84/84 true
+   ii_error_within_B: 84/84 true
+   ii_out_le_min_beta: 84/84 true
+   iii_bitwise_numpy: 84/84 true
+   iii_J_enclosed: 84/84 true
+   iii_beta_enclosed: 84/84 true
+   iii_split_enclosed: 84/84 true
+   C_lb_le_exact_samples: 84/84 true
+   BL1_lb_le_exact_samples: 84/84 true
+   prescreen: FMA-contracted variant differs from the kernel in bits on 84/84 cells; max |beta_fl - beta_exact| / B = 8.057e-04
+   smallest positive edge-hull margin 2.7755575615628907e-17; smallest positive prescreen bound 4.401618113786418e-17
+   decision BL1:   certified_feasible with truth    pos: 64
+   decision BL1:            uncertain with truth    pos: 20
+   decision C:   certified_feasible with truth    pos: 64
+   decision C:            uncertain with truth    pos: 20
+   violations: 0
+
+== family: positive corners, nonpositive interior: 10 cells; exact truth {'pos': 0, 'nonpos': 10, 'undet': 0}
+   i_bitwise_replica: 10/10 true
+   i_bitwise_soa: 10/10 true
+   i_encloses: 10/10 true
+   ii_bitwise_replica: 10/10 true
+   ii_error_within_B: 10/10 true
+   ii_out_le_min_beta: 10/10 true
+   iii_bitwise_numpy: 10/10 true
+   iii_J_enclosed: 10/10 true
+   iii_beta_enclosed: 10/10 true
+   iii_split_enclosed: 10/10 true
+   C_lb_le_exact_samples: 10/10 true
+   BL1_lb_le_exact_samples: 10/10 true
+   prescreen: FMA-contracted variant differs from the kernel in bits on 10/10 cells; max |beta_fl - beta_exact| / B = 3.678e-04
+   smallest positive edge-hull margin None; smallest positive prescreen bound None
+   decision BL1:           infeasible with truth nonpos: 10
+   decision C:           infeasible with truth nonpos: 10
+   violations: 0
+
+== family: certify_map at its own threshold (configuration C, full mode, zero faces): 6 maps
+    0 just certified t=0.6423669022510679 certified_feasible positive_enclosure_cover lb=1.6653345369377343e-16 paths fast/pre/fb=54/9/1 cells truth nonpos/undet/total=0/0/64 ok
+    0 just not certified t=0.642366902251068 uncertain subdivision_budget lb=-1.110223024625157e-16 paths fast/pre/fb=54/9/1 cells truth nonpos/undet/total=0/0/64 ok
+    1 just certified t=0.7203033147397435 certified_feasible positive_enclosure_cover lb=1.1102230246251563e-16 paths fast/pre/fb=90/34/1 cells truth nonpos/undet/total=0/0/125 ok
+    1 just not certified t=0.7203033147397436 uncertain subdivision_budget lb=-5.551115123125785e-17 paths fast/pre/fb=90/34/1 cells truth nonpos/undet/total=0/0/125 ok
+    2 just certified t=0.7309943374204045 certified_feasible positive_enclosure_cover lb=6.938893903907226e-17 paths fast/pre/fb=54/9/1 cells truth nonpos/undet/total=0/0/64 ok
+    2 just not certified t=0.7309943374204046 uncertain subdivision_budget lb=-6.938893903907231e-17 paths fast/pre/fb=54/9/1 cells truth nonpos/undet/total=0/0/64 ok
+    3 just certified t=0.6699706014834456 certified_feasible positive_enclosure_cover lb=1.3877787807814452e-16 paths fast/pre/fb=99/25/1 cells truth nonpos/undet/total=0/0/125 ok
+    3 just not certified t=0.6699706014834457 uncertain subdivision_budget lb=-1.3877787807814462e-16 paths fast/pre/fb=99/25/1 cells truth nonpos/undet/total=0/0/125 ok
+    4 just certified t=0.7185085988551928 certified_feasible positive_enclosure_cover lb=8.326672684688672e-17 paths fast/pre/fb=48/15/1 cells truth nonpos/undet/total=0/0/64 ok
+    4 just not certified t=0.7185085988551929 uncertain subdivision_budget lb=-1.3877787807814462e-16 paths fast/pre/fb=48/15/1 cells truth nonpos/undet/total=0/0/64 ok
+    5 just certified t=0.6054485040557301 certified_feasible positive_enclosure_cover lb=1.5265566588595898e-16 paths fast/pre/fb=106/18/1 cells truth nonpos/undet/total=0/0/125 ok
+    5 just not certified t=0.6054485040557303 uncertain subdivision_budget lb=-1.110223024625157e-16 paths fast/pre/fb=106/18/1 cells truth nonpos/undet/total=0/0/125 ok
+   violations: 0
+
+== NumPy ufunc chain multiply then add: equals CPython no-FMA True; cells where an FMA would differ 2000/2000
+
+# TOTAL: 396 cells, cells with any violation: 0; 99 s
+exit 0

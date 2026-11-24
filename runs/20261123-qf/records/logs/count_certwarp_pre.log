@@ -1,0 +1,9 @@
+16:37:53 certwarp_pre: field loaded
+16:37:53   central det <= 0: 23 of 6452160 (fixed > 0: 23)
+16:38:32   witness gauss27: 39 s, points with J <= 0: 18652
+16:39:09   witness closed27: 37 s, points with J <= 0: 45668
+16:39:09   Q1 cells with a witness: 19817 (fixed > 0: 19804), min J -4.602
+16:39:30   BL1 Jacobian-only certificate: passed False, status infeasible, infeasible 19830, uncertain 0, min lower bound -4.602077018216649, 20 s
+16:39:35   configuration C (C07-2) full certificate: passed False, status infeasible, reason JACOBIAN_VIOLATION, infeasible 19830, uncertain 0, 5 s
+16:39:43   cell pass: {'codes': 'cert_eval: 0 hull, 1 prescreen, 2 fallback (proven); 3 infeasible; 4, 5 uncertain', 'infeasible': 19830, 'uncertain': 0, 'witness_and_infeasible': 19817, 'witness_not_infeasible': 0, 'infeasible_without_witness': 13}
+16:39:43 wrote /home/rmcfz/seq_vp_tag_results/qf_v2/certwarp_pre/counts.json

@@ -1,0 +1,38 @@
+
+== OASIS hold-out: n 50 pairs; seconds per pair computed here median 100 (max 119), 49 computed in this run
+  checks: certificate lower bound <= sampled minimum: 50 / 50 | sampled minimum <= recorded min_J_centre: 50 / 50 | body-centre minimum computed here vs recorded min_J_centre, largest |difference|: 7.98e-16
+  certificate lower bound (cert.json min_jd_lower_bound): n 50; min 1.937e-09; q25 3.644e-07; median 1.166e-06; q75 1.991e-06; max 1.517e-05
+  sampled minimum of J over Gauss27 U closed27 (54 distinct points per cell): n 50; min 7.082e-06; q25 5.979e-05; median 0.0001426; q75 0.0002532; max 0.00115
+    over the Gauss27 points only: n 50; min 0.01212; q25 0.03161; median 0.03756; q75 0.04204; max 0.04853
+    over the closed27 points only: n 50; min 7.082e-06; q25 5.979e-05; median 0.0001426; q75 0.0002532; max 0.00115
+  smallest cell-centre J (evaluation record min_J_centre): n 50; min 0.02458; q25 0.04901; median 0.05057; q75 0.05677; max 0.08157
+  sampled minimum / certificate lower bound: n 50; min 5.868; q25 37.09; median 129.3; q75 449.1; max 8.713e+04
+  sampled minimum - certificate lower bound (width of the bracket of the true minimum): n 50; min 5.923e-06; q25 5.829e-05; median 0.0001409; q75 0.0002528; max 0.00115
+  point of the sampled minimum: {'corner': 50}
+  repair target eps: [0.05] | pairs with sampled minimum < eps: 50 / 50 | < .04: 50 | < .01: 50 | <= 0: 0
+  last repair round's inner.min_j (53 points + added points, over the cells of the repair mask only) equals the sampled minimum to 1e-9: 2 / 50 | is larger: 48 | is smaller: 0
+  last repair round's inner.min_j: n 50; min 4.837e-05; q25 0.0008306; median 0.002793; q75 0.003912; max 0.01528
+  cells whose sampled minimum is < 0.05 (count per pair, of 6772287 cells): n 50; min 1.602e+04; q25 3.146e+04; median 3.495e+04; q75 3.907e+04; max 4.587e+04
+  cells whose sampled minimum is < 0.01 (count per pair, of 6772287 cells): n 50; min 15; q25 48.25; median 86; q75 96.5; max 126
+  cells whose sampled minimum is < 0.001 (count per pair, of 6772287 cells): n 50; min 0; q25 5; median 6; q75 9; max 15
+
+== LPBA40 second test set: n 17 pairs; seconds per pair computed here median 102 (max 103), 16 computed in this run
+  checks: certificate lower bound <= sampled minimum: 17 / 17 | sampled minimum <= recorded min_J_centre: 17 / 17 | body-centre minimum computed here vs recorded min_J_centre, largest |difference|: 1.457e-16
+  certificate lower bound (cert.json min_jd_lower_bound): n 17; min 1.829e-07; q25 3.915e-07; median 8.585e-07; q75 1.738e-06; max 3.827e-06
+  sampled minimum of J over Gauss27 U closed27 (54 distinct points per cell): n 17; min 6.578e-06; q25 6.141e-05; median 0.000207; q75 0.000437; max 0.0007633
+    over the Gauss27 points only: n 17; min 0.004056; q25 0.02739; median 0.03083; q75 0.03479; max 0.04503
+    over the closed27 points only: n 17; min 6.578e-06; q25 6.141e-05; median 0.000207; q75 0.000437; max 0.0007633
+  smallest cell-centre J (evaluation record min_J_centre): n 17; min 0.01469; q25 0.04571; median 0.04928; q75 0.05018; max 0.1211
+  sampled minimum / certificate lower bound: n 17; min 2.407; q25 52.96; median 258.9; q75 713.8; max 2390
+  sampled minimum - certificate lower bound (width of the bracket of the true minimum): n 17; min 3.845e-06; q25 6.025e-05; median 0.0002045; q75 0.0004368; max 0.0007629
+  point of the sampled minimum: {'corner': 17}
+  repair target eps: [0.05] | pairs with sampled minimum < eps: 17 / 17 | < .04: 17 | < .01: 17 | <= 0: 0
+  last repair round's inner.min_j (53 points + added points, over the cells of the repair mask only) equals the sampled minimum to 1e-9: 0 / 17 | is larger: 17 | is smaller: 0
+  last repair round's inner.min_j: n 17; min 0.00119; q25 0.001737; median 0.003456; q75 0.004459; max 0.01239
+  cells whose sampled minimum is < 0.05 (count per pair, of 6998400 cells): n 17; min 6261; q25 1.812e+04; median 2.219e+04; q75 2.488e+04; max 3.786e+04
+  cells whose sampled minimum is < 0.01 (count per pair, of 6998400 cells): n 17; min 34; q25 39; median 75; q75 83; max 124
+  cells whose sampled minimum is < 0.001 (count per pair, of 6998400 cells): n 17; min 1; q25 5; median 6; q75 7; max 12
+
+total seconds 6619; peak RSS GiB 0.58; tile 32768 cells
+numba imported: True
+script sha256 59293661ac549dcdc78a30d08c336ae58dd3c4c47d53f6e0078d7435349e7799

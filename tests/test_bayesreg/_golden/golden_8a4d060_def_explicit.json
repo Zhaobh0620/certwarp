@@ -1,0 +1,103 @@
+{
+ "child_bayesreg_path": "/tmp/claude-1000/-home-rmcfz-code-python-projects-seq-vp-tag/8af191c1-629c-4510-bc7a-ebf66be2190c/scratchpad/golden_tmp/golden_gezuix0s/bayesreg",
+ "code_extracted": "git archive <ref_commit> bayesreg jd_curl tests/test_bayesreg (temporary directory)",
+ "command": "python tests/test_bayesreg/_golden/make_golden.py --path def_explicit --ref 8a4d060 --out tests/test_bayesreg/_golden/golden_8a4d060_def_explicit.json",
+ "digest_module": "tests/test_bayesreg/model/_logvol_digest.py",
+ "digest_module_sha256": "fccc675687375da1363440d8e597765305b4571b2272b852579cc8d0b150f7c6",
+ "digests": {
+  "model": {
+   "box12": "b3a0238ef6f344dae45335ba4e60bc290326811d361961a2d34fd44e8b57bd45",
+   "small": "702e635344192cce161deaf31946f9c14a2dff3788c462be4e7a98114e236d2d"
+  },
+  "solve": {
+   "numpy_a": "6ce277ffddf9f7f8456152cce888d462784b1790335832b9fa7f40bab1c23aa7",
+   "numpy_b": "3b62634ca0470db9c76025e3487d40be69e4e79d252e685078f88a14c6fa96c0",
+   "torch64_a": "bc01e1b2a3e84861149c265f63432207934a2a7d48560b3dc4edf6d823e15046"
+  },
+  "torch": {
+   "box12": "55bd503f2e6b7eead57e14412b4d483263884858ae9376453214be383b7f520b",
+   "small": "9ada8399d83fe300ecc23c37db4d92a592d10f8f0dda6d20ef24c126b3d556c0"
+  }
+ },
+ "environment": {
+  "longdouble_nmant": 63,
+  "numpy": "2.0.2",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "python": "3.10.20 | packaged by conda-forge | (main, Mar  5 2026, 16:42:22) [GCC 14.3.0]",
+  "thread_env": {
+   "CUDA_VISIBLE_DEVICES": "",
+   "MKL_NUM_THREADS": "1",
+   "NUMBA_NUM_THREADS": "1",
+   "OMP_NUM_THREADS": "1",
+   "OPENBLAS_NUM_THREADS": "1",
+   "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "torch": "2.5.1"
+ },
+ "generated_utc": "2026-10-31T10:05:36Z",
+ "generator_dirty": true,
+ "generator_head": "8a4d06051efc169d10f90e9d4ae6b37309d2b667",
+ "helpers": [
+  "tests/test_bayesreg/__init__.py",
+  "tests/test_bayesreg/model/__init__.py",
+  "tests/test_bayesreg/model/_helpers.py",
+  "tests/test_bayesreg/solve/__init__.py",
+  "tests/test_bayesreg/solve/_synthetic.py",
+  "tests/test_bayesreg/torch64/__init__.py",
+  "tests/test_bayesreg/torch64/_cases.py"
+ ],
+ "helpers_identical_to_generator": true,
+ "path": "def_explicit",
+ "path_options": {
+  "model": {
+   "closed27_weights": "simpson",
+   "logvol_closed27_share": 1.0,
+   "logvol_points": "gauss27+closed27"
+  },
+  "pg": {
+   "acceptance_order": "finite -> certificate -> energy -> stable comparison -> Armijo",
+   "bb2_cosine_min": 1e-12,
+   "bb2_interval": [
+    1e-08,
+    10.0
+   ],
+   "c1": 0.0001,
+   "direction": "p = -S~ M^-1 S~ g (C09.1-3a)",
+   "domain_fraction": 0.9,
+   "fallback": "protected 2 tau_prev",
+   "initial_step": 1.0,
+   "jd_scaling": {
+    "activation": 0.25,
+    "cell_estimate": "certificate",
+    "contract": "C09.1-3a",
+    "direction": "p = -S~ M^-1 S~ g",
+    "estimate": "J_a = min over the cells adjacent to the interior node a of m'_K = min(m_K, b_K): m_K = min(J at the 8 corners, J at the 27 Gauss points), b_K the per-cell certified lower bound of the accepted, certified state (per-cell path of the C07-2 certify_map, replicated read-only; min_K b_K equal to the reported min_jd_lower_bound bit for bit); no decision uses it",
+    "factor": "r_a = min(1, max(J_a, floor)/activation), same for the 3 components",
+    "floor": 1e-12,
+    "freeze": "with M (option (a): (level, EM round); option (b): reference refresh)",
+    "mode": "affine_v1",
+    "refresh": {
+     "consecutive_rejections": 3,
+     "jacobian_violation_share": "> 1/2 of the window",
+     "when": "after the next accepted step, M unchanged; statistics restart at every computation of S~; BB2 previous direction recomputed with the new operator",
+     "window": 26
+    }
+   },
+   "max_backtracks": 25,
+   "metric_jd_scaling": "affine_v1",
+   "stall_steps": 5,
+   "step": "BB2 (accepted steps only)",
+   "step_tol": 1e-12
+  }
+ },
+ "purpose": "golden digests of the defaults of work package DEF (2026-10-31; contract 8a4d060: gauss27+closed27 with beta_S 1 and the Simpson rule, jd_cell_estimate certificate) given explicitly, on the code before DEF",
+ "ref": "8a4d060",
+ "ref_commit": "8a4d06051efc169d10f90e9d4ae6b37309d2b667",
+ "seconds": 15.390433385036886,
+ "skip_solve": false,
+ "test_files": {
+  "model": "tests/test_bayesreg/model/test_logvol_corners.py",
+  "solve": "tests/test_bayesreg/solve/test_logvol_points.py",
+  "torch": "tests/test_bayesreg/torch64/test_torch64_corners.py"
+ }
+}

@@ -1,0 +1,102 @@
+{
+ "purpose": "B-line split (CLAUDE.md hard constraint 6); BZ authorisation 2026-10-30 ~4:25 am CDT",
+ "seed": 20261030,
+ "rng": "numpy.random.default_rng(seed); calls in order: permutation(206), permutation(106), permutation(53) x4",
+ "numpy_version": "2.0.2",
+ "python_version": "3.10.20",
+ "script": "experiments/split/draw_split.py",
+ "script_sha256": "ba7443ded09ad32df380fb55ed0d49415530c7e30380585644413dd2c283bcbe",
+ "git_head_at_draw": "9af7222eaa6f2a3deb50e3705b415b03a40c83b5",
+ "inputs": {
+  "all_subjects": {
+   "path": "/mnt/d/data/subjects.txt",
+   "resolved": "/mnt/d/data/subjects.txt",
+   "sha256": "ec063407bcf307343e98f32da3ce0d73208398fbd1257dae5679fe55f5a2714c"
+  },
+  "dev_L2R_val": {
+   "path": "/home/rmcfz/code/python_projects/seq_vp_tag/data/three_d/stage_L2R_val_v1/selection.json",
+   "resolved": "/home/rmcfz/code/python_projects/seq_vp_3d/data/three_d/stage_L2R_val_v1/selection.json",
+   "sha256": "21ccfbbb33a6fb4a1b376b1c7e07f69326182af692d05bd4bed83498baf138a8"
+  },
+  "T0_tune": {
+   "path": "/home/rmcfz/code/python_projects/seq_vp_tag/data/three_d/stage_T0_tune_v1/selection.json",
+   "resolved": "/home/rmcfz/code/python_projects/seq_vp_3d/data/three_d/stage_T0_tune_v1/selection.json",
+   "sha256": "a33da4c2973d3593c872ffe06dfb2b0fcaa3c116215a3f149d943813655fe6d9"
+  },
+  "E11_native": {
+   "path": "/home/rmcfz/code/python_projects/seq_vp_tag/data/three_d/stage_E11_native_v1/selection.json",
+   "resolved": "/home/rmcfz/code/python_projects/seq_vp_3d/data/three_d/stage_E11_native_v1/selection.json",
+   "sha256": "05b8c6d648d3800a5333c511f204818685d603b51477c580c886eb37f4eb4b9c"
+  },
+  "H1_pairs": {
+   "path": "/home/rmcfz/code/python_projects/seq_vp_tag/archive/seq_vp_3d/results/verification/3d_stage_HOLDOUT_v1/plan/oasis_heldout_pairs_draft.tsv",
+   "resolved": "/home/rmcfz/code/python_projects/seq_vp_tag/archive/seq_vp_3d/results/verification/3d_stage_HOLDOUT_v1/plan/oasis_heldout_pairs_draft.tsv",
+   "sha256": "734e12c1a888ab60c2bb451d89a0db77d857a756c3f723d5adf18e1d701edae5"
+  },
+  "H4_subjects": {
+   "path": "/home/rmcfz/code/python_projects/seq_vp_tag/archive/seq_vp_3d/results/verification/3d_stage_HOLDOUT_v1/plan/h4_subjects_20261020.txt",
+   "resolved": "/home/rmcfz/code/python_projects/seq_vp_tag/archive/seq_vp_3d/results/verification/3d_stage_HOLDOUT_v1/plan/h4_subjects_20261020.txt",
+   "sha256": "c2f8980d109afc4af88de419b4bf6a18af4e4ee5a24bb6de163ddbf533e2217f"
+  },
+  "H4_pool": {
+   "path": "/home/rmcfz/code/python_projects/seq_vp_tag/archive/seq_vp_3d/results/verification/3d_stage_HOLDOUT_v1/plan/h4_pool_volumes_20261020.tsv",
+   "resolved": "/home/rmcfz/code/python_projects/seq_vp_tag/archive/seq_vp_3d/results/verification/3d_stage_HOLDOUT_v1/plan/h4_pool_volumes_20261020.tsv",
+   "sha256": "48ce473e75be368bbbc9dbf6833087f631ed425cdaa5a772f8ae65c2c09681a6"
+  },
+  "used265_crosscheck": {
+   "path": "/home/rmcfz/code/python_projects/seq_vp_tag/archive/seq_vp_3d/results/verification/3d_stage_HOLDOUT_v1/plan/h4_used_subjects_20261020.txt",
+   "resolved": "/home/rmcfz/code/python_projects/seq_vp_tag/archive/seq_vp_3d/results/verification/3d_stage_HOLDOUT_v1/plan/h4_used_subjects_20261020.txt",
+   "sha256": "4cf21285fe121bce1751388c020b72345290ec0ea0dc535193ff4ff676afed37"
+  },
+  "similar14_source": {
+   "path": "/home/rmcfz/code/python_projects/seq_vp_tag/docs/plan/inventory_20261024/H_训练受试者与工具可得性.md",
+   "resolved": "/home/rmcfz/code/python_projects/seq_vp_tag/docs/plan/inventory_20261024/H_训练受试者与工具可得性.md",
+   "sha256": "a5bf1964662b9d32f81bcf04cc372cff06357ad9e153667e80e77ed32c7cf72a"
+  }
+ },
+ "similar14_note": "l2r_test_scan.json is not in archive/; the 14 ids are those of inventory H section 3",
+ "counts": {
+  "set_sizes": {
+   "all": 414,
+   "dev_L2R_val": 20,
+   "T0": 24,
+   "E11": 10,
+   "H1": 100,
+   "H4": 40,
+   "H4_pool": 149,
+   "similar14": 14
+  },
+  "remaining_111": 111,
+  "released_109": 109,
+  "pool": 206,
+  "pool_from_released_109": 109,
+  "pool_from_remaining_minus_similar": 97,
+  "pool_in_L2R_training_lines_1_394": 206,
+  "checks": {
+   "remaining_111": true,
+   "remaining_equals_inventory_H_list": true,
+   "similar14_inside_remaining": true,
+   "released_109": true,
+   "pool_equals_released109_plus_remaining_minus_similar": true,
+   "used265_equals_all_minus_H4_pool": true,
+   "similar14_inside_used265": true,
+   "pool_206": true,
+   "pool_directories_present": true
+  },
+  "drawn": {
+   "holdout_B_subjects": 100,
+   "holdout_B_pairs": 50,
+   "holdout_B_from_released_109": 50,
+   "train": 106,
+   "train_from_released_109": 59,
+   "fold_A": 53,
+   "fold_B": 53,
+   "calib_A": 8,
+   "calib_B": 8,
+   "eb_pairs_A": 15,
+   "eb_pairs_B": 15,
+   "eb_pairs_with_calib_subject": 6
+  }
+ },
+ "utc_time": "2026-10-30T09:36:18+00:00"
+}

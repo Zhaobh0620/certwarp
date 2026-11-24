@@ -1,0 +1,7 @@
+table,line_statuses,n_pairs,endpoint,n,mean_before,mean_after,mean_diff_after_minus_before,median_diff,ci95_lo,ci95_hi,void_draws,pairs_after_gt_before,pairs_after_lt_before
+main,hx_certified,50,seg35,50,0.879120070945443,0.8781670558207,-0.0009530151247430018,-0.00033738324107673856,-0.001343534501042401,-0.0006023296030038541,0,7,43
+main,hx_certified,50,seg4,50,0.9227838532625806,0.9225379548887617,-0.0002458983738189202,-0.00018240174084543925,-0.0003088698029271601,-0.000194164625554202,0,0,50
+main,hx_certified,50,sdlogj_official,50,0.06937537033448044,0.06922222440238796,-0.00015314593209247453,-0.00015482012314779747,-0.00015880708600542258,-0.00014725178762587204,0,0,50
+fallback,hx_fallback_configC;hx_fallback_identity,0,seg35,0,,,,,,,10000,0,0
+fallback,hx_fallback_configC;hx_fallback_identity,0,seg4,0,,,,,,,10000,0,0
+fallback,hx_fallback_configC;hx_fallback_identity,0,sdlogj_official,0,,,,,,,10000,0,0

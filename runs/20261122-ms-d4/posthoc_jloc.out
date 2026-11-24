@@ -1,0 +1,55 @@
+
+== OASIS hold-out: n 50 pairs; seconds per pair median 6.3 (max 9.2), total 317
+  definition check against the evaluation records (whole grid, exact): min_J_centre equal 50 / 50 | cell_centre_J_nonpositive equal 50 / 50 | n_cells equal 50 / 50
+  % of brain cells with J < .5: this script (mask = predicted label > 0) mean 16.30, median (range) 15.55 (10.57..27.87); evaluation record (its own mask) mean 16.27, median (range) 15.55 (10.54..27.8)
+    per pair, this script minus the record (percentage points): median (range) +0.028 (-0.080..+0.134); mean |difference| 0.043; Pearson r 0.9999
+    brain cells: predicted mask / recorded mask, ratio per pair median (range) 1 (0.9827..1.027)
+  cells with J < .5 outside the predicted mask (background, sulcal CSF included): share of all J < .5 cells of the grid, median (range) 0.2383 (0.07153..0.5079); rate among the cells outside 0.01238 (0.00608..0.03551); rate over the whole grid 0.0444 (0.03292..0.06624)
+  by predicted class (cells inside the predicted mask; share = of the J < .5 cells inside the mask; rate = J < .5 within the class; enrichment = rate / rate inside the whole mask):
+    class | share of J < .5, median (range) | rate within the class | enrichment | share of the mask's cells (median) | rate of J > 2 within the class (median)
+    cerebral cortex | 0.5402 (0.3143..0.6624) | 0.1925 (0.1253..0.3638) | 1.274 (0.8119..1.566) | 0.4183 | 0.05935
+    cerebral white matter | 0.3085 (0.2254..0.4761) | 0.1329 (0.08234..0.2393) | 0.8168 (0.6076..1.182) | 0.3725 | 0.03307
+    subcortical grey (thalamus, caudate, putamen, pallidum, hippocampus, amygdala, accumbens, ventral DC) | 0.02156 (0.005128..0.06996) | 0.06327 (0.0171..0.3952) | 0.4367 (0.1109..1.418) | 0.0493 | 0.01752
+    ventricles (lateral, inferior lateral, 3rd, 4th) | 0.03079 (0.0006434..0.364) | 0.1861 (0.007528..0.8639) | 1.258 (0.03713..5.826) | 0.0221 | 0.03586
+    choroid plexus and vessel | 0.002713 (0.0001849..0.01423) | 0.2517 (0.0434..0.7099) | 1.701 (0.1999..5.055) | 0.001606 | 0.05625
+    cerebellum (cortex and white matter) | 0.05167 (0.02404..0.1159) | 0.07069 (0.02891..0.2475) | 0.4459 (0.2059..0.888) | 0.114 | 0.019
+    brain stem | 0.001042 (5.43e-05..0.007918) | 0.00951 (0.0003982..0.07142) | 0.0612 (0.003507..0.4216) | 0.01774 | 0.001314
+    pairs in which the class has the highest rate: {'cerebral cortex': 15, 'cerebral white matter': 0, 'subcortical grey': 1, 'ventricles': 22, 'choroid plexus and vessel': 12, 'cerebellum': 0, 'brain stem': 0}
+    pairs in which the class holds the largest share: {'cerebral cortex': 46, 'cerebral white matter': 3, 'subcortical grey': 0, 'ventricles': 1, 'choroid plexus and vessel': 0, 'cerebellum': 0, 'brain stem': 0}
+  by distance from the boundary of the predicted mask (mm, Euclidean, from the cell's lower-corner node to the nearest node outside the mask):
+    bin (lo, hi] | share of J < .5, median (range) | rate within the bin | enrichment | share of the mask's cells (median)
+    (0, 2] | 0.3113 (0.1695..0.3959) | 0.1661 (0.1025..0.312) | 1.059 (0.6585..1.343) | 0.2857
+    (2, 4] | 0.3713 (0.2409..0.4303) | 0.1803 (0.1283..0.3194) | 1.218 (0.8402..1.368) | 0.3063
+    (4, 8] | 0.2452 (0.1747..0.3521) | 0.1365 (0.09264..0.2728) | 0.8709 (0.6286..1.224) | 0.286
+    (8, 16] | 0.04631 (0.01929..0.2723) | 0.06514 (0.02397..0.2867) | 0.382 (0.1768..1.784) | 0.1206
+    > 16 | 0.0007071 (0..0.04816) | 0.04057 (0..0.6641) | 0.2723 (0..3.729) | 0.002754
+    mean distance of the J < .5 cells 3.487 (2.839..6.478) mm; of all cells of the mask 4.169 (3.868..4.698) mm
+
+== LPBA40 second test set: n 17 pairs; seconds per pair median 6.1 (max 8.4), total 102
+  definition check against the evaluation records (whole grid, exact): min_J_centre equal 17 / 17 | cell_centre_J_nonpositive equal 17 / 17 | n_cells equal 17 / 17
+  % of brain cells with J < .5: this script (mask = predicted label > 0) mean 21.88, median (range) 21.57 (12.66..28.82); evaluation record (its own mask) mean 16.25, median (range) 13.44 (9.6..27.65)
+    per pair, this script minus the record (percentage points): median (range) +5.969 (-2.693..+15.086); mean |difference| 6.225; Pearson r 0.4339
+    brain cells: predicted mask / recorded mask, ratio per pair median (range) 1.05 (0.8032..1.358)
+  cells with J < .5 outside the predicted mask (background, sulcal CSF included): share of all J < .5 cells of the grid, median (range) 0.2752 (0.1664..0.5046); rate among the cells outside 0.01694 (0.007674..0.04873); rate over the whole grid 0.05121 (0.03251..0.08029)
+  by predicted class (cells inside the predicted mask; share = of the J < .5 cells inside the mask; rate = J < .5 within the class; enrichment = rate / rate inside the whole mask):
+    class | share of J < .5, median (range) | rate within the class | enrichment | share of the mask's cells (median) | rate of J > 2 within the class (median)
+    cerebral cortex | 0.6977 (0.511..0.7666) | 0.2628 (0.1167..0.3982) | 1.238 (0.9216..1.435) | 0.5567 | 0.06212
+    cerebral white matter | 0.2414 (0.1756..0.4263) | 0.1418 (0.09929..0.2055) | 0.6358 (0.5162..1.092) | 0.3701 | 0.05184
+    subcortical grey (thalamus, caudate, putamen, pallidum, hippocampus, amygdala, accumbens, ventral DC) | 0.0237 (0.0136..0.04539) | 0.1153 (0.06812..0.2379) | 0.4985 (0.3004..1.008) | 0.04526 | 0.02942
+    ventricles (lateral, inferior lateral, 3rd, 4th) | 0.01761 (0.002088..0.07138) | 0.2392 (0.01949..0.5914) | 1.282 (0.1075..3.047) | 0.01533 | 0.09586
+    choroid plexus and vessel | 0.0005321 (7.425e-05..0.003967) | 0.211 (0.04909..0.6565) | 0.8965 (0.1779..2.783) | 0.0009407 | 0.0845
+    cerebellum (cortex and white matter) | 0.001111 (3.238e-06..0.005339) | 0.3688 (0.134..0.6184) | 1.626 (0.8749..3.17) | 0.0007278 | 0.1171
+    brain stem | 0.009351 (0.0007708..0.02338) | 0.4402 (0.08492..0.8513) | 1.868 (0.3745..3.069) | 0.003786 | 0.1115
+    pairs in which the class has the highest rate: {'cerebral cortex': 0, 'cerebral white matter': 0, 'subcortical grey': 0, 'ventricles': 3, 'choroid plexus and vessel': 0, 'cerebellum': 5, 'brain stem': 9}
+    pairs in which the class holds the largest share: {'cerebral cortex': 17, 'cerebral white matter': 0, 'subcortical grey': 0, 'ventricles': 0, 'choroid plexus and vessel': 0, 'cerebellum': 0, 'brain stem': 0}
+  by distance from the boundary of the predicted mask (mm, Euclidean, from the cell's lower-corner node to the nearest node outside the mask):
+    bin (lo, hi] | share of J < .5, median (range) | rate within the bin | enrichment | share of the mask's cells (median)
+    (0, 2] | 0.2549 (0.1898..0.3466) | 0.225 (0.0959..0.3838) | 1.011 (0.7576..1.384) | 0.2561
+    (2, 4] | 0.3241 (0.255..0.3982) | 0.2773 (0.1318..0.3854) | 1.253 (1.041..1.425) | 0.2489
+    (4, 8] | 0.3483 (0.2288..0.3927) | 0.2204 (0.1575..0.3419) | 1.058 (0.6969..1.244) | 0.3223
+    (8, 16] | 0.07694 (0.02641..0.1755) | 0.1079 (0.05461..0.1976) | 0.5 (0.1969..0.8883) | 0.1656
+    > 16 | 0.000668 (0..0.004006) | 0.01191 (0..0.1475) | 0.06046 (0..0.5118) | 0.00643
+    mean distance of the J < .5 cells 4.127 (3.1..4.985) mm; of all cells of the mask 4.758 (4.407..5.279) mm
+
+total seconds 419; peak RSS GiB 1.26
+script sha256 d8c591aac832dd45683d76ff4b95c6225e57f37b8060e20726bb95ed2918db4f

@@ -1,0 +1,321 @@
+# V1 v1_codegen.py  host <host>  Sun Nov 22 13:03:34 CST 2026  commit 3cab1bae  model name	: 13th Gen Intel(R) Core(TM) i9-13900K
+# full IR / asm written to /tmp/v1_codegen_dyeuldsa (temporary, not committed)
+# target: {'numba': '0.65.0', 'llvmlite': '0.47.0', 'llvm': '20.1.8', 'host_cpu': 'raptorlake', 'host_fma': True, 'host_avx2': True, 'host_avx512f': False, 'numba_CPU_NAME': None, 'numba_CPU_FEATURES': None, 'numba_OPT': '_OptLevel(3)', 'numba_USING_SVML': False, 'codegen_tm_features_has_fma': True, 'target_triple': 'x86_64-unknown-linux-gnu'}
+# certify_map warm-up (scale: status, n_fast, n_prescreen, n_fallback, max_depth): {0.05: ('certified_feasible', 336, 0, 0, 0), 0.3: ('infeasible', 275, 59, 2, 0), 0.45: ('infeasible', 130, 162, 44, 0)}
+== (i) compiled_enclosure._chunk_hoisted_margins [used: libm execution]
+   signature: (Array(float64, 2, 'C', False, aligned=True), int64, int64, int64, int64, Array(float64, 1, 'C', False, aligned=True), float64, int64, int64, Array(float64, 1, 'C', False, aligned=True), Array(uint8, 1, 'C', False, aligned=True))
+   targetoptions_fastmath: False
+   ir_sha256: 6836d601a4cfde09
+   asm_sha256: 6e5e2ed30f82a5e8
+   ir_lines: 2269
+   asm_lines: 3051
+   ir_fastmath_flag_lines: 0
+   ir_fastmath_examples: []
+   ir_fma_intrinsics: 0
+   ir_vector_reduce_intrinsics: []
+   ir_fp_math_attributes: []
+   ir_vector_double_types: 0
+   asm_fma: 0
+   asm_fma_examples: []
+   asm_control_writes: []
+   asm_approx: 0
+   asm_packed_pd_arith: 0
+   asm_scalar_sd_arith: 240
+   ir_non_binary64_fp_ops: 0
+   ir_fptrunc_fpext: 0
+   asm_x87_arith: 0
+   asm_single_precision: 0
+   fadd_fsub: 186
+   fmul: 36
+   fadd_fsub_with_fmul_operand: 0
+   nextafter_calls: 84
+   examples: []
+== (i) compiled_enclosure.arithmetic_supported [smoke test]
+   signature: (float64,)
+   targetoptions_fastmath: False
+   ir_sha256: f1b68b65e4d70e84
+   asm_sha256: 31fbc9b848f87652
+   ir_lines: 193
+   asm_lines: 269
+   ir_fastmath_flag_lines: 0
+   ir_fastmath_examples: []
+   ir_fma_intrinsics: 0
+   ir_vector_reduce_intrinsics: []
+   ir_fp_math_attributes: []
+   ir_vector_double_types: 0
+   asm_fma: 0
+   asm_fma_examples: []
+   asm_control_writes: []
+   asm_approx: 0
+   asm_packed_pd_arith: 0
+   asm_scalar_sd_arith: 4
+   ir_non_binary64_fp_ops: 0
+   ir_fptrunc_fpext: 0
+   asm_x87_arith: 0
+   asm_single_precision: 0
+   fadd_fsub: 3
+   fmul: 1
+   fadd_fsub_with_fmul_operand: 0
+   nextafter_calls: 2
+   examples: []
+== (i) soa_enclosure._soa_rows [SoA execution, not selected]
+   signature: (Array(float64, 4, 'C', False, aligned=True), int64, int64, float64, float64, float64, float64, int64, int64, Array(float64, 1, 'C', False, aligned=True), Array(uint8, 1, 'C', False, aligned=True))
+   targetoptions_fastmath: False
+   ir_sha256: a86148c7ce3792c9
+   asm_sha256: 90a234e53b8d1ff4
+   ir_lines: 6219
+   asm_lines: 8652
+   ir_fastmath_flag_lines: 0
+   ir_fastmath_examples: []
+   ir_fma_intrinsics: 0
+   ir_vector_reduce_intrinsics: []
+   ir_fp_math_attributes: []
+   ir_vector_double_types: 1322
+   asm_fma: 0
+   asm_fma_examples: []
+   asm_control_writes: []
+   asm_approx: 0
+   asm_packed_pd_arith: 132
+   asm_scalar_sd_arith: 132
+   ir_non_binary64_fp_ops: 0
+   ir_fptrunc_fpext: 0
+   asm_x87_arith: 0
+   asm_single_precision: 0
+   fadd_fsub: 180
+   fmul: 72
+   fadd_fsub_with_fmul_operand: 0
+   nextafter_calls: 0
+   examples: []
+== (i) soa_enclosure._row_entries
+   signature: (Array(float64, 1, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), int64, float64, float64, float64, int64, Array(float64, 2, 'C', False, aligned=True), Array(float64, 2, 'C', False, aligned=True), Array(bool, 2, 'C', False, aligned=True))
+   targetoptions_fastmath: False
+   ir_sha256: 2f83931685584a19
+   asm_sha256: 8cc106687fdabaef
+   ir_lines: 2562
+   asm_lines: 3278
+   ir_fastmath_flag_lines: 0
+   ir_fastmath_examples: []
+   ir_fma_intrinsics: 0
+   ir_vector_reduce_intrinsics: []
+   ir_fp_math_attributes: []
+   ir_vector_double_types: 485
+   asm_fma: 0
+   asm_fma_examples: []
+   asm_control_writes: []
+   asm_approx: 0
+   asm_packed_pd_arith: 54
+   asm_scalar_sd_arith: 54
+   ir_non_binary64_fp_ops: 0
+   ir_fptrunc_fpext: 0
+   asm_x87_arith: 0
+   asm_single_precision: 0
+   fadd_fsub: 96
+   fmul: 0
+   fadd_fsub_with_fmul_operand: 0
+   nextafter_calls: 0
+   examples: []
+== (i) soa_enclosure._row_det
+   signature: (Array(float64, 2, 'C', False, aligned=True), Array(float64, 2, 'C', False, aligned=True), Array(bool, 2, 'C', False, aligned=True), int64, float64, Array(float64, 1, 'C', False, aligned=True), Array(uint8, 1, 'C', False, aligned=True), int64)
+   targetoptions_fastmath: False
+   ir_sha256: 078988abf6bba7c2
+   asm_sha256: 3d38b7be5ed14679
+   ir_lines: 3612
+   asm_lines: 4584
+   ir_fastmath_flag_lines: 0
+   ir_fastmath_examples: []
+   ir_fma_intrinsics: 0
+   ir_vector_reduce_intrinsics: []
+   ir_fp_math_attributes: []
+   ir_vector_double_types: 855
+   asm_fma: 0
+   asm_fma_examples: []
+   asm_control_writes: []
+   asm_approx: 0
+   asm_packed_pd_arith: 78
+   asm_scalar_sd_arith: 78
+   ir_non_binary64_fp_ops: 0
+   ir_fptrunc_fpext: 0
+   asm_x87_arith: 0
+   asm_single_precision: 0
+   fadd_fsub: 84
+   fmul: 72
+   fadd_fsub_with_fmul_operand: 0
+   nextafter_calls: 0
+   examples: []
+== (i) soa_enclosure._transpose
+   signature: (Array(float64, 2, 'C', False, aligned=True), Array(float64, 2, 'C', False, aligned=True), int64, int64)
+   targetoptions_fastmath: False
+   ir_sha256: e0c99f1faef71d99
+   asm_sha256: fe65e94ea08de5f5
+   ir_lines: 390
+   asm_lines: 427
+   ir_fastmath_flag_lines: 0
+   ir_fastmath_examples: []
+   ir_fma_intrinsics: 0
+   ir_vector_reduce_intrinsics: []
+   ir_fp_math_attributes: []
+   ir_vector_double_types: 0
+   asm_fma: 0
+   asm_fma_examples: []
+   asm_control_writes: []
+   asm_approx: 0
+   asm_packed_pd_arith: 0
+   asm_scalar_sd_arith: 0
+   ir_non_binary64_fp_ops: 0
+   ir_fptrunc_fpext: 0
+   asm_x87_arith: 0
+   asm_single_precision: 0
+   fadd_fsub: 0
+   fmul: 0
+   fadd_fsub_with_fmul_operand: 0
+   nextafter_calls: 0
+   examples: []
+== (i) compiled_enclosure._hoisted_bounds [certify_cell only]
+   signature: (Array(float64, 3, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True))
+   targetoptions_fastmath: False
+   ir_sha256: 5b27a06a3c8972ef
+   asm_sha256: 008753d1c86e9bc9
+   ir_lines: 1750
+   asm_lines: 2080
+   ir_fastmath_flag_lines: 0
+   ir_fastmath_examples: []
+   ir_fma_intrinsics: 0
+   ir_vector_reduce_intrinsics: []
+   ir_fp_math_attributes: []
+   ir_vector_double_types: 0
+   asm_fma: 0
+   asm_fma_examples: []
+   asm_control_writes: []
+   asm_approx: 0
+   asm_packed_pd_arith: 0
+   asm_scalar_sd_arith: 98
+   ir_non_binary64_fp_ops: 0
+   ir_fptrunc_fpext: 0
+   asm_x87_arith: 0
+   asm_single_precision: 0
+   fadd_fsub: 60
+   fmul: 36
+   fadd_fsub_with_fmul_operand: 0
+   nextafter_calls: 34
+   examples: []
+== (i) compiled_enclosure._bounds [certify_cell only]
+   signature: (Array(float64, 3, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True))
+   targetoptions_fastmath: False
+   ir_sha256: 9ca120422e6af299
+   asm_sha256: dfcce4e029540948
+   ir_lines: 1760
+   asm_lines: 2147
+   ir_fastmath_flag_lines: 0
+   ir_fastmath_examples: []
+   ir_fma_intrinsics: 0
+   ir_vector_reduce_intrinsics: []
+   ir_fp_math_attributes: []
+   ir_vector_double_types: 0
+   asm_fma: 0
+   asm_fma_examples: []
+   asm_control_writes: []
+   asm_approx: 0
+   asm_packed_pd_arith: 0
+   asm_scalar_sd_arith: 113
+   ir_non_binary64_fp_ops: 0
+   ir_fptrunc_fpext: 0
+   asm_x87_arith: 0
+   asm_single_precision: 0
+   fadd_fsub: 71
+   fmul: 36
+   fadd_fsub_with_fmul_operand: 0
+   nextafter_calls: 46
+   examples: []
+== (ii) certificate_prescreen kernel [used]
+   signature: (Array(float64, 2, 'C', False, aligned=True), Array(float64, 3, 'C', True, aligned=True), Array(int64, 1, 'C', False, aligned=True), Array(int64, 1, 'C', False, aligned=True), int64, int64, int64, int64, int64, int64, float64, float64, float64, float64, float64, Array(float64, 1, 'C', False, aligned=True))
+   targetoptions_fastmath: False
+   ir_sha256: 97ee2ba8b2cb9479
+   asm_sha256: 07bd13472f736518
+   ir_lines: 1722
+   asm_lines: 1936
+   ir_fastmath_flag_lines: 0
+   ir_fastmath_examples: []
+   ir_fma_intrinsics: 0
+   ir_vector_reduce_intrinsics: []
+   ir_fp_math_attributes: []
+   ir_vector_double_types: 0
+   asm_fma: 0
+   asm_fma_examples: []
+   asm_control_writes: []
+   asm_approx: 0
+   asm_packed_pd_arith: 0
+   asm_scalar_sd_arith: 94
+   ir_non_binary64_fp_ops: 0
+   ir_fptrunc_fpext: 0
+   asm_x87_arith: 0
+   asm_single_precision: 0
+   fadd_fsub: 46
+   fmul: 48
+   fadd_fsub_with_fmul_operand: 27
+   nextafter_calls: 0
+   examples: ['%.3169.us = fsub double %.3100.us, %.3168.us', '%.3169.us.182 = fsub double %.3100.us.177, %.3168.us.181', '%.3169.us.1 = fsub double %.3100.us.1, %.3168.us.1']
+== (iii) compiled_fallback._fallback_kernel [used]
+   signature: (Array(float64, 3, 'C', False, aligned=True), Array(float64, 1, 'C', False, aligned=True), float64, Array(int64, 3, 'C', False, aligned=True), Array(float64, 3, 'C', False, aligned=True), Array(float64, 2, 'C', False, aligned=True), Array(float64, 2, 'C', False, aligned=True), Array(float64, 2, 'C', False, aligned=True), Array(float64, 2, 'C', False, aligned=True), Array(float64, 2, 'C', False, aligned=True))
+   targetoptions_fastmath: False
+   ir_sha256: 8a3ed4754196dedd
+   asm_sha256: d666880ba9e62029
+   ir_lines: 4011
+   asm_lines: 4403
+   ir_fastmath_flag_lines: 0
+   ir_fastmath_examples: []
+   ir_fma_intrinsics: 0
+   ir_vector_reduce_intrinsics: []
+   ir_fp_math_attributes: []
+   ir_vector_double_types: 138
+   asm_fma: 0
+   asm_fma_examples: []
+   asm_control_writes: []
+   asm_approx: 0
+   asm_packed_pd_arith: 24
+   asm_scalar_sd_arith: 374
+   ir_non_binary64_fp_ops: 0
+   ir_fptrunc_fpext: 0
+   asm_x87_arith: 0
+   asm_single_precision: 0
+   fadd_fsub: 227
+   fmul: 117
+   fadd_fsub_with_fmul_operand: 63
+   nextafter_calls: 68
+   examples: ['%.13803 = fsub double %.13649, %.13802', '%.14113 = fsub double %.13959, %.14112', '%.14423 = fsub double %.14269, %.14422']
+== (R4.5) fast_checks._domain_counts [domain test, not Thm 4.4]
+   signature: (Array(float64, 4, 'C', False, aligned=True), Array(float64, 1, 'C', True, aligned=True), Array(float64, 1, 'C', True, aligned=True), Array(float64, 1, 'C', True, aligned=True), int64, int64)
+   targetoptions_fastmath: False
+   ir_sha256: d2353dbe9b0c6149
+   asm_sha256: 34a8718b49f3d607
+   ir_lines: 664
+   asm_lines: 866
+   ir_fastmath_flag_lines: 0
+   ir_fastmath_examples: []
+   ir_fma_intrinsics: 0
+   ir_vector_reduce_intrinsics: []
+   ir_fp_math_attributes: []
+   ir_vector_double_types: 61
+   asm_fma: 0
+   asm_fma_examples: []
+   asm_control_writes: []
+   asm_approx: 0
+   asm_packed_pd_arith: 9
+   asm_scalar_sd_arith: 9
+   ir_non_binary64_fp_ops: 0
+   ir_fptrunc_fpext: 0
+   asm_x87_arith: 0
+   asm_single_precision: 0
+   fadd_fsub: 18
+   fmul: 0
+   fadd_fsub_with_fmul_operand: 0
+   nextafter_calls: 0
+   examples: []
+# positive controls (the same detectors on code that is allowed to contract / reassociate)
+   {'control': 'a*b+c', 'option': 'fastmath=False', 'asm_fma': 0, 'ir_flag_lines': 0, 'value_hex': '0x0.0p+0', 'python_value_hex': '0x0.0p+0'}
+   {'control': 'a*b+c', 'option': 'fastmath=True', 'asm_fma': 1, 'ir_flag_lines': 2, 'value_hex': '0x1.0000000000000p-54', 'python_value_hex': '0x0.0p+0'}
+   {'control': 'a*b+c', 'option': "fastmath={'contract'}", 'asm_fma': 1, 'ir_flag_lines': 2, 'value_hex': '0x1.0000000000000p-54', 'python_value_hex': '0x0.0p+0'}
+   {'control': 'float32 product', 'option': 'fastmath=False', 'asm_single_precision': 3, 'ir_non_binary64_fp_ops': 4, 'ir_fptrunc_fpext': 3}
+   {'control': 'sequential sum', 'option': 'fastmath=False', 'asm_packed_addpd': 0, 'asm_scalar_addsd': 9, 'equals_python_sequential_sum': np.True_}
+   {'control': 'sequential sum', 'option': 'fastmath=True', 'asm_packed_addpd': 10, 'asm_scalar_addsd': 3, 'equals_python_sequential_sum': np.False_}
+# TOTAL over the certificate kernels: fast-math flag lines + FMA intrinsics + FMA instructions + MXCSR/x87 control writes + approx + non-binary64 FP ops (IR float/half/x86_fp80/fp128, fptrunc/fpext; asm x87 arithmetic, ss/ps arithmetic) = 0
+exit 0

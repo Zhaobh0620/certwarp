@@ -1,0 +1,32 @@
+{
+ "schema": "bayesreg.colour_table_a5.v1",
+ "comment": "A5, A5P colouring table (runs/20261103-a5/plan.md, docs/bayesreg/05_D0协议.md §14): f_l of seg35 label l, in units of the image's own cerebral white matter mean w. J = sum_{l=1..35} f_l w 1[L = l], background 0, then gaussian sigma .75 voxel. Add-only: this file is never edited; make_inputs.py pins its sha256. A different table is a new file with a new pre-registration.",
+ "provenance": {
+  "author": "hand-set by the lead (2026-11-03, brief runs/20261103-a5/任务书.md), not fitted",
+  "basis": "runs/20261103-a5/colour_survey.py, output runs/20261103-a5/colour_survey_20261103.out: U-Net argmax adjacency and volumes on 6 development subjects (OASIS_OAS1_0438-0443); no truth label read",
+  "lead_count": "of the 107 adjacent label pairs with boundary share >= .03, separation < .13 (in units of w): 6 with this table, 28 with the A3 formula (the lead's count, in the brief)",
+  "not_seen": "beyond the registration results already reported, the table saw no new data; no A5 or A5P result existed when it was fixed"
+ },
+ "labels_of_row": "left and right are one row, the midline structures 11, 12, 13 one label each; every seg35 label 1..35 appears exactly once",
+ "rows": [
+  {"labels": [1, 20],  "structure": "cerebral white matter",      "f": 1.00},
+  {"labels": [2, 21],  "structure": "cerebral cortex",            "f": 0.62},
+  {"labels": [3, 22],  "structure": "lateral ventricle",          "f": 0.28},
+  {"labels": [4, 23],  "structure": "inferior lateral ventricle", "f": 0.12},
+  {"labels": [5, 24],  "structure": "cerebellum white matter",    "f": 1.00},
+  {"labels": [6, 25],  "structure": "cerebellum cortex",          "f": 0.60},
+  {"labels": [7, 26],  "structure": "thalamus",                   "f": 0.55},
+  {"labels": [8, 27],  "structure": "caudate",                    "f": 0.62},
+  {"labels": [9, 28],  "structure": "putamen",                    "f": 0.48},
+  {"labels": [10, 29], "structure": "pallidum",                   "f": 0.75},
+  {"labels": [11],     "structure": "3rd ventricle",              "f": 0.28},
+  {"labels": [12],     "structure": "4th ventricle",              "f": 0.28},
+  {"labels": [13],     "structure": "brain stem",                 "f": 0.85},
+  {"labels": [14, 30], "structure": "hippocampus",                "f": 0.46},
+  {"labels": [15, 31], "structure": "amygdala",                   "f": 0.78},
+  {"labels": [16, 32], "structure": "accumbens",                  "f": 0.80},
+  {"labels": [17, 33], "structure": "ventral DC",                 "f": 0.70},
+  {"labels": [18, 34], "structure": "vessel",                     "f": 0.12},
+  {"labels": [19, 35], "structure": "choroid plexus",             "f": 0.82}
+ ]
+}

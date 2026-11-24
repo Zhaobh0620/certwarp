@@ -1,0 +1,20 @@
+quantity,OASIS hold-out,LPBA40
+pairs,50,17
+pairs passing the certificate before the repair (initial_certificate),0/50,0/17
+"cells with a certified J <= 0 point before the repair, median (range) (initial_certificate.n_infeasible)","21,392 (14,618..27,949)","14,777 (3,979..32,682)"
+"as % of all cells, median (range)",0.32 (0.22..0.41),0.21 (0.06..0.47)
+"undecided cells before the repair (n_uncertain), sum",0,0
+"certificate lower bound before the repair, median (range)",-3.45 (-9.94..-2.18),-4.40 (-10.54..-2.33)
+repair rounds: pairs with 1 / 2 / 3 rounds,31 / 18 / 1,11 / 6 / 0
+"nodes changed, median (range) (last round inner.n_moved)","104,816 (73,279..135,487)","73,292 (20,307..148,810)"
+"as % of all nodes, median (range)",1.52 (1.06..1.97),1.03 (0.29..2.09)
+"free nodes of the last round, median (range) (n_free)","323,326 (224,685..1,026,792)","222,034 (75,666..685,828)"
+"largest change of a node's displacement, mm, median (range) (last round inner.max_move_mm)",0.80 (0.60..2.49),0.92 (0.61..3.77)
+"repair seconds, median (range) (seconds_repair)",61.3 (44.5..316.1),43.9 (18.3..178.6)
+pairs passing the certificate after the repair,50/50,17/17
+"certificate lower bound after the repair, median (range)",1.17e-06 (1.94e-09..1.52e-05),8.58e-07 (1.83e-07..3.83e-06)
+pairs at the 1200 s fuse (wall_hit),0,0
+pairs on a fallback (line_status other than hx_certified),0,0
+"seg35: before -> after the repair; after - before, mean [95% interval]; pairs lower / higher (ablation.csv)","0.87912 -> 0.87817; -0.00095 [-0.00134, -0.00060]; 43 / 7",none (no repair ablation was run on LPBA40)
+"seg4: before -> after the repair; after - before, mean [95% interval]; pairs lower / higher (ablation.csv)","0.92278 -> 0.92254; -0.00025 [-0.00031, -0.00019]; 50 / 0",none (no repair ablation was run on LPBA40)
+"official SDlogJ: before -> after the repair; after - before, mean [95% interval]; pairs lower / higher (ablation.csv)","0.06938 -> 0.06922; -0.00015 [-0.00016, -0.00015]; 50 / 0",none (no repair ablation was run on LPBA40)

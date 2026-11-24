@@ -1,0 +1,79 @@
+{
+ "arm_args": {
+  "corners": [
+   "--logvol-points",
+   "gauss27+corners",
+   "--jd-cell-estimate",
+   "gauss27+corners"
+  ],
+  "def_explicit": [
+   "--logvol-points",
+   "gauss27+closed27",
+   "--logvol-closed27-share",
+   "1",
+   "--closed27-weights",
+   "simpson",
+   "--jd-cell-estimate",
+   "certificate"
+  ],
+  "pre_def": [
+   "--logvol-points",
+   "gauss27",
+   "--jd-cell-estimate",
+   "gauss27+corners"
+  ],
+  "pre_def_off": [
+   "--logvol-points",
+   "gauss27",
+   "--metric-jd-scaling",
+   "off"
+  ]
+ },
+ "child_bayesreg_path": "/tmp/claude-1000/-home-rmcfz-code-python-projects-seq-vp-tag/8af191c1-629c-4510-bc7a-ebf66be2190c/scratchpad/golden_tmp/golden_run_pair_9wp6ve6a/bayesreg",
+ "code_extracted": "git archive <ref_commit> bayesreg jd_curl tests/test_bayesreg (temporary directory)",
+ "command": "python tests/test_bayesreg/_golden/make_golden_run_pair.py --ref 8a4d060 --out tests/test_bayesreg/_golden/golden_8a4d060_run_pair.json",
+ "common_args": [
+  "--rounds",
+  "1,1,1,1",
+  "--max-accepted",
+  "2"
+ ],
+ "digest_module": "tests/test_bayesreg/solve/_run_pair_digest.py",
+ "digest_module_sha256": "16f2d0b50f5eaabe267598b9972d7a743093ede1d3e6f2fe502f6a363b7832c7",
+ "digests": {
+  "corners": "c36283f5cc4f7cf15a5092e707e723cf436a6a177a00252e17f17a58d1b53f9c",
+  "def_explicit": "3d4f455f95564a71ae1c401b3713dfd66a4d6218197ac6132f51f6ac6a444767",
+  "pre_def": "66c1c86e65149c8ca47aab1d84ddf63c4cc18ce1b14a74e8d2729a5f8cd8ef40",
+  "pre_def_off": "f8805f5a2a9eb2a230c2b0bd22655a35447d81ba2ea28c38c541e57d99e7fe25"
+ },
+ "environment": {
+  "longdouble_nmant": 63,
+  "numpy": "2.0.2",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "python": "3.10.20 | packaged by conda-forge | (main, Mar  5 2026, 16:42:22) [GCC 14.3.0]",
+  "thread_env": {
+   "CUDA_VISIBLE_DEVICES": "",
+   "MKL_NUM_THREADS": "1",
+   "NUMBA_NUM_THREADS": "1",
+   "NUMEXPR_NUM_THREADS": "1",
+   "OMP_NUM_THREADS": "1",
+   "OPENBLAS_NUM_THREADS": "1",
+   "PYTHONDONTWRITEBYTECODE": "1"
+  }
+ },
+ "generated_utc": "2026-10-31T10:07:13Z",
+ "generator_dirty": true,
+ "generator_head": "8a4d06051efc169d10f90e9d4ae6b37309d2b667",
+ "helpers": [
+  "tests/test_bayesreg/__init__.py",
+  "tests/test_bayesreg/solve/__init__.py",
+  "tests/test_bayesreg/solve/test_run_pair.py",
+  "tests/test_bayesreg/solve/_synthetic.py",
+  "tests/test_bayesreg/io_seg/__init__.py",
+  "tests/test_bayesreg/io_seg/_helpers.py"
+ ],
+ "purpose": "golden digests of the DEF gate: run_pair with the old options explicit and with the new defaults explicit, on the code before DEF",
+ "ref": "8a4d060",
+ "ref_commit": "8a4d06051efc169d10f90e9d4ae6b37309d2b667",
+ "seconds": 24.54897323192563
+}

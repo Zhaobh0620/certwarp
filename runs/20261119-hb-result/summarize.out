@@ -1,0 +1,404 @@
+# summarize.py 读数（B 线留出集 holdout_B_v1，第 12 步；留出集单次，每对每臂一次）
+decision.json sha256 a0dbdcf9fc03fac7b985bf0a77cd93ab34fe9fa0845039ad0a3bdda445c26eef (168381 B)
+holdout_eval.json sha256 89a7f1dc15bce6f688f753f11c946edcb1a4ddc7a9986ab290f226d5e3cea0cf (1855893 B)
+pairs/*.json: 50 files (glob one level), each <= 10 MB; sha256 of the position-ordered list '<position> <sha256>\n' = 5cfc19ca398dcaf8a2956cb43279f928f7dc2c88bd020bd3703be1cfc1ef33cb
+decision: reading decided, n_used 50, missing_pairs 0, seed 20261107, B 10000, sdlogj_guard 0.02, seg4_rule a, missing_rule yi, merge_conflicts 0, idx_sha256 842ee6695330ca1d
+decision rule_one: passed True, head cc2e06ef, pinned 3005a57e, pinned_is_ancestor True, tracked_clean True, problems 0
+decision prereg sha256 df7b497887dc7b82, arm_table sha256 69cb1ddf3e200611
+holdout_eval: evaluated 50, failed 0, stopped None, not_reached 0, opened events 9811, refused 0, sealed_list_reads 9, watched_dirs 39, ended_utc 2026-11-19T08:46:36Z
+pair records (of 50): complete 50, arms16 50, all_output 50, error_keys 0, seg4_equals_G 50, pq_complete 50, pq_ev1 50, pq_ev2 50, ablation_complete 50, in_ablation 50
+method_line_status {'hx_certified': 50}; no_output: method 0, configc 0, ants_s 0, fireants_greedy 0, fireants_syn 0, convexadam_v4seg 0, ants_so 0, niftyreg 0, deeds 0, convexadam 0, unigradicon_io 0, unigradicon_noio 0, voxelmorph 0, fireants_greedy_eq 0, fireants_syn_eq 0, unigradicon_io_eq 0
+
+## 绝对值（50 对的均值；Dice 越高越好；HD95 体素 = mm；SDlogJ、J 的量照 bayesreg/eval/metrics.py 的定义）
+arm | family | seg35 | seg4 | 官方Dice | DSC30 | HD95 | 官方SDlogJ | 脑内SDlogJ | 脑内J<.5% | 脑内|logJ|>log2 % | 单元中心J<=0 合计(对数) | 官方det<=0 合计(对数) | BL1证书通过 | 判定配置证书
+identity | reference | 0.5691 | 0.6213 | 0.5695 | 0.2745 | 3.991 | 0.0000 | 0.0000 | 0.00 | 0.00 | 0 (0) | 0 (0) |  | 
+method | method | 0.8782 | 0.9225 | 0.8787 | 0.7769 | 1.373 | 0.0692 | 0.5575 | 16.27 | 20.91 | 0 (0) | 0 (0) | 50/50 | 50/50
+configc | main | 0.8197 | 0.8862 | 0.8201 | 0.6713 | 1.829 | 0.0810 | 0.6369 | 17.43 | 23.04 | 0 (0) | 0 (0) | 50/50 | 
+ants_s | main | 0.7961 | 0.8601 | 0.7966 | 0.6180 | 2.087 | 0.0655 | 0.4441 | 8.83 | 12.31 | 0 (0) | 0 (0) | 1/50 | 
+fireants_greedy | main | 0.7877 | 0.8462 | 0.7881 | 0.6054 | 2.173 | 0.0717 | 0.4741 | 10.34 | 14.58 | 0 (0) | 0 (0) | 45/50 | 
+fireants_syn | main | 0.7282 | 0.8025 | 0.7286 | 0.5269 | 2.600 | 0.0682 | 0.3717 | 5.01 | 7.10 | 0 (0) | 0 (0) | 50/50 | 
+convexadam_v4seg | main | 0.8428 | 0.8603 | 0.8433 | 0.7156 | 1.671 | 0.0508 | 1.1912 | 6.18 | 8.28 | 137810 (50) | 128482 (50) | 0/50 | 
+ants_so | descriptive | 0.7960 | 0.8603 | 0.7964 | 0.6176 | 2.093 | 0.0665 | 0.4456 | 8.92 | 12.42 | 0 (0) | 0 (0) | 1/50 | 
+niftyreg | descriptive | 0.7875 | 0.8563 | 0.7879 | 0.6049 | 2.119 | 0.0702 | 2.2695 | 11.52 | 15.45 | 662316 (50) | 649690 (50) | 0/50 | 
+deeds | descriptive | 0.7395 | 0.7569 | 0.7399 | 0.5248 | 2.469 | 0.0544 | 0.2844 | 1.67 | 2.48 | 1 (1) | 0 (0) | 27/50 | 
+convexadam | descriptive | 0.7591 | 0.7819 | 0.7596 | 0.5603 | 2.428 | 0.0608 | 0.7495 | 6.77 | 9.08 | 67511 (50) | 62969 (50) | 0/50 | 
+unigradicon_io | descriptive | 0.7937 | 0.8578 | 0.7941 | 0.6128 | 2.025 | 0.0640 | 0.4388 | 7.89 | 10.77 | 4561 (47) | 4175 (46) | 0/50 | 
+unigradicon_noio | descriptive | 0.7887 | 0.8499 | 0.7891 | 0.6042 | 2.089 | 0.0607 | 0.4114 | 6.81 | 9.33 | 953 (44) | 745 (43) | 0/50 | 
+voxelmorph | descriptive | 0.7856 | 0.8488 | 0.7861 | 0.6026 | 2.094 | 0.0643 | 0.4503 | 8.28 | 11.90 | 2 (2) | 2 (1) | 8/50 | 
+fireants_greedy_eq | tier_90s | 0.7888 | 0.8472 | 0.7892 | 0.6075 | 2.164 | 0.0726 | 0.4813 | 10.72 | 15.09 | 0 (0) | 0 (0) | 45/50 | 
+fireants_syn_eq | tier_90s | 0.7697 | 0.8231 | 0.7702 | 0.5848 | 2.410 | 0.0660 | 0.4189 | 7.77 | 10.75 | 0 (0) | 0 (0) | 23/50 | 
+unigradicon_io_eq | tier_90s | 0.7961 | 0.8619 | 0.7966 | 0.6167 | 1.992 | 0.0655 | 0.4558 | 8.50 | 11.55 | 8387 (47) | 7919 (47) | 0/50 | 
+
+## 证书细目（BL1 jacobian_only，全单元，CPU FP64 外向舍入；对每臂的 u = h d 的 Q1 插值）
+arm | 通过(逐对记录/decision) | status 计数 | n_infeasible 单元合计(逐对/decision) | 有 infeasible 的对数 | 其中脑内/背景 | n_uncertain 合计(逐对/decision) | 最小下界 | domain ok 对数 | cells 与 map 一致
+method | 50/50 | certified_feasible:50 | 0/0 | 0 | 0/0 | 0/0 | 1.937e-09 | 50 | 50
+configc | 50/50 | certified_feasible:50 | 0/0 | 0 | 0/0 | 0/0 | 6.942e-09 | 50 | 50
+ants_s | 1/1 | certified_feasible:1;infeasible:49 | 966/966 | 49 | 683/283 | 0/0 | -1.517 | 0 | 50
+fireants_greedy | 45/45 | certified_feasible:45;infeasible:5 | 9/9 | 5 | 4/5 | 0/0 | -0.02249 | 0 | 50
+fireants_syn | 50/50 | certified_feasible:50 | 0/0 | 0 | 0/0 | 0/0 | 2.135e-06 | 0 | 50
+convexadam_v4seg | 0/0 | infeasible:50 | 244498/244498 | 50 | 227739/16759 | 0/0 | -2.481 | 0 | 50
+ants_so | 1/1 | certified_feasible:1;infeasible:49 | 1025/1025 | 49 | 713/312 | 0/0 | -2.036 | 50 | 50
+niftyreg | 0/0 | infeasible:50 | 1090011/1090011 | 50 | 777914/312097 | 0/0 | -3.205 | 0 | 50
+deeds | 27/27 | certified_feasible:27;infeasible:23 | 44/44 | 23 | 26/18 | 0/0 | -0.6145 | 0 | 50
+convexadam | 0/0 | infeasible:50 | 112819/112819 | 50 | 66976/45843 | 0/0 | -1.054 | 0 | 50
+unigradicon_io | 0/0 | infeasible:50 | 23771/23771 | 50 | 4844/18927 | 0/0 | -1.399 | 0 | 50
+unigradicon_noio | 0/0 | infeasible:50 | 9195/9195 | 50 | 1540/7655 | 0/0 | -0.9723 | 0 | 50
+voxelmorph | 8/8 | certified_feasible:8;infeasible:42 | 519/519 | 42 | 231/288 | 0/0 | -2.031 | 0 | 50
+fireants_greedy_eq | 45/45 | certified_feasible:45;infeasible:5 | 5/5 | 5 | 2/3 | 0/0 | -0.03012 | 0 | 50
+fireants_syn_eq | 23/23 | certified_feasible:23;infeasible:27 | 199/199 | 27 | 147/52 | 0/0 | -1.658 | 0 | 50
+unigradicon_io_eq | 0/0 | infeasible:50 | 36270/36270 | 50 | 8458/27812 | 0/0 | -1.634 | 0 | 50
+method 判定配置证书（D112 (a)）：passed 50/50，n_infeasible 0，n_uncertain 0，最小下界 1.937e-09，mode full:50，config PrescreenCertificateConfig:50
+seg35 与官方 Dice 不同的对数（|差| > 1e-12）与最大 |差|: identity 1 0.0170; method 1 0.0255; configc 1 0.0234; ants_s 1 0.0227; fireants_greedy 1 0.0221; fireants_syn 1 0.0205; convexadam_v4seg 1 0.0242; ants_so 1 0.0227; niftyreg 1 0.0225; deeds 1 0.0209; convexadam 1 0.0213; unigradicon_io 1 0.0225; unigradicon_noio 1 0.0226; voxelmorph 1 0.0226; fireants_greedy_eq 1 0.0221; fireants_syn_eq 1 0.0216; unigradicon_io_eq 1 0.0226
+terminal_status: method hx_certified:50; configc ok:50; ants_s ok:50; fireants_greedy ok:50; fireants_syn ok:50; convexadam_v4seg ok:50; ants_so ok:50; niftyreg ok:50; deeds ok:50; convexadam ok:50; unigradicon_io ok:50; unigradicon_noio ok:50; voxelmorph ok:50; fireants_greedy_eq ok:50; fireants_syn_eq ok:50; unigradicon_io_eq ok:50
+export_suspicious 非空的对数: method 0, configc 0, ants_s 0, fireants_greedy 0, fireants_syn 0, convexadam_v4seg 0, ants_so 0, niftyreg 0, deeds 0, convexadam 0, unigradicon_io 0, unigradicon_noio 0, voxelmorph 0, fireants_greedy_eq 0, fireants_syn_eq 0, unigradicon_io_eq 0
+
+## L2R 口径的其余聚合（official 行；dice std ddof 0；.3 / .7 分位）
+arm | Dice 均值 | Dice std | Dice30 分位 | HD95 .3 分位 | SDlogJ .7 分位 | DSC30（本脚本 / decision，差） | 最小单元中心 J
+identity | 0.5695 | 0.0628 | 0.5383 | 3.246 | 0.0000 | 0.2745 | 1
+method | 0.8787 | 0.0119 | 0.8752 | 1.181 | 0.0707 | 0.7769 / 0.7769, 0 | 0.02458
+configc | 0.8201 | 0.0218 | 0.8140 | 1.527 | 0.0830 | 0.6713 / 0.6713, 0 | 0.01381
+ants_s | 0.7966 | 0.0280 | 0.7920 | 1.720 | 0.0680 | 0.6180 / 0.6180, 0 | 0.04684
+fireants_greedy | 0.7881 | 0.0404 | 0.7717 | 1.771 | 0.0739 | 0.6054 / 0.6054, 0 | 0.01074
+fireants_syn | 0.7286 | 0.0419 | 0.7162 | 2.160 | 0.0693 | 0.5269 / 0.5269, 0 | 0.07649
+convexadam_v4seg | 0.8433 | 0.0126 | 0.8387 | 1.474 | 0.0529 | 0.7156 / 0.7156, 0 | -2.127
+ants_so | 0.7964 | 0.0281 | 0.7918 | 1.715 | 0.0691 | 0.6176 / 0.6176, 0 | 0.04122
+niftyreg | 0.7879 | 0.0291 | 0.7824 | 1.806 | 0.0729 | 0.6049 / 0.6049, 0 | -2.948
+deeds | 0.7399 | 0.0374 | 0.7261 | 2.052 | 0.0565 | 0.5248 / 0.5248, 0 | -0.08324
+convexadam | 0.7596 | 0.0348 | 0.7510 | 1.956 | 0.0623 | 0.5603 / 0.5603, 0 | -1.002
+unigradicon_io | 0.7941 | 0.0235 | 0.7832 | 1.728 | 0.0677 | 0.6128 / 0.6128, 0 | -0.3662
+unigradicon_noio | 0.7891 | 0.0244 | 0.7779 | 1.745 | 0.0643 | 0.6042 / 0.6042, 0 | -0.3891
+voxelmorph | 0.7861 | 0.0260 | 0.7782 | 1.790 | 0.0683 | 0.6026 / 0.6026, 0 | -0.06971
+fireants_greedy_eq | 0.7892 | 0.0398 | 0.7721 | 1.770 | 0.0746 | 0.6075 / 0.6075, 0 | 0.01206
+fireants_syn_eq | 0.7702 | 0.0434 | 0.7613 | 1.942 | 0.0673 | 0.5848 / 0.5848, 0 | 0.05095
+unigradicon_io_eq | 0.7966 | 0.0231 | 0.7861 | 1.707 | 0.0692 | 0.6167 / 0.6167, 0 | -0.4229
+
+## F1（seg35）与 F2（seg4）：方法 − 臂（decision.json）
+族 | 臂 | 均值差 | 中位差 | 95% 区间 | 胜对 | p_sup | Holm sup（步，调整后，阈） | 判定 | SDlogJ 护栏（均值，区间，上端，成立）
+F1 | configc | 0.0585 | 0.0551 | [0.0541, 0.0632] | 50/50 | 9.999e-05 | (1, 0.0005, 0.005) rejected True | 优于 | -0.0118, [-0.0128, -0.0108], -0.0108, True
+F1 | ants_s | 0.0821 | 0.0774 | [0.0760, 0.0886] | 50/50 | 9.999e-05 | (2, 0.0005, 0.00625) rejected True | 优于 | 0.0038, [0.0030, 0.0045], 0.0045, True
+F1 | fireants_greedy | 0.0905 | 0.0788 | [0.0814, 0.1008] | 50/50 | 9.999e-05 | (3, 0.0005, 0.008333333333333333) rejected True | 优于 | -0.0025, [-0.0039, -0.0012], -0.0012, True
+F1 | fireants_syn | 0.1500 | 0.1394 | [0.1404, 0.1605] | 50/50 | 9.999e-05 | (4, 0.0005, 0.0125) rejected True | 优于 | 0.0010, [-0.0007, 0.0028], 0.0028, True
+F1 | convexadam_v4seg | 0.0354 | 0.0344 | [0.0338, 0.0371] | 50/50 | 9.999e-05 | (5, 0.0005, 0.025) rejected True | 优于 | 0.0185, [0.0178, 0.0192], 0.0192, True
+F2 | configc | 0.0363 | 0.0342 | [0.0336, 0.0393] | 50/50 | 9.999e-05 | (1, 0.0005, 0.005) rejected True | 优于 | -0.0118, [-0.0128, -0.0108], -0.0108, True
+F2 | ants_s | 0.0624 | 0.0579 | [0.0586, 0.0669] | 50/50 | 9.999e-05 | (2, 0.0005, 0.00625) rejected True | 优于 | 0.0038, [0.0030, 0.0045], 0.0045, True
+F2 | fireants_greedy | 0.0763 | 0.0715 | [0.0702, 0.0835] | 50/50 | 9.999e-05 | (3, 0.0005, 0.008333333333333333) rejected True | 优于 | -0.0025, [-0.0039, -0.0012], -0.0012, True
+F2 | fireants_syn | 0.1200 | 0.1147 | [0.1146, 0.1261] | 50/50 | 9.999e-05 | (4, 0.0005, 0.0125) rejected True | 优于 | 0.0010, [-0.0007, 0.0028], 0.0028, True
+F2 | convexadam_v4seg | 0.0622 | 0.0610 | [0.0610, 0.0636] | 50/50 | 9.999e-05 | (5, 0.0005, 0.025) rejected True | 优于 | 0.0185, [0.0178, 0.0192], 0.0192, True
+S2（hx_certified 子集，F1 seg35 区间）：configc n 50 [0.0541, 0.0632]; ants_s n 50 [0.0760, 0.0886]; fireants_greedy n 50 [0.0814, 0.1008]; fireants_syn n 50 [0.1404, 0.1605]; convexadam_v4seg n 50 [0.0338, 0.0371]
+从逐对记录复算的方法 − 臂（核对用）：
+  configc (main): seg35 均值差 0.0585 中位 0.0551 胜 50 平 0; seg4 均值差 0.0363 中位 0.0342 胜 50 平 0
+  ants_s (main): seg35 均值差 0.0821 中位 0.0774 胜 50 平 0; seg4 均值差 0.0624 中位 0.0579 胜 50 平 0
+  fireants_greedy (main): seg35 均值差 0.0905 中位 0.0788 胜 50 平 0; seg4 均值差 0.0763 中位 0.0715 胜 50 平 0
+  fireants_syn (main): seg35 均值差 0.1500 中位 0.1394 胜 50 平 0; seg4 均值差 0.1200 中位 0.1147 胜 50 平 0
+  convexadam_v4seg (main): seg35 均值差 0.0354 中位 0.0344 胜 50 平 0; seg4 均值差 0.0622 中位 0.0610 胜 50 平 0
+  ants_so (descriptive): seg35 均值差 0.0822 中位 0.0774 胜 50 平 0; seg4 均值差 0.0623 中位 0.0571 胜 50 平 0
+  niftyreg (descriptive): seg35 均值差 0.0907 中位 0.0824 胜 50 平 0; seg4 均值差 0.0662 中位 0.0619 胜 50 平 0
+  deeds (descriptive): seg35 均值差 0.1387 中位 0.1340 胜 50 平 0; seg4 均值差 0.1656 中位 0.1603 胜 50 平 0
+  convexadam (descriptive): seg35 均值差 0.1190 中位 0.1136 胜 50 平 0; seg4 均值差 0.1407 中位 0.1351 胜 50 平 0
+  unigradicon_io (descriptive): seg35 均值差 0.0845 中位 0.0791 胜 50 平 0; seg4 均值差 0.0648 中位 0.0627 胜 50 平 0
+  unigradicon_noio (descriptive): seg35 均值差 0.0895 中位 0.0828 胜 50 平 0; seg4 均值差 0.0727 中位 0.0702 胜 50 平 0
+  voxelmorph (descriptive): seg35 均值差 0.0925 中位 0.0855 胜 50 平 0; seg4 均值差 0.0738 中位 0.0725 胜 50 平 0
+  fireants_greedy_eq (tier_90s): seg35 均值差 0.0894 中位 0.0800 胜 50 平 0; seg4 均值差 0.0753 中位 0.0698 胜 50 平 0
+  fireants_syn_eq (tier_90s): seg35 均值差 0.1084 中位 0.0971 胜 50 平 0; seg4 均值差 0.0994 中位 0.0944 胜 50 平 0
+  unigradicon_io_eq (tier_90s): seg35 均值差 0.0820 中位 0.0770 胜 50 平 0; seg4 均值差 0.0607 中位 0.0582 胜 50 平 0
+
+## F3（只描述，不判；未校正 95% 百分位区间；written 列给差的方向）
+endpoints | dice_official | configc (main) | 0.05853 [0.05416, 0.06318] | method - arm
+endpoints | dice_official | ants_s (main) | 0.08211 [0.07605, 0.08864] | method - arm
+endpoints | dice_official | fireants_greedy (main) | 0.09056 [0.08145, 0.10085] | method - arm
+endpoints | dice_official | fireants_syn (main) | 0.15010 [0.14051, 0.16064] | method - arm
+endpoints | dice_official | convexadam_v4seg (main) | 0.03540 [0.03380, 0.03718] | method - arm
+endpoints | dice_official | ants_so (descriptive) | 0.08224 [0.07618, 0.08882] | method - arm
+endpoints | dice_official | niftyreg (descriptive) | 0.09073 [0.08453, 0.09754] | method - arm
+endpoints | dice_official | deeds (descriptive) | 0.13879 [0.12998, 0.14831] | method - arm
+endpoints | dice_official | convexadam (descriptive) | 0.11911 [0.11106, 0.12790] | method - arm
+endpoints | dice_official | unigradicon_io (descriptive) | 0.08456 [0.07943, 0.08990] | method - arm
+endpoints | dice_official | unigradicon_noio (descriptive) | 0.08957 [0.08418, 0.09514] | method - arm
+endpoints | dice_official | voxelmorph (descriptive) | 0.09258 [0.08698, 0.09849] | method - arm
+endpoints | dice_official | fireants_greedy_eq (tier_90s) | 0.08944 [0.08057, 0.09964] | method - arm
+endpoints | dice_official | fireants_syn_eq (tier_90s) | 0.10850 [0.09876, 0.11948] | method - arm
+endpoints | dice_official | unigradicon_io_eq (tier_90s) | 0.08210 [0.07712, 0.08722] | method - arm
+endpoints | hd95 | configc (main) | 0.45533 [0.36795, 0.55079] | arm - method (smaller is better)
+endpoints | hd95 | ants_s (main) | 0.71358 [0.61121, 0.82342] | arm - method (smaller is better)
+endpoints | hd95 | fireants_greedy (main) | 0.79933 [0.68869, 0.92023] | arm - method (smaller is better)
+endpoints | hd95 | fireants_syn (main) | 1.22686 [1.10434, 1.35404] | arm - method (smaller is better)
+endpoints | hd95 | convexadam_v4seg (main) | 0.29815 [0.24727, 0.35362] | arm - method (smaller is better)
+endpoints | hd95 | ants_so (descriptive) | 0.71923 [0.61844, 0.82657] | arm - method (smaller is better)
+endpoints | hd95 | niftyreg (descriptive) | 0.74562 [0.65018, 0.85173] | arm - method (smaller is better)
+endpoints | hd95 | deeds (descriptive) | 1.09583 [0.97864, 1.21992] | arm - method (smaller is better)
+endpoints | hd95 | convexadam (descriptive) | 1.05511 [0.93587, 1.17972] | arm - method (smaller is better)
+endpoints | hd95 | unigradicon_io (descriptive) | 0.65155 [0.56423, 0.74184] | arm - method (smaller is better)
+endpoints | hd95 | unigradicon_noio (descriptive) | 0.71558 [0.62682, 0.80771] | arm - method (smaller is better)
+endpoints | hd95 | voxelmorph (descriptive) | 0.72066 [0.63744, 0.80749] | arm - method (smaller is better)
+endpoints | hd95 | fireants_greedy_eq (tier_90s) | 0.79030 [0.68194, 0.90843] | arm - method (smaller is better)
+endpoints | hd95 | fireants_syn_eq (tier_90s) | 1.03644 [0.90565, 1.17091] | arm - method (smaller is better)
+endpoints | hd95 | unigradicon_io_eq (tier_90s) | 0.61844 [0.53349, 0.70935] | arm - method (smaller is better)
+endpoints | sdlogj_official | configc (main) | 0.01181 [0.01082, 0.01279] | arm - method (smaller is better)
+endpoints | sdlogj_official | ants_s (main) | -0.00377 [-0.00454, -0.00299] | arm - method (smaller is better)
+endpoints | sdlogj_official | fireants_greedy (main) | 0.00252 [0.00121, 0.00389] | arm - method (smaller is better)
+endpoints | sdlogj_official | fireants_syn (main) | -0.00104 [-0.00279, 0.00071] | arm - method (smaller is better)
+endpoints | sdlogj_official | convexadam_v4seg (main) | -0.01847 [-0.01916, -0.01781] | arm - method (smaller is better)
+endpoints | sdlogj_official | ants_so (descriptive) | -0.00274 [-0.00347, -0.00199] | arm - method (smaller is better)
+endpoints | sdlogj_official | niftyreg (descriptive) | 0.00096 [-0.00011, 0.00208] | arm - method (smaller is better)
+endpoints | sdlogj_official | deeds (descriptive) | -0.01478 [-0.01592, -0.01365] | arm - method (smaller is better)
+endpoints | sdlogj_official | convexadam (descriptive) | -0.00842 [-0.00942, -0.00740] | arm - method (smaller is better)
+endpoints | sdlogj_official | unigradicon_io (descriptive) | -0.00521 [-0.00606, -0.00429] | arm - method (smaller is better)
+endpoints | sdlogj_official | unigradicon_noio (descriptive) | -0.00851 [-0.00933, -0.00765] | arm - method (smaller is better)
+endpoints | sdlogj_official | voxelmorph (descriptive) | -0.00490 [-0.00560, -0.00417] | arm - method (smaller is better)
+endpoints | sdlogj_official | fireants_greedy_eq (tier_90s) | 0.00338 [0.00190, 0.00493] | arm - method (smaller is better)
+endpoints | sdlogj_official | fireants_syn_eq (tier_90s) | -0.00322 [-0.00460, -0.00187] | arm - method (smaller is better)
+endpoints | sdlogj_official | unigradicon_io_eq (tier_90s) | -0.00367 [-0.00455, -0.00271] | arm - method (smaller is better)
+endpoints | sdlogj_brain | configc (main) | 0.07941 [0.07159, 0.08781] | arm - method (smaller is better)
+endpoints | sdlogj_brain | ants_s (main) | -0.11336 [-0.11785, -0.10873] | arm - method (smaller is better)
+endpoints | sdlogj_brain | fireants_greedy (main) | -0.08341 [-0.08846, -0.07849] | arm - method (smaller is better)
+endpoints | sdlogj_brain | fireants_syn (main) | -0.18580 [-0.19173, -0.18010] | arm - method (smaller is better)
+endpoints | sdlogj_brain | convexadam_v4seg (main) | 0.63372 [0.53718, 0.73474] | arm - method (smaller is better)
+endpoints | sdlogj_brain | ants_so (descriptive) | -0.11195 [-0.11616, -0.10745] | arm - method (smaller is better)
+endpoints | sdlogj_brain | niftyreg (descriptive) | 1.71203 [1.61137, 1.81812] | arm - method (smaller is better)
+endpoints | sdlogj_brain | deeds (descriptive) | -0.27309 [-0.27922, -0.26723] | arm - method (smaller is better)
+endpoints | sdlogj_brain | convexadam (descriptive) | 0.19199 [0.14899, 0.23835] | arm - method (smaller is better)
+endpoints | sdlogj_brain | unigradicon_io (descriptive) | -0.11865 [-0.12411, -0.11266] | arm - method (smaller is better)
+endpoints | sdlogj_brain | unigradicon_noio (descriptive) | -0.14614 [-0.15098, -0.14111] | arm - method (smaller is better)
+endpoints | sdlogj_brain | voxelmorph (descriptive) | -0.10720 [-0.11556, -0.09802] | arm - method (smaller is better)
+endpoints | sdlogj_brain | fireants_greedy_eq (tier_90s) | -0.07618 [-0.08258, -0.06985] | arm - method (smaller is better)
+endpoints | sdlogj_brain | fireants_syn_eq (tier_90s) | -0.13856 [-0.14620, -0.13121] | arm - method (smaller is better)
+endpoints | sdlogj_brain | unigradicon_io_eq (tier_90s) | -0.10172 [-0.10903, -0.09362] | arm - method (smaller is better)
+endpoints | pct_J_lt_half_brain | configc (main) | 1.15756 [0.64974, 1.69413] | arm - method (smaller is better)
+endpoints | pct_J_lt_half_brain | ants_s (main) | -7.44056 [-8.01648, -6.88919] | arm - method (smaller is better)
+endpoints | pct_J_lt_half_brain | fireants_greedy (main) | -5.93112 [-6.64854, -5.28069] | arm - method (smaller is better)
+endpoints | pct_J_lt_half_brain | fireants_syn (main) | -11.25839 [-12.21672, -10.35740] | arm - method (smaller is better)
+endpoints | pct_J_lt_half_brain | convexadam_v4seg (main) | -10.09152 [-10.61034, -9.58514] | arm - method (smaller is better)
+endpoints | pct_J_lt_half_brain | ants_so (descriptive) | -7.35461 [-7.91412, -6.80635] | arm - method (smaller is better)
+endpoints | pct_J_lt_half_brain | niftyreg (descriptive) | -4.75701 [-5.27637, -4.25368] | arm - method (smaller is better)
+endpoints | pct_J_lt_half_brain | deeds (descriptive) | -14.60317 [-15.54128, -13.74078] | arm - method (smaller is better)
+endpoints | pct_J_lt_half_brain | convexadam (descriptive) | -9.50234 [-10.21505, -8.83689] | arm - method (smaller is better)
+endpoints | pct_J_lt_half_brain | unigradicon_io (descriptive) | -8.38493 [-8.97862, -7.81578] | arm - method (smaller is better)
+endpoints | pct_J_lt_half_brain | unigradicon_noio (descriptive) | -9.46567 [-10.13809, -8.81936] | arm - method (smaller is better)
+endpoints | pct_J_lt_half_brain | voxelmorph (descriptive) | -7.99544 [-8.50918, -7.49883] | arm - method (smaller is better)
+endpoints | pct_J_lt_half_brain | fireants_greedy_eq (tier_90s) | -5.55767 [-6.34095, -4.84313] | arm - method (smaller is better)
+endpoints | pct_J_lt_half_brain | fireants_syn_eq (tier_90s) | -8.50789 [-9.34971, -7.74489] | arm - method (smaller is better)
+endpoints | pct_J_lt_half_brain | unigradicon_io_eq (tier_90s) | -7.77789 [-8.34260, -7.23771] | arm - method (smaller is better)
+endpoints | frac_abs_logj_gt_log2_brain | configc (main) | 0.02124 [0.01488, 0.02796] | arm - method (smaller is better)
+endpoints | frac_abs_logj_gt_log2_brain | ants_s (main) | -0.08601 [-0.09137, -0.08092] | arm - method (smaller is better)
+endpoints | frac_abs_logj_gt_log2_brain | fireants_greedy (main) | -0.06335 [-0.06973, -0.05757] | arm - method (smaller is better)
+endpoints | frac_abs_logj_gt_log2_brain | fireants_syn (main) | -0.13814 [-0.14693, -0.13011] | arm - method (smaller is better)
+endpoints | frac_abs_logj_gt_log2_brain | convexadam_v4seg (main) | -0.12629 [-0.13095, -0.12169] | arm - method (smaller is better)
+endpoints | frac_abs_logj_gt_log2_brain | ants_so (descriptive) | -0.08496 [-0.09024, -0.07993] | arm - method (smaller is better)
+endpoints | frac_abs_logj_gt_log2_brain | niftyreg (descriptive) | -0.05464 [-0.06016, -0.04899] | arm - method (smaller is better)
+endpoints | frac_abs_logj_gt_log2_brain | deeds (descriptive) | -0.18435 [-0.19329, -0.17624] | arm - method (smaller is better)
+endpoints | frac_abs_logj_gt_log2_brain | convexadam (descriptive) | -0.11831 [-0.12513, -0.11184] | arm - method (smaller is better)
+endpoints | frac_abs_logj_gt_log2_brain | unigradicon_io (descriptive) | -0.10138 [-0.10691, -0.09612] | arm - method (smaller is better)
+endpoints | frac_abs_logj_gt_log2_brain | unigradicon_noio (descriptive) | -0.11585 [-0.12207, -0.11001] | arm - method (smaller is better)
+endpoints | frac_abs_logj_gt_log2_brain | voxelmorph (descriptive) | -0.09008 [-0.09472, -0.08550] | arm - method (smaller is better)
+endpoints | frac_abs_logj_gt_log2_brain | fireants_greedy_eq (tier_90s) | -0.05823 [-0.06564, -0.05131] | arm - method (smaller is better)
+endpoints | frac_abs_logj_gt_log2_brain | fireants_syn_eq (tier_90s) | -0.10162 [-0.10964, -0.09409] | arm - method (smaller is better)
+endpoints | frac_abs_logj_gt_log2_brain | unigradicon_io_eq (tier_90s) | -0.09363 [-0.09901, -0.08841] | arm - method (smaller is better)
+described_arms | seg35 | ants_so (descriptive) | 0.08218 [0.07613, 0.08874] | method - arm
+described_arms | seg35 | niftyreg (descriptive) | 0.09067 [0.08447, 0.09746] | method - arm
+described_arms | seg35 | deeds (descriptive) | 0.13869 [0.12989, 0.14817] | method - arm
+described_arms | seg35 | convexadam (descriptive) | 0.11902 [0.11099, 0.12779] | method - arm
+described_arms | seg35 | unigradicon_io (descriptive) | 0.08450 [0.07938, 0.08982] | method - arm
+described_arms | seg35 | unigradicon_noio (descriptive) | 0.08951 [0.08413, 0.09508] | method - arm
+described_arms | seg35 | voxelmorph (descriptive) | 0.09252 [0.08695, 0.09844] | method - arm
+described_arms | seg35 | fireants_greedy_eq (tier_90s) | 0.08937 [0.08051, 0.09960] | method - arm
+described_arms | seg35 | fireants_syn_eq (tier_90s) | 0.10842 [0.09870, 0.11940] | method - arm
+described_arms | seg35 | unigradicon_io_eq (tier_90s) | 0.08205 [0.07708, 0.08717] | method - arm
+described_arms | seg4 | ants_so (descriptive) | 0.06226 [0.05843, 0.06664] | method - arm
+described_arms | seg4 | niftyreg (descriptive) | 0.06624 [0.06254, 0.07053] | method - arm
+described_arms | seg4 | deeds (descriptive) | 0.16562 [0.15934, 0.17238] | method - arm
+described_arms | seg4 | convexadam (descriptive) | 0.14067 [0.13519, 0.14668] | method - arm
+described_arms | seg4 | unigradicon_io (descriptive) | 0.06475 [0.06202, 0.06775] | method - arm
+described_arms | seg4 | unigradicon_noio (descriptive) | 0.07267 [0.06962, 0.07601] | method - arm
+described_arms | seg4 | voxelmorph (descriptive) | 0.07376 [0.07105, 0.07686] | method - arm
+described_arms | seg4 | fireants_greedy_eq (tier_90s) | 0.07531 [0.06917, 0.08252] | method - arm
+described_arms | seg4 | fireants_syn_eq (tier_90s) | 0.09944 [0.09348, 0.10624] | method - arm
+described_arms | seg4 | unigradicon_io_eq (tier_90s) | 0.06065 [0.05805, 0.06352] | method - arm
+dsc30 | dsc30 | configc (main) | 0.10563 [0.09441, 0.11616] | method - arm
+dsc30 | dsc30 | ants_s (main) | 0.15889 [0.14608, 0.17134] | method - arm
+dsc30 | dsc30 | fireants_greedy (main) | 0.17149 [0.15315, 0.19217] | method - arm
+dsc30 | dsc30 | fireants_syn (main) | 0.25004 [0.23169, 0.26897] | method - arm
+dsc30 | dsc30 | convexadam_v4seg (main) | 0.06133 [0.05533, 0.06865] | method - arm
+dsc30 | dsc30 | ants_so (descriptive) | 0.15934 [0.14651, 0.17173] | method - arm
+dsc30 | dsc30 | niftyreg (descriptive) | 0.17203 [0.15856, 0.18557] | method - arm
+dsc30 | dsc30 | deeds (descriptive) | 0.25215 [0.23703, 0.26890] | method - arm
+dsc30 | dsc30 | convexadam (descriptive) | 0.21664 [0.20170, 0.23258] | method - arm
+dsc30 | dsc30 | unigradicon_io (descriptive) | 0.16415 [0.15321, 0.17417] | method - arm
+dsc30 | dsc30 | unigradicon_noio (descriptive) | 0.17275 [0.16152, 0.18321] | method - arm
+dsc30 | dsc30 | voxelmorph (descriptive) | 0.17428 [0.16242, 0.18555] | method - arm
+dsc30 | dsc30 | fireants_greedy_eq (tier_90s) | 0.16945 [0.15126, 0.19026] | method - arm
+dsc30 | dsc30 | fireants_syn_eq (tier_90s) | 0.19206 [0.17218, 0.21349] | method - arm
+dsc30 | dsc30 | unigradicon_io_eq (tier_90s) | 0.16022 [0.14967, 0.17011] | method - arm
+官方 SDlogJ 均值 <= .10（itt）: method True, configc True, ants_s True, fireants_greedy True, fireants_syn True, convexadam_v4seg True, ants_so True, niftyreg True, deeds True, convexadam True, unigradicon_io True, unigradicon_noio True, voxelmorph True, fireants_greedy_eq True, fireants_syn_eq True, unigradicon_io_eq True
+官方 SDlogJ 均值 <= .10（outputs_only）: method True, configc True, ants_s True, fireants_greedy True, fireants_syn True, convexadam_v4seg True, ants_so True, niftyreg True, deeds True, convexadam True, unigradicon_io True, unigradicon_noio True, voxelmorph True, fireants_greedy_eq True, fireants_syn_eq True, unigradicon_io_eq True
+
+## F4（PQ 的确认性检验；Ω_e 上 Δ_k = AUSE_k − AUSE_q）
+reading 留出集上确认：PQ 承重（误差定位）; n_prime 50; n_P 50; excluded 0; failed 0; eval_side Ev1 0, Ev2 0, input_lock 0, Ev3 0; idx_sha256 842ee6695330ca1d
+基线 | Δ 均值 | LB（2.5 百分位） | R | 区间 | Δ>0 的对 | 过 | hx_certified 子集 n / LB / R
+h | 0.05924 | 0.05767 | 0.9081 | [0.05767, 0.06084] | 50/50 | True | 50 / 0.05767 / 0.9081
+H_F | 0.01931 | 0.01795 | 0.7631 | [0.01795, 0.02072] | 50/50 | True | 50 / 0.01795 / 0.7631
+H2 | 0.00697 | 0.00658 | 0.5375 | [0.00658, 0.00738] | 50/50 | True | 50 / 0.00658 / 0.5375
+V_F | 0.02046 | 0.01914 | 0.7734 | [0.01914, 0.02181] | 50/50 | True | 50 / 0.01914 / 0.7734
+V2 | 0.00847 | 0.00802 | 0.5855 | [0.00802, 0.00895] | 50/50 | True | 50 / 0.00802 / 0.5855
+G_plus | 0.04889 | 0.04737 | 0.8907 | [0.04737, 0.05050] | 50/50 | True | 50 / 0.04737 / 0.8907
+X_lex | 0.00060 | 0.00057 | 0.0906 | [0.00057, 0.00062] | 50/50 | True | 50 / 0.00057 / 0.0906
+B_d | 0.02434 | 0.02376 | 0.8023 | [0.02376, 0.02492] | 50/50 | True | 50 / 0.02376 / 0.8023
+
+## 修复消融（描述，不是臂，不进任何族；after − before，after = 方法臂的输出，before = 修复前位移）
+main (hx_certified, n_pairs 50) | seg35 | before 0.87912 after 0.87817 | 差 -0.00095 中位 -0.00034 [-0.00134, -0.00060] | after>before 7，after<before 43
+main (hx_certified, n_pairs 50) | seg4 | before 0.92278 after 0.92254 | 差 -0.00025 中位 -0.00018 [-0.00031, -0.00019] | after>before 0，after<before 50
+main (hx_certified, n_pairs 50) | sdlogj_official | before 0.06938 after 0.06922 | 差 -0.00015 中位 -0.00015 [-0.00016, -0.00015] | after>before 0，after<before 50
+fallback (hx_fallback_configC;hx_fallback_identity, n_pairs 0) | seg35 | n 0
+fallback (hx_fallback_configC;hx_fallback_identity, n_pairs 0) | seg4 | n 0
+fallback (hx_fallback_configC;hx_fallback_identity, n_pairs 0) | sdlogj_official | n 0
+ablation other_statuses 0, excluded 0
+
+## 第二次运行加的几节
+hi_record.json sha256 778cdba813003396a7a561caff0c7050f40744fe1b3f251f27d5ff6ede5b1bb6 (129324 B); structure_groups_v1.json sha256 20edfa374e2a9c8ad897a7ad658fc379e4123f83e6c987513b5bf745fe572c19
+HI（第 2 步）：100 人；backend hs_a；device cuda；gpu NVIDIA GeForce RTX 4090；每人 seconds_total 中位 56.90（54.39–60.85），合计 95.0 分钟；前向中位 2.31（2.05–3.07）；写文件中位 44.21（42.16–47.83）
+采样域与六面位移（BL1 记录的 domain 与 faces_max_abs_u_mm；不进证书状态）：节点数 6881280
+arm | 六面最大 |u| mm（最小/中位/最大） | 域内对数 | 有越界节点的对数 | 越界节点数（最小–最大） | 占节点比例（最小–最大）
+method | 0 / 0 / 0 | 50 | 0 | 0–0 | 0.0000%–0.000%
+configc | 0 / 0 / 0 | 50 | 0 | 0–0 | 0.0000%–0.000%
+ants_s | 2.637 / 6.309 / 9.225 | 0 | 50 | 729–570378 | 0.0106%–8.289%
+fireants_greedy | 0.571 / 1.134 / 2.309 | 0 | 50 | 26931–184500 | 0.3914%–2.681%
+fireants_syn | 0.7873 / 1.745 / 3.27 | 0 | 50 | 49348–202041 | 0.7171%–2.936%
+convexadam_v4seg | 1.322 / 2.236 / 3.473 | 0 | 50 | 21329–177882 | 0.3100%–2.585%
+ants_so | 0 / 0 / 0 | 50 | 0 | 0–0 | 0.0000%–0.000%
+niftyreg | 5.222 / 8.034 / 15.17 | 0 | 50 | 84479–433022 | 1.2277%–6.293%
+deeds | 7.411 / 11.01 / 16.62 | 0 | 50 | 56610–898425 | 0.8227%–13.056%
+convexadam | 1.632 / 3.358 / 8.945 | 0 | 50 | 4241–109161 | 0.0616%–1.586%
+unigradicon_io | 2.352 / 5.462 / 7.926 | 0 | 50 | 34179–384609 | 0.4967%–5.589%
+unigradicon_noio | 3.807 / 5.044 / 8.122 | 0 | 50 | 14227–283866 | 0.2067%–4.125%
+voxelmorph | 2.027 / 3.924 / 7.074 | 0 | 50 | 57664–310927 | 0.8380%–4.518%
+fireants_greedy_eq | 0.6012 / 1.053 / 2.437 | 0 | 50 | 27028–184317 | 0.3928%–2.679%
+fireants_syn_eq | 0.4193 / 0.7103 / 1.595 | 0 | 50 | 50569–204649 | 0.7349%–2.974%
+unigradicon_io_eq | 2.414 / 5.688 / 8.918 | 0 | 50 | 46552–452374 | 0.6765%–6.574%
+脑内 log J 的 1% / 99% 分位（50 对均值）: identity 0.000 / 0.000; method -1.555 / 1.093; configc -2.092 / 1.177; ants_s -1.258 / 0.969; fireants_greedy -1.351 / 1.025; fireants_syn -0.995 / 0.823; convexadam_v4seg -1.562 / 0.836; ants_so -1.263 / 0.972; niftyreg -5.187 / 0.996; deeds -0.752 / 0.658; convexadam -1.330 / 0.822; unigradicon_io -1.332 / 0.922; unigradicon_noio -1.233 / 0.885; voxelmorph -1.364 / 1.005; fireants_greedy_eq -1.375 / 1.040; fireants_syn_eq -1.170 / 0.908; unigradicon_io_eq -1.382 / 0.938
+
+## 分结构 Dice（50 对均值；seg35 标签名照 structure_groups_v1.json；n 是该标签被计入的对数，0 记 0 的对数另列在 per_label_dice.csv）
+label | name | method | configc | ants_s | fireants_greedy | fireants_syn | convexadam_v4seg
+seg35:1 | Left-Cerebral-White-Matter | 0.9320 (n 50, 0 0) | 0.9052 (n 50, 0 0) | 0.8739 (n 50, 0 0) | 0.8542 (n 50, 0 0) | 0.8157 (n 50, 0 0) | 0.8510 (n 50, 0 0)
+seg35:2 | Left-Cerebral-Cortex | 0.8748 (n 50, 0 0) | 0.8262 (n 50, 0 0) | 0.7634 (n 50, 0 0) | 0.7443 (n 50, 0 0) | 0.6901 (n 50, 0 0) | 0.7377 (n 50, 0 0)
+seg35:3 | Left-Lateral-Ventricle | 0.9342 (n 50, 0 0) | 0.8944 (n 50, 0 0) | 0.8908 (n 50, 0 0) | 0.8794 (n 50, 0 0) | 0.8480 (n 50, 0 0) | 0.9164 (n 50, 0 0)
+seg35:4 | Left-Inf-Lat-Ventricle | 0.6964 (n 50, 0 0) | 0.5384 (n 50, 0 0) | 0.4289 (n 50, 0 0) | 0.4376 (n 50, 0 0) | 0.3767 (n 50, 0 0) | 0.6264 (n 50, 0 0)
+seg35:5 | Left-Cerebellum-White-Matter | 0.9319 (n 50, 0 0) | 0.8962 (n 50, 0 0) | 0.8970 (n 50, 0 0) | 0.8940 (n 50, 0 0) | 0.8741 (n 50, 0 0) | 0.9089 (n 50, 0 0)
+seg35:6 | Left-Cerebellum-Cortex | 0.9460 (n 50, 0 0) | 0.9174 (n 50, 0 0) | 0.9133 (n 50, 0 0) | 0.9088 (n 50, 0 0) | 0.8887 (n 50, 0 0) | 0.9234 (n 50, 0 0)
+seg35:7 | Left-Thalamus | 0.9441 (n 50, 0 0) | 0.9068 (n 50, 0 0) | 0.9099 (n 50, 0 0) | 0.9036 (n 50, 0 0) | 0.8606 (n 50, 0 0) | 0.9363 (n 50, 0 0)
+seg35:8 | Left-Caudate | 0.9227 (n 50, 0 0) | 0.8711 (n 50, 0 0) | 0.8702 (n 50, 0 0) | 0.8264 (n 50, 0 0) | 0.7456 (n 50, 0 0) | 0.9056 (n 50, 0 0)
+seg35:9 | Left-Putamen | 0.9356 (n 50, 0 0) | 0.8965 (n 50, 0 0) | 0.8988 (n 50, 0 0) | 0.8921 (n 50, 0 0) | 0.8682 (n 50, 0 0) | 0.9220 (n 50, 0 0)
+seg35:10 | Left-Pallidum | 0.9158 (n 50, 0 0) | 0.8687 (n 50, 0 0) | 0.8786 (n 50, 0 0) | 0.8603 (n 50, 0 0) | 0.8364 (n 50, 0 0) | 0.9096 (n 50, 0 0)
+seg35:11 | 3rd-Ventricle | 0.8990 (n 50, 0 0) | 0.8313 (n 50, 0 0) | 0.8501 (n 50, 0 0) | 0.8353 (n 50, 0 0) | 0.7816 (n 50, 0 0) | 0.8875 (n 50, 0 0)
+seg35:12 | 4th-Ventricle | 0.8885 (n 50, 0 0) | 0.8444 (n 50, 0 0) | 0.8260 (n 50, 0 0) | 0.8350 (n 50, 0 0) | 0.7961 (n 50, 0 0) | 0.8649 (n 50, 0 0)
+seg35:13 | Brain-Stem | 0.9551 (n 50, 0 0) | 0.9396 (n 50, 0 0) | 0.9373 (n 50, 0 0) | 0.9380 (n 50, 0 0) | 0.9210 (n 50, 0 0) | 0.9484 (n 50, 0 0)
+seg35:14 | Left-Hippocampus | 0.9039 (n 50, 0 0) | 0.8399 (n 50, 0 0) | 0.7929 (n 50, 0 0) | 0.8022 (n 50, 0 0) | 0.7674 (n 50, 0 0) | 0.8818 (n 50, 0 0)
+seg35:15 | Left-Amygdala | 0.8993 (n 50, 0 0) | 0.8601 (n 50, 0 0) | 0.8280 (n 50, 0 0) | 0.8229 (n 50, 0 0) | 0.7732 (n 50, 0 0) | 0.8923 (n 50, 0 0)
+seg35:16 | Left-Accumbens | 0.8832 (n 50, 0 0) | 0.8324 (n 50, 0 0) | 0.8150 (n 50, 0 0) | 0.7825 (n 50, 0 0) | 0.7211 (n 50, 0 0) | 0.8762 (n 50, 0 0)
+seg35:17 | Left-Ventral-DC | 0.9073 (n 50, 0 0) | 0.8742 (n 50, 0 0) | 0.8698 (n 50, 0 0) | 0.8675 (n 50, 0 0) | 0.8257 (n 50, 0 0) | 0.8961 (n 50, 0 0)
+seg35:18 | Left-Vessel | 0.7113 (n 50, 0 0) | 0.5719 (n 50, 0 0) | 0.4765 (n 50, 0 0) | 0.4862 (n 50, 0 2) | 0.4463 (n 50, 0 1) | 0.5983 (n 50, 0 1)
+seg35:19 | Left-Choroid-Plexus | 0.6653 (n 50, 0 0) | 0.5193 (n 50, 0 0) | 0.5153 (n 50, 0 0) | 0.4999 (n 50, 0 0) | 0.4434 (n 50, 0 0) | 0.6166 (n 50, 0 0)
+seg35:20 | Right-Cerebral-White-Matter | 0.9336 (n 50, 0 0) | 0.9072 (n 50, 0 0) | 0.8760 (n 50, 0 0) | 0.8559 (n 50, 0 0) | 0.8032 (n 50, 0 0) | 0.8528 (n 50, 0 0)
+seg35:21 | Right-Cerebral-Cortex | 0.8759 (n 50, 0 0) | 0.8273 (n 50, 0 0) | 0.7635 (n 50, 0 0) | 0.7413 (n 50, 0 0) | 0.6656 (n 50, 0 0) | 0.7373 (n 50, 0 0)
+seg35:22 | Right-Lateral-Ventricle | 0.9329 (n 50, 0 0) | 0.8904 (n 50, 0 0) | 0.8854 (n 50, 0 0) | 0.8707 (n 50, 0 0) | 0.8237 (n 50, 0 0) | 0.9165 (n 50, 0 0)
+seg35:23 | Right-Inf-Lat-Ventricle | 0.7497 (n 50, 0 0) | 0.6167 (n 50, 0 0) | 0.5084 (n 50, 0 0) | 0.5242 (n 50, 0 0) | 0.4511 (n 50, 0 0) | 0.6767 (n 50, 0 0)
+seg35:24 | Right-Cerebellum-White-Matter | 0.9328 (n 50, 0 0) | 0.8949 (n 50, 0 0) | 0.8978 (n 50, 0 0) | 0.8918 (n 50, 0 0) | 0.8598 (n 50, 0 0) | 0.9102 (n 50, 0 0)
+seg35:25 | Right-Cerebellum-Cortex | 0.9473 (n 50, 0 0) | 0.9201 (n 50, 0 0) | 0.9160 (n 50, 0 0) | 0.9097 (n 50, 0 0) | 0.8818 (n 50, 0 0) | 0.9256 (n 50, 0 0)
+seg35:26 | Right-Thalamus | 0.9467 (n 50, 0 0) | 0.9093 (n 50, 0 0) | 0.9146 (n 50, 0 0) | 0.9004 (n 50, 0 0) | 0.8545 (n 50, 0 0) | 0.9390 (n 50, 0 0)
+seg35:27 | Right-Caudate | 0.9232 (n 50, 0 0) | 0.8668 (n 50, 0 0) | 0.8516 (n 50, 0 0) | 0.8030 (n 50, 0 0) | 0.7309 (n 50, 0 0) | 0.9068 (n 50, 0 0)
+seg35:28 | Right-Putamen | 0.9332 (n 50, 0 0) | 0.8937 (n 50, 0 0) | 0.8964 (n 50, 0 0) | 0.8895 (n 50, 0 0) | 0.7907 (n 50, 0 0) | 0.9185 (n 50, 0 0)
+seg35:29 | Right-Pallidum | 0.9183 (n 50, 0 0) | 0.8756 (n 50, 0 0) | 0.8810 (n 50, 0 0) | 0.8669 (n 50, 0 0) | 0.6994 (n 50, 0 0) | 0.9141 (n 50, 0 0)
+seg35:30 | Right-Hippocampus | 0.9094 (n 50, 0 0) | 0.8436 (n 50, 0 0) | 0.8049 (n 50, 0 0) | 0.8137 (n 50, 0 0) | 0.7619 (n 50, 0 0) | 0.8878 (n 50, 0 0)
+seg35:31 | Right-Amygdala | 0.9082 (n 50, 0 0) | 0.8668 (n 50, 0 0) | 0.8332 (n 50, 0 0) | 0.8254 (n 50, 0 0) | 0.7470 (n 50, 0 0) | 0.9009 (n 50, 0 0)
+seg35:32 | Right-Accumbens | 0.8715 (n 50, 0 0) | 0.8205 (n 50, 0 0) | 0.8046 (n 50, 0 0) | 0.7838 (n 50, 0 0) | 0.6501 (n 50, 0 0) | 0.8637 (n 50, 0 0)
+seg35:33 | Right-Ventral-DC | 0.9107 (n 50, 0 0) | 0.8768 (n 50, 0 0) | 0.8729 (n 50, 0 0) | 0.8730 (n 50, 0 0) | 0.8098 (n 50, 0 0) | 0.8994 (n 50, 0 0)
+seg35:34 | Right-Vessel | 0.6102 (n 50, 0 2) | 0.5105 (n 50, 0 2) | 0.3942 (n 50, 0 2) | 0.4381 (n 50, 0 2) | 0.3031 (n 50, 0 6) | 0.5219 (n 50, 0 2)
+seg35:35 | Right-Choroid-Plexus | 0.6858 (n 50, 0 0) | 0.5347 (n 50, 0 0) | 0.5279 (n 50, 0 0) | 0.5110 (n 50, 0 0) | 0.3734 (n 50, 0 0) | 0.6272 (n 50, 0 0)
+seg4:1 |  | 0.8755 (n 50, 0 0) | 0.8270 (n 50, 0 0) | 0.7637 (n 50, 0 0) | 0.7431 (n 50, 0 0) | 0.6784 (n 50, 0 0) | 0.7376 (n 50, 0 0)
+seg4:2 |  | 0.9457 (n 50, 0 0) | 0.9152 (n 50, 0 0) | 0.9101 (n 50, 0 0) | 0.9024 (n 50, 0 0) | 0.8733 (n 50, 0 0) | 0.9263 (n 50, 0 0)
+seg4:3 |  | 0.9362 (n 50, 0 0) | 0.9104 (n 50, 0 0) | 0.8828 (n 50, 0 0) | 0.8650 (n 50, 0 0) | 0.8231 (n 50, 0 0) | 0.8626 (n 50, 0 0)
+seg4:4 |  | 0.9326 (n 50, 0 0) | 0.8924 (n 50, 0 0) | 0.8838 (n 50, 0 0) | 0.8744 (n 50, 0 0) | 0.8355 (n 50, 0 0) | 0.9146 (n 50, 0 0)
+
+## PQ 的描述量（C22.H7-5；位置无关的聚合；不进判定）
+block score | mask omega_e | score q | ause_mean 0.00600 | ause_median 0.00538 | auroc_mean 0.95447 | auroc_median 0.95700 | auroc_min 0.93443 | auroc_max 0.96397 | largest_tie_share_max 0.00024
+block score | mask omega_e | score h | ause_mean 0.06524 | ause_median 0.06305 | auroc_mean 0.71604 | auroc_median 0.71986 | auroc_min 0.68246 | auroc_max 0.74603 | largest_tie_share_max 0.94129 | pairs_q_better 50
+block score | mask omega_e | score H_F | ause_mean 0.02531 | ause_median 0.02491 | auroc_mean 0.85622 | auroc_median 0.85619 | auroc_min 0.83469 | auroc_max 0.88074 | largest_tie_share_max 0.00052 | pairs_q_better 50
+block score | mask omega_e | score H2 | ause_mean 0.01297 | ause_median 0.01245 | auroc_mean 0.90537 | auroc_median 0.90759 | auroc_min 0.88727 | auroc_max 0.92257 | largest_tie_share_max 0.00024 | pairs_q_better 50
+block score | mask omega_e | score V_F | ause_mean 0.02646 | ause_median 0.02638 | auroc_mean 0.84730 | auroc_median 0.84795 | auroc_min 0.82657 | auroc_max 0.87165 | largest_tie_share_max 0.00000 | pairs_q_better 50
+block score | mask omega_e | score V2 | ause_mean 0.01447 | ause_median 0.01381 | auroc_mean 0.89429 | auroc_median 0.89648 | auroc_min 0.87457 | auroc_max 0.91209 | largest_tie_share_max 0.00002 | pairs_q_better 50
+block score | mask omega_e | score G_plus | ause_mean 0.05489 | ause_median 0.05347 | auroc_mean 0.68667 | auroc_median 0.68645 | auroc_min 0.64008 | auroc_max 0.72549 | largest_tie_share_max 0.01853 | pairs_q_better 50
+block score | mask omega_e | score X_lex | ause_mean 0.00659 | ause_median 0.00603 | auroc_mean 0.94926 | auroc_median 0.95185 | auroc_min 0.93025 | auroc_max 0.95845 | largest_tie_share_max 0.00024 | pairs_q_better 50
+block score | mask omega_e | score B_d | ause_mean 0.03034 | ause_median 0.03004 | auroc_mean 0.78395 | auroc_median 0.78400 | auroc_min 0.77008 | auroc_max 0.80073 | largest_tie_share_max 0.49718 | pairs_q_better 50
+block score | mask omega_e | score G_minus | ause_mean 0.17594 | ause_median 0.17434 | auroc_mean 0.31333 | auroc_median 0.31355 | auroc_min 0.27451 | auroc_max 0.35992 | largest_tie_share_max 0.01853 | pairs_q_better 50
+block score | mask band | score q | ause_mean 0.00848 | ause_median 0.00758 | auroc_mean 0.94569 | auroc_median 0.94837 | auroc_min 0.92269 | auroc_max 0.95653 | largest_tie_share_max 0.00024
+block score | mask band | score h | ause_mean 0.07610 | ause_median 0.07376 | auroc_mean 0.71444 | auroc_median 0.71800 | auroc_min 0.68084 | auroc_max 0.74455 | largest_tie_share_max 0.93023 | pairs_q_better 50
+block score | mask band | score H_F | ause_mean 0.03524 | ause_median 0.03497 | auroc_mean 0.83282 | auroc_median 0.83336 | auroc_min 0.80887 | auroc_max 0.85808 | largest_tie_share_max 0.00050 | pairs_q_better 50
+block score | mask band | score H2 | ause_mean 0.01852 | ause_median 0.01772 | auroc_mean 0.88740 | auroc_median 0.88910 | auroc_min 0.86512 | auroc_max 0.90619 | largest_tie_share_max 0.00024 | pairs_q_better 50
+block score | mask band | score V_F | ause_mean 0.03663 | ause_median 0.03646 | auroc_mean 0.82325 | auroc_median 0.82460 | auroc_min 0.80090 | auroc_max 0.84842 | largest_tie_share_max 0.00000 | pairs_q_better 50
+block score | mask band | score V2 | ause_mean 0.02052 | ause_median 0.01976 | auroc_mean 0.87464 | auroc_median 0.87666 | auroc_min 0.85306 | auroc_max 0.89374 | largest_tie_share_max 0.00002 | pairs_q_better 50
+block score | mask band | score G_plus | ause_mean 0.08255 | ause_median 0.08046 | auroc_mean 0.63380 | auroc_median 0.63156 | auroc_min 0.58119 | auroc_max 0.67482 | largest_tie_share_max 0.00669 | pairs_q_better 50
+block score | mask band | score X_lex | ause_mean 0.00931 | ause_median 0.00845 | auroc_mean 0.93946 | auroc_median 0.94219 | auroc_min 0.91771 | auroc_max 0.94980 | largest_tie_share_max 0.00024 | pairs_q_better 50
+block score | mask band | score B_d | ause_mean 0.04501 | ause_median 0.04434 | auroc_mean 0.74127 | auroc_median 0.74221 | auroc_min 0.72712 | auroc_max 0.75339 | largest_tie_share_max 0.57040 | pairs_q_better 50
+block score | mask band | score G_minus | ause_mean 0.18378 | ause_median 0.18265 | auroc_mean 0.36620 | auroc_median 0.36844 | auroc_min 0.32518 | auroc_max 0.41881 | largest_tie_share_max 0.00669 | pairs_q_better 50
+block score | mask whole | score q | ause_mean 0.00047 | ause_median 0.00043 | auroc_mean 0.98504 | auroc_median 0.98614 | auroc_min 0.97443 | auroc_max 0.98892 | largest_tie_share_max 0.00005
+block score | mask whole | score h | ause_mean 0.01422 | ause_median 0.01383 | auroc_mean 0.72207 | auroc_median 0.72654 | auroc_min 0.68861 | auroc_max 0.75186 | largest_tie_share_max 0.98647 | pairs_q_better 50
+block score | mask whole | score H_F | ause_mean 0.00539 | ause_median 0.00534 | auroc_mean 0.89081 | auroc_median 0.88676 | auroc_min 0.84612 | auroc_max 0.92183 | largest_tie_share_max 0.00011 | pairs_q_better 50
+block score | mask whole | score H2 | ause_mean 0.00160 | ause_median 0.00147 | auroc_mean 0.95659 | auroc_median 0.95890 | auroc_min 0.93496 | auroc_max 0.96869 | largest_tie_share_max 0.00005 | pairs_q_better 50
+block score | mask whole | score V_F | ause_mean 0.00544 | ause_median 0.00538 | auroc_mean 0.88697 | auroc_median 0.88474 | auroc_min 0.83979 | auroc_max 0.91890 | largest_tie_share_max 0.00000 | pairs_q_better 50
+block score | mask whole | score V2 | ause_mean 0.00163 | ause_median 0.00150 | auroc_mean 0.95418 | auroc_median 0.95585 | auroc_min 0.92842 | auroc_max 0.96640 | largest_tie_share_max 0.00000 | pairs_q_better 50
+block score | mask whole | score G_plus | ause_mean 0.00273 | ause_median 0.00267 | auroc_mean 0.90235 | auroc_median 0.90253 | auroc_min 0.88184 | auroc_max 0.91700 | largest_tie_share_max 0.72128 | pairs_q_better 50
+block score | mask whole | score X_lex | ause_mean 0.00054 | ause_median 0.00049 | auroc_mean 0.98291 | auroc_median 0.98391 | auroc_min 0.97208 | auroc_max 0.98711 | largest_tie_share_max 0.00005 | pairs_q_better 50
+block score | mask whole | score B_d | ause_mean 0.00147 | ause_median 0.00142 | auroc_mean 0.94494 | auroc_median 0.94518 | auroc_min 0.94025 | auroc_max 0.94870 | largest_tie_share_max 0.13393 | pairs_q_better 50
+block score | mask whole | score G_minus | ause_mean 0.06667 | ause_median 0.06646 | auroc_mean 0.09765 | auroc_median 0.09747 | auroc_min 0.08300 | auroc_max 0.11816 | largest_tie_share_max 0.72128 | pairs_q_better 50
+block score | mask omega_e_seg4 | score q4 | ause_mean 0.00550 | ause_median 0.00500 | auroc_mean 0.95674 | auroc_median 0.95880 | auroc_min 0.93730 | auroc_max 0.96928
+block error_rate | mask omega_e | score e | rate_median 0.11950 | rate_min 0.10365 | rate_max 0.14018
+block error_rate | mask band | score e | rate_median 0.14021 | rate_min 0.12208 | rate_max 0.16338
+block error_rate | mask whole | score e | rate_median 0.02564 | rate_min 0.02272 | rate_max 0.03079
+block error_rate | mask omega_e_seg4 | score e4 | rate_median 0.11677 | rate_min 0.10136 | rate_max 0.13728
+block ece | mask omega_e | score width | ece_median 0.01281 | ece_min 0.00514 | ece_max 0.02137
+block reliability_pooled | mask omega_e | score width | bin 0 | count 52524345 | mean_q 0.00741 | error_rate 0.00602
+block reliability_pooled | mask omega_e | score width | bin 1 | count 4081254 | mean_q 0.09676 | error_rate 0.08736
+block reliability_pooled | mask omega_e | score width | bin 2 | count 2681538 | mean_q 0.16513 | error_rate 0.16340
+block reliability_pooled | mask omega_e | score width | bin 3 | count 2173056 | mean_q 0.23248 | error_rate 0.24407
+block reliability_pooled | mask omega_e | score width | bin 4 | count 1954263 | mean_q 0.29966 | error_rate 0.32678
+block reliability_pooled | mask omega_e | score width | bin 5 | count 1900474 | mean_q 0.36676 | error_rate 0.41047
+block reliability_pooled | mask omega_e | score width | bin 6 | count 2043668 | mean_q 0.43414 | error_rate 0.49503
+block reliability_pooled | mask omega_e | score width | bin 7 | count 2114854 | mean_q 0.49609 | error_rate 0.57251
+block reliability_pooled | mask omega_e | score width | bin 8 | count 972438 | mean_q 0.56443 | error_rate 0.64718
+block reliability_pooled | mask omega_e | score width | bin 9 | count 709928 | mean_q 0.63193 | error_rate 0.71524
+block reliability_pooled | mask omega_e | score width | bin 10 | count 571970 | mean_q 0.69893 | error_rate 0.77979
+block reliability_pooled | mask omega_e | score width | bin 11 | count 486690 | mean_q 0.76583 | error_rate 0.83811
+block reliability_pooled | mask omega_e | score width | bin 12 | count 433403 | mean_q 0.83287 | error_rate 0.89392
+block reliability_pooled | mask omega_e | score width | bin 13 | count 413581 | mean_q 0.90009 | error_rate 0.94159
+block reliability_pooled | mask omega_e | score width | bin 14 | count 873047 | mean_q 0.98080 | error_rate 0.98837
+block ece | mask omega_e | score decile | ece_median 0.01220 | ece_min 0.00531 | ece_max 0.02134
+block reliability_pooled | mask omega_e | score decile | bin 0 | count 7393464 | mean_q 0.00013 | error_rate 0.00042
+block reliability_pooled | mask omega_e | score decile | bin 1 | count 7393447 | mean_q 0.00039 | error_rate 0.00029
+block reliability_pooled | mask omega_e | score decile | bin 2 | count 7393454 | mean_q 0.00068 | error_rate 0.00041
+block reliability_pooled | mask omega_e | score decile | bin 3 | count 7393442 | mean_q 0.00125 | error_rate 0.00092
+block reliability_pooled | mask omega_e | score decile | bin 4 | count 7393436 | mean_q 0.00301 | error_rate 0.00254
+block reliability_pooled | mask omega_e | score decile | bin 5 | count 7393458 | mean_q 0.00908 | error_rate 0.00752
+block reliability_pooled | mask omega_e | score decile | bin 6 | count 7393444 | mean_q 0.03245 | error_rate 0.02666
+block reliability_pooled | mask omega_e | score decile | bin 7 | count 7393445 | mean_q 0.11617 | error_rate 0.10924
+block reliability_pooled | mask omega_e | score decile | bin 8 | count 7393450 | mean_q 0.31477 | error_rate 0.34563
+block reliability_pooled | mask omega_e | score decile | bin 9 | count 7393469 | mean_q 0.64613 | error_rate 0.71192
+block per_pair_R | mask omega_e | score h | R_pair_median 0.91380 | R_pair_min 0.86763 | R_pair_max 0.92686 | pairs_R_ge_05 50 | delta_matches_decision True
+block per_pair_R | mask omega_e | score H_F | R_pair_median 0.75638 | R_pair_min 0.65653 | R_pair_max 0.85984 | pairs_R_ge_05 50 | delta_matches_decision True
+block per_pair_R | mask omega_e | score H2 | R_pair_median 0.55737 | R_pair_min 0.37148 | R_pair_max 0.66766 | pairs_R_ge_05 50 | delta_matches_decision True
+block per_pair_R | mask omega_e | score V_F | R_pair_median 0.77063 | R_pair_min 0.66860 | R_pair_max 0.86151 | pairs_R_ge_05 50 | delta_matches_decision True
+block per_pair_R | mask omega_e | score V2 | R_pair_median 0.60216 | R_pair_min 0.41698 | R_pair_max 0.70023 | pairs_R_ge_05 50 | delta_matches_decision True
+block per_pair_R | mask omega_e | score G_plus | R_pair_median 0.89724 | R_pair_min 0.82627 | R_pair_max 0.91890 | pairs_R_ge_05 50 | delta_matches_decision True
+block per_pair_R | mask omega_e | score X_lex | R_pair_median 0.09348 | R_pair_min 0.04565 | R_pair_max 0.13302 | pairs_R_ge_05 49 | delta_matches_decision True
+block per_pair_R | mask omega_e | score B_d | R_pair_median 0.81709 | R_pair_min 0.69898 | R_pair_max 0.84197 | pairs_R_ge_05 50 | delta_matches_decision True
+
+## 逐对文件（只按位置序号，不进 git）
+/home/rmcfz/seq_vp_tag_results/holdout_run_v1/step_12/per_position_run2/metrics_by_position.csv sha256 2c1301b6d4db26531300e9bb7bfecae7749bb4d22e313c8c095631a60675415e
+/home/rmcfz/seq_vp_tag_results/holdout_run_v1/step_12/per_position_run2/f4_delta_by_position.csv sha256 4cf8baa7cd3f4f693348e4d112f41e1080384692789a27f41854411691a08094
+/home/rmcfz/seq_vp_tag_results/holdout_run_v1/step_12/per_position_run2/ablation_by_position.csv sha256 8db04ee413ecf4a94f73730629898cc8f60358f9e7b4421e9198a7410fde4b99
+/home/rmcfz/seq_vp_tag_results/holdout_run_v1/step_12/per_position_run2/pq_by_position.csv sha256 dcc10eb170cf161a578fcb65a4e78d01be881caa31ab9c55528569eb220e22b8
+## 本目录 CSV
+arms_absolute.csv sha256 29eca28c305a60493da5fb8d61385b7ea35379d42e4f86eb9bcbd2694adb181b
+f1_f2_main_family.csv sha256 0354cb8c659311e3532bf93b7063db7cbab9fbab57bcd810614894bad08d6421
+f3_described.csv sha256 2da24c27d3886416a2a806cfc654b96e93af8d4b76d2df2693bf36db6a439ed9
+f4_pq.csv sha256 1b21a1c4b999e901d742eb51bfa82f5141b1e72be04c7e0352524cd5aee24643
+ablation.csv sha256 74a644e0d44b440e7002bea1ab2774fb0a334e12edd4404e30600008fa64463e
+per_label_dice.csv sha256 b30d8562df06dd0a6877f42f26b398fc86d39dc94cd9d92e38b56ef137d00872
+pq_described.csv sha256 3b8c9545153b3adf27caed46aa88fc37426f0d01a82386f5ec5e5ea316827081

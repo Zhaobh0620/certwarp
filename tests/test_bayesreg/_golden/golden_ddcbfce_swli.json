@@ -1,0 +1,76 @@
+{
+ "arms": {
+  "default": []
+ },
+ "child_bayesreg_path": "/tmp/golden_swli_l75o05ls/bayesreg",
+ "code_extracted": "git archive <ref_commit> bayesreg jd_curl tests/test_bayesreg (temporary directory)",
+ "command": "python tests/test_bayesreg/_golden/make_golden_swli.py --ref ddcbfce --out tests/test_bayesreg/_golden/golden_ddcbfce_swli.json",
+ "digest_module_sha256": {
+  "tests/test_bayesreg/solve/_run_pair_digest.py": "16f2d0b50f5eaabe267598b9972d7a743093ede1d3e6f2fe502f6a363b7832c7",
+  "tests/test_bayesreg/solve/_swli_digest.py": "98b0644822208cad2ec0db7c5b9033976e6c2ea35310b88b8e264c4713e1b8c5"
+ },
+ "digest_modules": [
+  "tests/test_bayesreg/solve/_swli_digest.py",
+  "tests/test_bayesreg/solve/_run_pair_digest.py"
+ ],
+ "digests": {
+  "laplace": {
+   "converged": [
+    true,
+    true,
+    true,
+    true
+   ],
+   "deltas": "72157799d5195f018273184061aed496dbb3794f23ce460c5fd1a642c9cf9429",
+   "iterations": [
+    12,
+    12,
+    12,
+    12
+   ]
+  },
+  "runs": {
+   "default": {
+    "disp": "86858b04ccb8c3c955d24a1f40580a98e3c5dafbeb9252688869abe361132f11",
+    "final_native": "41482da58c315b0134a85ab8696d3074014db141cddf5307f935852bbcd9cdc8",
+    "hyper": "0c3350fd91316202de0cb726aec220760c995b2b697067ee23588471a7951155",
+    "qc": "2f0aacc934c13cb56059b8ca17249fa4b5ff8956b69e8b10a8b860ee49b68e91",
+    "run": "3d4f455f95564a71ae1c401b3713dfd66a4d6218197ac6132f51f6ac6a444767"
+   }
+  }
+ },
+ "environment": {
+  "longdouble_nmant": 63,
+  "numpy": "2.0.2",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "python": "3.10.20 | packaged by conda-forge | (main, Mar  5 2026, 16:42:22) [GCC 14.3.0]",
+  "thread_env": {
+   "CUDA_VISIBLE_DEVICES": "",
+   "MKL_NUM_THREADS": "1",
+   "NUMBA_NUM_THREADS": "1",
+   "NUMEXPR_NUM_THREADS": "1",
+   "OMP_NUM_THREADS": "1",
+   "OPENBLAS_NUM_THREADS": "1",
+   "PYTHONDONTWRITEBYTECODE": "1"
+  }
+ },
+ "generated_utc": "2026-10-31T17:48:15Z",
+ "generator_dirty": true,
+ "generator_head": "e25f9a51014df9ef58044de35a6e018db2358564",
+ "helpers": [
+  "tests/test_bayesreg/__init__.py",
+  "tests/test_bayesreg/solve/__init__.py",
+  "tests/test_bayesreg/solve/test_run_pair.py",
+  "tests/test_bayesreg/solve/_synthetic.py",
+  "tests/test_bayesreg/io_seg/__init__.py",
+  "tests/test_bayesreg/io_seg/_helpers.py",
+  "tests/test_bayesreg/infer/__init__.py",
+  "tests/test_bayesreg/infer/_cases.py",
+  "tests/test_bayesreg/model/__init__.py",
+  "tests/test_bayesreg/model/_helpers.py"
+ ],
+ "purpose": "golden digests of the SWLI gate (C04-6 gates 1, 10): run_pair brain default (log rows, numeric fields of hyper.json / qc.json, disp and final_native arrays) and brain Laplace samples, on the code before SWLI",
+ "ref": "ddcbfce",
+ "ref_commit": "ddcbfce100e9467658ae2e5b6782482710fd7114",
+ "seconds": 16.128496726974845
+}

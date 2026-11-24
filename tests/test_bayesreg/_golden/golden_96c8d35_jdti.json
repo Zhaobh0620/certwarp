@@ -1,0 +1,58 @@
+{
+ "child_bayesreg_path": "/tmp/golden_jdti_nfch0ksg/bayesreg",
+ "code_extracted": "git archive <ref_commit> bayesreg jd_curl tests/test_bayesreg (temporary directory)",
+ "command": "python tests/test_bayesreg/_golden/make_golden_jdti.py --ref 96c8d35 --out tests/test_bayesreg/_golden/golden_96c8d35_jdti.json",
+ "digest_module": "tests/test_bayesreg/solve/_jdti_digest.py",
+ "digest_module_sha256": "0cb2784ab4367daed795aa7b5dd6bb5070707c356b2cf8a6e092dffd9e038b53",
+ "digests": {
+  "outer_a_certificate": "95716aec8e17e586dbd03d0dcd54d5337a180b041309e2ee3ba8c9e3dd1fba98",
+  "outer_b_certificate": "19e32fe0215b0a31950859e6d2297ec717f3cfb367eb77084ab67820c4c23e5f",
+  "quadratic_mid_certificate": "5ff4fac4b01f23a6a0684c038695773fe5a845d60189c5778c1907452aa60d33",
+  "quadratic_mid_closed27": "b265f54415f024a1f61b95cae3f0dccfb257f2fb9d41018f47065994a4af7285",
+  "quadratic_mid_gauss27+corners": "96491ff7a02cab1ea4283a8ee14cc082d7bd403883884bda6b26f1f55d47b72a",
+  "quadratic_off_certificate": "026db4257b5cb1fdd2913f6b26de4e7fe40fcc528db9b6709a829d0dfec8f495",
+  "quadratic_off_closed27": "7ebe0119e05fd4e527e1efa31103be871b134f7e6d52a5b93824cf0669b6d937",
+  "quadratic_off_gauss27+corners": "857f7ffbf93176847fcfa2bba00f1a66ae61c0b39ab273aed85d5bcb92dc5f7a"
+ },
+ "environment": {
+  "numpy": "2.0.2",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "python": "3.10.20 | packaged by conda-forge | (main, Mar  5 2026, 16:42:22) [GCC 14.3.0]",
+  "thread_env": {
+   "CUDA_VISIBLE_DEVICES": "",
+   "MKL_NUM_THREADS": "1",
+   "NUMBA_NUM_THREADS": "1",
+   "NUMEXPR_NUM_THREADS": "1",
+   "OMP_NUM_THREADS": "1",
+   "OPENBLAS_NUM_THREADS": "1",
+   "PYTHONDONTWRITEBYTECODE": "1"
+  }
+ },
+ "generated_utc": "2026-10-31T21:36:50Z",
+ "generator_dirty": true,
+ "generator_head": "1b3ff4bb371e0388304cf4daf0cd75508abf0546",
+ "helpers": [
+  "tests/test_bayesreg/__init__.py",
+  "tests/test_bayesreg/solve/__init__.py",
+  "tests/test_bayesreg/solve/_edge_dip.py",
+  "tests/test_bayesreg/solve/_synthetic.py",
+  "tests/test_bayesreg/solve/test_jd_scaling.py"
+ ],
+ "purpose": "golden digests of the JDTI gate 1: the existing jd_cell_estimate options on the code before JDTI",
+ "ref": "96c8d35",
+ "ref_commit": "96c8d35d6624fe9d226387633c356e42ae03288e",
+ "run_helpers": {
+  "file": "tests/test_bayesreg/solve/test_jd_cell_estimate.py",
+  "names": [
+   "_hex",
+   "Point",
+   "Reduction",
+   "Identity",
+   "Quadratic",
+   "dip_problem",
+   "run_quadratic",
+   "run_outer"
+  ]
+ },
+ "seconds": 19.68157391110435
+}

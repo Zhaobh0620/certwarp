@@ -1,0 +1,127 @@
+{
+ "opponent": "ants_s",
+ "per_orientation": {
+  "ants_s": {
+   "axial (index z)": {
+    "slabs_with_a_witness_cell": 7,
+    "n_slabs": 191,
+    "max_cells_in_a_slab": 2
+   },
+   "coronal (index y)": {
+    "slabs_with_a_witness_cell": 5,
+    "n_slabs": 223,
+    "max_cells_in_a_slab": 3
+   },
+   "sagittal (index x)": {
+    "slabs_with_a_witness_cell": 7,
+    "n_slabs": 159,
+    "max_cells_in_a_slab": 3
+   }
+  },
+  "certwarp_pre": {
+   "axial (index z)": {
+    "slabs_with_a_witness_cell": 139,
+    "n_slabs": 191,
+    "max_cells_in_a_slab": 303
+   },
+   "coronal (index y)": {
+    "slabs_with_a_witness_cell": 178,
+    "n_slabs": 223,
+    "max_cells_in_a_slab": 261
+   },
+   "sagittal (index x)": {
+    "slabs_with_a_witness_cell": 142,
+    "n_slabs": 159,
+    "max_cells_in_a_slab": 276
+   }
+  },
+  "certwarp_final": {
+   "axial (index z)": {
+    "slabs_with_a_witness_cell": 0,
+    "n_slabs": 191,
+    "max_cells_in_a_slab": 0
+   },
+   "coronal (index y)": {
+    "slabs_with_a_witness_cell": 0,
+    "n_slabs": 223,
+    "max_cells_in_a_slab": 0
+   },
+   "sagittal (index x)": {
+    "slabs_with_a_witness_cell": 0,
+    "n_slabs": 159,
+    "max_cells_in_a_slab": 0
+   }
+  }
+ },
+ "chosen": {
+  "axis": 2,
+  "k": 107,
+  "W": 24,
+  "window": [
+   140,
+   124
+  ],
+  "a": 3,
+  "a_slab": 3,
+  "b": 31,
+  "final": 0,
+  "fixed_gt0_fraction": 0.92
+ }
+}
+24 {'axis': 0, 'k': 118, 'W': 24, 'window': [80, 15], 'a': 2, 'a_slab': 2, 'b': 8, 'final': 0, 'fixed_gt0_fraction': 1.0}
+24 {'axis': 0, 'k': 134, 'W': 24, 'window': [144, 96], 'a': 1, 'a_slab': 1, 'b': 2, 'final': 0, 'fixed_gt0_fraction': 0.9936}
+24 {'axis': 0, 'k': 135, 'W': 24, 'window': [144, 97], 'a': 2, 'a_slab': 2, 'b': 1, 'final': 0, 'fixed_gt0_fraction': 0.9888}
+24 {'axis': 0, 'k': 136, 'W': 24, 'window': [144, 97], 'a': 2, 'a_slab': 2, 'b': 4, 'final': 0, 'fixed_gt0_fraction': 0.984}
+24 {'axis': 0, 'k': 150, 'W': 24, 'window': [124, 94], 'a': 2, 'a_slab': 2, 'b': 7, 'final': 0, 'fixed_gt0_fraction': 1.0}
+24 {'axis': 0, 'k': 151, 'W': 24, 'window': [124, 96], 'a': 1, 'a_slab': 1, 'b': 10, 'final': 0, 'fixed_gt0_fraction': 1.0}
+24 {'axis': 0, 'k': 152, 'W': 24, 'window': [124, 95], 'a': 2, 'a_slab': 2, 'b': 6, 'final': 0, 'fixed_gt0_fraction': 1.0}
+24 {'axis': 1, 'k': 91, 'W': 24, 'window': [106, 15], 'a': 2, 'a_slab': 2, 'b': 27, 'final': 0, 'fixed_gt0_fraction': 1.0}
+24 {'axis': 1, 'k': 135, 'W': 24, 'window': [140, 94], 'a': 2, 'a_slab': 2, 'b': 3, 'final': 0, 'fixed_gt0_fraction': 0.9536}
+24 {'axis': 1, 'k': 136, 'W': 24, 'window': [140, 96], 'a': 3, 'a_slab': 3, 'b': 4, 'final': 0, 'fixed_gt0_fraction': 0.9344}
+24 {'axis': 1, 'k': 155, 'W': 24, 'window': [124, 96], 'a': 3, 'a_slab': 3, 'b': 17, 'final': 0, 'fixed_gt0_fraction': 0.9984}
+24 {'axis': 1, 'k': 157, 'W': 24, 'window': [124, 98], 'a': 2, 'a_slab': 2, 'b': 5, 'final': 0, 'fixed_gt0_fraction': 0.9664}
+24 {'axis': 2, 'k': 26, 'W': 24, 'window': [106, 80], 'a': 1, 'a_slab': 1, 'b': 16, 'final': 0, 'fixed_gt0_fraction': 1.0}
+24 {'axis': 2, 'k': 27, 'W': 24, 'window': [106, 80], 'a': 1, 'a_slab': 1, 'b': 10, 'final': 0, 'fixed_gt0_fraction': 1.0}
+24 {'axis': 2, 'k': 105, 'W': 24, 'window': [138, 124], 'a': 1, 'a_slab': 1, 'b': 40, 'final': 0, 'fixed_gt0_fraction': 0.9984}
+24 {'axis': 2, 'k': 106, 'W': 24, 'window': [140, 124], 'a': 1, 'a_slab': 1, 'b': 40, 'final': 0, 'fixed_gt0_fraction': 0.9504}
+24 {'axis': 2, 'k': 107, 'W': 24, 'window': [140, 124], 'a': 3, 'a_slab': 3, 'b': 31, 'final': 0, 'fixed_gt0_fraction': 0.92}
+24 {'axis': 2, 'k': 108, 'W': 24, 'window': [124, 144], 'a': 3, 'a_slab': 3, 'b': 13, 'final': 0, 'fixed_gt0_fraction': 0.9984}
+24 {'axis': 2, 'k': 109, 'W': 24, 'window': [124, 146], 'a': 2, 'a_slab': 2, 'b': 13, 'final': 0, 'fixed_gt0_fraction': 0.9712}
+32 {'axis': 0, 'k': 118, 'W': 32, 'window': [76, 11], 'a': 2, 'a_slab': 2, 'b': 8, 'final': 0, 'fixed_gt0_fraction': 0.9935720844811754}
+32 {'axis': 0, 'k': 134, 'W': 32, 'window': [140, 92], 'a': 1, 'a_slab': 1, 'b': 9, 'final': 0, 'fixed_gt0_fraction': 0.9449035812672176}
+32 {'axis': 0, 'k': 135, 'W': 32, 'window': [140, 93], 'a': 2, 'a_slab': 2, 'b': 13, 'final': 0, 'fixed_gt0_fraction': 0.931129476584022}
+32 {'axis': 0, 'k': 136, 'W': 32, 'window': [140, 93], 'a': 2, 'a_slab': 2, 'b': 14, 'final': 0, 'fixed_gt0_fraction': 0.9228650137741047}
+32 {'axis': 0, 'k': 150, 'W': 32, 'window': [120, 90], 'a': 2, 'a_slab': 2, 'b': 11, 'final': 0, 'fixed_gt0_fraction': 0.9990817263544536}
+32 {'axis': 0, 'k': 151, 'W': 32, 'window': [120, 92], 'a': 1, 'a_slab': 1, 'b': 11, 'final': 0, 'fixed_gt0_fraction': 0.9853076216712581}
+32 {'axis': 0, 'k': 152, 'W': 32, 'window': [120, 91], 'a': 2, 'a_slab': 2, 'b': 8, 'final': 0, 'fixed_gt0_fraction': 0.9853076216712581}
+32 {'axis': 1, 'k': 91, 'W': 32, 'window': [102, 11], 'a': 2, 'a_slab': 2, 'b': 27, 'final': 0, 'fixed_gt0_fraction': 0.9889807162534435}
+32 {'axis': 1, 'k': 135, 'W': 32, 'window': [136, 90], 'a': 2, 'a_slab': 2, 'b': 3, 'final': 0, 'fixed_gt0_fraction': 0.8769513314967861}
+32 {'axis': 1, 'k': 136, 'W': 32, 'window': [136, 92], 'a': 3, 'a_slab': 3, 'b': 5, 'final': 0, 'fixed_gt0_fraction': 0.852157943067034}
+32 {'axis': 1, 'k': 155, 'W': 32, 'window': [120, 92], 'a': 3, 'a_slab': 3, 'b': 21, 'final': 0, 'fixed_gt0_fraction': 0.9660238751147842}
+32 {'axis': 1, 'k': 157, 'W': 32, 'window': [120, 94], 'a': 2, 'a_slab': 2, 'b': 5, 'final': 0, 'fixed_gt0_fraction': 0.9191919191919192}
+32 {'axis': 2, 'k': 26, 'W': 32, 'window': [102, 76], 'a': 1, 'a_slab': 1, 'b': 16, 'final': 0, 'fixed_gt0_fraction': 1.0}
+32 {'axis': 2, 'k': 27, 'W': 32, 'window': [102, 76], 'a': 1, 'a_slab': 1, 'b': 10, 'final': 0, 'fixed_gt0_fraction': 1.0}
+32 {'axis': 2, 'k': 105, 'W': 32, 'window': [134, 120], 'a': 1, 'a_slab': 1, 'b': 58, 'final': 0, 'fixed_gt0_fraction': 0.931129476584022}
+32 {'axis': 2, 'k': 106, 'W': 32, 'window': [136, 120], 'a': 1, 'a_slab': 1, 'b': 61, 'final': 0, 'fixed_gt0_fraction': 0.8631772268135904}
+32 {'axis': 2, 'k': 107, 'W': 32, 'window': [136, 120], 'a': 3, 'a_slab': 3, 'b': 37, 'final': 0, 'fixed_gt0_fraction': 0.8383838383838383}
+32 {'axis': 2, 'k': 108, 'W': 32, 'window': [120, 140], 'a': 3, 'a_slab': 3, 'b': 13, 'final': 0, 'fixed_gt0_fraction': 0.945821854912764}
+32 {'axis': 2, 'k': 109, 'W': 32, 'window': [120, 142], 'a': 2, 'a_slab': 2, 'b': 16, 'final': 0, 'fixed_gt0_fraction': 0.9008264462809917}
+48 {'axis': 0, 'k': 118, 'W': 48, 'window': [68, 3], 'a': 2, 'a_slab': 2, 'b': 13, 'final': 0, 'fixed_gt0_fraction': 0.8450645564348188}
+48 {'axis': 0, 'k': 134, 'W': 48, 'window': [132, 84], 'a': 1, 'a_slab': 1, 'b': 28, 'final': 0, 'fixed_gt0_fraction': 0.8309037900874635}
+48 {'axis': 0, 'k': 135, 'W': 48, 'window': [132, 85], 'a': 2, 'a_slab': 2, 'b': 32, 'final': 0, 'fixed_gt0_fraction': 0.8054977092877967}
+48 {'axis': 0, 'k': 136, 'W': 48, 'window': [132, 85], 'a': 2, 'a_slab': 2, 'b': 28, 'final': 0, 'fixed_gt0_fraction': 0.795085381091212}
+48 {'axis': 0, 'k': 150, 'W': 48, 'window': [112, 82], 'a': 2, 'a_slab': 2, 'b': 19, 'final': 0, 'fixed_gt0_fraction': 0.9100374843815077}
+48 {'axis': 0, 'k': 151, 'W': 48, 'window': [112, 84], 'a': 1, 'a_slab': 1, 'b': 14, 'final': 0, 'fixed_gt0_fraction': 0.8667221990837152}
+48 {'axis': 0, 'k': 152, 'W': 48, 'window': [112, 83], 'a': 2, 'a_slab': 2, 'b': 18, 'final': 0, 'fixed_gt0_fraction': 0.8696376509787589}
+48 {'axis': 1, 'k': 91, 'W': 48, 'window': [94, 3], 'a': 2, 'a_slab': 2, 'b': 31, 'final': 0, 'fixed_gt0_fraction': 0.8571428571428571}
+48 {'axis': 1, 'k': 135, 'W': 48, 'window': [128, 82], 'a': 2, 'a_slab': 2, 'b': 6, 'final': 0, 'fixed_gt0_fraction': 0.7509371095376927}
+48 {'axis': 1, 'k': 136, 'W': 48, 'window': [128, 84], 'a': 3, 'a_slab': 3, 'b': 15, 'final': 0, 'fixed_gt0_fraction': 0.7263640149937526}
+48 {'axis': 1, 'k': 155, 'W': 48, 'window': [112, 84], 'a': 3, 'a_slab': 3, 'b': 28, 'final': 0, 'fixed_gt0_fraction': 0.8542274052478134}
+48 {'axis': 1, 'k': 157, 'W': 48, 'window': [112, 86], 'a': 2, 'a_slab': 2, 'b': 11, 'final': 0, 'fixed_gt0_fraction': 0.8004997917534361}
+48 {'axis': 2, 'k': 26, 'W': 48, 'window': [94, 68], 'a': 1, 'a_slab': 1, 'b': 26, 'final': 0, 'fixed_gt0_fraction': 1.0}
+48 {'axis': 2, 'k': 27, 'W': 48, 'window': [94, 68], 'a': 1, 'a_slab': 1, 'b': 17, 'final': 0, 'fixed_gt0_fraction': 1.0}
+48 {'axis': 2, 'k': 105, 'W': 48, 'window': [126, 112], 'a': 1, 'a_slab': 1, 'b': 78, 'final': 0, 'fixed_gt0_fraction': 0.8254893794252395}
+48 {'axis': 2, 'k': 106, 'W': 48, 'window': [128, 112], 'a': 1, 'a_slab': 1, 'b': 64, 'final': 0, 'fixed_gt0_fraction': 0.768429820907955}
+48 {'axis': 2, 'k': 107, 'W': 48, 'window': [128, 112], 'a': 3, 'a_slab': 3, 'b': 39, 'final': 0, 'fixed_gt0_fraction': 0.7526030820491462}
+48 {'axis': 2, 'k': 108, 'W': 48, 'window': [112, 132], 'a': 3, 'a_slab': 3, 'b': 31, 'final': 0, 'fixed_gt0_fraction': 0.8113286130778842}
+48 {'axis': 2, 'k': 109, 'W': 48, 'window': [112, 134], 'a': 2, 'a_slab': 2, 'b': 22, 'final': 0, 'fixed_gt0_fraction': 0.7700957934194086}

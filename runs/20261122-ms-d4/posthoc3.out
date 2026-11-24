@@ -1,0 +1,147 @@
+== item 1: per arm, the Jacobian-only certificate (BL1; pair records arms.<arm>.certificate) against the central-difference count of the same exported field
+   (arms.<arm>.metrics.central_det_nonpositive: voxels with det(I + G) <= 0, G = central differences of d, on the volume cropped by 2 voxels per side;
+    metrics.cell_centre_J_nonpositive: cells with J <= 0 at the cell centre of the Q1 map, whole grid; certificate.cells.regions.brain.infeasible: cells of the evaluation's brain mask with a certified J <= 0 point)
+-- OASIS hold-out (50 pairs)
+  arm | name | family | passed | failed | failed with central-difference count 0 | failed with cell-centre count 0 | failed with both 0 | failed, central 0, infeasible cells in the brain mask | infeasible cells per failed central-0 field, median (max) | passed with central count > 0
+  method | CertWarp | method | 50/50 | 0 | 0 | 0 | 0 | 0 | - | 0
+  configc | Frozen solver [R-P1] | main (not external) | 50/50 | 0 | 0 | 0 | 0 | 0 | - | 0
+  ants_s | ANTs SyN | main | 1/50 | 49 | 49 | 49 | 49 | 49 | 9 (148) | 0
+  fireants_greedy | FireANTs Greedy | main | 45/50 | 5 | 5 | 5 | 5 | 3 | 1 (4) | 0
+  fireants_syn | FireANTs SyN | main | 50/50 | 0 | 0 | 0 | 0 | 0 | - | 0
+  convexadam_v4seg | ConvexAdam-Seg | main | 0/50 | 50 | 0 | 0 | 0 | 0 | - | 0
+  ants_so | ANTs SyN `-t so` | descriptive | 1/50 | 49 | 49 | 49 | 49 | 47 | 13 (145) | 0
+  niftyreg | NiftyReg | descriptive | 0/50 | 50 | 0 | 0 | 0 | 0 | - | 0
+  deeds | deedsBCV | descriptive | 27/50 | 23 | 23 | 22 | 22 | 14 | 1 (6) | 0
+  convexadam | ConvexAdam (MIND-SSC) | descriptive | 0/50 | 50 | 0 | 0 | 0 | 0 | - | 0
+  unigradicon_io | uniGradICON + IO | descriptive | 0/50 | 50 | 4 | 3 | 3 | 4 | 95 (135) | 0
+  unigradicon_noio | uniGradICON without IO | descriptive | 0/50 | 50 | 7 | 6 | 4 | 7 | 76 (94) | 0
+  voxelmorph | VoxelMorph | descriptive | 8/50 | 42 | 41 | 40 | 40 | 31 | 6 (52) | 0
+  fireants_greedy_eq | FireANTs Greedy, 90 s tier | 90 s tier | 45/50 | 5 | 5 | 5 | 5 | 2 | 1 (1) | 0
+  fireants_syn_eq | FireANTs SyN, 90 s tier | 90 s tier | 23/50 | 27 | 27 | 27 | 27 | 21 | 3 (34) | 0
+  unigradicon_io_eq | uniGradICON + IO, 90 s tier | 90 s tier | 0/50 | 50 | 3 | 3 | 3 | 3 | 133 (205) | 0
+  TOTAL over the 14 external arms: fields 700; passed 200; failed 500; of the failed: central-difference count 0 in 213 (42.6%); cell-centre count 0 in 209; both 0 in 207; central 0 and infeasible cells inside the brain mask in 181 (and brain central count 0: 181); passed with central count > 0: 0
+-- LPBA40 second test set (17 pairs)
+  arm | name | family | passed | failed | failed with central-difference count 0 | failed with cell-centre count 0 | failed with both 0 | failed, central 0, infeasible cells in the brain mask | infeasible cells per failed central-0 field, median (max) | passed with central count > 0
+  method | CertWarp | method | 17/17 | 0 | 0 | 0 | 0 | 0 | - | 0
+  configc | Frozen solver [R-P1] | main (not external) | 17/17 | 0 | 0 | 0 | 0 | 0 | - | 0
+  ants_s | ANTs SyN | main | 2/17 | 15 | 15 | 15 | 15 | 15 | 3 (9) | 0
+  fireants_greedy | FireANTs Greedy | main | 17/17 | 0 | 0 | 0 | 0 | 0 | - | 0
+  fireants_syn | FireANTs SyN | main | 17/17 | 0 | 0 | 0 | 0 | 0 | - | 0
+  convexadam_v4seg | ConvexAdam-Seg | main | 0/17 | 17 | 0 | 0 | 0 | 0 | - | 0
+  TOTAL over the 4 external arms: fields 68; passed 36; failed 32; of the failed: central-difference count 0 in 15 (46.9%); cell-centre count 0 in 15; both 0 in 15; central 0 and infeasible cells inside the brain mask in 15 (and brain central count 0: 15); passed with central count > 0: 0
+
+== item 3: LPBA40 label names (the distribution's own label file; names only)
+  lpba40.label.xml: labels 57 (with id 0 background); non-zero ids 56 | notes/label_id_map.md equal to the xml (id and full name): True
+  the xml's non-zero ids equal the 56 ids of the evaluation records: True
+  ids 21..92: 44 labels, 22 distinct structure names; names with the word 'gyrus': 40 labels; without it: ['cuneus', 'precuneus']
+    superior frontal gyrus; middle frontal gyrus; inferior frontal gyrus; precentral gyrus; middle orbitofrontal gyrus; lateral orbitofrontal gyrus; gyrus rectus; postcentral gyrus; superior parietal gyrus; supramarginal gyrus; angular gyrus; precuneus; superior occipital gyrus; middle occipital gyrus; inferior occipital gyrus; cuneus; superior temporal gyrus; middle temporal gyrus; inferior temporal gyrus; parahippocampal gyrus; lingual gyrus; fusiform gyrus
+  ids 101..166: 10 labels, 5 distinct structure names; names with the word 'gyrus': 2 labels; without it: ['caudate', 'hippocampus', 'insular cortex', 'putamen']
+    insular cortex; cingulate gyrus; caudate; putamen; hippocampus
+  ids 181..182: 2 labels, 2 distinct structure names; names with the word 'gyrus': 0 labels; without it: ['brainstem', 'cerebellum']
+    cerebellum; brainstem
+  per id (id: full name):
+    21: L superior frontal gyrus
+    22: R superior frontal gyrus
+    23: L middle frontal gyrus
+    24: R middle frontal gyrus
+    25: L inferior frontal gyrus
+    26: R inferior frontal gyrus
+    27: L precentral gyrus
+    28: R precentral gyrus
+    29: L middle orbitofrontal gyrus
+    30: R middle orbitofrontal gyrus
+    31: L lateral orbitofrontal gyrus
+    32: R lateral orbitofrontal gyrus
+    33: L gyrus rectus
+    34: R gyrus rectus
+    41: L postcentral gyrus
+    42: R postcentral gyrus
+    43: L superior parietal gyrus
+    44: R superior parietal gyrus
+    45: L supramarginal gyrus
+    46: R supramarginal gyrus
+    47: L angular gyrus
+    48: R angular gyrus
+    49: L precuneus
+    50: R precuneus
+    61: L superior occipital gyrus
+    62: R superior occipital gyrus
+    63: L middle occipital gyrus
+    64: R middle occipital gyrus
+    65: L inferior occipital gyrus
+    66: R inferior occipital gyrus
+    67: L cuneus
+    68: R cuneus
+    81: L superior temporal gyrus
+    82: R superior temporal gyrus
+    83: L middle temporal gyrus
+    84: R middle temporal gyrus
+    85: L inferior temporal gyrus
+    86: R inferior temporal gyrus
+    87: L parahippocampal gyrus
+    88: R parahippocampal gyrus
+    89: L lingual gyrus
+    90: R lingual gyrus
+    91: L fusiform gyrus
+    92: R fusiform gyrus
+    101: L insular cortex
+    102: R insular cortex
+    121: L cingulate gyrus
+    122: R cingulate gyrus
+    161: L caudate
+    162: R caudate
+    163: L putamen
+    164: R putamen
+    165: L hippocampus
+    166: R hippocampus
+    181: cerebellum
+    182: brainstem
+  the six labels caudate / putamen / hippocampus: method minus comparator, mean over 17 pairs (pairs with the method higher); from lpba_per_label_delta.csv, recomputed here from the pair records
+    id: name | method mean | configc | ants_s | fireants_greedy | fireants_syn | convexadam_v4seg
+    161: L caudate | 0.7754 | -0.0095 (6) | -0.0035 (9) | -0.0035 (8) | +0.0373 (12) | -0.0025 (9)
+    162: R caudate | 0.7706 | -0.0014 (7) | -0.0031 (8) | +0.0055 (9) | +0.0444 (15) | +0.0019 (8)
+    163: L putamen | 0.7972 | +0.0116 (14) | -0.0083 (7) | +0.0081 (11) | +0.0357 (17) | -0.0006 (10)
+    164: R putamen | 0.7991 | +0.0188 (15) | -0.0011 (10) | +0.0161 (15) | +0.0890 (17) | +0.0049 (13)
+    165: L hippocampus | 0.7440 | -0.0057 (8) | -0.0301 (4) | +0.0052 (9) | +0.0286 (14) | -0.0089 (4)
+    166: R hippocampus | 0.7715 | +0.0143 (13) | -0.0127 (4) | +0.0170 (12) | +0.0391 (16) | -0.0032 (5)
+    equal to lpba_per_label_delta.csv for the six labels and five comparators: True
+  named groups: per pair the mean over the group's labels, then over 17 pairs; method minus comparator (pairs with the method higher)
+    group | n labels | method | configc | ants_s | fireants_greedy | fireants_syn | convexadam_v4seg
+    caudate (161, 162) | 2 | 0.7730 | -0.0054 (7) | -0.0033 (9) | +0.0010 (6) | +0.0409 (16) | -0.0003 (7)
+    putamen (163, 164) | 2 | 0.7981 | +0.0152 (15) | -0.0047 (7) | +0.0121 (14) | +0.0624 (17) | +0.0021 (11)
+    hippocampus (165, 166) | 2 | 0.7578 | +0.0043 (9) | -0.0214 (4) | +0.0111 (11) | +0.0339 (15) | -0.0061 (4)
+    caudate + putamen + hippocampus (161-166) | 6 | 0.7763 | +0.0047 (9) | -0.0098 (4) | +0.0081 (11) | +0.0457 (17) | -0.0014 (8)
+    caudate + putamen (161-164; the 4 non-cortical structures of this label set by name) | 4 | 0.7856 | +0.0049 (9) | -0.0040 (6) | +0.0065 (10) | +0.0516 (17) | +0.0009 (11)
+    insular cortex (101, 102) | 2 | 0.7804 | -0.0007 (5) | -0.0247 (3) | -0.0122 (6) | +0.0304 (14) | +0.0179 (14)
+    cingulate gyrus (121, 122) | 2 | 0.6988 | -0.0052 (6) | -0.0140 (1) | +0.0041 (8) | +0.0286 (14) | +0.0064 (12)
+    insular cortex + cingulate gyrus (101-122) | 4 | 0.7396 | -0.0029 (5) | -0.0194 (2) | -0.0041 (5) | +0.0295 (15) | +0.0122 (15)
+    ids 21-34: 7 structures x L/R (superior, middle, inferior frontal, precentral, middle and lateral orbitofrontal gyri, gyrus rectus) | 14 | 0.7026 | -0.0194 (2) | -0.0308 (0) | -0.0146 (0) | +0.0170 (15) | +0.0055 (13)
+    ids 41-50: 5 x L/R (postcentral, superior parietal, supramarginal, angular gyri, precuneus) | 10 | 0.6261 | -0.0164 (4) | -0.0637 (0) | -0.0100 (4) | +0.0098 (12) | -0.0039 (8)
+    ids 61-68: 4 x L/R (superior, middle, inferior occipital gyri, cuneus) | 8 | 0.5885 | -0.0611 (1) | -0.0802 (0) | -0.0216 (3) | -0.0147 (5) | -0.0033 (9)
+    ids 81-92: 6 x L/R (superior, middle, inferior temporal, parahippocampal, lingual, fusiform gyri) | 12 | 0.6677 | -0.0478 (0) | -0.0665 (0) | -0.0421 (0) | -0.0134 (4) | -0.0050 (7)
+    ids 21-92: all 44 gyral labels | 44 | 0.6550 | -0.0341 (0) | -0.0570 (0) | -0.0223 (1) | +0.0013 (8) | -0.0011 (9)
+    ids 21-92 without parahippocampal gyrus (87, 88): 42 labels | 42 | 0.6556 | -0.0323 (0) | -0.0564 (0) | -0.0209 (2) | +0.0024 (9) | -0.0000 (9)
+    ids 21-122: the 44 gyral labels + insular cortex + cingulate gyrus (48 labels) | 48 | 0.6620 | -0.0315 (0) | -0.0539 (0) | -0.0208 (1) | +0.0037 (10) | +0.0000 (10)
+
+== item 4: inputs of the before/after-repair table (repair/repair.json of every method cell; runs/20261119-hb-result/ablation.csv)
+  pairs | OASIS 50 | LPBA40 17
+  pairs passing the certificate before the repair (initial_certificate) | OASIS 0/50 | LPBA40 0/17
+  cells with a certified J <= 0 point before the repair, median (range) (initial_certificate.n_infeasible) | OASIS 21,392 (14,618..27,949) | LPBA40 14,777 (3,979..32,682)
+    as % of all cells, median (range) | OASIS 0.32 (0.22..0.41) | LPBA40 0.21 (0.06..0.47)
+  undecided cells before the repair (n_uncertain), sum | OASIS 0 | LPBA40 0
+  certificate lower bound before the repair, median (range) | OASIS -3.45 (-9.94..-2.18) | LPBA40 -4.40 (-10.54..-2.33)
+  repair rounds: pairs with 1 / 2 / 3 rounds | OASIS 31 / 18 / 1 | LPBA40 11 / 6 / 0
+  nodes changed, median (range) (last round inner.n_moved) | OASIS 104,816 (73,279..135,487) | LPBA40 73,292 (20,307..148,810)
+    as % of all nodes, median (range) | OASIS 1.52 (1.06..1.97) | LPBA40 1.03 (0.29..2.09)
+  free nodes of the last round, median (range) (n_free) | OASIS 323,326 (224,685..1,026,792) | LPBA40 222,034 (75,666..685,828)
+  largest change of a node's displacement, mm, median (range) (last round inner.max_move_mm) | OASIS 0.80 (0.60..2.49) | LPBA40 0.92 (0.61..3.77)
+  repair seconds, median (range) (seconds_repair) | OASIS 61.3 (44.5..316.1) | LPBA40 43.9 (18.3..178.6)
+  pairs passing the certificate after the repair | OASIS 50/50 | LPBA40 17/17
+  certificate lower bound after the repair, median (range) | OASIS 1.17e-06 (1.94e-09..1.52e-05) | LPBA40 8.58e-07 (1.83e-07..3.83e-06)
+  pairs at the 1200 s fuse (wall_hit) | OASIS 0 | LPBA40 0
+  pairs on a fallback (line_status other than hx_certified) | OASIS 0 | LPBA40 0
+  seg35: before -> after the repair; after - before, mean [95% interval]; pairs lower / higher (ablation.csv) | OASIS 0.87912 -> 0.87817; -0.00095 [-0.00134, -0.00060]; 43 / 7 | LPBA40 none (no repair ablation was run on LPBA40)
+  seg4: before -> after the repair; after - before, mean [95% interval]; pairs lower / higher (ablation.csv) | OASIS 0.92278 -> 0.92254; -0.00025 [-0.00031, -0.00019]; 50 / 0 | LPBA40 none (no repair ablation was run on LPBA40)
+  official SDlogJ: before -> after the repair; after - before, mean [95% interval]; pairs lower / higher (ablation.csv) | OASIS 0.06938 -> 0.06922; -0.00015 [-0.00016, -0.00015]; 50 / 0 | LPBA40 none (no repair ablation was run on LPBA40)
+
+script sha256 c876881beedf6e29f623a4a3683ef53ce77cb152c8247f06c70237bb93a7e963

@@ -1,0 +1,905 @@
+{
+ "schema": "bayesreg.holdout.arm_table.v3",
+ "comment": "B 线留出集预登记 docs/bayesreg/notes/留出集预登记_20261107.md 修订 2 第 6 条的机器可读臂表；schema 照 bayesreg/eval/holdout.py 的 SCHEMA_ARMS，用 validate_arm_table 校验。臂是第 2.1–2.6 节要跑的 16 个：方法 1、主族 5、描述 7、90 s 档 3；TransMorph、VPreg、SynthMorph 不进表；PQ 是方法臂的附加输出，不是臂。方法臂的记录目录是第 5 步定稿、移到 D: 之后的格子；它的授权记录目录在 /home。附注 1：配置 C 臂补跑之后若是 needs_lead_rejudgment，这一格仍是 stopped（not_written），由总负责人另定（接口对齐修订 1 第 4 条）。附注 2：描述臂与 90 s 档的场照修订 2 第 8 条的分配放 D:（总负责人已定）；experiments/xb/xb_core.py 的 ARMS 里这 10 臂的 store 由 A5 包改成 d（经复核）。附注 3：stop_record 是总负责人在 runs/holdout_B_v1/ 下提交的停臂记录（修订 2 第 11 条），XB 的 arm_stopped.json 是原始记录，评测入口核它的 sha256。",
+ "stage_root": "/home/rmcfz/seq_vp_tag_results/holdout_B_v1/stage",
+ "main_family": [
+  "configc",
+  "ants_s",
+  "fireants_greedy",
+  "fireants_syn",
+  "convexadam_v4seg"
+ ],
+ "pq": {
+  "small_root": "/home/rmcfz/seq_vp_tag_results/holdout_B_v1/pq",
+  "big_root": "/mnt/d/seq_vp_tag_holdout_B_v1/pq"
+ },
+ "segmentation": null,
+ "arms": [
+  {
+   "name": "method",
+   "family": "method",
+   "kind": "disp",
+   "record_dir": "/mnt/d/seq_vp_tag_holdout_B_v1/method/{pair}",
+   "field": {
+    "dir": "/mnt/d/seq_vp_tag_holdout_B_v1/method/{pair}/output"
+   },
+   "cert_mode": "jacobian_only",
+   "jacobian_config": "BL1",
+   "terminal": {
+    "files": [
+     "terminal.json"
+    ],
+    "status_key": "line_status",
+    "classes": {
+     "output": [
+      "hx_certified",
+      "hx_fallback_configC",
+      "hx_fallback_identity"
+     ],
+     "method_failure": [],
+     "unit_limit": [],
+     "wrapper_exception": [],
+     "implementation_error": [
+      "hx_implementation_error"
+     ],
+     "infrastructure": [
+      "infra_failure"
+     ],
+     "not_written": [
+      "hx_provenance_rejected",
+      "needs_lead_rejudgment"
+     ]
+    }
+   },
+   "complete_files": [
+    "terminal.json",
+    "output/final.npz",
+    "output/disp.npz",
+    "output/cert.json",
+    "output/line.json",
+    "review/review.json"
+   ],
+   "review_record": {
+    "file": "review/review.json",
+    "status_key": "finalized",
+    "final": [
+     true
+    ]
+   },
+   "decision_certificate": {
+    "final": "output/final.npz",
+    "cert": "output/cert.json"
+   },
+   "export_check": null,
+   "stop_record": "runs/holdout_B_v1/arm_stop_{arm}.json",
+   "authorization": {
+    "tool": "hb",
+    "arm": "method",
+    "records": "/home/rmcfz/seq_vp_tag_results/holdout_B_v1/method/{pair}"
+   }
+  },
+  {
+   "name": "configc",
+   "family": "main",
+   "kind": "disp",
+   "record_dir": "/home/rmcfz/seq_vp_tag_results/holdout_B_v1/{arm}/{pair}",
+   "field": {
+    "file_key": "output_store.disp.file",
+    "sha256_key": "output_store.disp.sha256",
+    "root": "/mnt/d/seq_vp_tag_holdout_B_v1/{arm}"
+   },
+   "cert_mode": "jacobian_only",
+   "jacobian_config": "BL1",
+   "terminal": {
+    "files": [
+     "overridden_resume.json",
+     "result_resume.json",
+     "overridden.json",
+     "result.json"
+    ],
+    "status_key": "status",
+    "classes": {
+     "output": [
+      "ok"
+     ],
+     "method_failure": [
+      "method_failure"
+     ],
+     "unit_limit": [
+      "unit_limit"
+     ],
+     "wrapper_exception": [
+      "wrapper_error"
+     ],
+     "implementation_error": [],
+     "infrastructure": [
+      "infra_failure"
+     ],
+     "not_written": [
+      "needs_lead_rejudgment"
+     ]
+    }
+   },
+   "complete_files": [],
+   "review_record": null,
+   "decision_certificate": null,
+   "export_check": null,
+   "stop_record": "runs/holdout_B_v1/arm_stop_{arm}.json",
+   "authorization": {
+    "tool": "hb",
+    "arm": "configc",
+    "records": "/home/rmcfz/seq_vp_tag_results/holdout_B_v1/{arm}/{pair}"
+   }
+  },
+  {
+   "name": "ants_s",
+   "family": "main",
+   "kind": "disp",
+   "record_dir": "/home/rmcfz/seq_vp_tag_results/holdout_B_v1/{arm}/{pair}",
+   "field": {
+    "file_key": "disp.file",
+    "sha256_key": "disp.sha256",
+    "root": "/mnt/d/seq_vp_tag_holdout_B_v1/{arm}"
+   },
+   "cert_mode": "jacobian_only",
+   "jacobian_config": "BL1",
+   "terminal": {
+    "files": [
+     "resume/overridden.json",
+     "resume/result.json",
+     "overridden.json",
+     "result.json"
+    ],
+    "status_key": "status",
+    "classes": {
+     "output": [
+      "ok"
+     ],
+     "method_failure": [
+      "method_failure"
+     ],
+     "unit_limit": [
+      "unit_limit"
+     ],
+     "wrapper_exception": [
+      "wrapper_error"
+     ],
+     "implementation_error": [],
+     "infrastructure": [
+      "infra_failure"
+     ],
+     "not_written": [
+      "needs_lead_rejudgment"
+     ]
+    }
+   },
+   "complete_files": [],
+   "review_record": null,
+   "decision_certificate": null,
+   "export_check": {
+    "key": "export_check.suspicious"
+   },
+   "stop_record": "runs/holdout_B_v1/arm_stop_{arm}.json",
+   "authorization": {
+    "tool": "xb",
+    "arm": "ants_s",
+    "records": "/home/rmcfz/seq_vp_tag_results/holdout_B_v1/{arm}/{pair}"
+   }
+  },
+  {
+   "name": "fireants_greedy",
+   "family": "main",
+   "kind": "disp",
+   "record_dir": "/home/rmcfz/seq_vp_tag_results/holdout_B_v1/{arm}/{pair}",
+   "field": {
+    "file_key": "disp.file",
+    "sha256_key": "disp.sha256",
+    "root": "/mnt/d/seq_vp_tag_holdout_B_v1/{arm}"
+   },
+   "cert_mode": "jacobian_only",
+   "jacobian_config": "BL1",
+   "terminal": {
+    "files": [
+     "resume/overridden.json",
+     "resume/result.json",
+     "overridden.json",
+     "result.json"
+    ],
+    "status_key": "status",
+    "classes": {
+     "output": [
+      "ok"
+     ],
+     "method_failure": [
+      "method_failure"
+     ],
+     "unit_limit": [
+      "unit_limit"
+     ],
+     "wrapper_exception": [
+      "wrapper_error"
+     ],
+     "implementation_error": [],
+     "infrastructure": [
+      "infra_failure"
+     ],
+     "not_written": [
+      "needs_lead_rejudgment"
+     ]
+    }
+   },
+   "complete_files": [],
+   "review_record": null,
+   "decision_certificate": null,
+   "export_check": {
+    "key": "export_check.suspicious"
+   },
+   "stop_record": "runs/holdout_B_v1/arm_stop_{arm}.json",
+   "authorization": {
+    "tool": "xb",
+    "arm": "fireants_greedy",
+    "records": "/home/rmcfz/seq_vp_tag_results/holdout_B_v1/{arm}/{pair}"
+   }
+  },
+  {
+   "name": "fireants_syn",
+   "family": "main",
+   "kind": "disp",
+   "record_dir": "/home/rmcfz/seq_vp_tag_results/holdout_B_v1/{arm}/{pair}",
+   "field": {
+    "file_key": "disp.file",
+    "sha256_key": "disp.sha256",
+    "root": "/mnt/d/seq_vp_tag_holdout_B_v1/{arm}"
+   },
+   "cert_mode": "jacobian_only",
+   "jacobian_config": "BL1",
+   "terminal": {
+    "files": [
+     "resume/overridden.json",
+     "resume/result.json",
+     "overridden.json",
+     "result.json"
+    ],
+    "status_key": "status",
+    "classes": {
+     "output": [
+      "ok"
+     ],
+     "method_failure": [
+      "method_failure"
+     ],
+     "unit_limit": [
+      "unit_limit"
+     ],
+     "wrapper_exception": [
+      "wrapper_error"
+     ],
+     "implementation_error": [],
+     "infrastructure": [
+      "infra_failure"
+     ],
+     "not_written": [
+      "needs_lead_rejudgment"
+     ]
+    }
+   },
+   "complete_files": [],
+   "review_record": null,
+   "decision_certificate": null,
+   "export_check": {
+    "key": "export_check.suspicious"
+   },
+   "stop_record": "runs/holdout_B_v1/arm_stop_{arm}.json",
+   "authorization": {
+    "tool": "xb",
+    "arm": "fireants_syn",
+    "records": "/home/rmcfz/seq_vp_tag_results/holdout_B_v1/{arm}/{pair}"
+   }
+  },
+  {
+   "name": "convexadam_v4seg",
+   "family": "main",
+   "kind": "disp",
+   "record_dir": "/home/rmcfz/seq_vp_tag_results/holdout_B_v1/{arm}/{pair}",
+   "field": {
+    "file_key": "disp.file",
+    "sha256_key": "disp.sha256",
+    "root": "/mnt/d/seq_vp_tag_holdout_B_v1/{arm}"
+   },
+   "cert_mode": "jacobian_only",
+   "jacobian_config": "BL1",
+   "terminal": {
+    "files": [
+     "resume/overridden.json",
+     "resume/result.json",
+     "overridden.json",
+     "result.json"
+    ],
+    "status_key": "status",
+    "classes": {
+     "output": [
+      "ok"
+     ],
+     "method_failure": [
+      "method_failure"
+     ],
+     "unit_limit": [
+      "unit_limit"
+     ],
+     "wrapper_exception": [
+      "wrapper_error"
+     ],
+     "implementation_error": [],
+     "infrastructure": [
+      "infra_failure"
+     ],
+     "not_written": [
+      "needs_lead_rejudgment"
+     ]
+    }
+   },
+   "complete_files": [],
+   "review_record": null,
+   "decision_certificate": null,
+   "export_check": {
+    "key": "export_check.suspicious"
+   },
+   "stop_record": "runs/holdout_B_v1/arm_stop_{arm}.json",
+   "authorization": {
+    "tool": "xb",
+    "arm": "convexadam_v4seg",
+    "records": "/home/rmcfz/seq_vp_tag_results/holdout_B_v1/{arm}/{pair}"
+   }
+  },
+  {
+   "name": "ants_so",
+   "family": "descriptive",
+   "kind": "disp",
+   "record_dir": "/home/rmcfz/seq_vp_tag_results/holdout_B_v1/{arm}/{pair}",
+   "field": {
+    "file_key": "disp.file",
+    "sha256_key": "disp.sha256",
+    "root": "/mnt/d/seq_vp_tag_holdout_B_v1/{arm}"
+   },
+   "cert_mode": "jacobian_only",
+   "jacobian_config": "BL1",
+   "terminal": {
+    "files": [
+     "resume/overridden.json",
+     "resume/result.json",
+     "overridden.json",
+     "result.json"
+    ],
+    "status_key": "status",
+    "classes": {
+     "output": [
+      "ok"
+     ],
+     "method_failure": [
+      "method_failure"
+     ],
+     "unit_limit": [
+      "unit_limit"
+     ],
+     "wrapper_exception": [
+      "wrapper_error"
+     ],
+     "implementation_error": [],
+     "infrastructure": [
+      "infra_failure"
+     ],
+     "not_written": [
+      "needs_lead_rejudgment"
+     ]
+    }
+   },
+   "complete_files": [],
+   "review_record": null,
+   "decision_certificate": null,
+   "export_check": {
+    "key": "export_check.suspicious"
+   },
+   "stop_record": "runs/holdout_B_v1/arm_stop_{arm}.json",
+   "authorization": {
+    "tool": "xb",
+    "arm": "ants_so",
+    "records": "/home/rmcfz/seq_vp_tag_results/holdout_B_v1/{arm}/{pair}"
+   }
+  },
+  {
+   "name": "niftyreg",
+   "family": "descriptive",
+   "kind": "disp",
+   "record_dir": "/home/rmcfz/seq_vp_tag_results/holdout_B_v1/{arm}/{pair}",
+   "field": {
+    "file_key": "disp.file",
+    "sha256_key": "disp.sha256",
+    "root": "/mnt/d/seq_vp_tag_holdout_B_v1/{arm}"
+   },
+   "cert_mode": "jacobian_only",
+   "jacobian_config": "BL1",
+   "terminal": {
+    "files": [
+     "resume/overridden.json",
+     "resume/result.json",
+     "overridden.json",
+     "result.json"
+    ],
+    "status_key": "status",
+    "classes": {
+     "output": [
+      "ok"
+     ],
+     "method_failure": [
+      "method_failure"
+     ],
+     "unit_limit": [
+      "unit_limit"
+     ],
+     "wrapper_exception": [
+      "wrapper_error"
+     ],
+     "implementation_error": [],
+     "infrastructure": [
+      "infra_failure"
+     ],
+     "not_written": [
+      "needs_lead_rejudgment"
+     ]
+    }
+   },
+   "complete_files": [],
+   "review_record": null,
+   "decision_certificate": null,
+   "export_check": {
+    "key": "export_check.suspicious"
+   },
+   "stop_record": "runs/holdout_B_v1/arm_stop_{arm}.json",
+   "authorization": {
+    "tool": "xb",
+    "arm": "niftyreg",
+    "records": "/home/rmcfz/seq_vp_tag_results/holdout_B_v1/{arm}/{pair}"
+   }
+  },
+  {
+   "name": "deeds",
+   "family": "descriptive",
+   "kind": "disp",
+   "record_dir": "/home/rmcfz/seq_vp_tag_results/holdout_B_v1/{arm}/{pair}",
+   "field": {
+    "file_key": "disp.file",
+    "sha256_key": "disp.sha256",
+    "root": "/mnt/d/seq_vp_tag_holdout_B_v1/{arm}"
+   },
+   "cert_mode": "jacobian_only",
+   "jacobian_config": "BL1",
+   "terminal": {
+    "files": [
+     "resume/overridden.json",
+     "resume/result.json",
+     "overridden.json",
+     "result.json"
+    ],
+    "status_key": "status",
+    "classes": {
+     "output": [
+      "ok"
+     ],
+     "method_failure": [
+      "method_failure"
+     ],
+     "unit_limit": [
+      "unit_limit"
+     ],
+     "wrapper_exception": [
+      "wrapper_error"
+     ],
+     "implementation_error": [],
+     "infrastructure": [
+      "infra_failure"
+     ],
+     "not_written": [
+      "needs_lead_rejudgment"
+     ]
+    }
+   },
+   "complete_files": [],
+   "review_record": null,
+   "decision_certificate": null,
+   "export_check": {
+    "key": "export_check.suspicious"
+   },
+   "stop_record": "runs/holdout_B_v1/arm_stop_{arm}.json",
+   "authorization": {
+    "tool": "xb",
+    "arm": "deeds",
+    "records": "/home/rmcfz/seq_vp_tag_results/holdout_B_v1/{arm}/{pair}"
+   }
+  },
+  {
+   "name": "convexadam",
+   "family": "descriptive",
+   "kind": "disp",
+   "record_dir": "/home/rmcfz/seq_vp_tag_results/holdout_B_v1/{arm}/{pair}",
+   "field": {
+    "file_key": "disp.file",
+    "sha256_key": "disp.sha256",
+    "root": "/mnt/d/seq_vp_tag_holdout_B_v1/{arm}"
+   },
+   "cert_mode": "jacobian_only",
+   "jacobian_config": "BL1",
+   "terminal": {
+    "files": [
+     "resume/overridden.json",
+     "resume/result.json",
+     "overridden.json",
+     "result.json"
+    ],
+    "status_key": "status",
+    "classes": {
+     "output": [
+      "ok"
+     ],
+     "method_failure": [
+      "method_failure"
+     ],
+     "unit_limit": [
+      "unit_limit"
+     ],
+     "wrapper_exception": [
+      "wrapper_error"
+     ],
+     "implementation_error": [],
+     "infrastructure": [
+      "infra_failure"
+     ],
+     "not_written": [
+      "needs_lead_rejudgment"
+     ]
+    }
+   },
+   "complete_files": [],
+   "review_record": null,
+   "decision_certificate": null,
+   "export_check": {
+    "key": "export_check.suspicious"
+   },
+   "stop_record": "runs/holdout_B_v1/arm_stop_{arm}.json",
+   "authorization": {
+    "tool": "xb",
+    "arm": "convexadam",
+    "records": "/home/rmcfz/seq_vp_tag_results/holdout_B_v1/{arm}/{pair}"
+   }
+  },
+  {
+   "name": "unigradicon_io",
+   "family": "descriptive",
+   "kind": "disp",
+   "record_dir": "/home/rmcfz/seq_vp_tag_results/holdout_B_v1/{arm}/{pair}",
+   "field": {
+    "file_key": "disp.file",
+    "sha256_key": "disp.sha256",
+    "root": "/mnt/d/seq_vp_tag_holdout_B_v1/{arm}"
+   },
+   "cert_mode": "jacobian_only",
+   "jacobian_config": "BL1",
+   "terminal": {
+    "files": [
+     "resume/overridden.json",
+     "resume/result.json",
+     "overridden.json",
+     "result.json"
+    ],
+    "status_key": "status",
+    "classes": {
+     "output": [
+      "ok"
+     ],
+     "method_failure": [
+      "method_failure"
+     ],
+     "unit_limit": [
+      "unit_limit"
+     ],
+     "wrapper_exception": [
+      "wrapper_error"
+     ],
+     "implementation_error": [],
+     "infrastructure": [
+      "infra_failure"
+     ],
+     "not_written": [
+      "needs_lead_rejudgment"
+     ]
+    }
+   },
+   "complete_files": [],
+   "review_record": null,
+   "decision_certificate": null,
+   "export_check": {
+    "key": "export_check.suspicious"
+   },
+   "stop_record": "runs/holdout_B_v1/arm_stop_{arm}.json",
+   "authorization": {
+    "tool": "xb",
+    "arm": "unigradicon_io",
+    "records": "/home/rmcfz/seq_vp_tag_results/holdout_B_v1/{arm}/{pair}"
+   }
+  },
+  {
+   "name": "unigradicon_noio",
+   "family": "descriptive",
+   "kind": "disp",
+   "record_dir": "/home/rmcfz/seq_vp_tag_results/holdout_B_v1/{arm}/{pair}",
+   "field": {
+    "file_key": "disp.file",
+    "sha256_key": "disp.sha256",
+    "root": "/mnt/d/seq_vp_tag_holdout_B_v1/{arm}"
+   },
+   "cert_mode": "jacobian_only",
+   "jacobian_config": "BL1",
+   "terminal": {
+    "files": [
+     "resume/overridden.json",
+     "resume/result.json",
+     "overridden.json",
+     "result.json"
+    ],
+    "status_key": "status",
+    "classes": {
+     "output": [
+      "ok"
+     ],
+     "method_failure": [
+      "method_failure"
+     ],
+     "unit_limit": [
+      "unit_limit"
+     ],
+     "wrapper_exception": [
+      "wrapper_error"
+     ],
+     "implementation_error": [],
+     "infrastructure": [
+      "infra_failure"
+     ],
+     "not_written": [
+      "needs_lead_rejudgment"
+     ]
+    }
+   },
+   "complete_files": [],
+   "review_record": null,
+   "decision_certificate": null,
+   "export_check": {
+    "key": "export_check.suspicious"
+   },
+   "stop_record": "runs/holdout_B_v1/arm_stop_{arm}.json",
+   "authorization": {
+    "tool": "xb",
+    "arm": "unigradicon_noio",
+    "records": "/home/rmcfz/seq_vp_tag_results/holdout_B_v1/{arm}/{pair}"
+   }
+  },
+  {
+   "name": "voxelmorph",
+   "family": "descriptive",
+   "kind": "disp",
+   "record_dir": "/home/rmcfz/seq_vp_tag_results/holdout_B_v1/{arm}/{pair}",
+   "field": {
+    "file_key": "disp.file",
+    "sha256_key": "disp.sha256",
+    "root": "/mnt/d/seq_vp_tag_holdout_B_v1/{arm}"
+   },
+   "cert_mode": "jacobian_only",
+   "jacobian_config": "BL1",
+   "terminal": {
+    "files": [
+     "resume/overridden.json",
+     "resume/result.json",
+     "overridden.json",
+     "result.json"
+    ],
+    "status_key": "status",
+    "classes": {
+     "output": [
+      "ok"
+     ],
+     "method_failure": [
+      "method_failure"
+     ],
+     "unit_limit": [
+      "unit_limit"
+     ],
+     "wrapper_exception": [
+      "wrapper_error"
+     ],
+     "implementation_error": [],
+     "infrastructure": [
+      "infra_failure"
+     ],
+     "not_written": [
+      "needs_lead_rejudgment"
+     ]
+    }
+   },
+   "complete_files": [],
+   "review_record": null,
+   "decision_certificate": null,
+   "export_check": {
+    "key": "export_check.suspicious"
+   },
+   "stop_record": "runs/holdout_B_v1/arm_stop_{arm}.json",
+   "authorization": {
+    "tool": "xb",
+    "arm": "voxelmorph",
+    "records": "/home/rmcfz/seq_vp_tag_results/holdout_B_v1/{arm}/{pair}"
+   }
+  },
+  {
+   "name": "fireants_greedy_eq",
+   "family": "tier_90s",
+   "kind": "disp",
+   "record_dir": "/home/rmcfz/seq_vp_tag_results/holdout_B_v1/{arm}/{pair}",
+   "field": {
+    "file_key": "disp.file",
+    "sha256_key": "disp.sha256",
+    "root": "/mnt/d/seq_vp_tag_holdout_B_v1/{arm}"
+   },
+   "cert_mode": "jacobian_only",
+   "jacobian_config": "BL1",
+   "terminal": {
+    "files": [
+     "resume/overridden.json",
+     "resume/result.json",
+     "overridden.json",
+     "result.json"
+    ],
+    "status_key": "status",
+    "classes": {
+     "output": [
+      "ok"
+     ],
+     "method_failure": [
+      "method_failure"
+     ],
+     "unit_limit": [
+      "unit_limit"
+     ],
+     "wrapper_exception": [
+      "wrapper_error"
+     ],
+     "implementation_error": [],
+     "infrastructure": [
+      "infra_failure"
+     ],
+     "not_written": [
+      "needs_lead_rejudgment"
+     ]
+    }
+   },
+   "complete_files": [],
+   "review_record": null,
+   "decision_certificate": null,
+   "export_check": {
+    "key": "export_check.suspicious"
+   },
+   "stop_record": "runs/holdout_B_v1/arm_stop_{arm}.json",
+   "authorization": {
+    "tool": "xb",
+    "arm": "fireants_greedy_eq",
+    "records": "/home/rmcfz/seq_vp_tag_results/holdout_B_v1/{arm}/{pair}"
+   }
+  },
+  {
+   "name": "fireants_syn_eq",
+   "family": "tier_90s",
+   "kind": "disp",
+   "record_dir": "/home/rmcfz/seq_vp_tag_results/holdout_B_v1/{arm}/{pair}",
+   "field": {
+    "file_key": "disp.file",
+    "sha256_key": "disp.sha256",
+    "root": "/mnt/d/seq_vp_tag_holdout_B_v1/{arm}"
+   },
+   "cert_mode": "jacobian_only",
+   "jacobian_config": "BL1",
+   "terminal": {
+    "files": [
+     "resume/overridden.json",
+     "resume/result.json",
+     "overridden.json",
+     "result.json"
+    ],
+    "status_key": "status",
+    "classes": {
+     "output": [
+      "ok"
+     ],
+     "method_failure": [
+      "method_failure"
+     ],
+     "unit_limit": [
+      "unit_limit"
+     ],
+     "wrapper_exception": [
+      "wrapper_error"
+     ],
+     "implementation_error": [],
+     "infrastructure": [
+      "infra_failure"
+     ],
+     "not_written": [
+      "needs_lead_rejudgment"
+     ]
+    }
+   },
+   "complete_files": [],
+   "review_record": null,
+   "decision_certificate": null,
+   "export_check": {
+    "key": "export_check.suspicious"
+   },
+   "stop_record": "runs/holdout_B_v1/arm_stop_{arm}.json",
+   "authorization": {
+    "tool": "xb",
+    "arm": "fireants_syn_eq",
+    "records": "/home/rmcfz/seq_vp_tag_results/holdout_B_v1/{arm}/{pair}"
+   }
+  },
+  {
+   "name": "unigradicon_io_eq",
+   "family": "tier_90s",
+   "kind": "disp",
+   "record_dir": "/home/rmcfz/seq_vp_tag_results/holdout_B_v1/{arm}/{pair}",
+   "field": {
+    "file_key": "disp.file",
+    "sha256_key": "disp.sha256",
+    "root": "/mnt/d/seq_vp_tag_holdout_B_v1/{arm}"
+   },
+   "cert_mode": "jacobian_only",
+   "jacobian_config": "BL1",
+   "terminal": {
+    "files": [
+     "resume/overridden.json",
+     "resume/result.json",
+     "overridden.json",
+     "result.json"
+    ],
+    "status_key": "status",
+    "classes": {
+     "output": [
+      "ok"
+     ],
+     "method_failure": [
+      "method_failure"
+     ],
+     "unit_limit": [
+      "unit_limit"
+     ],
+     "wrapper_exception": [
+      "wrapper_error"
+     ],
+     "implementation_error": [],
+     "infrastructure": [
+      "infra_failure"
+     ],
+     "not_written": [
+      "needs_lead_rejudgment"
+     ]
+    }
+   },
+   "complete_files": [],
+   "review_record": null,
+   "decision_certificate": null,
+   "export_check": {
+    "key": "export_check.suspicious"
+   },
+   "stop_record": "runs/holdout_B_v1/arm_stop_{arm}.json",
+   "authorization": {
+    "tool": "xb",
+    "arm": "unigradicon_io_eq",
+    "records": "/home/rmcfz/seq_vp_tag_results/holdout_B_v1/{arm}/{pair}"
+   }
+  }
+ ]
+}

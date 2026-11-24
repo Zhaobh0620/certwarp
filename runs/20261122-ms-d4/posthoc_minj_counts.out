@@ -1,0 +1,10 @@
+input minj_by_position.csv sha256 39c556f31cbb021e148b29520097838ffd2350b6bf9c79dd75b04de0e06136fc
+oasis: n 50; pairs with the sampled minimum < 1e-5 / 1e-4 / 1e-3 / 1e-2: 1 / 20 / 49 / 50; geometric mean of the sampled minimum 0.000122, of the certificate lower bound 7.4e-07
+oasis: pairs with the Gauss27-only minimum < .01 / .02 / .03 / .04 / .05: 0 / 3 / 12 / 31 / 50; pairs with the recorded cell-centre minimum < .04 / .05: 2 / 19
+oasis: Spearman rank correlation, certificate lower bound against sampled minimum: -0.15 (no test)
+oasis: cells per pair with a sampled value < .01, as a fraction of all cells: median 1.27e-05
+lpba: n 17; pairs with the sampled minimum < 1e-5 / 1e-4 / 1e-3 / 1e-2: 1 / 6 / 17 / 17; geometric mean of the sampled minimum 0.000139, of the certificate lower bound 8.29e-07
+lpba: pairs with the Gauss27-only minimum < .01 / .02 / .03 / .04 / .05: 2 / 3 / 8 / 13 / 17; pairs with the recorded cell-centre minimum < .04 / .05: 3 / 12
+lpba: Spearman rank correlation, certificate lower bound against sampled minimum: -0.32 (no test)
+lpba: cells per pair with a sampled value < .01, as a fraction of all cells: median 1.07e-05
+script sha256 86100adbd9fa7ef254ecba84356b4414399e80596686dabd4eb4c33eb922954e

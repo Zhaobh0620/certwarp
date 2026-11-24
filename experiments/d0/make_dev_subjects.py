@@ -1,0 +1,121 @@
+"""Generate configs/bayesreg/dev_subjects.json (schema bayesreg.dev_subjects.v1; configs/bayesreg/README.md).
+
+Sources (project rules, hard constraint 6, development part): the subject ids listed by
+  - data/three_d/stage_L2R_val_v1/selection.json   (19 Learn2Reg validation pairs, 20 subjects)
+  - data/three_d/stage_T0_tune_v1/selection.json   (12 tuning pairs, 24 subjects; never_for_training, BZ 2026-10-05)
+  - data/three_d/stage_E11_native_v1/selection.json (5 pairs, 10 subjects)
+  - data/three_d/stage_LPBA40_v1/selection.json    (LPBA40: only the subjects of the role 'tune' pairs, S01-S24)
+Only these ID lists are read (no image, label or result file). LPBA40 S25-S36 are development subjects too, but the
+only list naming them is /mnt/d/data/LPBA40/splits/{train,val}.txt, which is not a repository-relative path (the
+schema requires one); they are therefore not listed here (see the D0 report).
+
+Checks before writing (any failure -> exit 1, nothing written):
+  - every id canonical (bayesreg.io.guard), pair names consistent with fixed/moving, T0 pairs == reserved list;
+  - no listed subject in H1 (oasis_heldout_pairs_draft.tsv), the H4 pool incl. H4 (h4_pool_volumes_20261020.tsv,
+    h4_subjects_20261020.txt), the B-line pool (splits/bayesreg_v1/pool_206.txt) or LPBA40 S37-S40;
+  - the written file loads with bayesreg.io.guard.load_dev_allowlist and verify_allowlist_sources.
+Usage: python -B experiments/d0/make_dev_subjects.py [--out configs/bayesreg/dev_subjects.json] [--check-only]
+"""
+import argparse
+import hashlib
+import json
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT))
+from bayesreg.io.guard import (canonical_subject_list, load_dev_allowlist,  # noqa: E402
+                               verify_allowlist_sources)
+
+HOLD = 'archive/seq_vp_3d/results/verification/3d_stage_HOLDOUT_v1/plan'
+
+
+def sha(path):
+    return hashlib.sha256((ROOT/path).read_bytes()).hexdigest()
+
+
+def oasis_pairs(rel):
+    doc = json.loads((ROOT/rel).read_text())
+    subjects = []
+    for row in doc['pairs']:
+        f, m = Path(row['fixed']).name, Path(row['moving']).name
+        if row['pair'] != f'{f}__{m}':
+            raise SystemExit(f'{rel}: pair name {row["pair"]} != fixed__moving')
+        subjects += [f, m]
+    return doc, sorted(set(subjects))       # the validation pairs are a chain: a subject may appear in two pairs
+
+
+def sealed_sets():
+    h1 = set()
+    for line in (ROOT/HOLD/'oasis_heldout_pairs_draft.tsv').read_text().splitlines()[1:]:
+        if line.strip():
+            _, f, m = line.split('\t')
+            h1 |= {f, m}
+    pool = {l.split('\t')[0] for l in (ROOT/HOLD/'h4_pool_volumes_20261020.tsv').read_text().splitlines()[1:] if l.strip()}
+    h4 = {l.strip() for l in (ROOT/HOLD/'h4_subjects_20261020.txt').read_text().splitlines() if l.strip() and not l.startswith('#')}
+    bpool = {l.strip() for l in (ROOT/'splits/bayesreg_v1/pool_206.txt').read_text().splitlines() if l.strip()}
+    assert len(h1) == 100 and len(pool) == 149 and len(h4) == 40 and h4 <= pool and len(bpool) == 206, \
+        (len(h1), len(pool), len(h4), len(bpool))
+    return dict(H1=h1, H4_pool_incl_H4=pool, B_line_pool_206=bpool, LPBA40_H2={'S37', 'S38', 'S39', 'S40'})
+
+
+def build():
+    sources = []
+    for name, never in (('stage_L2R_val_v1', False), ('stage_T0_tune_v1', True), ('stage_E11_native_v1', False)):
+        rel = f'data/three_d/{name}/selection.json'
+        doc, subjects = oasis_pairs(rel)
+        if name == 'stage_T0_tune_v1' and sorted(doc['reserved_subjects_never_for_training']) != subjects:
+            raise SystemExit('T0: reserved_subjects_never_for_training != the subjects of its pairs')
+        canonical_subject_list(subjects, name, 'OASIS')
+        sources.append(dict(name=name, dataset='OASIS', path=rel, sha256=sha(rel), never_for_training=never, subjects=subjects))
+    rel = 'data/three_d/stage_LPBA40_v1/selection.json'
+    doc = json.loads((ROOT/rel).read_text())
+    lpba = sorted({s for row in doc['pairs'] if row['role'] == 'tune' for s in (row['fixed'], row['moving'])})
+    if lpba != [f'S{i:02d}' for i in range(1, 25)]:
+        raise SystemExit(f'LPBA40 tune subjects are not S01-S24: {lpba}')
+    canonical_subject_list(lpba, 'LPBA40 tune', 'LPBA40')
+    sources.append(dict(name='stage_LPBA40_v1_tune', dataset='LPBA40', path=rel, sha256=sha(rel),
+                        never_for_training=False, subjects=lpba))
+    subjects = {}
+    for s in sources:
+        subjects.setdefault(s['dataset'], set()).update(s['subjects'])
+    sealed = sealed_sets()
+    listed = set().union(*subjects.values())
+    clash = {k: sorted(listed & v) for k, v in sealed.items() if listed & v}
+    if clash:
+        raise SystemExit(f'sealed subjects would be allowlisted: {clash}')
+    oasis = subjects['OASIS']
+    assert len(oasis) == 54, len(oasis)
+    doc = dict(schema='bayesreg.dev_subjects.v1',
+               comment=('Development allowlist generated by experiments/d0/make_dev_subjects.py (D0 work package, 2026-10-30). '
+                        'LPBA40 S25-S36 are development subjects but have no repository-relative list (splits are under '
+                        '/mnt/d/data/LPBA40); add them as a new source if needed. The B-line training set '
+                        '(splits/bayesreg_v1/train_subjects.txt) is a later source, added by the lead.'),
+               subjects={k: sorted(v) for k, v in sorted(subjects.items())}, sources=sources)
+    return doc, {k: len(v) for k, v in sealed.items()}
+
+
+def main(argv=None):
+    ap = argparse.ArgumentParser()
+    ap.add_argument('--out', default='configs/bayesreg/dev_subjects.json')
+    ap.add_argument('--check-only', action='store_true', help='rebuild in memory and compare with --out')
+    a = ap.parse_args(argv)
+    doc, sizes = build()
+    text = json.dumps(doc, indent=1, ensure_ascii=False)+'\n'
+    out = ROOT/a.out
+    if a.check_only:
+        same = out.read_text() == text
+        print('identical' if same else 'DIFFERS'); return 0 if same else 1
+    if out.exists():
+        raise SystemExit(f'{out} exists; refusing to overwrite')
+    out.write_text(text)
+    allow = load_dev_allowlist(out)
+    checked = verify_allowlist_sources(allow, ROOT)
+    print(json.dumps(dict(written=str(out), sha256=allow.sha256, subjects={k: len(v) for k, v in allow.subjects.items()},
+                          never_for_training=len(allow.never_for_training), sources_verified=checked,
+                          sealed_sets_checked=sizes), indent=1))
+    return 0
+
+
+if __name__ == '__main__':
+    sys.exit(main())

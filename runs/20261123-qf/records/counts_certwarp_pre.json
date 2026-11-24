@@ -1,0 +1,239 @@
+{
+ "schema": "qf.counts.v1",
+ "field": "certwarp_pre",
+ "pair": "OASIS_OAS1_0438_MR1__OASIS_OAS1_0439_MR1",
+ "grid": {
+  "shape_zyx": [
+   192,
+   224,
+   160
+  ],
+  "spacing_xyz": [
+   1.0,
+   1.0,
+   1.0
+  ],
+  "origin_xyz": [
+   -79.0,
+   -112.0,
+   -95.0
+  ],
+  "unit": "mm"
+ },
+ "n_cells": 6772287,
+ "source": {
+  "kind": "boundary_taper(t88/field_0600.npz u): the repair's input (C22.3-1), HE smoke v3 arm a",
+  "path": "/home/rmcfz/seq_vp_tag_results/he_smoke_v3/a/0438-0439/t88/field_0600.npz",
+  "file_sha256": "b5be9924cf48e1722a8008a2ec7b61385d1ed894819a4111f0a84eee8e9c53b2",
+  "taper_L": 4,
+  "u_sha256": "b6f061daa0eb8ce2131abea9218e2010a9f9e7a1057f91ec25eb227809adde2f",
+  "tapered_u_sha256": "f5d944bce23008b7f2c0f0e4ba0e211e4b145ea18176b1bdcadc78558919d2b6",
+  "checks_against_repair_json": true,
+  "d_sha256": "f250124962626982d4862be713c463deb952460a214ac9c943af39ace9513d2e",
+  "run_initial_certificate": {
+   "status": "infeasible",
+   "reason": "JACOBIAN_VIOLATION",
+   "min_jd_lower_bound": -4.602077018216649,
+   "n_cells_checked": 6772287,
+   "n_infeasible": 19830,
+   "n_uncertain": 0,
+   "state_hash": "f5d944bce23008b7f2c0f0e4ba0e211e4b145ea18176b1bdcadc78558919d2b6",
+   "certificate_version": "q1-3d-parallel-hoisted-edge-hull-float-bernstein-prescreen-compiled-bernstein-v1"
+  },
+  "run_repair": {
+   "status": "certified",
+   "passed": true,
+   "n_located": 19891,
+   "rounds": 1,
+   "final_state_hash": "79e3d2a69cbf351b28a2ac9f30fc1d288c00fd44ee2f6f338755591bac7c9c60"
+  }
+ },
+ "pair_keys_read": [
+  "fixed",
+  "moving",
+  "initial_u"
+ ],
+ "pair_sha256": "658715bc3a23a9f84757ef66ad0e359f662d14b5b7d834426bab5530d6c8fedc",
+ "central_det": {
+  "definition": "bayesreg.eval.metrics.central_det(d), volume cropped by 2 voxels per side",
+  "n_voxels": 6452160,
+  "nonpositive": 23,
+  "min": -0.2239399292305575,
+  "max": 8.572122375131563,
+  "n_voxels_fixed_gt0": 2098710,
+  "nonpositive_fixed_gt0": 23,
+  "min_fixed_gt0": -0.2239399292305575,
+  "sdlogj_official": 0.06841649173520234
+ },
+ "q1_witness": {
+  "definition": "cells with J <= 0 at one of the Gauss27 or closed27 points of the Q1 interpolant (bayesreg.geom.q1.tile_geometry)",
+  "cells": 19817,
+  "cells_gauss27": 8346,
+  "cells_closed27": 19817,
+  "points_gauss27": 18652,
+  "points_closed27": 45668,
+  "min_J": -4.602077018216624,
+  "cells_fixed_gt0": 19804,
+  "n_cells_fixed_gt0": 2098710
+ },
+ "certificate_bl1": {
+  "status": "infeasible",
+  "reason": "JACOBIAN_VIOLATION",
+  "min_jd_lower_bound": -4.602077018216649,
+  "min_margin_lower_bound": -4.602077018216649,
+  "sampled_min_jd": null,
+  "n_cells_checked": 6772287,
+  "n_uncertain": 0,
+  "n_infeasible": 19830,
+  "n_boxes": 6772729,
+  "max_depth": 10,
+  "witness_cell": 1142771,
+  "witness_reference_point": [
+   1.0,
+   1.0,
+   1.0
+  ],
+  "n_fast_cells": 6581528,
+  "n_fallback_cells": 190759,
+  "n_prescreen_cells": 0,
+  "state_hash": "f5d944bce23008b7f2c0f0e4ba0e211e4b145ea18176b1bdcadc78558919d2b6",
+  "grid_id": "1ea40c55a1b0904f524314f273f4fffd3265cbdd3686074e6d2cd8396aa7038a",
+  "delta_hex": "0x0.0p+0",
+  "certificate_version": "q1-3d-parallel-hoisted-edge-hull-bernstein-v1",
+  "mode": "jacobian_only",
+  "configuration": "BL1",
+  "n_cells": 6772287,
+  "seconds": 11.953637502971105,
+  "config": {
+   "config_class": "ParallelEnclosureCertificateConfig",
+   "certificate_version": "q1-3d-parallel-hoisted-edge-hull-bernstein-v1",
+   "delta_hex": "0x0.0p+0",
+   "max_depth": 48,
+   "max_boxes": 255,
+   "tile_size": 8192,
+   "policy": "lowest_bound_first_v1",
+   "prepass": "edge_hull_v1",
+   "kernel": "numba-parallel-hoisted-edge-hull-v1",
+   "fallback_workers": 2,
+   "precision": "CPU FP64, outward rounding",
+   "source": "archive/seq_vp_3d/results/verification/3d_stage_BL1_v1/analysis/bl1_cert.py:53-54"
+  },
+  "passed": false,
+  "faces_max_abs_u_mm": 0.0,
+  "domain": {
+   "ok": true,
+   "reason": null,
+   "count": null
+  },
+  "cells": {
+   "regions": {
+    "all": {
+     "cells": 6772287,
+     "proven": 6752457,
+     "infeasible": 19830,
+     "uncertain": 0,
+     "uncertain_arithmetic": 0,
+     "min_lower_bound": -4.602077018216649
+    },
+    "brain": {
+     "cells": 2098710,
+     "proven": 2078893,
+     "infeasible": 19817,
+     "uncertain": 0,
+     "uncertain_arithmetic": 0,
+     "min_lower_bound": -4.602077018216649
+    },
+    "background": {
+     "cells": 4673577,
+     "proven": 4673564,
+     "infeasible": 13,
+     "uncertain": 0,
+     "uncertain_arithmetic": 0,
+     "min_lower_bound": -0.17476729018761533
+    }
+   },
+   "cell_pass": {
+    "n_infeasible": 19830,
+    "n_uncertain": 0,
+    "n_fast_cells": 6581528,
+    "n_prescreen_cells": 0,
+    "n_fallback_cells": 190759,
+    "min_margin_lower_bound": -4.602077018216649
+   },
+   "map_reached_cells": true,
+   "matches_map": true,
+   "mismatch": {},
+   "seconds": 8.181080035981722
+  }
+ },
+ "certificate_c_full": {
+  "status": "infeasible",
+  "reason": "JACOBIAN_VIOLATION",
+  "min_jd_lower_bound": -4.602077018216649,
+  "min_margin_lower_bound": -4.602077018216649,
+  "sampled_min_jd": null,
+  "n_cells_checked": 6772287,
+  "n_uncertain": 0,
+  "n_infeasible": 19830,
+  "n_boxes": 6772729,
+  "max_depth": 10,
+  "witness_cell": 1142771,
+  "witness_reference_point": [
+   1.0,
+   1.0,
+   1.0
+  ],
+  "n_fast_cells": 6581528,
+  "n_fallback_cells": 19891,
+  "n_prescreen_cells": 170868,
+  "state_hash": "f5d944bce23008b7f2c0f0e4ba0e211e4b145ea18176b1bdcadc78558919d2b6",
+  "grid_id": "1ea40c55a1b0904f524314f273f4fffd3265cbdd3686074e6d2cd8396aa7038a",
+  "delta_hex": "0x0.0p+0",
+  "certificate_version": "q1-3d-parallel-hoisted-edge-hull-float-bernstein-prescreen-compiled-bernstein-v1",
+  "mode": "full",
+  "n_cells": 6772287,
+  "seconds": 4.958155341970269,
+  "config": {
+   "config_class": "PrescreenCertificateConfig",
+   "certificate_version": "q1-3d-parallel-hoisted-edge-hull-float-bernstein-prescreen-compiled-bernstein-v1",
+   "delta_hex": "0x0.0p+0",
+   "max_depth": 48,
+   "max_boxes": 255,
+   "tile_size": 8192,
+   "kernel": "numba-parallel-hoisted-edge-hull-v1",
+   "fallback_kernel": "numba-bernstein-fallback-v1",
+   "prescreen_kernel": "numba-float-bernstein-apriori-v1",
+   "fallback_workers": 8,
+   "precision": "CPU FP64, outward rounding"
+  },
+  "passed": false,
+  "faces_max_abs_u_mm": 0.0,
+  "domain": {
+   "ok": true,
+   "reason": null,
+   "count": null
+  },
+  "cells": null
+ },
+ "cell_pass": {
+  "codes": "cert_eval: 0 hull, 1 prescreen, 2 fallback (proven); 3 infeasible; 4, 5 uncertain",
+  "infeasible": 19830,
+  "uncertain": 0,
+  "witness_and_infeasible": 19817,
+  "witness_not_infeasible": 0,
+  "infeasible_without_witness": 13
+ },
+ "state_hash_equals_run_certificate": {
+  "bl1": true,
+  "c_full": true
+ },
+ "regions_note": "certificate_bl1.cells.regions: 'brain' here is fixed > 0 (no label), not the evaluation's seg4 > 0",
+ "utc": "2026-11-23T22:39:43Z",
+ "code": {
+  "head": "a1395c69d8949ab4a715b069ba44d18afcb5f373",
+  "script": "docs/manuscript/midl/figures/fig_qual.py",
+  "script_sha256": "759a43305ded47d4b2572995f431645c435d45b011d462eb4ab94e2264ce0212",
+  "clean": true,
+  "status": ""
+ }
+}

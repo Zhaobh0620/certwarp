@@ -1,0 +1,8 @@
+# V1 revision 1 (I4) v1_oasis_spacing.py  host <host>  Sun Nov 22 13:40:47 CST 2026  commit 76d92c85
+# records matched: 50
+grid.spacing_xyz: ('0x1.0000000000000p+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0') x 50
+arms.method.units.spacing_xyz: ('0x1.0000000000000p+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0') x 50
+arms.method.decision_certificate.final.grid.spacing_xyz: ('0x1.0000000000000p+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0') x 50
+arms.method.field.disp.meta.grid.spacing_xyz: ('0x1.0000000000000p+0', '0x1.0000000000000p+0', '0x1.0000000000000p+0') x 50
+# every record, every field: spacing exactly 1.0 on all three axes: True
+exit 0

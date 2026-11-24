@@ -1,0 +1,181 @@
+{
+ "commit": "1933643",
+ "torch": "2.5.1",
+ "numpy": "2.0.2",
+ "fingerprint": {
+  "config_default": "dee14b1735abc4e4e7df227e78e861a0b247fdb0e38d761025c94321ee3a8f3e",
+  "logits": {
+   "whole": "83edd76160736b5de646c1b5d7a0c5ab5bd9c885e5a66b28fac1dbd2a7a61476",
+   "window": "5921862b2f9763cb00569b403dd2ac737e3520da65d2cc97f68bc57984d44f00",
+   "window_25": "dee81f1ab45079f1f71fe6f8020f64481eceddd94bbe629351804e7d539d79ce"
+  },
+  "model_default_init": "0ee9170e5cfcb87f1188e2ed487cbfc87e80a6bd208ad7b7f027a62293e8fa30",
+  "model_config_default": {
+   "base_channels": 16,
+   "depth": 4,
+   "n_classes": 36,
+   "max_channels": 320
+  },
+  "whole_volume_member": {
+   "state": "598ef6c595961ab1606794837618e488a93e0d2f42d8b07b06a080f9b7a0d031",
+   "temperature": "0x1.3ffae329b2834p+4",
+   "member_keys": [
+    "amp",
+    "best_iteration",
+    "fold",
+    "format",
+    "label_contact_subjects",
+    "label_contact_subjects_sha256",
+    "model_best_sha256",
+    "model_config",
+    "percentile",
+    "seed",
+    "state_dict",
+    "temperature",
+    "window"
+   ],
+   "config": "81a3dd30da9b87b833a6e56bf1b15c6c5db3a619f0ce60c497d2d8060442c76c",
+   "model_config": {
+    "base_channels": 4,
+    "depth": 2,
+    "n_classes": 36,
+    "max_channels": 320
+   },
+   "record_keys": [
+    "best_calib_mean_dice35",
+    "best_calib_per_label_dice",
+    "best_iteration",
+    "calib_subjects",
+    "command",
+    "config",
+    "environment",
+    "eval_history",
+    "fold",
+    "fold_index",
+    "format",
+    "image_sha256",
+    "inputs",
+    "iterations_run",
+    "label_contact_subjects",
+    "label_contact_subjects_sha256",
+    "label_guard",
+    "label_sha256",
+    "model_best_sha256",
+    "normalization",
+    "parameters",
+    "seed",
+    "started",
+    "stopped",
+    "train_subjects",
+    "wall_seconds"
+   ],
+   "best_calib": "0x1.b458a933ece85p-8",
+   "window": null,
+   "amp": false
+  },
+  "patch_member": {
+   "state": "59f33d3f1212a6e3522c3bada44f33fb74ec39ebc1b3188e49f1a5ef7cd8922f",
+   "temperature": "0x1.3ffb6582adfc2p+4",
+   "member_keys": [
+    "amp",
+    "best_iteration",
+    "fold",
+    "format",
+    "label_contact_subjects",
+    "label_contact_subjects_sha256",
+    "model_best_sha256",
+    "model_config",
+    "percentile",
+    "seed",
+    "state_dict",
+    "temperature",
+    "window"
+   ],
+   "config": "f4789e08f65af96c80f3c2c8b68566d66ba9465f98ee07118e65b64789171346",
+   "model_config": {
+    "base_channels": 4,
+    "depth": 2,
+    "n_classes": 36,
+    "max_channels": 320
+   },
+   "record_keys": [
+    "best_calib_mean_dice35",
+    "best_calib_per_label_dice",
+    "best_iteration",
+    "calib_subjects",
+    "command",
+    "config",
+    "environment",
+    "eval_history",
+    "fold",
+    "fold_index",
+    "format",
+    "image_sha256",
+    "inputs",
+    "iterations_run",
+    "label_contact_subjects",
+    "label_contact_subjects_sha256",
+    "label_guard",
+    "label_sha256",
+    "model_best_sha256",
+    "normalization",
+    "parameters",
+    "seed",
+    "started",
+    "stopped",
+    "train_subjects",
+    "wall_seconds"
+   ],
+   "best_calib": "0x1.785f21013f2ecp-8",
+   "window": [
+    8,
+    8,
+    8
+   ],
+   "amp": false
+  },
+  "v1_probs": {
+   "OASIS_OAS1_0901_MR1": {
+    "probs36": "ab8babdad20a279e43426291fa3905b73f5c66f3f93a41b06d0fa7a5133c45be",
+    "groups": "597a0a1d9d29634629849284f2b413127d245a4ad01942c58b6e66948c1e5db7"
+   },
+   "OASIS_OAS1_0902_MR1": {
+    "probs36": "925e7ca820e20b2c48716991b87f9b5badd6bf6c31af3a6fa1663afa7414a32d",
+    "groups": "b8cd63a6e15cc0f20860fb2508c73b42216ec6d0a4fbe7458fe2b7b16c7c655b"
+   },
+   "OASIS_OAS1_0904_MR1": {
+    "probs36": "9a3bed3205e6eeeda8886309a52d99e0f57a830382d0124e932ad481b2b701bd",
+    "groups": "7a3466d4dfdea94e9fd343ec989a7fc36dc46a9e538123d1c8f9aaeb7fe3bab1"
+   },
+   "OASIS_OAS1_0907_MR1": {
+    "probs36": "fbb98bb1e3e27c60b21024b450d63ee9977f03be8570a6dc0d13bbc4eb8f6e65",
+    "groups": "c8ebeb7f60a87747198a8ac7fa783a53ad3efcd358b26adf3b05b25c49a64104"
+   },
+   "OASIS_OAS1_0909_MR1": {
+    "probs36": "c161cf7895c510684a3990c88f864151d3927733658b9dc1a88d4809a2040e70",
+    "groups": "8ce7b2acdf5f06c11e6092a326ea17b6054a38790c9f5783ffa93a443ac364a9"
+   }
+  },
+  "v1_temperatures": {
+   "A0": "0x1.3ffb8492eb940p+4",
+   "A1": "0x1.b74dba8a88a12p+2",
+   "B0": "0x1.8b5cebe9b0832p+2",
+   "B1": "0x1.d59d2938448acp+2"
+  },
+  "v2_probs": {
+   "OASIS_OAS1_0907_MR1": {
+    "probs36": "6374e3497048e23325ff53d8347fc5b63dff24566c7a54a929af12a15deb5922",
+    "groups": "3edb34c33b3899c35da1a08633ec04985d84d3672d89bd17e47005db8e8a58c8"
+   },
+   "OASIS_OAS1_0908_MR1": {
+    "probs36": "9903be786a142cc7cbdffacadd029a6e7f7932dc97fa38ae935cd83ed4e3a1b1",
+    "groups": "8ab5ba5b0e199751529b47b2573be324e863ba9f59198e44ce948fed4bdffd12"
+   }
+  },
+  "v2_temperatures": {
+   "A0": "0x1.3ffb651252db7p+4",
+   "B0": "0x1.cb9760728127bp+3",
+   "A1": "0x1.c2b4685378337p+2"
+  }
+ }
+}

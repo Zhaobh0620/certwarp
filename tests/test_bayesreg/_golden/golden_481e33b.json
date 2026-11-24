@@ -1,0 +1,79 @@
+{
+ "check": {
+  "constants": {
+   "model": {
+    "box12": "959df58e0f59085de2bfec127a29f5ed581dea34b0111475e5a2a0790de08b3d",
+    "small": "b10cd432bf46d2daf6ae5f35ace88a7b2f25bf1817e82b467e5338e6599ebece"
+   },
+   "solve": {
+    "numpy_a": "796fc35ec51ea98231e150dad525f1545c405a613a59e846826e28527abd716b",
+    "numpy_b": "188635287d49686d00b0b74e788762e3c99047cf1ac0dc6b4d5cdc90d5bbc1e6",
+    "torch64_a": "3e620f1070c26b75944c0ed0f6bb61c1dc254533d19edb45fa4b6d4866b89945"
+   },
+   "torch": {
+    "box12": "3dbe619e5681f4a5e084f191e8ba70039156fa6602f1390f7530315062496c7e",
+    "small": "5269d5a4053512525c96705b9ef29051f4a555f463fbde8fafe0db9e82831d9b"
+   }
+  },
+  "mismatches": {},
+  "passed": true
+ },
+ "child_bayesreg_path": "/tmp/claude-1000/-home-rmcfz-code-python-projects-seq-vp-tag/8af191c1-629c-4510-bc7a-ebf66be2190c/scratchpad/golden_iv_n441e/bayesreg",
+ "code_extracted": "git archive <ref_commit> bayesreg jd_curl tests/test_bayesreg (temporary directory)",
+ "command": "python tests/test_bayesreg/_golden/make_golden.py --ref 481e33b --check --out tests/test_bayesreg/_golden/golden_481e33b.json",
+ "digest_module": "tests/test_bayesreg/model/_logvol_digest.py",
+ "digest_module_sha256": "48180ba7024080c31cb76c3ce67176754680058e4443afce5f891689af2d3bab",
+ "digests": {
+  "model": {
+   "box12": "959df58e0f59085de2bfec127a29f5ed581dea34b0111475e5a2a0790de08b3d",
+   "small": "b10cd432bf46d2daf6ae5f35ace88a7b2f25bf1817e82b467e5338e6599ebece"
+  },
+  "solve": {
+   "numpy_a": "796fc35ec51ea98231e150dad525f1545c405a613a59e846826e28527abd716b",
+   "numpy_b": "188635287d49686d00b0b74e788762e3c99047cf1ac0dc6b4d5cdc90d5bbc1e6",
+   "torch64_a": "3e620f1070c26b75944c0ed0f6bb61c1dc254533d19edb45fa4b6d4866b89945"
+  },
+  "torch": {
+   "box12": "3dbe619e5681f4a5e084f191e8ba70039156fa6602f1390f7530315062496c7e",
+   "small": "5269d5a4053512525c96705b9ef29051f4a555f463fbde8fafe0db9e82831d9b"
+  }
+ },
+ "environment": {
+  "longdouble_nmant": 63,
+  "numpy": "2.0.2",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "python": "3.10.20 | packaged by conda-forge | (main, Mar  5 2026, 16:42:22) [GCC 14.3.0]",
+  "thread_env": {
+   "CUDA_VISIBLE_DEVICES": "",
+   "MKL_NUM_THREADS": "1",
+   "NUMBA_NUM_THREADS": "1",
+   "OMP_NUM_THREADS": "1",
+   "OPENBLAS_NUM_THREADS": "1",
+   "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "torch": "2.5.1"
+ },
+ "generated_utc": "2026-10-30T13:24:54Z",
+ "generator_dirty": true,
+ "generator_head": "10d20fae79eb387ab74fbc03a15c53b3c90db204",
+ "helpers": [
+  "tests/test_bayesreg/__init__.py",
+  "tests/test_bayesreg/model/__init__.py",
+  "tests/test_bayesreg/model/_helpers.py",
+  "tests/test_bayesreg/solve/__init__.py",
+  "tests/test_bayesreg/solve/_synthetic.py",
+  "tests/test_bayesreg/torch64/__init__.py",
+  "tests/test_bayesreg/torch64/_cases.py"
+ ],
+ "helpers_identical_to_generator": true,
+ "purpose": "golden digests of the C05-2a default-path bitwise gate (FB1; review LVC_CPUPAR item 1)",
+ "ref": "481e33b",
+ "ref_commit": "481e33bf70325411a50112eb556b90061a38fedb",
+ "seconds": 8.70792975788936,
+ "skip_solve": false,
+ "test_files": {
+  "model": "tests/test_bayesreg/model/test_logvol_corners.py",
+  "solve": "tests/test_bayesreg/solve/test_logvol_points.py",
+  "torch": "tests/test_bayesreg/torch64/test_torch64_corners.py"
+ }
+}

@@ -1,0 +1,24 @@
+# V1 v1_identity_lpba.py  host <host>  Sun Nov 22 13:02:07 CST 2026  commit 3cab1bae
+# 17 evaluation records under /home/rmcfz/seq_vp_tag_results/lpba40_test_v1/eval/run_1/pairs
+pair	line_status	h==1.0 (grid, final, disp meta)	decision cert passed	unc/inf	stored hash==sha256(u)	cert.json hash==u	decision cert hash==u	status==cert.json	u==h*d bitwise	disp meta: u_state_hash==u, exact_inverse, layout	BL1 hash==u & passed	review hash==u & passed	config C fields	cells.matches_map	fast/prescreen/fallback (decision)	min lower bound
+S03__S04	hx_certified	True	True	True	True	True	True	True	True	True	True	True	True	True	6773981/224366/53	3.686e-07
+S05__S06	hx_certified	True	True	True	True	True	True	True	True	True	True	True	True	True	6863084/135297/19	4.364e-07
+S07__S08	hx_certified	True	True	True	True	True	True	True	True	True	True	True	True	True	6825716/172654/30	6.514e-07
+S09__S10	hx_certified	True	True	True	True	True	True	True	True	True	True	True	True	True	6842712/155646/42	2.733e-06
+S11__S12	hx_certified	True	True	True	True	True	True	True	True	True	True	True	True	True	6817920/180422/58	3.399e-07
+S13__S14	hx_certified	True	True	True	True	True	True	True	True	True	True	True	True	True	6850298/148076/26	8.585e-07
+S15__S16	hx_certified	True	True	True	True	True	True	True	True	True	True	True	True	True	6800330/198024/46	1.117e-06
+S17__S18	hx_certified	True	True	True	True	True	True	True	True	True	True	True	True	True	6838712/159673/15	2.162e-06
+S19__S20	hx_certified	True	True	True	True	True	True	True	True	True	True	True	True	True	6857950/140409/41	1.829e-07
+S21__S22	hx_certified	True	True	True	True	True	True	True	True	True	True	True	True	True	6858340/140031/29	1.738e-06
+S23__S24	hx_certified	True	True	True	True	True	True	True	True	True	True	True	True	True	6808419/189954/27	3.915e-07
+S25__S26	hx_certified	True	True	True	True	True	True	True	True	True	True	True	True	True	6726892/271450/58	2.475e-06
+S27__S28	hx_certified	True	True	True	True	True	True	True	True	True	True	True	True	True	6925649/72745/6	1.160e-06
+S29__S30	hx_certified	True	True	True	True	True	True	True	True	True	True	True	True	True	6920050/78348/2	3.827e-06
+S31__S32	hx_certified	True	True	True	True	True	True	True	True	True	True	True	True	True	6879625/118751/24	1.346e-06
+S33__S34	hx_certified	True	True	True	True	True	True	True	True	True	True	True	True	True	6830492/167880/28	4.058e-07
+S35__S36	hx_certified	True	True	True	True	True	True	True	True	True	True	True	True	True	6853353/145019/28	2.762e-07
+# rows 17, rows with every check true 17
+# export convention (disp.npz meta, one record): pull-back: warped(p) = moving(p + d(p)), p = (z, y, x) voxel index; d[k] = u[..., 2 - k] / h_(z,y,x)[k]; same semantics as Learn2Reg evaluation.py
+# processes that certified the same bytes (one record): the repair process (run_hx.py repair, pid 1086811; reads no label) | the step-5 review unit (hb_review.py, pid 1089972; reads no label) | the evaluation (decision_certificate, BL1)
+exit 0

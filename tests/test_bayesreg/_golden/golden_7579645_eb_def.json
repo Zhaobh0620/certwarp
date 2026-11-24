@@ -1,0 +1,43 @@
+{
+ "child_bayesreg_path": "/tmp/claude-1000/-home-rmcfz-code-python-projects-seq-vp-tag/8af191c1-629c-4510-bc7a-ebf66be2190c/scratchpad/golden_tmp/golden_eb_6fwyom64/bayesreg",
+ "code_extracted": "git archive <ref_commit> bayesreg jd_curl tests/test_bayesreg (temporary directory)",
+ "command": "python tests/test_bayesreg/_golden/make_golden_eb.py --ref 7579645 --out tests/test_bayesreg/_golden/golden_7579645_eb_def.json",
+ "digest_module": "tests/test_bayesreg/learn/_eb_digest.py",
+ "digest_module_sha256": "efd88f37ca248852c66f2c5619b03f7d23942c5f6888cdf5a92b52321fdcb58f",
+ "digests": {
+  "config": "b1ee1827d53371ce20403df86f29c22d401508b4700e0a82f381ab61518ed3ab",
+  "driver": "41fc5d0658a74750ef4331bdbe5ad8415e2dd20876d5eaf5dad46ba04c5999db",
+  "gauss": "9b08f79fd9713adf8538a868b1e3fbbaeb8bc982e5bd58dcd3b59393718bfbd6",
+  "pair": "dd4cbc36705f0564b67351d7db3172ac8d7ce09cb73ece24c1b77fc51e88674a",
+  "update": "3371c7243ed5d50766f47e308f596f830e174954f11654efd5ae7871fcc01ca5"
+ },
+ "environment": {
+  "longdouble_nmant": 63,
+  "numpy": "2.0.2",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "python": "3.10.20 | packaged by conda-forge | (main, Mar  5 2026, 16:42:22) [GCC 14.3.0]",
+  "thread_env": {
+   "CUDA_VISIBLE_DEVICES": "",
+   "MKL_NUM_THREADS": "1",
+   "NUMBA_NUM_THREADS": "1",
+   "OMP_NUM_THREADS": "1",
+   "OPENBLAS_NUM_THREADS": "1",
+   "PYTHONDONTWRITEBYTECODE": "1"
+  }
+ },
+ "generated_utc": "2026-10-31T10:05:37Z",
+ "generator_dirty": true,
+ "generator_head": "8a4d06051efc169d10f90e9d4ae6b37309d2b667",
+ "helpers": [
+  "tests/test_bayesreg/__init__.py",
+  "tests/test_bayesreg/learn/__init__.py",
+  "tests/test_bayesreg/model/__init__.py",
+  "tests/test_bayesreg/model/_helpers.py",
+  "tests/test_bayesreg/infer/__init__.py",
+  "tests/test_bayesreg/infer/_cases.py"
+ ],
+ "purpose": "golden digests of the C15-9 dim bitwise gate (EBC2)",
+ "ref": "7579645",
+ "ref_commit": "75796454cbdde425a97ed03d953a44fd13b4d107",
+ "seconds": 0.4855459820246324
+}

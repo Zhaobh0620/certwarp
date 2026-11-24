@@ -1,0 +1,22 @@
+{
+ "schema": "bayesreg.sv.fstar.v1",
+ "oracle": true,
+ "pinned_by": "总负责人，约 6:13 pm CST 11-04",
+ "pinned_utc": "2026-11-05T00:11:59Z",
+ "probe_sha256": "3830b5bec9c14174c5fd3a3fcbfa20eb19498b3677c1cdffecb818963e1cae07",
+ "probe_file": "/home/rmcfz/seq_vp_tag_results/segvoi_v1/analysis/probe_posterior.json",
+ "role": "oracle_probe_of_the_value_of_a_better_segmenter_NOT_a_method_NOT_in_any_result_table",
+ "tolerance": 0.03,
+ "arms": {
+  "r1_3": {
+   "f": 0.2859,
+   "target": 0.3333333333333333,
+   "reduction_seg35_in_probe": 0.3333980065400325
+  },
+  "r2_3": {
+   "f": 0.454,
+   "target": 0.6666666666666666,
+   "reduction_seg35_in_probe": 0.6668772235583802
+  }
+ }
+}

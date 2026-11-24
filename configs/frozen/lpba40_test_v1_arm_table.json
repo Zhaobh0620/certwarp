@@ -1,0 +1,388 @@
+{
+ "schema": "bayesreg.lpba40.arm_table.v1",
+ "comment": "LPBA40 第二测试集预登记 docs/bayesreg/notes/LPBA40第二测试集预登记_20261119.md（定稿修订 3，sha256 06121278…）第 4 节的机器可读臂表；第 12 节第 15 项。臂是第 4 节的 6 个：方法 1、主族 5（configc、ants_s、fireants_greedy、fireants_syn、convexadam_v4seg，次序照留出集），另加恒等参照（reference：d = 0，经同一评测入口，不进任何族，不检验）。由 runs/20261119-lpba/make_lpba40_arm_table.py 从留出集冻结臂表 configs/frozen/holdout_B_v1_arm_table.json（sha256 69cb1ddf…）机械生成：6 臂照它的次序逐字复制（终态记录与类、完整记录、复核记录、判定证书、导出核对、证书模式、授权 tool），只按前缀换根：/home/rmcfz/seq_vp_tag_results/holdout_B_v1/ → /home/rmcfz/seq_vp_tag_results/lpba40_test_v1/；/mnt/d/seq_vp_tag_holdout_B_v1/ → /home/rmcfz/seq_vp_tag_results/lpba40_test_v1/work/（第 11 节：全放 /home，不移到 D:，场留在 work 下的格子里）；runs/holdout_B_v1/ → runs/lpba40_test_v1/。pq 为 null（第 4.5 节：PQ 不跑）。frozen 记第 4 节点名的冻结设置（方法 settings_sha256、配置 C 参照、外部臂冻结文件）与本表所依据的两份文件。校验：experiments/lpba/lpba_arm_table.py 的 validate_lpba40_arm_table（LPBA40 的顶层与根，再调 bayesreg.eval.holdout.validate_arm_table 核逐臂的格式）。本表的 sha256 不写进预登记，由总负责人写进 decision_log 与代码钉值。附注：configc 的场照留出集取终态记录的 output_store.disp.file，不换键（总负责人 2026-11-19 约 1:01 PM CST 裁决 (1)）。留出集里这个键在移到 D: 时才写；LPBA 的配置 C 入口在不移动时写 output_store（照 xb_drive.py:402），形状与留出集移动之后相同，文件在 work/configc/<pair>/output 下，补跑在 work/configc/<pair>.resume/output 下；入口本身留给后面的工具包（第 12 节第 10 项）。",
+ "stage_root": "/home/rmcfz/seq_vp_tag_results/lpba40_test_v1/stage",
+ "main_family": [
+  "configc",
+  "ants_s",
+  "fireants_greedy",
+  "fireants_syn",
+  "convexadam_v4seg"
+ ],
+ "pq": null,
+ "segmentation": null,
+ "reference": [
+  {
+   "name": "identity",
+   "field": "zero",
+   "family": null
+  }
+ ],
+ "frozen": {
+  "prereg": {
+   "path": "docs/bayesreg/notes/LPBA40第二测试集预登记_20261119.md",
+   "sha256": "06121278d8b229401afea7cb86c841f80ba02f23bc40f8c5f5594c7da8d95643"
+  },
+  "holdout_arm_table": {
+   "path": "configs/frozen/holdout_B_v1_arm_table.json",
+   "sha256": "69cb1ddf3e2006116c3d2237f3a4912e68a7238f2ce813f7d67723e5eeb8d661"
+  },
+  "method": {
+   "name": "Hx24-RF05-F1200-v4",
+   "settings_sha256": "414eccd37fe264d081e87bb63235790dc3a1ec40655c57ac64337bf84992f35d",
+   "constant": "experiments/hb/hb_method.py SETTINGS_SHA256"
+  },
+  "configc": {
+   "path": "experiments/d0/configC_reference.json",
+   "sha256": "d331386890d90c8e5fc0c53410a8ffbde64293b1dea3851ccba87e2c9a81c1c3"
+  },
+  "external": {
+   "path": "configs/frozen/holdout_B_v1_baselines.json",
+   "sha256": "7c4965ebed65cfe55009518abca72c021309c366f96b8452b9c622a5f53b15a2",
+   "arms": [
+    "ants_s",
+    "fireants_greedy",
+    "fireants_syn",
+    "convexadam_v4seg"
+   ]
+  }
+ },
+ "arms": [
+  {
+   "name": "method",
+   "family": "method",
+   "kind": "disp",
+   "record_dir": "/home/rmcfz/seq_vp_tag_results/lpba40_test_v1/work/method/{pair}",
+   "field": {
+    "dir": "/home/rmcfz/seq_vp_tag_results/lpba40_test_v1/work/method/{pair}/output"
+   },
+   "cert_mode": "jacobian_only",
+   "jacobian_config": "BL1",
+   "terminal": {
+    "files": [
+     "terminal.json"
+    ],
+    "status_key": "line_status",
+    "classes": {
+     "output": [
+      "hx_certified",
+      "hx_fallback_configC",
+      "hx_fallback_identity"
+     ],
+     "method_failure": [],
+     "unit_limit": [],
+     "wrapper_exception": [],
+     "implementation_error": [
+      "hx_implementation_error"
+     ],
+     "infrastructure": [
+      "infra_failure"
+     ],
+     "not_written": [
+      "hx_provenance_rejected",
+      "needs_lead_rejudgment"
+     ]
+    }
+   },
+   "complete_files": [
+    "terminal.json",
+    "output/final.npz",
+    "output/disp.npz",
+    "output/cert.json",
+    "output/line.json",
+    "review/review.json"
+   ],
+   "review_record": {
+    "file": "review/review.json",
+    "status_key": "finalized",
+    "final": [
+     true
+    ]
+   },
+   "decision_certificate": {
+    "final": "output/final.npz",
+    "cert": "output/cert.json"
+   },
+   "export_check": null,
+   "stop_record": "runs/lpba40_test_v1/arm_stop_{arm}.json",
+   "authorization": {
+    "tool": "hb",
+    "arm": "method",
+    "records": "/home/rmcfz/seq_vp_tag_results/lpba40_test_v1/method/{pair}"
+   }
+  },
+  {
+   "name": "configc",
+   "family": "main",
+   "kind": "disp",
+   "record_dir": "/home/rmcfz/seq_vp_tag_results/lpba40_test_v1/{arm}/{pair}",
+   "field": {
+    "file_key": "output_store.disp.file",
+    "sha256_key": "output_store.disp.sha256",
+    "root": "/home/rmcfz/seq_vp_tag_results/lpba40_test_v1/work/{arm}"
+   },
+   "cert_mode": "jacobian_only",
+   "jacobian_config": "BL1",
+   "terminal": {
+    "files": [
+     "overridden_resume.json",
+     "result_resume.json",
+     "overridden.json",
+     "result.json"
+    ],
+    "status_key": "status",
+    "classes": {
+     "output": [
+      "ok"
+     ],
+     "method_failure": [
+      "method_failure"
+     ],
+     "unit_limit": [
+      "unit_limit"
+     ],
+     "wrapper_exception": [
+      "wrapper_error"
+     ],
+     "implementation_error": [],
+     "infrastructure": [
+      "infra_failure"
+     ],
+     "not_written": [
+      "needs_lead_rejudgment"
+     ]
+    }
+   },
+   "complete_files": [],
+   "review_record": null,
+   "decision_certificate": null,
+   "export_check": null,
+   "stop_record": "runs/lpba40_test_v1/arm_stop_{arm}.json",
+   "authorization": {
+    "tool": "hb",
+    "arm": "configc",
+    "records": "/home/rmcfz/seq_vp_tag_results/lpba40_test_v1/{arm}/{pair}"
+   }
+  },
+  {
+   "name": "ants_s",
+   "family": "main",
+   "kind": "disp",
+   "record_dir": "/home/rmcfz/seq_vp_tag_results/lpba40_test_v1/{arm}/{pair}",
+   "field": {
+    "file_key": "disp.file",
+    "sha256_key": "disp.sha256",
+    "root": "/home/rmcfz/seq_vp_tag_results/lpba40_test_v1/work/{arm}"
+   },
+   "cert_mode": "jacobian_only",
+   "jacobian_config": "BL1",
+   "terminal": {
+    "files": [
+     "resume/overridden.json",
+     "resume/result.json",
+     "overridden.json",
+     "result.json"
+    ],
+    "status_key": "status",
+    "classes": {
+     "output": [
+      "ok"
+     ],
+     "method_failure": [
+      "method_failure"
+     ],
+     "unit_limit": [
+      "unit_limit"
+     ],
+     "wrapper_exception": [
+      "wrapper_error"
+     ],
+     "implementation_error": [],
+     "infrastructure": [
+      "infra_failure"
+     ],
+     "not_written": [
+      "needs_lead_rejudgment"
+     ]
+    }
+   },
+   "complete_files": [],
+   "review_record": null,
+   "decision_certificate": null,
+   "export_check": {
+    "key": "export_check.suspicious"
+   },
+   "stop_record": "runs/lpba40_test_v1/arm_stop_{arm}.json",
+   "authorization": {
+    "tool": "xb",
+    "arm": "ants_s",
+    "records": "/home/rmcfz/seq_vp_tag_results/lpba40_test_v1/{arm}/{pair}"
+   }
+  },
+  {
+   "name": "fireants_greedy",
+   "family": "main",
+   "kind": "disp",
+   "record_dir": "/home/rmcfz/seq_vp_tag_results/lpba40_test_v1/{arm}/{pair}",
+   "field": {
+    "file_key": "disp.file",
+    "sha256_key": "disp.sha256",
+    "root": "/home/rmcfz/seq_vp_tag_results/lpba40_test_v1/work/{arm}"
+   },
+   "cert_mode": "jacobian_only",
+   "jacobian_config": "BL1",
+   "terminal": {
+    "files": [
+     "resume/overridden.json",
+     "resume/result.json",
+     "overridden.json",
+     "result.json"
+    ],
+    "status_key": "status",
+    "classes": {
+     "output": [
+      "ok"
+     ],
+     "method_failure": [
+      "method_failure"
+     ],
+     "unit_limit": [
+      "unit_limit"
+     ],
+     "wrapper_exception": [
+      "wrapper_error"
+     ],
+     "implementation_error": [],
+     "infrastructure": [
+      "infra_failure"
+     ],
+     "not_written": [
+      "needs_lead_rejudgment"
+     ]
+    }
+   },
+   "complete_files": [],
+   "review_record": null,
+   "decision_certificate": null,
+   "export_check": {
+    "key": "export_check.suspicious"
+   },
+   "stop_record": "runs/lpba40_test_v1/arm_stop_{arm}.json",
+   "authorization": {
+    "tool": "xb",
+    "arm": "fireants_greedy",
+    "records": "/home/rmcfz/seq_vp_tag_results/lpba40_test_v1/{arm}/{pair}"
+   }
+  },
+  {
+   "name": "fireants_syn",
+   "family": "main",
+   "kind": "disp",
+   "record_dir": "/home/rmcfz/seq_vp_tag_results/lpba40_test_v1/{arm}/{pair}",
+   "field": {
+    "file_key": "disp.file",
+    "sha256_key": "disp.sha256",
+    "root": "/home/rmcfz/seq_vp_tag_results/lpba40_test_v1/work/{arm}"
+   },
+   "cert_mode": "jacobian_only",
+   "jacobian_config": "BL1",
+   "terminal": {
+    "files": [
+     "resume/overridden.json",
+     "resume/result.json",
+     "overridden.json",
+     "result.json"
+    ],
+    "status_key": "status",
+    "classes": {
+     "output": [
+      "ok"
+     ],
+     "method_failure": [
+      "method_failure"
+     ],
+     "unit_limit": [
+      "unit_limit"
+     ],
+     "wrapper_exception": [
+      "wrapper_error"
+     ],
+     "implementation_error": [],
+     "infrastructure": [
+      "infra_failure"
+     ],
+     "not_written": [
+      "needs_lead_rejudgment"
+     ]
+    }
+   },
+   "complete_files": [],
+   "review_record": null,
+   "decision_certificate": null,
+   "export_check": {
+    "key": "export_check.suspicious"
+   },
+   "stop_record": "runs/lpba40_test_v1/arm_stop_{arm}.json",
+   "authorization": {
+    "tool": "xb",
+    "arm": "fireants_syn",
+    "records": "/home/rmcfz/seq_vp_tag_results/lpba40_test_v1/{arm}/{pair}"
+   }
+  },
+  {
+   "name": "convexadam_v4seg",
+   "family": "main",
+   "kind": "disp",
+   "record_dir": "/home/rmcfz/seq_vp_tag_results/lpba40_test_v1/{arm}/{pair}",
+   "field": {
+    "file_key": "disp.file",
+    "sha256_key": "disp.sha256",
+    "root": "/home/rmcfz/seq_vp_tag_results/lpba40_test_v1/work/{arm}"
+   },
+   "cert_mode": "jacobian_only",
+   "jacobian_config": "BL1",
+   "terminal": {
+    "files": [
+     "resume/overridden.json",
+     "resume/result.json",
+     "overridden.json",
+     "result.json"
+    ],
+    "status_key": "status",
+    "classes": {
+     "output": [
+      "ok"
+     ],
+     "method_failure": [
+      "method_failure"
+     ],
+     "unit_limit": [
+      "unit_limit"
+     ],
+     "wrapper_exception": [
+      "wrapper_error"
+     ],
+     "implementation_error": [],
+     "infrastructure": [
+      "infra_failure"
+     ],
+     "not_written": [
+      "needs_lead_rejudgment"
+     ]
+    }
+   },
+   "complete_files": [],
+   "review_record": null,
+   "decision_certificate": null,
+   "export_check": {
+    "key": "export_check.suspicious"
+   },
+   "stop_record": "runs/lpba40_test_v1/arm_stop_{arm}.json",
+   "authorization": {
+    "tool": "xb",
+    "arm": "convexadam_v4seg",
+    "records": "/home/rmcfz/seq_vp_tag_results/lpba40_test_v1/{arm}/{pair}"
+   }
+  }
+ ]
+}

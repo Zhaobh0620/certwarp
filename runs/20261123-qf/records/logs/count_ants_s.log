@@ -1,0 +1,8 @@
+16:36:21 ants_s: field loaded
+16:36:21   central det <= 0: 0 of 6452160 (fixed > 0: 0)
+16:37:00   witness gauss27: 39 s, points with J <= 0: 1
+16:37:38   witness closed27: 38 s, points with J <= 0: 17
+16:37:38   Q1 cells with a witness: 12 (fixed > 0: 12), min J -0.4833
+16:37:49   BL1 Jacobian-only certificate: passed False, status infeasible, infeasible 12, uncertain 0, min lower bound -0.48331876317228806, 10 s
+16:37:51   cell pass: {'codes': 'cert_eval: 0 hull, 1 prescreen, 2 fallback (proven); 3 infeasible; 4, 5 uncertain', 'infeasible': 12, 'uncertain': 0, 'witness_and_infeasible': 12, 'witness_not_infeasible': 0, 'infeasible_without_witness': 0}
+16:37:51 wrote /home/rmcfz/seq_vp_tag_results/qf_v2/ants_s/counts.json

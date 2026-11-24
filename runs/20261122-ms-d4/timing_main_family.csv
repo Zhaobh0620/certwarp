@@ -1,0 +1,41 @@
+set,arm,n,quantity,median,min,max
+oasis,method,50,task clock line.json seconds_total (supervisor: T88 + repair + decision; no U-Net),119.636,98.191,373.260
+oasis,method,50,t88.seconds_task,49.813,43.876,59.858
+oasis,method,50,repair.seconds_repair,61.335,44.531,316.111
+oasis,method,50,repair.seconds_warmup,1.205,1.139,12.880
+oasis,method,50,"seconds_total - t88.seconds_task - repair.seconds_repair (the rest: start-up, channels, warm-up, checks)",7.143,6.813,21.554
+oasis,method,100,"HI (U-Net, per subject, a separate unit) seconds_total",56.901,54.387,60.848
+oasis,method,100,HI seconds_forward,2.310,2.049,3.066
+oasis,configc,50,"result.json utc_end - utc_start (whole seconds; the driver's span, the 90 s native budget inside)",158.000,151.000,198.000
+oasis,ants_s,50,method.seconds_registration (cold; the method's own report),183.943,172.279,189.850
+oasis,ants_s,50,method.seconds_total (method process start to output written),188.045,176.330,193.963
+oasis,ants_s,50,seconds_driver_wall,197.860,186.020,203.400
+oasis,fireants_greedy,50,method.seconds_registration (cold; the method's own report),3.175,1.936,3.596
+oasis,fireants_greedy,50,method.seconds_total (method process start to output written),5.459,4.268,6.965
+oasis,fireants_greedy,50,seconds_driver_wall,17.700,15.260,19.660
+oasis,fireants_syn,50,method.seconds_registration (cold; the method's own report),3.089,2.834,3.317
+oasis,fireants_syn,50,method.seconds_total (method process start to output written),7.068,6.759,7.271
+oasis,fireants_syn,50,seconds_driver_wall,21.050,20.450,21.950
+oasis,convexadam_v4seg,50,method.seconds_registration (cold; the method's own report),3.350,3.099,3.973
+oasis,convexadam_v4seg,50,method.seconds_total (method process start to output written),4.990,4.706,6.542
+oasis,convexadam_v4seg,50,seconds_driver_wall,31.460,27.850,33.470
+lpba,method,17,task clock line.json seconds_total (supervisor: T88 + repair + decision; no U-Net),101.213,77.305,236.308
+lpba,method,17,t88.seconds_task,50.862,46.011,53.925
+lpba,method,17,repair.seconds_repair,43.859,18.309,178.562
+lpba,method,17,repair.seconds_warmup,1.242,1.197,13.347
+lpba,method,17,"seconds_total - t88.seconds_task - repair.seconds_repair (the rest: start-up, channels, warm-up, checks)",6.908,6.713,19.622
+lpba,method,34,"HI (U-Net, per subject, a separate unit) seconds_total",50.537,47.810,55.612
+lpba,method,34,HI seconds_forward,2.419,2.271,3.389
+lpba,configc,17,"result.json utc_end - utc_start (whole seconds; the driver's span, the 90 s native budget inside)",122.000,120.000,180.000
+lpba,ants_s,17,method.seconds_registration (cold; the method's own report),171.456,160.477,178.439
+lpba,ants_s,17,method.seconds_total (method process start to output written),175.500,164.453,182.401
+lpba,ants_s,17,seconds_driver_wall,183.490,172.030,190.460
+lpba,fireants_greedy,17,method.seconds_registration (cold; the method's own report),3.805,3.446,4.281
+lpba,fireants_greedy,17,method.seconds_total (method process start to output written),5.575,5.275,7.345
+lpba,fireants_greedy,17,seconds_driver_wall,17.180,16.370,18.850
+lpba,fireants_syn,17,method.seconds_registration (cold; the method's own report),3.754,3.461,3.915
+lpba,fireants_syn,17,method.seconds_total (method process start to output written),7.292,7.021,7.494
+lpba,fireants_syn,17,seconds_driver_wall,20.570,20.000,21.230
+lpba,convexadam_v4seg,17,method.seconds_registration (cold; the method's own report),3.731,3.209,4.668
+lpba,convexadam_v4seg,17,method.seconds_total (method process start to output written),5.007,4.492,6.745
+lpba,convexadam_v4seg,17,seconds_driver_wall,28.680,27.650,30.090

@@ -1,0 +1,241 @@
+pins ok: both decision.json (first 8 hex as quoted in the two result documents)
+
+== item 1: the pre-optimisation output before the repair (repair/repair.json of every method cell; output/line.json)
+-- OASIS hold-out (50 pairs): n 50
+  repair status {'certified': 50} | reason {'certified': 50} | passed 50 | wall_hit 0 | line_status {'hx_certified': 50}
+  initial certificate (configuration C, on the tapered T88 field, before any repair): status {'infeasible': 50} | passing (rule of C22.3-6) 0 | not passing 50
+  grid cells per pair [6772287] | nodes [6881280] | initial n_cells_checked == all cells: 50 / 50
+  initial n_infeasible (cells with a proven J <= 0 point): n 50; min 1.462e+04; q25 1.983e+04; median 2.139e+04; q75 2.459e+04; max 2.795e+04; mean 2.195e+04
+  initial n_uncertain (cells undecided): n 50; min 0; q25 0; median 0; q75 0; max 0; mean 0
+  initial n_infeasible + n_uncertain (cells not proven): n 50; min 1.462e+04; q25 1.983e+04; median 2.139e+04; q75 2.459e+04; max 2.795e+04; mean 2.195e+04
+    as a fraction of all cells: n 50; min 0.002159; q25 0.002929; median 0.003159; q75 0.003631; max 0.004127; mean 0.003241
+  pairs with initial n_uncertain > 0: 0 | pairs with initial n_infeasible > 0: 50
+  initial min_jd_lower_bound: n 50; min -9.937; q25 -4.768; median -3.448; q75 -2.979; max -2.179; mean -3.962
+  n_located (cells the two fast proofs of locate_cells do not prove; the repair's seed, a superset, not a verdict): n 50; min 1.465e+04; q25 1.988e+04; median 2.145e+04; q75 2.465e+04; max 2.803e+04; mean 2.201e+04
+  repair rounds {'1': 31, '2': 18, '3': 1} | line.json repair.rounds the same: 50 / 50
+  free nodes in the last round (n_free; every other node is bitwise the input): n 50; min 2.247e+05; q25 2.766e+05; median 3.233e+05; q75 6.105e+05; max 1.027e+06; mean 4.273e+05
+    as a fraction of all nodes: n 50; min 0.03265; q25 0.0402; median 0.04699; q75 0.08873; max 0.1492; mean 0.06209
+  attempt.n_free_nodes == last n_free: 50 / 50
+  nodes moved in the last round (inner.n_moved: free nodes with |v - u| > 0): n 50; min 7.328e+04; q25 9.529e+04; median 1.048e+05; q75 1.17e+05; max 1.355e+05; mean 1.063e+05
+  cells touched in the last round (n_cells): n 50; min 3.435e+05; q25 4.176e+05; median 4.781e+05; q75 7.727e+05; max 1.197e+06; mean 5.803e+05
+  largest node displacement change of the output against the repair input, mm (last round inner.max_move_mm): n 50; min 0.5996; q25 0.7049; median 0.7996; q75 1.096; max 2.492; mean 0.925
+    largest over all rounds of a pair, mm: n 50; min 0.5996; q25 0.7049; median 0.7996; q75 1.096; max 2.492; mean 0.9254
+  inner stop reasons over all rounds {'inner_cap': 70} | inner iterations per round: median 300
+  seconds_repair (first locate + repair_field: its certificates included; warm-up excluded): n 50; min 44.53; q25 54.14; median 61.34; q75 153.7; max 316.1; mean 98.38
+    of which seconds_first_locate: n 50; min 0.4642; q25 0.4875; median 0.5002; q75 0.5159; max 0.5536; mean 0.5022
+    of which L-BFGS solves (sum of rounds' seconds_solve): n 50; min 42.31; q25 51.75; median 58.91; q75 150.1; max 311.2; mean 95.5
+    of which certificates after rounds (sum of rounds' seconds_certificate): n 50; min 0.6187; q25 0.6669; median 0.704; q75 1.345; max 2.052; mean 0.9541
+  seconds_warmup (numba + device, not in seconds_repair): n 50; min 1.139; q25 1.188; median 1.205; q75 1.223; max 12.88; mean 1.45
+  repair child seconds_total: n 50; min 48.44; q25 58.01; median 65.45; q75 157.7; max 320.2; mean 102.7
+  final certificate min_jd_lower_bound (repair.json certificate): n 50; min 1.937e-09; q25 3.644e-07; median 1.166e-06; q75 1.991e-06; max 1.517e-05; mean 1.676e-06
+  pairs with 1 round(s): n 31; median initial not-proven cells 2.084e+04; median seconds_repair 56.47; median last n_free 2.955e+05
+  pairs with 2 round(s): n 18; median initial not-proven cells 2.347e+04; median seconds_repair 158.1; median last n_free 6.242e+05
+  pairs with 3 round(s): n 1; median initial not-proven cells 2.751e+04; median seconds_repair 316.1; median last n_free 1.027e+06
+-- LPBA40 second test set (17 pairs): n 17
+  repair status {'certified': 17} | reason {'certified': 17} | passed 17 | wall_hit 0 | line_status {'hx_certified': 17}
+  initial certificate (configuration C, on the tapered T88 field, before any repair): status {'infeasible': 17} | passing (rule of C22.3-6) 0 | not passing 17
+  grid cells per pair [6998400] | nodes [7109137] | initial n_cells_checked == all cells: 17 / 17
+  initial n_infeasible (cells with a proven J <= 0 point): n 17; min 3979; q25 1.245e+04; median 1.478e+04; q75 1.893e+04; max 3.268e+04; mean 1.55e+04
+  initial n_uncertain (cells undecided): n 17; min 0; q25 0; median 0; q75 0; max 0; mean 0
+  initial n_infeasible + n_uncertain (cells not proven): n 17; min 3979; q25 1.245e+04; median 1.478e+04; q75 1.893e+04; max 3.268e+04; mean 1.55e+04
+    as a fraction of all cells: n 17; min 0.0005686; q25 0.001779; median 0.002111; q75 0.002704; max 0.00467; mean 0.002215
+  pairs with initial n_uncertain > 0: 0 | pairs with initial n_infeasible > 0: 17
+  initial min_jd_lower_bound: n 17; min -10.54; q25 -5.168; median -4.405; q75 -3.389; max -2.332; mean -5.091
+  n_located (cells the two fast proofs of locate_cells do not prove; the repair's seed, a superset, not a verdict): n 17; min 3985; q25 1.248e+04; median 1.481e+04; q75 1.899e+04; max 3.277e+04; mean 1.554e+04
+  repair rounds {'1': 11, '2': 6} | line.json repair.rounds the same: 17 / 17
+  free nodes in the last round (n_free; every other node is bitwise the input): n 17; min 7.567e+04; q25 1.76e+05; median 2.22e+05; q75 4.118e+05; max 6.858e+05; mean 2.885e+05
+    as a fraction of all nodes: n 17; min 0.01064; q25 0.02475; median 0.03123; q75 0.05793; max 0.09647; mean 0.04059
+  attempt.n_free_nodes == last n_free: 17 / 17
+  nodes moved in the last round (inner.n_moved: free nodes with |v - u| > 0): n 17; min 2.031e+04; q25 6.283e+04; median 7.329e+04; q75 8.717e+04; max 1.488e+05; mean 7.464e+04
+  cells touched in the last round (n_cells): n 17; min 1.248e+05; q25 2.747e+05; median 3.407e+05; q75 5.328e+05; max 8.712e+05; mean 3.998e+05
+  largest node displacement change of the output against the repair input, mm (last round inner.max_move_mm): n 17; min 0.6077; q25 0.7996; median 0.9201; q75 1.079; max 3.767; mean 1.093
+    largest over all rounds of a pair, mm: n 17; min 0.6077; q25 0.7996; median 0.9201; q75 1.079; max 3.767; mean 1.095
+  inner stop reasons over all rounds {'inner_cap': 23} | inner iterations per round: median 300
+  seconds_repair (first locate + repair_field: its certificates included; warm-up excluded): n 17; min 18.31; q25 37.16; median 43.86; q75 109.6; max 178.6; mean 69.17
+    of which seconds_first_locate: n 17; min 0.4348; q25 0.4458; median 0.4586; q75 0.4793; max 0.5102; mean 0.4624
+    of which L-BFGS solves (sum of rounds' seconds_solve): n 17; min 16.5; q25 35.18; median 41.78; q75 106.5; max 174.7; mean 66.64
+    of which certificates after rounds (sum of rounds' seconds_certificate): n 17; min 0.5779; q25 0.6085; median 0.6339; q75 1.23; max 1.371; mean 0.8538
+  seconds_warmup (numba + device, not in seconds_repair): n 17; min 1.197; q25 1.228; median 1.242; q75 1.271; max 13.35; mean 1.961
+  repair child seconds_total: n 17; min 22.14; q25 41.18; median 47.75; q75 113.6; max 182.5; mean 73.79
+  final certificate min_jd_lower_bound (repair.json certificate): n 17; min 1.829e-07; q25 3.915e-07; median 8.585e-07; q75 1.738e-06; max 3.827e-06; mean 1.204e-06
+  pairs with 1 round(s): n 11; median initial not-proven cells 1.263e+04; median seconds_repair 37.86; median last n_free 1.821e+05
+  pairs with 2 round(s): n 6; median initial not-proven cells 1.77e+04; median seconds_repair 115.6; median last n_free 4.342e+05
+-- development set (HS, 19 pairs, single run; repair_metrics.json): the change record computed from the two fields
+  before.n_infeasible_at_1: n 19; min 1.702e+04; q25 1.967e+04; median 2.129e+04; q75 2.234e+04; max 2.416e+04; mean 2.094e+04
+  change.n_changed_nodes: n 19; min 8.082e+04; q25 9.631e+04; median 1.016e+05; q75 1.068e+05; max 1.152e+05; mean 1.01e+05
+  change.max_change_mm: n 19; min 0.5556; q25 0.7113; median 0.7802; q75 0.843; max 1.696; mean 0.8496
+
+== item 2: LPBA40, method minus opponent per label and per ID group (pair records: arms.<arm>.per_label.lpba56_per_label)
+  check method: mean of per-label = recorded lpba56 / lpba54 to 0.0e+00; lpba54 0.6747 lpba56 0.6804
+  check configc: mean of per-label = recorded lpba56 / lpba54 to 0.0e+00; lpba54 0.7022 lpba56 0.7074
+  check ants_s: mean of per-label = recorded lpba56 / lpba54 to 0.0e+00; lpba54 0.7237 lpba56 0.7281
+  check fireants_greedy: mean of per-label = recorded lpba56 / lpba54 to 0.0e+00; lpba54 0.6923 lpba56 0.6971
+  check fireants_syn: mean of per-label = recorded lpba56 / lpba54 to 0.0e+00; lpba54 0.6664 lpba56 0.6720
+  check convexadam_v4seg: mean of per-label = recorded lpba56 / lpba54 to 0.0e+00; lpba54 0.6749 lpba56 0.6806
+  per label (56 rows) in lpba_per_label_delta.csv
+  opponent | lpba54 delta | lpba56 delta | labels with mean delta < 0 (of 56 / of 54) | most negative 5 labels (id: delta) | most positive 5 labels
+  configc | -0.0274 | -0.0271 | 49 / 47 | 66: -0.110, 65: -0.106, 87: -0.088, 91: -0.082, 61: -0.059 | 164: +0.019, 166: +0.014, 163: +0.012, 27: +0.011, 102: +0.009
+  ants_s | -0.0490 | -0.0477 | 56 / 54 | 42: -0.113, 65: -0.111, 66: -0.107, 91: -0.101, 61: -0.093 | 182: -0.001, 164: -0.001, 162: -0.003, 161: -0.004, 163: -0.008
+  fireants_greedy | -0.0176 | -0.0168 | 46 / 46 | 91: -0.067, 87: -0.067, 65: -0.061, 82: -0.053, 92: -0.049 | 166: +0.017, 164: +0.016, 163: +0.008, 181: +0.006, 162: +0.005
+  fireants_syn | +0.0083 | +0.0084 | 19 / 19 | 65: -0.052, 91: -0.049, 66: -0.047, 87: -0.033, 92: -0.031 | 164: +0.089, 102: +0.051, 27: +0.045, 162: +0.044, 166: +0.039
+  convexadam_v4seg | -0.0001 | -0.0002 | 28 / 26 | 87: -0.039, 91: -0.026, 48: -0.021, 46: -0.014, 84: -0.013 | 31: +0.025, 32: +0.023, 102: +0.023, 43: +0.014, 101: +0.013
+  ID group | n labels | identity | method | method - configc (pairs won of 17) | method - ants_s (pairs won of 17) | method - fireants_greedy (pairs won of 17) | method - fireants_syn (pairs won of 17) | method - convexadam_v4seg (pairs won of 17)
+  21-34 | 14 | 0.5849 | 0.7026 | -0.0194 (2) | -0.0308 (0) | -0.0146 (0) | +0.0170 (15) | +0.0055 (13)
+  41-50 | 10 | 0.4936 | 0.6261 | -0.0164 (4) | -0.0637 (0) | -0.0100 (4) | +0.0098 (12) | -0.0039 (8)
+  61-68 | 8 | 0.4116 | 0.5885 | -0.0611 (1) | -0.0802 (0) | -0.0216 (3) | -0.0147 (5) | -0.0033 (9)
+  81-92 | 12 | 0.5471 | 0.6677 | -0.0478 (0) | -0.0665 (0) | -0.0421 (0) | -0.0134 (4) | -0.0050 (7)
+  101-102 | 2 | 0.5952 | 0.7804 | -0.0007 (5) | -0.0247 (3) | -0.0122 (6) | +0.0304 (14) | +0.0179 (14)
+  121-122 | 2 | 0.5342 | 0.6988 | -0.0052 (6) | -0.0140 (1) | +0.0041 (8) | +0.0286 (14) | +0.0064 (12)
+  161-166 | 6 | 0.5658 | 0.7763 | +0.0047 (9) | -0.0098 (4) | +0.0081 (11) | +0.0457 (17) | -0.0014 (8)
+  181-182 | 2 | 0.7949 | 0.8335 | -0.0166 (1) | -0.0135 (6) | +0.0057 (12) | +0.0098 (10) | -0.0009 (7)
+  ids 21..92 (44 labels) | 44 | 0.5223 | 0.6550 | -0.0341 (0) | -0.0570 (0) | -0.0223 (1) | +0.0013 (8) | -0.0011 (9)
+  ids 101..166 (10 labels) | 10 | 0.5654 | 0.7616 | +0.0016 (9) | -0.0136 (4) | +0.0032 (12) | +0.0392 (17) | +0.0040 (12)
+  ids 181,182 (2 labels) | 2 | 0.7949 | 0.8335 | -0.0166 (1) | -0.0135 (6) | +0.0057 (12) | +0.0098 (10) | -0.0009 (7)
+  rank correlation over the 56 labels (Spearman, no test): method-minus-opponent mean delta against the label's unregistered (identity) Dice
+    configc: rho +0.33
+    ants_s: rho +0.59
+    fireants_greedy: rho +0.11
+    fireants_syn: rho +0.28
+    convexadam_v4seg: rho +0.25
+
+== item 3: certificate lower bounds (decision certificate: method cell output/cert.json; BL1: pair records arms.<arm>.certificate)
+-- OASIS hold-out (50 pairs)
+  decision certificate (configuration C, full mode): status {'certified_feasible': 50} | n_infeasible sum 0 | n_uncertain sum 0
+  method, decision certificate min_jd_lower_bound (one number per pair: the certified lower bound of min J over all closed cells): n 50; min 1.937e-09; q25 3.644e-07; median 1.166e-06; q75 1.991e-06; max 1.517e-05; mean 1.676e-06
+  pairs with the bound below 1e-8 / 1e-7 / 1e-6 / 1e-5 / 1e-4 / 1e-3 / 1e-2: 1 / 5 / 23 / 49 / 50 / 50 / 50
+  method, min_margin_lower_bound (cert.json): n 50; min 1.937e-09; q25 3.644e-07; median 1.166e-06; q75 1.991e-06; max 1.517e-05; mean 1.676e-06
+  evaluation's recomputation equals cert.json: 50 / 50
+  method, min_J_centre (smallest cell-centre J on the whole grid; pair records metrics): n 50; min 0.02458; q25 0.04901; median 0.05057; q75 0.05677; max 0.08157; mean 0.05384
+  method, pct_J_lt_half_brain (% of brain cells with centre J < .5): n 50; min 10.54; q25 13.89; median 15.55; q75 18.29; max 27.8; mean 16.27
+  method, logj_q01_brain: n 50; min -1.707; q25 -1.581; median -1.548; q75 -1.518; max -1.464; mean -1.555
+  method, logj_q99_brain: n 50; min 0.9687; q25 1.028; median 1.073; q75 1.123; max 1.392; mean 1.093
+  BL1 (jacobian_only) min_jd_lower_bound per arm: passed | min | q25 | median | q75 | max
+    method: 50/50 | 1.937e-09 | 3.644e-07 | 1.166e-06 | 1.991e-06 | 1.517e-05
+    configc: 50/50 | 6.942e-09 | 1.707e-07 | 4.014e-07 | 9.399e-07 | 2.154e-06
+    ants_s: 1/50 | -1.517 | -0.5777 | -0.3246 | -0.133 | 2.647e-06
+    fireants_greedy: 45/50 | -0.02249 | 4.682e-06 | 3.151e-05 | 5.944e-05 | 0.0001869
+    fireants_syn: 50/50 | 2.135e-06 | 0.0001898 | 0.0004355 | 0.001029 | 0.003753
+    convexadam_v4seg: 0/50 | -2.481 | -1.083 | -0.9785 | -0.8474 | -0.4251
+    ants_so: 1/50 | -2.036 | -0.609 | -0.3792 | -0.2487 | 3.007e-05
+    niftyreg: 0/50 | -3.205 | -2.131 | -1.832 | -1.614 | -1.034
+    deeds: 27/50 | -0.6145 | -0.0396 | 0.00218 | 0.0569 | 0.1765
+    convexadam: 0/50 | -1.054 | -0.7149 | -0.5176 | -0.4516 | -0.2071
+    unigradicon_io: 0/50 | -1.399 | -0.4572 | -0.3389 | -0.2335 | -0.08473
+    unigradicon_noio: 0/50 | -0.9723 | -0.3792 | -0.2264 | -0.1553 | -0.07884
+    voxelmorph: 8/50 | -2.031 | -0.3348 | -0.06186 | -0.01659 | 0.0002954
+    fireants_greedy_eq: 45/50 | -0.03012 | 7.431e-06 | 4.494e-05 | 8.908e-05 | 0.0007606
+    fireants_syn_eq: 23/50 | -1.658 | -0.2554 | -0.02509 | 1.656e-05 | 0.0003591
+    unigradicon_io_eq: 0/50 | -1.634 | -0.5431 | -0.4276 | -0.2657 | -0.1222
+-- LPBA40 second test set (17 pairs)
+  decision certificate (configuration C, full mode): status {'certified_feasible': 17} | n_infeasible sum 0 | n_uncertain sum 0
+  method, decision certificate min_jd_lower_bound (one number per pair: the certified lower bound of min J over all closed cells): n 17; min 1.829e-07; q25 3.915e-07; median 8.585e-07; q75 1.738e-06; max 3.827e-06; mean 1.204e-06
+  pairs with the bound below 1e-8 / 1e-7 / 1e-6 / 1e-5 / 1e-4 / 1e-3 / 1e-2: 0 / 0 / 9 / 17 / 17 / 17 / 17
+  method, min_margin_lower_bound (cert.json): n 17; min 1.829e-07; q25 3.915e-07; median 8.585e-07; q75 1.738e-06; max 3.827e-06; mean 1.204e-06
+  evaluation's recomputation equals cert.json: 17 / 17
+  method, min_J_centre (smallest cell-centre J on the whole grid; pair records metrics): n 17; min 0.01469; q25 0.04571; median 0.04928; q75 0.05018; max 0.1211; mean 0.0482
+  method, pct_J_lt_half_brain (% of brain cells with centre J < .5): n 17; min 9.6; q25 12.5; median 13.44; q75 18.54; max 27.65; mean 16.25
+  method, logj_q01_brain: n 17; min -1.642; q25 -1.614; median -1.585; q75 -1.572; max -1.48; mean -1.58
+  method, logj_q99_brain: n 17; min 0.9012; q25 1.107; median 1.146; q75 1.229; max 1.358; mean 1.166
+  BL1 (jacobian_only) min_jd_lower_bound per arm: passed | min | q25 | median | q75 | max
+    method: 17/17 | 1.829e-07 | 3.915e-07 | 8.585e-07 | 1.738e-06 | 3.827e-06
+    configc: 17/17 | 6.047e-08 | 5.24e-07 | 5.633e-07 | 1.975e-06 | 3.983e-06
+    ants_s: 2/17 | -0.6459 | -0.2392 | -0.07594 | -0.03001 | 0.0001625
+    fireants_greedy: 17/17 | 1.183e-06 | 8.178e-06 | 6.916e-05 | 9.498e-05 | 0.0005543
+    fireants_syn: 17/17 | 0.0002238 | 0.0005878 | 0.001159 | 0.001514 | 0.00272
+    convexadam_v4seg: 0/17 | -1.875 | -0.9343 | -0.6713 | -0.3759 | -0.1791
+  where the cells with J < .5 are: NOT computed. The records hold one number per pair (pct_J_lt_half_brain) and no location.
+
+== item 4: seconds per arm, median (min..max); method: output/line.json; external arms and configuration C: <arm>/<pair>/result.json
+-- OASIS hold-out (50 pairs)
+  method | task clock line.json seconds_total (supervisor: T88 + repair + decision; no U-Net): median 119.64 (98.19..373.26); n 50
+  method | t88.seconds_task: median 49.81 (43.88..59.86); n 50
+  method | repair.seconds_repair: median 61.34 (44.53..316.11); n 50
+  method | repair.seconds_warmup: median 1.21 (1.14..12.88); n 50
+  method | seconds_total - t88.seconds_task - repair.seconds_repair (the rest: start-up, channels, warm-up, checks): median 7.14 (6.81..21.55); n 50
+  method | pairs with task clock <= 90 s: 0/50; <= 120 s: 26/50
+  method | HI (U-Net, per subject, a separate unit) seconds_total: median 56.90 (54.39..60.85); n 100
+  method | HI seconds_forward: median 2.31 (2.05..3.07); n 100
+  configc | result.json utc_end - utc_start (whole seconds; the driver's span, the 90 s native budget inside): median 158.00 (151.00..198.00); n 50
+  ants_s | method.seconds_registration (cold; the method's own report): median 183.94 (172.28..189.85); n 50
+  ants_s | method.seconds_total (method process start to output written): median 188.04 (176.33..193.96); n 50
+  ants_s | seconds_driver_wall: median 197.86 (186.02..203.40); n 50
+    ants_s device: {'cpu': 50}
+  fireants_greedy | method.seconds_registration (cold; the method's own report): median 3.17 (1.94..3.60); n 50
+  fireants_greedy | method.seconds_total (method process start to output written): median 5.46 (4.27..6.97); n 50
+  fireants_greedy | seconds_driver_wall: median 17.70 (15.26..19.66); n 50
+    fireants_greedy device: {'cuda (NVIDIA GeForce RTX 4090)': 50}
+  fireants_syn | method.seconds_registration (cold; the method's own report): median 3.09 (2.83..3.32); n 50
+  fireants_syn | method.seconds_total (method process start to output written): median 7.07 (6.76..7.27); n 50
+  fireants_syn | seconds_driver_wall: median 21.05 (20.45..21.95); n 50
+    fireants_syn device: {'cuda (NVIDIA GeForce RTX 4090)': 50}
+  convexadam_v4seg | method.seconds_registration (cold; the method's own report): median 3.35 (3.10..3.97); n 50
+  convexadam_v4seg | method.seconds_total (method process start to output written): median 4.99 (4.71..6.54); n 50
+  convexadam_v4seg | seconds_driver_wall: median 31.46 (27.85..33.47); n 50
+    convexadam_v4seg device: {'cuda (NVIDIA GeForce RTX 4090)': 50}
+-- LPBA40 second test set (17 pairs)
+  method | task clock line.json seconds_total (supervisor: T88 + repair + decision; no U-Net): median 101.21 (77.30..236.31); n 17
+  method | t88.seconds_task: median 50.86 (46.01..53.93); n 17
+  method | repair.seconds_repair: median 43.86 (18.31..178.56); n 17
+  method | repair.seconds_warmup: median 1.24 (1.20..13.35); n 17
+  method | seconds_total - t88.seconds_task - repair.seconds_repair (the rest: start-up, channels, warm-up, checks): median 6.91 (6.71..19.62); n 17
+  method | pairs with task clock <= 90 s: 2/17; <= 120 s: 10/17
+  method | HI (U-Net, per subject, a separate unit) seconds_total: median 50.54 (47.81..55.61); n 34
+  method | HI seconds_forward: median 2.42 (2.27..3.39); n 34
+  configc | result.json utc_end - utc_start (whole seconds; the driver's span, the 90 s native budget inside): median 122.00 (120.00..180.00); n 17
+  ants_s | method.seconds_registration (cold; the method's own report): median 171.46 (160.48..178.44); n 17
+  ants_s | method.seconds_total (method process start to output written): median 175.50 (164.45..182.40); n 17
+  ants_s | seconds_driver_wall: median 183.49 (172.03..190.46); n 17
+    ants_s device: {'cpu': 17}
+  fireants_greedy | method.seconds_registration (cold; the method's own report): median 3.80 (3.45..4.28); n 17
+  fireants_greedy | method.seconds_total (method process start to output written): median 5.58 (5.28..7.34); n 17
+  fireants_greedy | seconds_driver_wall: median 17.18 (16.37..18.85); n 17
+    fireants_greedy device: {'cuda (NVIDIA GeForce RTX 4090)': 17}
+  fireants_syn | method.seconds_registration (cold; the method's own report): median 3.75 (3.46..3.92); n 17
+  fireants_syn | method.seconds_total (method process start to output written): median 7.29 (7.02..7.49); n 17
+  fireants_syn | seconds_driver_wall: median 20.57 (20.00..21.23); n 17
+    fireants_syn device: {'cuda (NVIDIA GeForce RTX 4090)': 17}
+  convexadam_v4seg | method.seconds_registration (cold; the method's own report): median 3.73 (3.21..4.67); n 17
+  convexadam_v4seg | method.seconds_total (method process start to output written): median 5.01 (4.49..6.74); n 17
+  convexadam_v4seg | seconds_driver_wall: median 28.68 (27.65..30.09); n 17
+    convexadam_v4seg device: {'cuda (NVIDIA GeForce RTX 4090)': 17}
+
+== item 5: development set (19 Learn2Reg validation pairs; HS, single run; not an independent test): after.metrics of repair_metrics.json
+  seg35: mean 0.8778; sd (ddof 0) 0.0183; min 0.8194; max 0.8936; nonfinite 0
+  seg4: mean 0.9194; sd (ddof 0) 0.0151; min 0.8766; max 0.9312; nonfinite 0
+  dice_official: mean 0.8778; sd (ddof 0) 0.0183; min 0.8194; max 0.8936; nonfinite 0
+  hd95: mean 1.3472; sd (ddof 0) 0.2931; min 1.1043; max 2.1280; nonfinite 0
+  sdlogj_official: mean 0.0686; sd (ddof 0) 0.0040; min 0.0630; max 0.0775; nonfinite 0
+  sdlogj_brain: mean 0.5509; sd (ddof 0) 0.0275; min 0.5160; max 0.6063; nonfinite 0
+  pairs with seg35 != dice_official: 0 | max |difference| 0
+  after.certificate status_at_1 certified_feasible with accepted_alpha 1 and n_infeasible_at_1 0: 19 / 19; arms {'RSHx24': 19} | eps {'0.05': 19}
+
+== item 6: input table of the scatter figure (scatter_input.csv)
+  OASIS: 16 arms + identity from arms_absolute.csv (seg35_mean, seg4_mean, sdlogj_official_mean, bl1_passed); each equal to the pair records' means (1e-12) and pass counts
+  LPBA40: 6 arms + identity as printed in the result document (section 2, 2.1); each equal to the pair records' means after rounding to 4 places, and the pass counts
+  method's decision certificate (configuration C, full mode) passed: OASIS 50 / 50; LPBA40 17 / 17
+  oasis | identity | reference | 50 | seg35 | 0.5691 | seg4 | 0.6213 | 0.0000 | BL1 jacobian_only |  | 50
+  oasis | method | method | 50 | seg35 | 0.8782 | seg4 | 0.9225 | 0.0692 | BL1 jacobian_only | 50 | 50
+  oasis | configc | main | 50 | seg35 | 0.8197 | seg4 | 0.8862 | 0.0810 | BL1 jacobian_only | 50 | 50
+  oasis | ants_s | main | 50 | seg35 | 0.7961 | seg4 | 0.8601 | 0.0655 | BL1 jacobian_only | 1 | 50
+  oasis | fireants_greedy | main | 50 | seg35 | 0.7877 | seg4 | 0.8462 | 0.0717 | BL1 jacobian_only | 45 | 50
+  oasis | fireants_syn | main | 50 | seg35 | 0.7282 | seg4 | 0.8025 | 0.0682 | BL1 jacobian_only | 50 | 50
+  oasis | convexadam_v4seg | main | 50 | seg35 | 0.8428 | seg4 | 0.8603 | 0.0508 | BL1 jacobian_only | 0 | 50
+  oasis | ants_so | descriptive | 50 | seg35 | 0.7960 | seg4 | 0.8603 | 0.0665 | BL1 jacobian_only | 1 | 50
+  oasis | niftyreg | descriptive | 50 | seg35 | 0.7875 | seg4 | 0.8563 | 0.0702 | BL1 jacobian_only | 0 | 50
+  oasis | deeds | descriptive | 50 | seg35 | 0.7395 | seg4 | 0.7569 | 0.0544 | BL1 jacobian_only | 27 | 50
+  oasis | convexadam | descriptive | 50 | seg35 | 0.7591 | seg4 | 0.7819 | 0.0608 | BL1 jacobian_only | 0 | 50
+  oasis | unigradicon_io | descriptive | 50 | seg35 | 0.7937 | seg4 | 0.8578 | 0.0640 | BL1 jacobian_only | 0 | 50
+  oasis | unigradicon_noio | descriptive | 50 | seg35 | 0.7887 | seg4 | 0.8499 | 0.0607 | BL1 jacobian_only | 0 | 50
+  oasis | voxelmorph | descriptive | 50 | seg35 | 0.7856 | seg4 | 0.8488 | 0.0643 | BL1 jacobian_only | 8 | 50
+  oasis | fireants_greedy_eq | tier_90s | 50 | seg35 | 0.7888 | seg4 | 0.8472 | 0.0726 | BL1 jacobian_only | 45 | 50
+  oasis | fireants_syn_eq | tier_90s | 50 | seg35 | 0.7697 | seg4 | 0.8231 | 0.0660 | BL1 jacobian_only | 23 | 50
+  oasis | unigradicon_io_eq | tier_90s | 50 | seg35 | 0.7961 | seg4 | 0.8619 | 0.0655 | BL1 jacobian_only | 0 | 50
+  lpba | identity | reference | 17 | lpba54 | 0.5303 | lpba56 | 0.5398 | 0.0000 | BL1 jacobian_only |  | 17
+  lpba | method | method | 17 | lpba54 | 0.6747 | lpba56 | 0.6804 | 0.0812 | BL1 jacobian_only | 17 | 17
+  lpba | configc | main | 17 | lpba54 | 0.7022 | lpba56 | 0.7074 | 0.0558 | BL1 jacobian_only | 17 | 17
+  lpba | ants_s | main | 17 | lpba54 | 0.7237 | lpba56 | 0.7281 | 0.0448 | BL1 jacobian_only | 2 | 17
+  lpba | fireants_greedy | main | 17 | lpba54 | 0.6923 | lpba56 | 0.6971 | 0.0658 | BL1 jacobian_only | 17 | 17
+  lpba | fireants_syn | main | 17 | lpba54 | 0.6664 | lpba56 | 0.6720 | 0.0533 | BL1 jacobian_only | 17 | 17
+  lpba | convexadam_v4seg | main | 17 | lpba54 | 0.6749 | lpba56 | 0.6806 | 0.0432 | BL1 jacobian_only | 0 | 17
+
+script sha256 2c4548c7291cb95d2d8aa2c7a739c3721c0ce53a007492d0f7ed85f4ab10283e

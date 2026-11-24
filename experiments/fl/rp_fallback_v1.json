@@ -1,0 +1,649 @@
+{
+ "schema": "bayesreg.rp.fallback.v1",
+ "source": "d0_v1 arm A0: configuration C (frozen eb808be, 90 s) on the 19 development pairs, final_native.npz, read only; the fallback of 2c(i) (BZ about 8:10 pm CST 11-05)",
+ "pairs": {
+  "0438-0439": {
+   "run_id": "d0v1_A0_0438-0439_20261030T100247Z",
+   "field": "runs/A0/OASIS_OAS1_0438_MR1__OASIS_OAS1_0439_MR1/pg_weak__four__90s/final_native.npz",
+   "file_sha256": "8b85b8519723925eabc88be9402a1771398d2c1ebf7243ca088bca30f3578220",
+   "u_sha256": "1064de54635eeefd452c089cd3777d395f2e1fb9978d71904427ff0c5e5e1b64",
+   "certificate": {
+    "status": "certified_feasible",
+    "min_jd_lower_bound": 3.857657769057442e-07,
+    "n_infeasible": 0,
+    "n_uncertain": 0,
+    "certificate_version": "q1-3d-parallel-hoisted-edge-hull-float-bernstein-prescreen-compiled-bernstein-v1",
+    "config": {
+     "delta": 0.0,
+     "max_depth": 48,
+     "max_boxes": 255,
+     "tile_size": 65536,
+     "policy": "lowest_bound_first_v1",
+     "prepass": "edge_hull_v1",
+     "kernel": "numba-parallel-hoisted-edge-hull-v1",
+     "fallback_workers": 8,
+     "fallback_kernel": "numba-bernstein-fallback-v1",
+     "prescreen_kernel": "numba-float-bernstein-apriori-v1"
+    }
+   },
+   "d0_evaluation": {
+    "passed": true,
+    "state_hash_matches_u": true,
+    "final_npz_sha256": "8b85b8519723925eabc88be9402a1771398d2c1ebf7243ca088bca30f3578220",
+    "final_npz_sha256_matches": true,
+    "classification": "ok",
+    "evaluator_sha256": "d066e28c0aa21f02cf197fc072ba0d5929035ccbf84e49d03cf3fbb6c367d272"
+   }
+  },
+  "0439-0440": {
+   "run_id": "d0v1_A0_0439-0440_20261030T102923Z",
+   "field": "runs/A0/OASIS_OAS1_0439_MR1__OASIS_OAS1_0440_MR1/pg_weak__four__90s/final_native.npz",
+   "file_sha256": "8bb0b2dda6f22fe11e8a0dbce5493cb6bb8e1e42c33d5e7ccb4e7bb3d8a3b820",
+   "u_sha256": "370ea2945d1fc4c63df9214cffc97b61fcfd40db1b9e399ab48d6727fef320aa",
+   "certificate": {
+    "status": "certified_feasible",
+    "min_jd_lower_bound": 3.595146402246562e-07,
+    "n_infeasible": 0,
+    "n_uncertain": 0,
+    "certificate_version": "q1-3d-parallel-hoisted-edge-hull-float-bernstein-prescreen-compiled-bernstein-v1",
+    "config": {
+     "delta": 0.0,
+     "max_depth": 48,
+     "max_boxes": 255,
+     "tile_size": 65536,
+     "policy": "lowest_bound_first_v1",
+     "prepass": "edge_hull_v1",
+     "kernel": "numba-parallel-hoisted-edge-hull-v1",
+     "fallback_workers": 8,
+     "fallback_kernel": "numba-bernstein-fallback-v1",
+     "prescreen_kernel": "numba-float-bernstein-apriori-v1"
+    }
+   },
+   "d0_evaluation": {
+    "passed": true,
+    "state_hash_matches_u": true,
+    "final_npz_sha256": "8bb0b2dda6f22fe11e8a0dbce5493cb6bb8e1e42c33d5e7ccb4e7bb3d8a3b820",
+    "final_npz_sha256_matches": true,
+    "classification": "ok",
+    "evaluator_sha256": "d066e28c0aa21f02cf197fc072ba0d5929035ccbf84e49d03cf3fbb6c367d272"
+   }
+  },
+  "0440-0441": {
+   "run_id": "d0v1_A0_0440-0441_20261030T104112Z",
+   "field": "runs/A0/OASIS_OAS1_0440_MR1__OASIS_OAS1_0441_MR1/pg_weak__four__90s/final_native.npz",
+   "file_sha256": "b5193dba58d504a5fd5a07afb148ad1a7cfbca75df5b9ca1e35455e4b7620292",
+   "u_sha256": "ea4644f7e54f641013d509e6b313f603d3f92aef896796f1ff68afc3a46b72f8",
+   "certificate": {
+    "status": "certified_feasible",
+    "min_jd_lower_bound": 3.421995577179703e-07,
+    "n_infeasible": 0,
+    "n_uncertain": 0,
+    "certificate_version": "q1-3d-parallel-hoisted-edge-hull-float-bernstein-prescreen-compiled-bernstein-v1",
+    "config": {
+     "delta": 0.0,
+     "max_depth": 48,
+     "max_boxes": 255,
+     "tile_size": 65536,
+     "policy": "lowest_bound_first_v1",
+     "prepass": "edge_hull_v1",
+     "kernel": "numba-parallel-hoisted-edge-hull-v1",
+     "fallback_workers": 8,
+     "fallback_kernel": "numba-bernstein-fallback-v1",
+     "prescreen_kernel": "numba-float-bernstein-apriori-v1"
+    }
+   },
+   "d0_evaluation": {
+    "passed": true,
+    "state_hash_matches_u": true,
+    "final_npz_sha256": "b5193dba58d504a5fd5a07afb148ad1a7cfbca75df5b9ca1e35455e4b7620292",
+    "final_npz_sha256_matches": true,
+    "classification": "ok",
+    "evaluator_sha256": "d066e28c0aa21f02cf197fc072ba0d5929035ccbf84e49d03cf3fbb6c367d272"
+   }
+  },
+  "0441-0442": {
+   "run_id": "d0v1_A0_0441-0442_20261030T105601Z",
+   "field": "runs/A0/OASIS_OAS1_0441_MR1__OASIS_OAS1_0442_MR1/pg_weak__four__90s/final_native.npz",
+   "file_sha256": "ec35750207369d44d9c4d4fb7ec74c5fc765bd0a08d52510c7ba14c8c56ede15",
+   "u_sha256": "14eb2b4fd4516951ebc3575cf42a3f1d0e7912f7bd629d2d1f2352ae10088736",
+   "certificate": {
+    "status": "certified_feasible",
+    "min_jd_lower_bound": 1.3434226701775072e-06,
+    "n_infeasible": 0,
+    "n_uncertain": 0,
+    "certificate_version": "q1-3d-parallel-hoisted-edge-hull-float-bernstein-prescreen-compiled-bernstein-v1",
+    "config": {
+     "delta": 0.0,
+     "max_depth": 48,
+     "max_boxes": 255,
+     "tile_size": 65536,
+     "policy": "lowest_bound_first_v1",
+     "prepass": "edge_hull_v1",
+     "kernel": "numba-parallel-hoisted-edge-hull-v1",
+     "fallback_workers": 8,
+     "fallback_kernel": "numba-bernstein-fallback-v1",
+     "prescreen_kernel": "numba-float-bernstein-apriori-v1"
+    }
+   },
+   "d0_evaluation": {
+    "passed": true,
+    "state_hash_matches_u": true,
+    "final_npz_sha256": "ec35750207369d44d9c4d4fb7ec74c5fc765bd0a08d52510c7ba14c8c56ede15",
+    "final_npz_sha256_matches": true,
+    "classification": "ok",
+    "evaluator_sha256": "d066e28c0aa21f02cf197fc072ba0d5929035ccbf84e49d03cf3fbb6c367d272"
+   }
+  },
+  "0442-0443": {
+   "run_id": "d0v1_A0_0442-0443_20261030T110553Z",
+   "field": "runs/A0/OASIS_OAS1_0442_MR1__OASIS_OAS1_0443_MR1/pg_weak__four__90s/final_native.npz",
+   "file_sha256": "88a025b021224f3a0051fcf6516f64d46f3f812506f49476c75328b3135693d4",
+   "u_sha256": "dd01d2342877e002a697520cc467ab3a138e67ea5086ce4c797ad02df0497b25",
+   "certificate": {
+    "status": "certified_feasible",
+    "min_jd_lower_bound": 5.337160526863725e-07,
+    "n_infeasible": 0,
+    "n_uncertain": 0,
+    "certificate_version": "q1-3d-parallel-hoisted-edge-hull-float-bernstein-prescreen-compiled-bernstein-v1",
+    "config": {
+     "delta": 0.0,
+     "max_depth": 48,
+     "max_boxes": 255,
+     "tile_size": 65536,
+     "policy": "lowest_bound_first_v1",
+     "prepass": "edge_hull_v1",
+     "kernel": "numba-parallel-hoisted-edge-hull-v1",
+     "fallback_workers": 8,
+     "fallback_kernel": "numba-bernstein-fallback-v1",
+     "prescreen_kernel": "numba-float-bernstein-apriori-v1"
+    }
+   },
+   "d0_evaluation": {
+    "passed": true,
+    "state_hash_matches_u": true,
+    "final_npz_sha256": "88a025b021224f3a0051fcf6516f64d46f3f812506f49476c75328b3135693d4",
+    "final_npz_sha256_matches": true,
+    "classification": "ok",
+    "evaluator_sha256": "d066e28c0aa21f02cf197fc072ba0d5929035ccbf84e49d03cf3fbb6c367d272"
+   }
+  },
+  "0443-0444": {
+   "run_id": "d0v1_A0_0443-0444_20261030T113336Z",
+   "field": "runs/A0/OASIS_OAS1_0443_MR1__OASIS_OAS1_0444_MR1/pg_weak__four__90s/final_native.npz",
+   "file_sha256": "1200f96c7bf1da6e0754234dcb09d796f81aaee82644a34ca36f6e27d38370db",
+   "u_sha256": "3ab65b9bbe69cbdbf80586a551db587514ea560867565ebb6fbd2a99435dde87",
+   "certificate": {
+    "status": "certified_feasible",
+    "min_jd_lower_bound": 9.691039443843193e-07,
+    "n_infeasible": 0,
+    "n_uncertain": 0,
+    "certificate_version": "q1-3d-parallel-hoisted-edge-hull-float-bernstein-prescreen-compiled-bernstein-v1",
+    "config": {
+     "delta": 0.0,
+     "max_depth": 48,
+     "max_boxes": 255,
+     "tile_size": 65536,
+     "policy": "lowest_bound_first_v1",
+     "prepass": "edge_hull_v1",
+     "kernel": "numba-parallel-hoisted-edge-hull-v1",
+     "fallback_workers": 8,
+     "fallback_kernel": "numba-bernstein-fallback-v1",
+     "prescreen_kernel": "numba-float-bernstein-apriori-v1"
+    }
+   },
+   "d0_evaluation": {
+    "passed": true,
+    "state_hash_matches_u": true,
+    "final_npz_sha256": "1200f96c7bf1da6e0754234dcb09d796f81aaee82644a34ca36f6e27d38370db",
+    "final_npz_sha256_matches": true,
+    "classification": "ok",
+    "evaluator_sha256": "d066e28c0aa21f02cf197fc072ba0d5929035ccbf84e49d03cf3fbb6c367d272"
+   }
+  },
+  "0444-0445": {
+   "run_id": "d0v1_A0_0444-0445_20261030T114535Z",
+   "field": "runs/A0/OASIS_OAS1_0444_MR1__OASIS_OAS1_0445_MR1/pg_weak__four__90s/final_native.npz",
+   "file_sha256": "59a450a4bf92cb5f6ba731f352ea5db533af433b75ef8b283adb995d16ba9095",
+   "u_sha256": "8b03361ceaf25ca12ca315298860f55b0798a6dc5142aa8707b0c04fac2cfd75",
+   "certificate": {
+    "status": "certified_feasible",
+    "min_jd_lower_bound": 1.8188131560015193e-06,
+    "n_infeasible": 0,
+    "n_uncertain": 0,
+    "certificate_version": "q1-3d-parallel-hoisted-edge-hull-float-bernstein-prescreen-compiled-bernstein-v1",
+    "config": {
+     "delta": 0.0,
+     "max_depth": 48,
+     "max_boxes": 255,
+     "tile_size": 65536,
+     "policy": "lowest_bound_first_v1",
+     "prepass": "edge_hull_v1",
+     "kernel": "numba-parallel-hoisted-edge-hull-v1",
+     "fallback_workers": 8,
+     "fallback_kernel": "numba-bernstein-fallback-v1",
+     "prescreen_kernel": "numba-float-bernstein-apriori-v1"
+    }
+   },
+   "d0_evaluation": {
+    "passed": true,
+    "state_hash_matches_u": true,
+    "final_npz_sha256": "59a450a4bf92cb5f6ba731f352ea5db533af433b75ef8b283adb995d16ba9095",
+    "final_npz_sha256_matches": true,
+    "classification": "ok",
+    "evaluator_sha256": "d066e28c0aa21f02cf197fc072ba0d5929035ccbf84e49d03cf3fbb6c367d272"
+   }
+  },
+  "0445-0446": {
+   "run_id": "d0v1_A0_0445-0446_20261030T121743Z",
+   "field": "runs/A0/OASIS_OAS1_0445_MR1__OASIS_OAS1_0446_MR1/pg_weak__four__90s/final_native.npz",
+   "file_sha256": "29bbb5a67de5029cfabb508c63002f352fb530da8afb2042beec12cb1f0df651",
+   "u_sha256": "001ef38574a426b0c473c6f1f43c190fe167e90311c001dba8f0b34a82d04b27",
+   "certificate": {
+    "status": "certified_feasible",
+    "min_jd_lower_bound": 1.2209375309865651e-06,
+    "n_infeasible": 0,
+    "n_uncertain": 0,
+    "certificate_version": "q1-3d-parallel-hoisted-edge-hull-float-bernstein-prescreen-compiled-bernstein-v1",
+    "config": {
+     "delta": 0.0,
+     "max_depth": 48,
+     "max_boxes": 255,
+     "tile_size": 65536,
+     "policy": "lowest_bound_first_v1",
+     "prepass": "edge_hull_v1",
+     "kernel": "numba-parallel-hoisted-edge-hull-v1",
+     "fallback_workers": 8,
+     "fallback_kernel": "numba-bernstein-fallback-v1",
+     "prescreen_kernel": "numba-float-bernstein-apriori-v1"
+    }
+   },
+   "d0_evaluation": {
+    "passed": true,
+    "state_hash_matches_u": true,
+    "final_npz_sha256": "29bbb5a67de5029cfabb508c63002f352fb530da8afb2042beec12cb1f0df651",
+    "final_npz_sha256_matches": true,
+    "classification": "ok",
+    "evaluator_sha256": "d066e28c0aa21f02cf197fc072ba0d5929035ccbf84e49d03cf3fbb6c367d272"
+   }
+  },
+  "0446-0447": {
+   "run_id": "d0v1_A0_0446-0447_20261030T122748Z",
+   "field": "runs/A0/OASIS_OAS1_0446_MR1__OASIS_OAS1_0447_MR1/pg_weak__four__90s/final_native.npz",
+   "file_sha256": "a56a9dbce4c013766f9321e2eecce114ef1fc0b8cadb8d9b8481a37dc7093040",
+   "u_sha256": "08bc0952dd71bc3d253bbc41da92139b32bd5050aa4284378ae4124f24d1e9d9",
+   "certificate": {
+    "status": "certified_feasible",
+    "min_jd_lower_bound": 2.169481692348984e-07,
+    "n_infeasible": 0,
+    "n_uncertain": 0,
+    "certificate_version": "q1-3d-parallel-hoisted-edge-hull-float-bernstein-prescreen-compiled-bernstein-v1",
+    "config": {
+     "delta": 0.0,
+     "max_depth": 48,
+     "max_boxes": 255,
+     "tile_size": 65536,
+     "policy": "lowest_bound_first_v1",
+     "prepass": "edge_hull_v1",
+     "kernel": "numba-parallel-hoisted-edge-hull-v1",
+     "fallback_workers": 8,
+     "fallback_kernel": "numba-bernstein-fallback-v1",
+     "prescreen_kernel": "numba-float-bernstein-apriori-v1"
+    }
+   },
+   "d0_evaluation": {
+    "passed": true,
+    "state_hash_matches_u": true,
+    "final_npz_sha256": "a56a9dbce4c013766f9321e2eecce114ef1fc0b8cadb8d9b8481a37dc7093040",
+    "final_npz_sha256_matches": true,
+    "classification": "ok",
+    "evaluator_sha256": "d066e28c0aa21f02cf197fc072ba0d5929035ccbf84e49d03cf3fbb6c367d272"
+   }
+  },
+  "0447-0448": {
+   "run_id": "d0v1_A0_0447-0448_20261030T125218Z",
+   "field": "runs/A0/OASIS_OAS1_0447_MR1__OASIS_OAS1_0448_MR1/pg_weak__four__90s/final_native.npz",
+   "file_sha256": "eb12b79df486a2e94dd8cb78cf4740badb694a76f710904b80124611fd87f09b",
+   "u_sha256": "f5501c17b7ff034d5f1715797debe83d346904c0f8f2073de8c6221d1a83d1c3",
+   "certificate": {
+    "status": "certified_feasible",
+    "min_jd_lower_bound": 1.6997071150548488e-07,
+    "n_infeasible": 0,
+    "n_uncertain": 0,
+    "certificate_version": "q1-3d-parallel-hoisted-edge-hull-float-bernstein-prescreen-compiled-bernstein-v1",
+    "config": {
+     "delta": 0.0,
+     "max_depth": 48,
+     "max_boxes": 255,
+     "tile_size": 65536,
+     "policy": "lowest_bound_first_v1",
+     "prepass": "edge_hull_v1",
+     "kernel": "numba-parallel-hoisted-edge-hull-v1",
+     "fallback_workers": 8,
+     "fallback_kernel": "numba-bernstein-fallback-v1",
+     "prescreen_kernel": "numba-float-bernstein-apriori-v1"
+    }
+   },
+   "d0_evaluation": {
+    "passed": true,
+    "state_hash_matches_u": true,
+    "final_npz_sha256": "eb12b79df486a2e94dd8cb78cf4740badb694a76f710904b80124611fd87f09b",
+    "final_npz_sha256_matches": true,
+    "classification": "ok",
+    "evaluator_sha256": "d066e28c0aa21f02cf197fc072ba0d5929035ccbf84e49d03cf3fbb6c367d272"
+   }
+  },
+  "0448-0449": {
+   "run_id": "d0v1_A0_0448-0449_20261030T130409Z",
+   "field": "runs/A0/OASIS_OAS1_0448_MR1__OASIS_OAS1_0449_MR1/pg_weak__four__90s/final_native.npz",
+   "file_sha256": "34276b0825b986fdf5626348f87babf94b8a321644de3e1b71f9605baa49e453",
+   "u_sha256": "1ffd3acdaf74be131980ebd83f9bdc7bfb795b88a601329cc21f5a4d70efe48f",
+   "certificate": {
+    "status": "certified_feasible",
+    "min_jd_lower_bound": 5.59496036001139e-07,
+    "n_infeasible": 0,
+    "n_uncertain": 0,
+    "certificate_version": "q1-3d-parallel-hoisted-edge-hull-float-bernstein-prescreen-compiled-bernstein-v1",
+    "config": {
+     "delta": 0.0,
+     "max_depth": 48,
+     "max_boxes": 255,
+     "tile_size": 65536,
+     "policy": "lowest_bound_first_v1",
+     "prepass": "edge_hull_v1",
+     "kernel": "numba-parallel-hoisted-edge-hull-v1",
+     "fallback_workers": 8,
+     "fallback_kernel": "numba-bernstein-fallback-v1",
+     "prescreen_kernel": "numba-float-bernstein-apriori-v1"
+    }
+   },
+   "d0_evaluation": {
+    "passed": true,
+    "state_hash_matches_u": true,
+    "final_npz_sha256": "34276b0825b986fdf5626348f87babf94b8a321644de3e1b71f9605baa49e453",
+    "final_npz_sha256_matches": true,
+    "classification": "ok",
+    "evaluator_sha256": "d066e28c0aa21f02cf197fc072ba0d5929035ccbf84e49d03cf3fbb6c367d272"
+   }
+  },
+  "0449-0450": {
+   "run_id": "d0v1_A0_0449-0450_20261030T131359Z",
+   "field": "runs/A0/OASIS_OAS1_0449_MR1__OASIS_OAS1_0450_MR1/pg_weak__four__90s/final_native.npz",
+   "file_sha256": "209701e482d3ee21a5e9d8e72da61ada0309a11c83717b1383c75887a05d0f63",
+   "u_sha256": "7c32e57ab182a3552b31fcfd43e2a54183e3d33f898f1b13ec6e9a4493ce343d",
+   "certificate": {
+    "status": "certified_feasible",
+    "min_jd_lower_bound": 6.653041979519379e-07,
+    "n_infeasible": 0,
+    "n_uncertain": 0,
+    "certificate_version": "q1-3d-parallel-hoisted-edge-hull-float-bernstein-prescreen-compiled-bernstein-v1",
+    "config": {
+     "delta": 0.0,
+     "max_depth": 48,
+     "max_boxes": 255,
+     "tile_size": 65536,
+     "policy": "lowest_bound_first_v1",
+     "prepass": "edge_hull_v1",
+     "kernel": "numba-parallel-hoisted-edge-hull-v1",
+     "fallback_workers": 8,
+     "fallback_kernel": "numba-bernstein-fallback-v1",
+     "prescreen_kernel": "numba-float-bernstein-apriori-v1"
+    }
+   },
+   "d0_evaluation": {
+    "passed": true,
+    "state_hash_matches_u": true,
+    "final_npz_sha256": "209701e482d3ee21a5e9d8e72da61ada0309a11c83717b1383c75887a05d0f63",
+    "final_npz_sha256_matches": true,
+    "classification": "ok",
+    "evaluator_sha256": "d066e28c0aa21f02cf197fc072ba0d5929035ccbf84e49d03cf3fbb6c367d272"
+   }
+  },
+  "0450-0451": {
+   "run_id": "d0v1_A0_0450-0451_20261030T132451Z",
+   "field": "runs/A0/OASIS_OAS1_0450_MR1__OASIS_OAS1_0451_MR1/pg_weak__four__90s/final_native.npz",
+   "file_sha256": "532e95dac472db01232b9bdbd7a91023b075452938fb7f10dc8071d2fd97ad16",
+   "u_sha256": "5e7c3acf1cd91927b939b2ac40f376dfd13500f98d5cd967e6fd7ee95e105d05",
+   "certificate": {
+    "status": "certified_feasible",
+    "min_jd_lower_bound": 1.4371949132729873e-06,
+    "n_infeasible": 0,
+    "n_uncertain": 0,
+    "certificate_version": "q1-3d-parallel-hoisted-edge-hull-float-bernstein-prescreen-compiled-bernstein-v1",
+    "config": {
+     "delta": 0.0,
+     "max_depth": 48,
+     "max_boxes": 255,
+     "tile_size": 65536,
+     "policy": "lowest_bound_first_v1",
+     "prepass": "edge_hull_v1",
+     "kernel": "numba-parallel-hoisted-edge-hull-v1",
+     "fallback_workers": 8,
+     "fallback_kernel": "numba-bernstein-fallback-v1",
+     "prescreen_kernel": "numba-float-bernstein-apriori-v1"
+    }
+   },
+   "d0_evaluation": {
+    "passed": true,
+    "state_hash_matches_u": true,
+    "final_npz_sha256": "532e95dac472db01232b9bdbd7a91023b075452938fb7f10dc8071d2fd97ad16",
+    "final_npz_sha256_matches": true,
+    "classification": "ok",
+    "evaluator_sha256": "d066e28c0aa21f02cf197fc072ba0d5929035ccbf84e49d03cf3fbb6c367d272"
+   }
+  },
+  "0451-0452": {
+   "run_id": "d0v1_A0_0451-0452_20261030T134939Z",
+   "field": "runs/A0/OASIS_OAS1_0451_MR1__OASIS_OAS1_0452_MR1/pg_weak__four__90s/final_native.npz",
+   "file_sha256": "158c0dacefa1ca4bca71700d3c7edd5e9884718644bbf50094528ac6b61d62bc",
+   "u_sha256": "200887b8ea8c06f0cc18b48edd1b8a3973d40536b9336f88a2cc924d01be7597",
+   "certificate": {
+    "status": "certified_feasible",
+    "min_jd_lower_bound": 3.7217783421805695e-07,
+    "n_infeasible": 0,
+    "n_uncertain": 0,
+    "certificate_version": "q1-3d-parallel-hoisted-edge-hull-float-bernstein-prescreen-compiled-bernstein-v1",
+    "config": {
+     "delta": 0.0,
+     "max_depth": 48,
+     "max_boxes": 255,
+     "tile_size": 65536,
+     "policy": "lowest_bound_first_v1",
+     "prepass": "edge_hull_v1",
+     "kernel": "numba-parallel-hoisted-edge-hull-v1",
+     "fallback_workers": 8,
+     "fallback_kernel": "numba-bernstein-fallback-v1",
+     "prescreen_kernel": "numba-float-bernstein-apriori-v1"
+    }
+   },
+   "d0_evaluation": {
+    "passed": true,
+    "state_hash_matches_u": true,
+    "final_npz_sha256": "158c0dacefa1ca4bca71700d3c7edd5e9884718644bbf50094528ac6b61d62bc",
+    "final_npz_sha256_matches": true,
+    "classification": "ok",
+    "evaluator_sha256": "d066e28c0aa21f02cf197fc072ba0d5929035ccbf84e49d03cf3fbb6c367d272"
+   }
+  },
+  "0452-0453": {
+   "run_id": "d0v1_A0_0452-0453_20261030T135934Z",
+   "field": "runs/A0/OASIS_OAS1_0452_MR1__OASIS_OAS1_0453_MR1/pg_weak__four__90s/final_native.npz",
+   "file_sha256": "d66a8afe0eb5106c467a4dc0edf445bc2259bee31fb6809c18a8512408a3d049",
+   "u_sha256": "868cb12237b423d5e189da1f0a16bf36622b51c4d47868ad87e87ece11d244a1",
+   "certificate": {
+    "status": "certified_feasible",
+    "min_jd_lower_bound": 6.314814137882428e-07,
+    "n_infeasible": 0,
+    "n_uncertain": 0,
+    "certificate_version": "q1-3d-parallel-hoisted-edge-hull-float-bernstein-prescreen-compiled-bernstein-v1",
+    "config": {
+     "delta": 0.0,
+     "max_depth": 48,
+     "max_boxes": 255,
+     "tile_size": 65536,
+     "policy": "lowest_bound_first_v1",
+     "prepass": "edge_hull_v1",
+     "kernel": "numba-parallel-hoisted-edge-hull-v1",
+     "fallback_workers": 8,
+     "fallback_kernel": "numba-bernstein-fallback-v1",
+     "prescreen_kernel": "numba-float-bernstein-apriori-v1"
+    }
+   },
+   "d0_evaluation": {
+    "passed": true,
+    "state_hash_matches_u": true,
+    "final_npz_sha256": "d66a8afe0eb5106c467a4dc0edf445bc2259bee31fb6809c18a8512408a3d049",
+    "final_npz_sha256_matches": true,
+    "classification": "ok",
+    "evaluator_sha256": "d066e28c0aa21f02cf197fc072ba0d5929035ccbf84e49d03cf3fbb6c367d272"
+   }
+  },
+  "0453-0454": {
+   "run_id": "d0v1_A0_0453-0454_20261030T140930Z",
+   "field": "runs/A0/OASIS_OAS1_0453_MR1__OASIS_OAS1_0454_MR1/pg_weak__four__90s/final_native.npz",
+   "file_sha256": "988285c3a542216d9fba5580c496a5fbc77bd10158624e88db64f1a9baaee6f0",
+   "u_sha256": "0a52dee3d88ea6b316515e2a8b7b90e63e22511c9cd7eb84109a5613c25d109d",
+   "certificate": {
+    "status": "certified_feasible",
+    "min_jd_lower_bound": 6.21471407894619e-08,
+    "n_infeasible": 0,
+    "n_uncertain": 0,
+    "certificate_version": "q1-3d-parallel-hoisted-edge-hull-float-bernstein-prescreen-compiled-bernstein-v1",
+    "config": {
+     "delta": 0.0,
+     "max_depth": 48,
+     "max_boxes": 255,
+     "tile_size": 65536,
+     "policy": "lowest_bound_first_v1",
+     "prepass": "edge_hull_v1",
+     "kernel": "numba-parallel-hoisted-edge-hull-v1",
+     "fallback_workers": 8,
+     "fallback_kernel": "numba-bernstein-fallback-v1",
+     "prescreen_kernel": "numba-float-bernstein-apriori-v1"
+    }
+   },
+   "d0_evaluation": {
+    "passed": true,
+    "state_hash_matches_u": true,
+    "final_npz_sha256": "988285c3a542216d9fba5580c496a5fbc77bd10158624e88db64f1a9baaee6f0",
+    "final_npz_sha256_matches": true,
+    "classification": "ok",
+    "evaluator_sha256": "d066e28c0aa21f02cf197fc072ba0d5929035ccbf84e49d03cf3fbb6c367d272"
+   }
+  },
+  "0454-0455": {
+   "run_id": "d0v1_A0_0454-0455_20261030T142019Z",
+   "field": "runs/A0/OASIS_OAS1_0454_MR1__OASIS_OAS1_0455_MR1/pg_weak__four__90s/final_native.npz",
+   "file_sha256": "9b50c30f553c858995546f3dcea08b7fb11d984c8c5168fcd46701a62031905a",
+   "u_sha256": "a31d3cc741201e609553d7b4b58b3da1fd417d901f55aff4393c3f76d139a871",
+   "certificate": {
+    "status": "certified_feasible",
+    "min_jd_lower_bound": 5.828401454729957e-07,
+    "n_infeasible": 0,
+    "n_uncertain": 0,
+    "certificate_version": "q1-3d-parallel-hoisted-edge-hull-float-bernstein-prescreen-compiled-bernstein-v1",
+    "config": {
+     "delta": 0.0,
+     "max_depth": 48,
+     "max_boxes": 255,
+     "tile_size": 65536,
+     "policy": "lowest_bound_first_v1",
+     "prepass": "edge_hull_v1",
+     "kernel": "numba-parallel-hoisted-edge-hull-v1",
+     "fallback_workers": 8,
+     "fallback_kernel": "numba-bernstein-fallback-v1",
+     "prescreen_kernel": "numba-float-bernstein-apriori-v1"
+    }
+   },
+   "d0_evaluation": {
+    "passed": true,
+    "state_hash_matches_u": true,
+    "final_npz_sha256": "9b50c30f553c858995546f3dcea08b7fb11d984c8c5168fcd46701a62031905a",
+    "final_npz_sha256_matches": true,
+    "classification": "ok",
+    "evaluator_sha256": "d066e28c0aa21f02cf197fc072ba0d5929035ccbf84e49d03cf3fbb6c367d272"
+   }
+  },
+  "0455-0456": {
+   "run_id": "d0v1_A0_0455-0456_20261030T144458Z",
+   "field": "runs/A0/OASIS_OAS1_0455_MR1__OASIS_OAS1_0456_MR1/pg_weak__four__90s/final_native.npz",
+   "file_sha256": "4e2d01779e841176a38397ca9421cb868f4a6b755f9c58c51961246431d41213",
+   "u_sha256": "3e70eee74591afb88c4fafe889257f8f6c2965a38cfe171cdd1a2286f747ff0e",
+   "certificate": {
+    "status": "certified_feasible",
+    "min_jd_lower_bound": 7.162002257921071e-08,
+    "n_infeasible": 0,
+    "n_uncertain": 0,
+    "certificate_version": "q1-3d-parallel-hoisted-edge-hull-float-bernstein-prescreen-compiled-bernstein-v1",
+    "config": {
+     "delta": 0.0,
+     "max_depth": 48,
+     "max_boxes": 255,
+     "tile_size": 65536,
+     "policy": "lowest_bound_first_v1",
+     "prepass": "edge_hull_v1",
+     "kernel": "numba-parallel-hoisted-edge-hull-v1",
+     "fallback_workers": 8,
+     "fallback_kernel": "numba-bernstein-fallback-v1",
+     "prescreen_kernel": "numba-float-bernstein-apriori-v1"
+    }
+   },
+   "d0_evaluation": {
+    "passed": true,
+    "state_hash_matches_u": true,
+    "final_npz_sha256": "4e2d01779e841176a38397ca9421cb868f4a6b755f9c58c51961246431d41213",
+    "final_npz_sha256_matches": true,
+    "classification": "ok",
+    "evaluator_sha256": "d066e28c0aa21f02cf197fc072ba0d5929035ccbf84e49d03cf3fbb6c367d272"
+   }
+  },
+  "0456-0457": {
+   "run_id": "d0v1_A0_0456-0457_20261030T145641Z",
+   "field": "runs/A0/OASIS_OAS1_0456_MR1__OASIS_OAS1_0457_MR1/pg_weak__four__90s/final_native.npz",
+   "file_sha256": "2a4f3452cd0a84dda1b75f66af98461888494055a5fea302a976be1a127a8858",
+   "u_sha256": "114b1159a3806c98233b2150d3831e0cfa67bcba111215b78e6d6553e996a1da",
+   "certificate": {
+    "status": "certified_feasible",
+    "min_jd_lower_bound": 2.969465302919693e-07,
+    "n_infeasible": 0,
+    "n_uncertain": 0,
+    "certificate_version": "q1-3d-parallel-hoisted-edge-hull-float-bernstein-prescreen-compiled-bernstein-v1",
+    "config": {
+     "delta": 0.0,
+     "max_depth": 48,
+     "max_boxes": 255,
+     "tile_size": 65536,
+     "policy": "lowest_bound_first_v1",
+     "prepass": "edge_hull_v1",
+     "kernel": "numba-parallel-hoisted-edge-hull-v1",
+     "fallback_workers": 8,
+     "fallback_kernel": "numba-bernstein-fallback-v1",
+     "prescreen_kernel": "numba-float-bernstein-apriori-v1"
+    }
+   },
+   "d0_evaluation": {
+    "passed": true,
+    "state_hash_matches_u": true,
+    "final_npz_sha256": "2a4f3452cd0a84dda1b75f66af98461888494055a5fea302a976be1a127a8858",
+    "final_npz_sha256_matches": true,
+    "classification": "ok",
+    "evaluator_sha256": "d066e28c0aa21f02cf197fc072ba0d5929035ccbf84e49d03cf3fbb6c367d272"
+   }
+  }
+ },
+ "evaluation_certificate": {
+  "source": "rw_v1/runs/RHx24_c600/0439-0440/repair_metrics.json after.certificate.attempts[0]",
+  "config": {
+   "delta": 0.0,
+   "max_depth": 48,
+   "max_boxes": 255,
+   "tile_size": 65536,
+   "policy": "lowest_bound_first_v1",
+   "prepass": "edge_hull_v1",
+   "kernel": "numba-parallel-hoisted-edge-hull-v1",
+   "fallback_workers": 8,
+   "fallback_kernel": "numba-bernstein-fallback-v1",
+   "prescreen_kernel": "numba-float-bernstein-apriori-v1"
+  },
+  "certificate_version": "q1-3d-parallel-hoisted-edge-hull-float-bernstein-prescreen-compiled-bernstein-v1"
+ }
+}
